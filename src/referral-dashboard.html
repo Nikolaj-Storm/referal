@@ -303,6 +303,66 @@
                     </div>
                 </div>
 
+                <!-- How it works -->
+                <div
+                    class="bg-white p-6 md:p-8 rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100 mb-6">
+                    <h2 class="text-xl font-extrabold text-[#171717] mb-6">How it works</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Step 1: Connect Bank -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-[14px] shrink-0">
+                                1</div>
+                            <div class="pt-0.5">
+                                <h4 class="font-bold text-[#171717] text-sm mb-1">Connect Bank Account</h4>
+                                <p class="text-[#8f92a1] text-[13px] leading-relaxed mb-3">Add your bank details so we
+                                    can transfer your monthly earnings.</p>
+                                <button onclick="openBankModal()" id="connectBankBtn"
+                                    class="bg-[#7B53E7] text-white hover:bg-[#6b42d6] px-4 py-2.5 rounded-md text-[13px] font-bold transition-colors shadow-sm whitespace-nowrap">
+                                    Connect Bank Account
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-[14px] shrink-0">
+                                2</div>
+                            <div class="pt-0.5">
+                                <h4 class="font-bold text-[#171717] text-sm mb-1">Share your link</h4>
+                                <p class="text-[#8f92a1] text-[13px] leading-relaxed">Copy your unique referral link and
+                                    share it on social media, blogs, or messages.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-[14px] shrink-0">
+                                3</div>
+                            <div class="pt-0.5">
+                                <h4 class="font-bold text-[#171717] text-sm mb-1">They sign up & sell</h4>
+                                <p class="text-[#8f92a1] text-[13px] leading-relaxed">Your referral creates a Printumo
+                                    account and completes their first successful sale.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-[14px] shrink-0">
+                                4</div>
+                            <div class="pt-0.5">
+                                <h4 class="font-bold text-[#171717] text-sm mb-1">You both get rewarded</h4>
+                                <p class="text-[#8f92a1] text-[13px] leading-relaxed">You earn €50 and your friend saves
+                                    €50 on their first order. Payouts happen monthly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- KPI Stats Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Stat 1: Total Referrals -->
@@ -744,62 +804,7 @@
                             </form>
                         </div>
 
-                        <!-- How it works -->
-                        <div
-                            class="bg-white p-6 md:p-8 rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100">
-                            <h2 class="text-xl font-extrabold text-[#171717] mb-6">How it works</h2>
-
-                            <div class="flex flex-col gap-6">
-                                <!-- Step 1: Connect Bank -->
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
-                                        1</div>
-                                    <div class="pt-0.5">
-                                        <h4 class="font-bold text-[#171717] text-sm mb-1">Connect Bank Account</h4>
-                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed mb-3">Add your bank details
-                                            so we can transfer your monthly earnings.</p>
-                                        <button onclick="connectBank()" id="connectBankBtn"
-                                            class="bg-[#171717] text-white hover:bg-black px-4 py-2 rounded-md text-sm font-bold transition-colors">
-                                            Connect Bank Account
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
-                                        2</div>
-                                    <div class="pt-0.5">
-                                        <h4 class="font-bold text-[#171717] text-sm mb-1">Share your link</h4>
-                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed">Copy your unique referral
-                                            link and share it on social media, blogs, or messages.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
-                                        3</div>
-                                    <div class="pt-0.5">
-                                        <h4 class="font-bold text-[#171717] text-sm mb-1">They sign up & sell</h4>
-                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed">Your referral creates a
-                                            Printumo account and completes their first successful sale.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
-                                        4</div>
-                                    <div class="pt-0.5">
-                                        <h4 class="font-bold text-[#171717] text-sm mb-1">You both get rewarded</h4>
-                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed">You earn €50 and your
-                                            friend saves €50 on their first order. Payouts happen monthly.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Move note: How it works logic has been relocated above KPI Stats -->
                     </div>
 
                 </div>
@@ -809,47 +814,163 @@
 
     <div id="overlay" class="overlay md:hidden fixed inset-0 bg-[#000000]/50 z-40 hidden" onclick="closeDrawer()"></div>
 
+    <!-- Bank Connection Modal -->
+    <div id="bankModal"
+        class="fixed inset-0 bg-[#000000]/40 backdrop-blur-sm z-50 hidden flex flex-col justify-end md:items-center md:justify-center transition-opacity">
+        <!-- Close overlay click -->
+        <div class="absolute inset-0 z-0" onclick="closeBankModal()"></div>
+
+        <div
+            class="bg-white rounded-t-2xl md:rounded-xl shadow-2xl w-full max-w-[420px] p-6 md:p-8 relative z-10 animate-[slideUp_0.3s_ease-out] md:animate-[fadeIn_0.2s_ease-out]">
+            <button onclick="closeBankModal()"
+                class="absolute top-5 right-5 text-gray-400 hover:text-[#171717] transition-colors p-1 bg-gray-50 hover:bg-gray-100 rounded-full">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div
+                class="w-12 h-12 bg-[#F4F0FF] rounded-xl flex items-center justify-center mb-5 border border-[#eaddff]">
+                <svg class="w-6 h-6 text-[#7B53E7]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+            </div>
+            <h2 class="text-xl font-extrabold text-[#171717] mb-1.5">Connect Bank Account</h2>
+            <p class="text-[13.5px] text-[#8f92a1] mb-6 font-medium leading-relaxed">Enter your details to receive your
+                monthly referral payouts directly to your bank account.</p>
+
+            <form onsubmit="connectBank(event)" class="flex flex-col gap-4">
+                <div>
+                    <label class="block text-[11px] font-bold text-[#171717] mb-1.5 uppercase tracking-wider">Account
+                        Holder Name</label>
+                    <input type="text" placeholder="e.g. Nikolaj Petersen"
+                        class="w-full bg-[#f9f9fa] border border-gray-200 text-[#171717] placeholder:text-gray-400 rounded-lg px-3.5 py-2.5 text-[13px] font-medium outline-none focus:border-[#7B53E7] focus:bg-white transition-all shadow-sm"
+                        required>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-[#171717] mb-1.5 uppercase tracking-wider">Bank
+                        Name</label>
+                    <input type="text" placeholder="e.g. Danske Bank"
+                        class="w-full bg-[#f9f9fa] border border-gray-200 text-[#171717] placeholder:text-gray-400 rounded-lg px-3.5 py-2.5 text-[13px] font-medium outline-none focus:border-[#7B53E7] focus:bg-white transition-all shadow-sm"
+                        required>
+                </div>
+                <div>
+                    <label
+                        class="block text-[11px] font-bold text-[#171717] mb-1.5 uppercase tracking-wider">IBAN</label>
+                    <input type="text" placeholder="DK00 0000 0000 0000"
+                        class="w-full bg-[#f9f9fa] border border-gray-200 text-[#171717] placeholder:text-gray-400 rounded-lg px-3.5 py-2.5 text-[13px] font-medium outline-none focus:border-[#7B53E7] focus:bg-white transition-all shadow-sm font-mono tracking-wide"
+                        required>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-[#171717] mb-1.5 uppercase tracking-wider">SWIFT /
+                        BIC</label>
+                    <input type="text" placeholder="DABADKKK"
+                        class="w-full bg-[#f9f9fa] border border-gray-200 text-[#171717] placeholder:text-gray-400 rounded-lg px-3.5 py-2.5 text-[13px] font-medium outline-none focus:border-[#7B53E7] focus:bg-white transition-all shadow-sm font-mono tracking-wide uppercase"
+                        required>
+                </div>
+
+                <div class="mt-2 text-center text-[11px] text-[#8f92a1] font-medium">
+                    Your data is strictly secured and encrypted.
+                </div>
+                <button type="submit"
+                    class="w-full bg-[#7B53E7] text-white hover:bg-[#6b42d6] font-bold py-3.5 rounded-lg transition-colors text-[14px] shadow-sm flex justify-center items-center gap-2">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Save & Connect
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+
     <!-- Script  -->
     <script>
+        // Bank connection modal functions
+        function openBankModal() {
+            document.getElementById('bankModal').classList.remove('hidden');
+            // Prevent body scroll on mobile
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBankModal() {
+            document.getElementById('bankModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
         // Bank connection logic
-        function connectBank() {
-            // Remove fog effect from elements
-            const foggedElements = document.querySelectorAll('.fogged-feature');
-            foggedElements.forEach(el => el.classList.remove('fogged-feature'));
+        function connectBank(e) {
+            if (e) e.preventDefault();
 
-            // Clear dummy data from table
-            const tbody = document.getElementById('friends-tbody');
-            if (tbody) {
-                tbody.innerHTML = `
-                    <tr class="bg-white">
-                        <td colspan="4" class="p-8 text-center text-[#8f92a1] text-sm font-medium">
-                            No friends invited yet. Share your link to get started!
-                        </td>
-                    </tr>
-                `;
-            }
+            closeBankModal();
 
-            // Reset KPI stats to 0
-            const valInvited = document.getElementById('val-invited');
-            if (valInvited) valInvited.innerText = '0';
+            // Small delay for UI smoothness before lifting fog
+            setTimeout(() => {
+                // Remove fog effect from elements
+                const foggedElements = document.querySelectorAll('.fogged-feature');
+                foggedElements.forEach(el => el.classList.remove('fogged-feature'));
 
-            const valSaved = document.getElementById('val-saved');
-            if (valSaved) valSaved.innerText = '€0.00';
+                // Clear dummy data from table
+                const tbody = document.getElementById('friends-tbody');
+                if (tbody) {
+                    tbody.innerHTML = `
+                        <tr class="bg-white">
+                            <td colspan="4" class="p-8 text-center text-[#8f92a1] text-sm font-medium">
+                                No friends invited yet. Share your link to get started!
+                            </td>
+                        </tr>
+                    `;
+                }
 
-            const valEarnings = document.getElementById('val-earnings');
-            if (valEarnings) valEarnings.innerText = '€0.00';
+                // Reset KPI stats to 0
+                const valInvited = document.getElementById('val-invited');
+                if (valInvited) valInvited.innerText = '0';
 
-            const valExpected = document.getElementById('val-expected');
-            if (valExpected) valExpected.innerText = '€0.00';
+                const valSaved = document.getElementById('val-saved');
+                if (valSaved) valSaved.innerText = '€0.00';
 
-            // Update the step button to show connected state
-            const connectBtn = document.getElementById('connectBankBtn');
-            if (connectBtn) {
-                connectBtn.innerHTML = '<span class="flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Bank Connected</span>';
-                connectBtn.classList.replace('bg-[#171717]', 'bg-[#10b981]');
-                connectBtn.classList.replace('hover:bg-black', 'hover:bg-[#059669]');
-                connectBtn.disabled = true;
-            }
+                const valEarnings = document.getElementById('val-earnings');
+                if (valEarnings) valEarnings.innerText = '€0.00';
+
+                const valExpected = document.getElementById('val-expected');
+                if (valExpected) valExpected.innerText = '€0.00';
+
+                // Update the step button to show connected state
+                const connectBtn = document.getElementById('connectBankBtn');
+                if (connectBtn) {
+                    connectBtn.innerHTML = '<span class="flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Bank Connected</span>';
+                    connectBtn.classList.replace('bg-[#7B53E7]', 'bg-[#10b981]');
+                    connectBtn.classList.replace('hover:bg-[#6b42d6]', 'hover:bg-[#059669]');
+                    connectBtn.disabled = true;
+                    connectBtn.onclick = null;
+                }
+            }, 100);
         }
 
         // Copy referral link functionality
