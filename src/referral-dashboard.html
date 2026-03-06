@@ -31,6 +31,35 @@
             background: #f7f5fb;
             border-radius: 10px;
         }
+
+        /* Friends table vertical scroll — hidden until hover */
+        .friends-table-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+            transition: scrollbar-color 0.2s;
+        }
+
+        .friends-table-scroll:hover {
+            scrollbar-color: #e5e7eb transparent;
+        }
+
+        .friends-table-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .friends-table-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .friends-table-scroll::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+
+        .friends-table-scroll:hover::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+        }
     </style>
 </head>
 
@@ -311,27 +340,20 @@
                         class="lg:col-span-2 bg-[#ffffff] rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100 flex flex-col overflow-hidden">
                         <div class="p-6 md:px-8 border-b border-gray-100 flex justify-between items-center bg-white">
                             <h2 class="text-[20px] font-extrabold text-[#171717]">Friends Invited</h2>
-                            <button
-                                class="text-white text-sm font-bold hover:text-[#5B3EAD] bg-transparent border-none flex items-center gap-1 transition-colors">
-                                View all <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </button>
                         </div>
 
-                        <div class="overflow-x-auto">
+                        <div class="overflow-x-auto friends-table-scroll" style="max-height: 480px; overflow-y: auto;">
                             <table class="w-full text-left border-collapse">
-                                <thead>
+                                <thead class="sticky top-0 z-10">
                                     <tr class="bg-white text-[#8f92a1] text-[11px] uppercase tracking-wider">
                                         <th
-                                            class="p-4 md:px-8 font-bold border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+                                            class="p-4 md:px-8 font-bold border-b border-gray-100">
                                             User</th>
                                         <th
-                                            class="p-4 md:px-8 font-bold border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+                                            class="p-4 md:px-8 font-bold border-b border-gray-100">
                                             Date Joined</th>
                                         <th
-                                            class="p-4 md:px-8 font-bold border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+                                            class="p-4 md:px-8 font-bold border-b border-gray-100">
                                             Status</th>
                                         <th class="p-4 md:px-8 font-bold border-b border-gray-100 text-right">Reward
                                         </th>
@@ -340,71 +362,192 @@
                                 <tbody class="divide-y divide-gray-100 text-sm">
                                     <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
                                         <td class="p-4 md:px-8 flex items-center gap-3">
-                                            <div
-                                                class="w-8 h-8 rounded bg-[#f0f9ff] text-[#0284c7] flex items-center justify-center font-bold text-xs">
-                                                MK</div>
+                                            <div class="w-8 h-8 rounded bg-[#f0f9ff] text-[#0284c7] flex items-center justify-center font-bold text-xs">MK</div>
                                             <span class="font-bold text-[#171717]">M**** K.</span>
                                         </td>
                                         <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 24, 2024</td>
-                                        <td class="p-4 md:px-8">
-                                            <span
-                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
-                                                Converted
-                                            </span>
-                                        </td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
                                         <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
                                     </tr>
                                     <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
                                         <td class="p-4 md:px-8 flex items-center gap-3">
-                                            <div
-                                                class="w-8 h-8 rounded bg-[#fff7ed] text-[#c2410c] flex items-center justify-center font-bold text-xs">
-                                                JL</div>
+                                            <div class="w-8 h-8 rounded bg-[#fff7ed] text-[#c2410c] flex items-center justify-center font-bold text-xs">JL</div>
                                             <span class="font-bold text-[#171717]">J**** L.</span>
                                         </td>
                                         <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 22, 2024</td>
-                                        <td class="p-4 md:px-8">
-                                            <span
-                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
-                                                Pending
-                                            </span>
-                                        </td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
                                         <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
                                     </tr>
                                     <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
                                         <td class="p-4 md:px-8 flex items-center gap-3">
-                                            <div
-                                                class="w-8 h-8 rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-xs">
-                                                AS</div>
+                                            <div class="w-8 h-8 rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-xs">AS</div>
                                             <span class="font-bold text-[#171717]">A**** S.</span>
                                         </td>
                                         <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 18, 2024</td>
-                                        <td class="p-4 md:px-8">
-                                            <span
-                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
-                                                Converted
-                                            </span>
-                                        </td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
                                         <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
                                     </tr>
                                     <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
                                         <td class="p-4 md:px-8 flex items-center gap-3">
-                                            <div
-                                                class="w-8 h-8 rounded bg-[#f3f4f6] text-[#4b5563] flex items-center justify-center font-bold text-xs">
-                                                RT</div>
+                                            <div class="w-8 h-8 rounded bg-[#f3f4f6] text-[#4b5563] flex items-center justify-center font-bold text-xs">RT</div>
                                             <span class="font-bold text-[#171717]">R**** T.</span>
                                         </td>
                                         <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 15, 2024</td>
-                                        <td class="p-4 md:px-8">
-                                            <span
-                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
-                                                Converted
-                                            </span>
-                                        </td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
                                         <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fef9c3] text-[#854d0e] flex items-center justify-center font-bold text-xs">LB</div>
+                                            <span class="font-bold text-[#171717]">L**** B.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 11, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#f0fdf4] text-[#16a34a] flex items-center justify-center font-bold text-xs">NP</div>
+                                            <span class="font-bold text-[#171717]">N**** P.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 08, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fce7f3] text-[#9d174d] flex items-center justify-center font-bold text-xs">EH</div>
+                                            <span class="font-bold text-[#171717]">E**** H.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 05, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#ede9fe] text-[#6d28d9] flex items-center justify-center font-bold text-xs">OM</div>
+                                            <span class="font-bold text-[#171717]">O**** M.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Sep 28, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#f0f9ff] text-[#0369a1] flex items-center justify-center font-bold text-xs">CW</div>
+                                            <span class="font-bold text-[#171717]">C**** W.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Sep 22, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fef2f2] text-[#b91c1c] flex items-center justify-center font-bold text-xs">IV</div>
+                                            <span class="font-bold text-[#171717]">I**** V.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Sep 17, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#f0fdf4] text-[#15803d] flex items-center justify-center font-bold text-xs">SN</div>
+                                            <span class="font-bold text-[#171717]">S**** N.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Sep 12, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fdf4ff] text-[#a21caf] flex items-center justify-center font-bold text-xs">PG</div>
+                                            <span class="font-bold text-[#171717]">P**** G.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Sep 07, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fff7ed] text-[#92400e] flex items-center justify-center font-bold text-xs">TF</div>
+                                            <span class="font-bold text-[#171717]">T**** F.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Sep 01, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#f0f9ff] text-[#0284c7] flex items-center justify-center font-bold text-xs">KD</div>
+                                            <span class="font-bold text-[#171717]">K**** D.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Aug 26, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-xs">YA</div>
+                                            <span class="font-bold text-[#171717]">Y**** A.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Aug 20, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fce7f3] text-[#be185d] flex items-center justify-center font-bold text-xs">HR</div>
+                                            <span class="font-bold text-[#171717]">H**** R.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Aug 14, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#ecfdf5] text-[#059669] flex items-center justify-center font-bold text-xs">BJ</div>
+                                            <span class="font-bold text-[#171717]">B**** J.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Aug 09, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fef3c7] text-[#b45309] flex items-center justify-center font-bold text-xs">ZC</div>
+                                            <span class="font-bold text-[#171717]">Z**** C.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Aug 03, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#f0f9ff] text-[#0369a1] flex items-center justify-center font-bold text-xs">FO</div>
+                                            <span class="font-bold text-[#171717]">F**** O.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Jul 28, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#ede9fe] text-[#5b21b6] flex items-center justify-center font-bold text-xs">WQ</div>
+                                            <span class="font-bold text-[#171717]">W**** Q.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Jul 21, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]"><span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>Converted</span></td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€50.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-[#fef2f2] text-[#dc2626] flex items-center justify-center font-bold text-xs">DX</div>
+                                            <span class="font-bold text-[#171717]">D**** X.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Jul 14, 2024</td>
+                                        <td class="p-4 md:px-8"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]"><span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>Pending</span></td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
                                     </tr>
                                 </tbody>
                             </table>
