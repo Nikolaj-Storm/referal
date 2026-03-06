@@ -203,21 +203,21 @@
 
                 <!-- Welcome Hero Area -->
                 <div
-                    class="bg-[#ffffff] rounded-xl p-8 lg:p-10 flex flex-col md:flex-row justify-between items-center gap-8 shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100">
+                    class="bg-[#ffffff] rounded-xl p-6 lg:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 lg:gap-8 shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100">
 
                     <div class="flex flex-col gap-4 relative z-10 max-w-lg">
                         <h1
                             class="text-[32px] lg:text-[40px] font-extrabold text-[#171717] tracking-tight leading-[1.1]">
                             Refer a Friend and Earn <span class="text-[#7B53E7]">50€</span></h1>
                         <p class="text-[#8F92A1] text-[15px] leading-relaxed mt-1">Invite your creative friends to
-                            Printumo. You earn €50 and they save €50 when they sign up through your link.</p>
+                            Printumo. You earn €50 and they save €50 when they sell their first piece.</p>
                     </div>
 
                     <div
-                        class="w-full md:w-auto relative z-10 flex flex-col gap-2 bg-[#f9f9fa] p-6 rounded-xl border border-gray-100">
+                        class="w-full md:w-auto md:min-w-[360px] lg:min-w-[400px] relative z-10 flex flex-col gap-2 bg-[#f9f9fa] p-6 rounded-xl border border-gray-100">
                         <p class="text-sm font-bold text-[#171717] mb-1">Your unique referral link</p>
                         <div
-                            class="flex items-center gap-2 bg-[#ffffff] border border-gray-200 p-1.5 pl-4 rounded-md w-full md:w-[380px] shadow-sm">
+                            class="flex items-center gap-2 bg-[#ffffff] border border-gray-200 p-1.5 pl-4 rounded-md w-full shadow-sm">
                             <input type="text" id="refLink"
                                 class="bg-transparent border-none outline-none text-[#171717] font-medium text-sm w-full truncate"
                                 value="https://printumo.com/ref/nikolaj2024" readonly />
@@ -260,7 +260,7 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-[#8f92a1] text-xs font-bold uppercase tracking-wider mb-2">Total Referrals
+                            <h3 class="text-[#8f92a1] text-xs font-bold uppercase tracking-wider mb-2">Total Invited
                             </h3>
                             <p class="text-[32px] font-extrabold text-[#171717] leading-none">42</p>
                         </div>
@@ -271,7 +271,8 @@
                         class="bg-[#ffffff] p-6 lg:p-7 rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100 flex flex-col gap-6">
                         <div class="flex justify-between items-start">
                             <div
-                                class="w-[42px] h-[42px] bg-[#fef3c7] rounded-md flex items-center justify-center text-[#d97706]">
+                                class="w-[42px] h-[42px] rounded-md flex items-center justify-center text-[#ef4444]"
+                                style="background-color: rgba(239,68,68,0.18);">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -290,7 +291,7 @@
                         class="bg-[#7B53E7] !text-white p-6 lg:p-7 rounded-xl shadow-[0_8px_30px_0_rgba(123,83,231,0.3)] flex flex-col gap-6">
                         <div class="flex justify-between items-start">
                             <div
-                                class="w-[42px] h-[42px] bg-transparent !text-white rounded-md flex items-center justify-start text-xl font-bold">
+                                class="w-[42px] h-[42px] rounded-md flex items-center justify-start text-xl font-bold text-white">
                                 €
                             </div>
                         </div>
