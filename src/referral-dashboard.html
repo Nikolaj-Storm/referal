@@ -200,47 +200,13 @@
             <div
                 class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] md:pr-9 md:pl-0 px-4 bg-[#F9F9FA] sticky top-0 z-40">
 
-                <!-- Search bar -->
-                <div class="hidden md:flex flex-1 max-w-[500px] relative mt-1">
-                    <input type="text" placeholder="Search for orders, products etc..."
-                        class="w-full h-[40px] bg-[#ffffff] border-none rounded-md pl-4 pr-10 text-[13px] outline-none shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-gray-400 font-medium" />
-                    <div class="absolute right-3 top-1/2 -translate-y-1/2">
-                        <svg class="w-[18px] h-[18px] text-[#8f92a1]" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <div
-                    class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto items-center mt-1 text-[13px]">
+                <!-- Nav header for mobile only (since desktop items are removed) -->
+                <div class="flex justify-between w-full items-center mt-1 text-[13px]">
                     <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
-                        <!-- for small screen -->
                         <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block w-[24px]" alt="" />
                         <img src="./assets/logo.svg"
                             class="w-[110px] md:hidden block h-[35px] cursor-pointer object-contain"
                             alt="Printumo Logo" />
-
-                        <button
-                            class="px-[18px] h-[36px] md:block hidden bg-white hover:bg-gray-50 text-[#171717] border border-[#e5e5e5] rounded-md font-bold transition-all shadow-sm tracking-wide">
-                            Create product
-                        </button>
-                    </div>
-                    <div class="flex justify-center items-center gap-3 md:gap-5">
-                        <button
-                            class="w-[36px] h-[36px] bg-white border border-[#e5e5e5] rounded-md flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm">
-                            <svg class="w-[18px] h-[18px] text-[#171717]" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="w-[36px] h-[36px] rounded-full bg-[#1e9b6a] flex items-center justify-center text-white font-bold shadow-md cursor-pointer border-2 border-[#F9F9FA]">
-                            N
-                        </div>
                     </div>
                 </div>
             </div>
@@ -432,13 +398,13 @@
                             </div>
                         </div>
 
-                        <!-- Expected Payout Box - Snipped into bottom right corner -->
+                        <!-- Expected Payout Box - Embedded with padding -->
                         <div
-                            class="bg-white rounded-tl-[20px] p-4 lg:p-5 absolute bottom-0 right-0 flex flex-col gap-1.5 border-t border-l border-white shadow-[-4px_-4px_15px_rgba(0,0,0,0.05)] w-[160px] lg:w-[190px]">
-                            <h3 class="text-[#171717] text-[10px] lg:text-[11px] font-semibold leading-tight">Expected
-                                Payout This Month</h3>
+                            class="bg-white rounded-[20px] p-5 absolute bottom-4 right-4 md:bottom-5 md:right-5 flex flex-col gap-1.5 shadow-[0_4px_15px_0_rgba(0,0,0,0.05)] w-[160px] lg:w-[190px]">
+                            <h3 class="text-[#171717] text-[11px] font-semibold leading-tight">Expected Payout This
+                                Month</h3>
                             <p id="val-expected"
-                                class="text-[15px] lg:text-[18px] font-extrabold text-[#171717] leading-none mt-1">
+                                class="text-[16px] lg:text-[18px] font-extrabold text-[#171717] leading-none mt-1">
                                 €150.00
                             </p>
                         </div>
