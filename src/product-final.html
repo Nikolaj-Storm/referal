@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Product Final</title>
+</head>
+
+<body class="border-red-400">
+  <div class="w-full flex flex-col relative">
+    <!-- top Navibar  -->
+    <div
+      class="w-full flex fixed gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] bg-white-1 md:px-9 p-4 z-20">
+      <!-- back -->
+      <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7 absolute md:static">
+        <button
+          class="px-0 md:px-2 h-[42px] md:flex justify-center items-center text-[16px] active:-translate-y-[2px] text-black-2 rounded-lg font-bold space-x-[13px] group hover:opacity-80">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-3 fill-current text-gray-900" viewBox="0 0 18 12">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.5396 5.0002V7.0002H4.71135L7.95383 10.2428L6.53966 11.657L0.882812 6.0001L6.53966 0.343262L7.95383 1.75747L4.71112 5.0002H17.5396Z" />
+          </svg>
+
+          <span class="leading-[24px] hidden md:inline-block">Back to products</span>
+        </button>
+      </div>
+
+      <!-- steps -->
+      <div class="flex justify-center items-center gap-5 sm:gap-8 xl:gap-10 mx-auto">
+        <a href="#" class="w-[22px] h-[22px] md:w-10 md:h-10 inline-block flex-none">
+          <img src="./assets/dark-done.svg" class="w-full h-full object-fill" alt="" />
+        </a>
+
+        <img src="./assets/next.svg" class="w-[5px] h-[8px] md:w-[7px] md:h-[12px] object-fill flex-none" alt="" />
+
+        <a href="#" class="w-[22px] h-[22px] md:w-10 md:h-10 inline-block flex-none">
+          <img src="./assets/dark-done.svg" class="w-full h-full object-fill" alt="" />
+        </a>
+        <img src="./assets/next.svg" class="w-[5px] h-[8px] md:w-[7px] md:h-[12px] object-fill flex-none" alt="" />
+
+        <a href="#" class="relative w-[22px] h-[22px] md:w-10 md:h-10 inline-block flex-none">
+          <img src="./assets/final.svg" class="w-full h-full object-fill" alt="" />
+          <span
+            class="absolute -bottom-5 md:-bottom-6 -left-[5px] w-[34px] h-[3px] md:h-[4px] md:w-[52px] bg-purple-1 z-10 rounded-tl-full rounded-tr-full"></span>
+        </a>
+      </div>
+
+      <!-- button -->
+      <div class="hidden md:flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+        <!-- create product button -->
+        <button
+          class="px-6 h-[42px] md:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1  rounded-lg font-semibold leading-[24px]">
+          Continue to shipping
+        </button>
+      </div>
+    </div>
+
+    <!-- down section -->
+    <div id="product-section" class="w-full flex flex-col bg-gray-2 p-3 md:p-5 rounded-xl md:pt-[80px] pt-[60px]">
+      <div class="container max-w-[937px] mx-auto py-7">
+        <!-- content -->
+        <div class="w-full flex flex-col gap-4">
+          <!-- title -->
+          <div class="flex md:flex-row flex-col justify-between items-start md:items-center gap-5">
+            <h1 class="text-[20px] text-black-1 font-normal md:order-1 order-2">
+              Products
+            </h1>
+            <button
+              class="px-6 md:w-auto w-full h-[44px] md:h-[42px] flex justify-center items-center text-[14px] bg-transparent active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 hover:bg-purple-1 hover:text-white-1 hover:border-purple-1 rounded-lg font-bold gap-2 group md:order-2 order-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-black-2 group-hover:fill-white-1"
+                viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M17 5V4C17 2.89543 16.1046 2 15 2H9C7.89543 2 7 2.89543 7 4V5H4C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H5V18C5 19.6569 6.34315 21 8 21H16C17.6569 21 19 19.6569 19 18V7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H17ZM15 4H9V5H15V4ZM17 7H7V18C7 18.5523 7.44772 19 8 19H16C16.5523 19 17 18.5523 17 18V7ZM9 9H11V17H9V9ZM15 9H13V17H15V9Z" />
+              </svg>
+              <span>Delete order</span>
+            </button>
+          </div>
+          <!-- draft -->
+          <div class="w-full h-[60px] flex justify-between items-center px-3 bg-white-1 rounded-xl">
+            <!-- item-1 -->
+            <div class="flex items-center gap-7">
+              <h2 class="text-base lg:text-[24px] text-black-1 font-bold">
+                #100106
+              </h2>
+              <div class="hidden md:inline-block">
+                <span class="text-[14px] text-black-1 font-normal">2024-06-06</span>
+                <span class="text-[14px] text-black-1 font-normal">18:09:08</span>
+              </div>
+            </div>
+            <div class="inline-block md:hidden">
+              <span class="text-[14px] text-black-1 font-normal">2024-06-06</span>
+              <span class="text-[14px] text-black-1 font-normal">18:09:08</span>
+            </div>
+            <!-- item-2 -->
+            <button
+              class="px-2 h-[28px] md:block text-[14px] bg-blue-1/20 hover:bg-blue-1 active:-translate-y-[2px] text-blue-1 hover:text-white-1 rounded-lg font-medium leading-[24px]">
+              Saved as draft
+            </button>
+          </div>
+
+          <!-- product card -->
+          <div class="bg-white-1 rounded-xl productCardShadow my-4">
+            <!-- titles -->
+            <div class="hidden lg:block p-2 lg:p-5 lg:border-b lg:border-[#E3E3E3]">
+              <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-2">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Image
+                  </h2>
+                </div>
+                <div class="col-span-3">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Product name
+                  </h2>
+                </div>
+                <div class="col-span-2">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Quantity
+                  </h2>
+                </div>
+                <div class="col-span-2">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Unit Price
+                  </h2>
+                </div>
+                <div class="col-span-2 flex">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Retail Price
+                  </h2>
+                  <div class="w-[35px] ml-1 -mt-1 relative">
+                    <select
+                      class="appearance-none block w-full bg-white-1 text-purple-1 border border-transparent rounded-lg leading-[24px] focus:outline-none focus:bg-white focus:border-transparent text-[12px] pl-[1px] font-bold uppercase">
+                      <option class="">
+                        <img src="./assets/flag.png" alt="" />EUR
+                      </option>
+                      <option class="">
+                        <img src="./assets/flag.png" alt="" />USD
+                      </option>
+                      <option class="">
+                        <img src="./assets/flag.png" alt="" />JPY
+                      </option>
+                    </select>
+                    <div
+                      class="pointer-events-none absolute inset-y-[55%] -right-3 flex items-center px-2 text-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.29104 1.70743C9.92144 1.07759 9.47537 0 8.58425 0H1.41268C0.521988 0 0.0757232 1.07669 0.705251 1.70679L4.28781 5.29257C4.67815 5.68327 5.31132 5.68356 5.70202 5.29321L9.29104 1.70743Z"
+                          fill="#A4A4A4" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-1 flex items-center">
+                  <svg width="14px" height="14px" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-[13px] h-[13px] fill-current text-black">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.5007 7.00388C13.1325 7.00388 12.834 7.30235 12.834 7.67054V11.6705C12.834 12.0387 12.5355 12.3372 12.1673 12.3372H2.83398C2.46579 12.3372 2.16732 12.0387 2.16732 11.6705V2.33721C2.16732 1.96902 2.46579 1.67054 2.83398 1.67054H6.83398C7.20217 1.67054 7.50065 1.37207 7.50065 1.00388C7.50065 0.635686 7.20217 0.337209 6.83398 0.337209H2.83398C1.72941 0.337209 0.833984 1.23264 0.833984 2.33721V11.6705C0.833984 12.7751 1.72941 13.6705 2.83398 13.6705H12.1673C13.2719 13.6705 14.1673 12.7751 14.1673 11.6705V7.67054C14.1673 7.30235 13.8688 7.00388 13.5007 7.00388ZM3.50065 7.51054V10.3372C3.50065 10.7054 3.79913 11.0039 4.16732 11.0039H6.99398C7.17119 11.0049 7.34151 10.9353 7.46732 10.8105L12.0807 6.19054V6.19054L13.974 4.33721C14.1002 4.21203 14.1712 4.04163 14.1712 3.86388C14.1712 3.68612 14.1002 3.51572 13.974 3.39054L11.1473 0.530542C11.0221 0.404334 10.8517 0.333344 10.674 0.333344C10.4962 0.333344 10.3258 0.404334 10.2007 0.530542L8.32065 2.41721V2.41721L3.69398 7.03721C3.56919 7.16302 3.49963 7.33334 3.50065 7.51054ZM10.674 1.94388L12.5607 3.83054L11.614 4.77721L9.72732 2.89054L10.674 1.94388ZM4.83398 7.78388L8.78732 3.83054L10.674 5.71721L6.72065 9.67054H4.83398V7.78388Z"
+                      class="fill-current" />
+                  </svg>
+
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase ml-2">
+                    Edit
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- content -->
+            <div class="p-4 lg:p-5 flex flex-col gap-5 lg:gap-8 border-b border-[#E3E3E3]">
+              <div class="flex gap-5 lg:gap-8">
+                <div class="w-[78px]">
+                  <img src="./assets/matte.svg" class="w-full" alt="" />
+                </div>
+                <div class="flex-1">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                    <div class="flex justify-start lg:justify-start lg:space-y-4 col-span-4">
+                      <div>
+                        <h3 class="font-bold text-base lg:text-lg text-black-2">
+                          Premium Matte Poster
+                        </h3>
+                        <p class="text-black-1 text-sm font-light">
+                          50x70cm / 20x28"
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- quantity -->
+                    <div class="hidden md:flex col-span-2 mx-auto">
+                      <div class="text-start lg:text-center flex justify-end items-center gap-12">
+                        <p class="text-black-1 lg:text-base text-sm">1</p>
+                      </div>
+                    </div>
+                    <!-- price -->
+                    <div class="hidden md:flex col-span-2 mx-auto">
+                      <div class="text-start lg:text-center flex justify-end items-center gap-12">
+                        <p class="text-black-1 lg:text-base text-sm">
+                          €14.90
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Rentail -->
+                    <div class="hidden lg:flex justify-center items-center gap-2 col-span-3 mx-auto">
+                      <div
+                        class="max-w-[89px] min-h-[38px] flex justify-between items-center border border-[#E2E2E2] rounded-lg">
+                        <!-- input field -->
+                        <input type="number" id="quantity-input"
+                          class="appearance-none block w-full px-[10px] text-[16px] text-black-2 leading-[24px] font-normal border-none placeholder-black-2 text-center rounded-[2px] focus:border-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-transparent shadow-none"
+                          value="" step="" required />
+                      </div>
+                      <p class="text-black-1 lg:text-base text-sm">EUR</p>
+                    </div>
+                    <!-- edit -->
+                    <div class="hidden lg:block col-span-1"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- mobile part -->
+              <div class="gap-5 lg:hidden flex flex-col">
+                <!-- quantity -->
+
+                <!-- price -->
+                <div class="">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">Quantity</p>
+                    <p class="text-black-1 lg:text-base text-sm">1</p>
+                  </div>
+                </div>
+                <!-- price -->
+                <div class="">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">Price</p>
+                    <p class="text-black-1 lg:text-base text-sm">€14.90</p>
+                  </div>
+                </div>
+                <!-- price -->
+                <div class="-pt-[10px]">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">
+                      Retail Price
+                    </p>
+                    <div class="flex justify-center items-center gap-2">
+                      <div
+                        class="max-w-[89px] min-h-[38px] flex justify-between items-center border border-[#E2E2E2] rounded-lg">
+                        <!-- input field -->
+                        <input type="number" id="quantity-input"
+                          class="appearance-none block w-full px-[10px] text-[16px] text-black-2 leading-[24px] font-normal border-none placeholder-black-2 text-center rounded-[2px] focus:border-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-transparent shadow-none"
+                          value="" step="" required />
+                      </div>
+                      <p class="text-black-1 lg:text-base text-sm">EUR</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- content -->
+            <div class="p-4 lg:p-5 flex flex-col gap-5 lg:gap-8">
+              <div class="flex gap-5 lg:gap-8">
+                <div class="w-[78px]">
+                  <img src="./assets/matte.svg" class="w-full" alt="" />
+                </div>
+                <div class="flex-1">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                    <div class="flex justify-start lg:justify-start lg:space-y-4 col-span-4">
+                      <div>
+                        <h3 class="font-bold text-base lg:text-lg text-black-2">
+                          Premium Matte Poster
+                        </h3>
+                        <p class="text-black-1 text-sm font-light">
+                          50x70cm / 20x28"
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- quantity -->
+                    <div class="hidden md:flex col-span-2 mx-auto">
+                      <div class="text-start lg:text-center flex justify-end items-center gap-12">
+                        <p class="text-black-1 lg:text-base text-sm">1</p>
+                      </div>
+                    </div>
+                    <!-- price -->
+                    <div class="hidden md:flex col-span-2 mx-auto">
+                      <div class="text-start lg:text-center flex justify-end items-center gap-12">
+                        <p class="text-black-1 lg:text-base text-sm">
+                          €14.90
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Rentail -->
+                    <div class="hidden lg:flex justify-center items-center gap-2 col-span-3 mx-auto">
+                      <div
+                        class="max-w-[89px] min-h-[38px] flex justify-between items-center border border-[#E2E2E2] rounded-lg">
+                        <!-- input field -->
+                        <input type="number" id="quantity-input"
+                          class="appearance-none block w-full px-[10px] text-[16px] text-black-2 leading-[24px] font-normal border-none placeholder-black-2 text-center rounded-[2px] focus:border-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-transparent shadow-none"
+                          value="" step="" required />
+                      </div>
+                      <p class="text-black-1 lg:text-base text-sm">EUR</p>
+                    </div>
+                    <!-- edit -->
+                    <div class="hidden lg:block col-span-1"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- mobile part -->
+              <div class="gap-5 lg:hidden flex flex-col">
+                <!-- quantity -->
+
+                <!-- price -->
+                <div class="">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">Quantity</p>
+                    <p class="text-black-1 lg:text-base text-sm">1</p>
+                  </div>
+                </div>
+                <!-- price -->
+                <div class="">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">Price</p>
+                    <p class="text-black-1 lg:text-base text-sm">€14.90</p>
+                  </div>
+                </div>
+                <!-- price -->
+                <div class="-pt-[10px]">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">
+                      Retail Price
+                    </p>
+                    <div class="flex justify-center items-center gap-2">
+                      <div
+                        class="max-w-[89px] min-h-[38px] flex justify-between items-center border border-[#E2E2E2] rounded-lg">
+                        <!-- input field -->
+                        <input type="number" id="quantity-input"
+                          class="appearance-none block w-full px-[10px] text-[16px] text-black-2 leading-[24px] font-normal border-none placeholder-black-2 text-center rounded-[2px] focus:border-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-transparent shadow-none"
+                          value="" step="" required />
+                      </div>
+                      <p class="text-black-1 lg:text-base text-sm">EUR</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block lg:hidden border-b border-[#E3E3E3]"></div>
+              <!-- edit button -->
+              <div class="gap-5 lg:hidden flex flex-col">
+                <button
+                  class="px-6 md:w-auto w-full h-[48px] flex justify-center items-center text-[14px] bg-transparent active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 hover:bg-purple-1 hover:text-white-1 hover:border-purple-1 rounded-lg font-semibold gap-2 group md:order-2 order-1">
+                  <svg width="14px" height="14px" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 fill-current text-black">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.5007 7.00388C13.1325 7.00388 12.834 7.30235 12.834 7.67054V11.6705C12.834 12.0387 12.5355 12.3372 12.1673 12.3372H2.83398C2.46579 12.3372 2.16732 12.0387 2.16732 11.6705V2.33721C2.16732 1.96902 2.46579 1.67054 2.83398 1.67054H6.83398C7.20217 1.67054 7.50065 1.37207 7.50065 1.00388C7.50065 0.635686 7.20217 0.337209 6.83398 0.337209H2.83398C1.72941 0.337209 0.833984 1.23264 0.833984 2.33721V11.6705C0.833984 12.7751 1.72941 13.6705 2.83398 13.6705H12.1673C13.2719 13.6705 14.1673 12.7751 14.1673 11.6705V7.67054C14.1673 7.30235 13.8688 7.00388 13.5007 7.00388ZM3.50065 7.51054V10.3372C3.50065 10.7054 3.79913 11.0039 4.16732 11.0039H6.99398C7.17119 11.0049 7.34151 10.9353 7.46732 10.8105L12.0807 6.19054V6.19054L13.974 4.33721C14.1002 4.21203 14.1712 4.04163 14.1712 3.86388C14.1712 3.68612 14.1002 3.51572 13.974 3.39054L11.1473 0.530542C11.0221 0.404334 10.8517 0.333344 10.674 0.333344C10.4962 0.333344 10.3258 0.404334 10.2007 0.530542L8.32065 2.41721V2.41721L3.69398 7.03721C3.56919 7.16302 3.49963 7.33334 3.50065 7.51054ZM10.674 1.94388L12.5607 3.83054L11.614 4.77721L9.72732 2.89054L10.674 1.94388ZM4.83398 7.78388L8.78732 3.83054L10.674 5.71721L6.72065 9.67054H4.83398V7.78388Z"
+                      class="fill-current" />
+                  </svg>
+                  <span>Edit</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- sub-title -->
+          <div class="">
+            <h2 class="text-[20px] text-black-1 font-normal md:order-1 order-2">
+              Shipment
+            </h2>
+          </div>
+          <!-- shipment -->
+          <div class="w-full flex flex-col lg:flex-row justify-between items-stretch bg-white-1 rounded-xl">
+            <!-- item-1 -->
+            <div class="w-full lg:w-[48%] flex items-start gap-7 py-[18px] px-4">
+              <div class="w-full flex justify-between items-start">
+                <!-- 1 -->
+                <div>
+                  <h3 class="text-black-1 font-bold text-base flex justify-center items-center gap-1">
+                    DHL Parcel (Economy)
+                    <img src="./assets/info.svg" class="mt-1 hidden lg:block" alt="" />
+                  </h3>
+                  <p class="text-black-1 font-light text-base">
+                    29 Jul - 30 Jul
+                  </p>
+                </div>
+
+                <!-- 2 -->
+                <p class="text-black-1 lg:text-base text-sm">14.90 EUR</p>
+              </div>
+            </div>
+
+            <div class="border-b border-[#E3E3E3] w-full block lg:hidden"></div>
+
+            <!-- vertical full height border -->
+            <div class="border-l border-[#E3E3E3] h-auto lg:block"></div>
+
+            <!-- item-2 -->
+            <div class="w-full lg:w-[48%] flex justify-start items-start gap-7 py-[18px] px-4">
+              <div class="w-full flex flex-col lg:flex-row justify-between items-start">
+                <!-- 1 -->
+                <div>
+                  <h3 class="text-black-1 font-bold text-base">
+                    Amanda Charing
+                  </h3>
+                  <p class="text-black-1 font-light text-base">
+                    Baksterst. 334
+                  </p>
+                  <p class="text-black-1 font-light text-base">
+                    11230 Copenhagen
+                  </p>
+                  <p class="text-black-1 font-light text-base">
+                    email@gmail.comm
+                  </p>
+                  <p class="text-black-1 font-light text-base">15123446660</p>
+                </div>
+
+                <!-- 2 -->
+                <button class="hidden lg:flex items-center">
+                  <svg width="14px" height="14px" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-[13px] h-[13px] fill-current text-black">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M13.5007 7.00388C13.1325 7.00388 12.834 7.30235 12.834 7.67054V11.6705C12.834 12.0387 12.5355 12.3372 12.1673 12.3372H2.83398C2.46579 12.3372 2.16732 12.0387 2.16732 11.6705V2.33721C2.16732 1.96902 2.46579 1.67054 2.83398 1.67054H6.83398C7.20217 1.67054 7.50065 1.37207 7.50065 1.00388C7.50065 0.635686 7.20217 0.337209 6.83398 0.337209H2.83398C1.72941 0.337209 0.833984 1.23264 0.833984 2.33721V11.6705C0.833984 12.7751 1.72941 13.6705 2.83398 13.6705H12.1673C13.2719 13.6705 14.1673 12.7751 14.1673 11.6705V7.67054C14.1673 7.30235 13.8688 7.00388 13.5007 7.00388ZM3.50065 7.51054V10.3372C3.50065 10.7054 3.79913 11.0039 4.16732 11.0039H6.99398C7.17119 11.0049 7.34151 10.9353 7.46732 10.8105L12.0807 6.19054V6.19054L13.974 4.33721C14.1002 4.21203 14.1712 4.04163 14.1712 3.86388C14.1712 3.68612 14.1002 3.51572 13.974 3.39054L11.1473 0.530542C11.0221 0.404334 10.8517 0.333344 10.674 0.333344C10.4962 0.333344 10.3258 0.404334 10.2007 0.530542L8.32065 2.41721V2.41721L3.69398 7.03721C3.56919 7.16302 3.49963 7.33334 3.50065 7.51054ZM10.674 1.94388L12.5607 3.83054L11.614 4.77721L9.72732 2.89054L10.674 1.94388ZM4.83398 7.78388L8.78732 3.83054L10.674 5.71721L6.72065 9.67054H4.83398V7.78388Z"
+                      class="fill-current" />
+                  </svg>
+
+                  <h3 class="text-[12px] font-bold text-black-2 uppercase ml-2">
+                    Edit
+                  </h3>
+                </button>
+                <!-- edit button -->
+                <div class="gap-5 lg:hidden flex flex-col w-[100%] pt-3">
+                  <button
+                    class="px-6 w-full h-[48px] flex justify-center items-center text-[14px] bg-transparent active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 hover:bg-purple-1 hover:text-white-1 hover:border-purple-1 rounded-lg font-semibold gap-2 group md:order-2 order-1">
+                    <svg width="14px" height="14px" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 fill-current text-black">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M13.5007 7.00388C13.1325 7.00388 12.834 7.30235 12.834 7.67054V11.6705C12.834 12.0387 12.5355 12.3372 12.1673 12.3372H2.83398C2.46579 12.3372 2.16732 12.0387 2.16732 11.6705V2.33721C2.16732 1.96902 2.46579 1.67054 2.83398 1.67054H6.83398C7.20217 1.67054 7.50065 1.37207 7.50065 1.00388C7.50065 0.635686 7.20217 0.337209 6.83398 0.337209H2.83398C1.72941 0.337209 0.833984 1.23264 0.833984 2.33721V11.6705C0.833984 12.7751 1.72941 13.6705 2.83398 13.6705H12.1673C13.2719 13.6705 14.1673 12.7751 14.1673 11.6705V7.67054C14.1673 7.30235 13.8688 7.00388 13.5007 7.00388ZM3.50065 7.51054V10.3372C3.50065 10.7054 3.79913 11.0039 4.16732 11.0039H6.99398C7.17119 11.0049 7.34151 10.9353 7.46732 10.8105L12.0807 6.19054V6.19054L13.974 4.33721C14.1002 4.21203 14.1712 4.04163 14.1712 3.86388C14.1712 3.68612 14.1002 3.51572 13.974 3.39054L11.1473 0.530542C11.0221 0.404334 10.8517 0.333344 10.674 0.333344C10.4962 0.333344 10.3258 0.404334 10.2007 0.530542L8.32065 2.41721V2.41721L3.69398 7.03721C3.56919 7.16302 3.49963 7.33334 3.50065 7.51054ZM10.674 1.94388L12.5607 3.83054L11.614 4.77721L9.72732 2.89054L10.674 1.94388ZM4.83398 7.78388L8.78732 3.83054L10.674 5.71721L6.72065 9.67054H4.83398V7.78388Z"
+                        class="fill-current" />
+                    </svg>
+                    <span>Edit</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- summery -->
+          <div class="w-full py-5 md:py-6 bg-white-1 rounded-xl hidden lg:block">
+            <div class="w-full md:max-w-[448px] mx-auto">
+              <div class="flex justify-between pb-4 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-bold">
+                  Summary
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">EUR</span>
+              </div>
+              <div class="border-b border-[#E3E3E3]"></div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal">
+                  Subtotal
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€14.90</span>
+              </div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal">
+                  Shipping
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€14.38</span>
+              </div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal">
+                  Total excl. Tax
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€101.36</span>
+              </div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal flex justify-center items-center gap-2">
+                  Total Vat
+                  <img src="./assets/info.svg" class="" alt="" />
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€19.26</span>
+              </div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal">
+                  Total excl. tax
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€120.62</span>
+              </div>
+            </div>
+          </div>
+          <!-- sub-title -->
+          <div class="pt-3 lg:pt-4">
+            <h2 class="text-[20px] text-black-1 font-normal md:order-1 order-2">
+              Billing address
+            </h2>
+          </div>
+          <!-- from -->
+          <div class="lg:pb-0 pb-[120px]">
+            <form action="" class="w-full bg-white-1 md:p-[20px] p-[14px] rounded-xl md:space-y-5 space-y-3">
+              <!-- name -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="first-name">
+                    First Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="last-name">
+                    Last Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- company -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="company">
+                    Company name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- country -->
+              <div class="flex -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full px-3 md:mb-0 relative">
+                  <!-- Added relative positioning -->
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="first-name">
+                    Country
+                  </label>
+                  <select
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] pl-12 pr-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1">
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-[70%] right-5 flex items-center px-2 text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.29104 1.70743C9.92144 1.07759 9.47537 0 8.58425 0H1.41268C0.521988 0 0.0757232 1.07669 0.705251 1.70679L4.28781 5.29257C4.67815 5.68327 5.31132 5.68356 5.70202 5.29321L9.29104 1.70743Z"
+                        fill="#A4A4A4" />
+                    </svg>
+                  </div>
+                  <div class="pointer-events-none absolute inset-y-[67%] left-5 flex items-center px-2 text-gray-700">
+                    <img src="./assets/flag.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Street + House number -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="street">
+                    Street
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1"
+                    for="houseNumber">
+                    House number
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- postal + City -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="post">
+                    Postal code
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="city">
+                    City
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- payment -->
+          <div class="w-full p-5 bg-white-1 rounded-xl mt-3 hidden lg:block">
+            <!-- 1 -->
+            <div class="flex justify-between items-center">
+              <p class="text-sm text-black-1 leading-[160%] font-bold">
+                Payment
+              </p>
+              <img src="./assets/payment.png" class="object-fill" alt="" />
+            </div>
+            <!-- 2 -->
+            <div class="max-w-[240px] mx-auto pt-6">
+              <button
+                class="w-full px-10 h-[42px] md:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-semibold">
+                Pay securaly
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- btn -->
+    <div class="w-full bg-white-1 p-4 fixed bottom-0 lg:hidden">
+      <div class="flex justify-between items-center pb-4">
+        <div class="flex items-center gap-2">
+          <img src="./assets/down-chevron.svg" class="" alt="" />
+          <h3 class="text-base text-black-1 leading-[20px]">
+            <strong>Total</strong> excl. tax
+          </h3>
+        </div>
+        <h3 class="text-base text-black-1 leading-[20px] font-bold">
+          €120.62
+        </h3>
+      </div>
+      <button
+        class="px-6 w-full h-[52px] md:block text-[14px] bg-purple-1 active:-translate-y-[2px] text-white-1 hover:opacity-80 rounded-lg font-semibold">
+        Pay securely
+      </button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+
+</body>
+
+</html>

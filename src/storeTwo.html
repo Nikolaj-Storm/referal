@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+
+  <title>Store - Home</title>
+</head>
+
+<body class="border-red-400">
+  <div class="w-full flex flex-col relative">
+    <!-- LEFT NAVIGATION ------->
+    <div id="left-navigation"
+      class="w-[300px] md:w-[250px] drawer fixed h-screen bg-white-1 justify-start md:justify-between flex flex-col gap-3 md:gap-0 p-5">
+      <!-- top section -->
+      <div class="flex flex-col">
+        <img src="./assets/logo.svg" class="w-[157px] left-0 top-0 h-[55px] object-fill" alt="" />
+        <!-- Links  -->
+        <div class="w-full flex flex-col gap-3 md:gap-5 mt-8 items-start">
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/home.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-semibold">Home</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/products.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Products</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/orders.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Orders</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2 hoverBgColor">
+            <img src="./assets/stores.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Stores</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/ana.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Analytics</p>
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:hidden block my-2 h-[1px] bg-[#D7D7D7]"></div>
+      <!-- down section -->
+      <div class="w-full flex flex-col gap-3 md:gap-5">
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/center.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Resource center</p>
+        </button>
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/call.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Customer support</p>
+        </button>
+      </div>
+    </div>
+    <!-- RIGHT PORTION  ------>
+    <div class="ml-0 md:ml-[250px] px-0 md:pl-5 flex flex-col bg-white-1">
+      <!-- top Navibar  -->
+      <div
+        class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] md:pl-0 px-4 md:pr-9 productCardShadow">
+        <div class="hidden md:block">
+          <h2 class="text-black-1 text-2xl leading-[36px]">Store</h2>
+        </div>
+        <div class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto">
+          <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+            <!-- for small screen -->
+            <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block" alt="" />
+            <img src="./assets/logo.svg"
+              class="w-[130px] md:hidden block h-[40px] cursor-pointer sm:w-[157px] left-0 top-0 md:h-[55px] object-fill"
+              alt="" />
+            <!--create product button -->
+            <button
+              class="px-6 h-[42px] md:block hidden text-[14px] hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 rounded-lg font-semibold">
+              Create product
+            </button>
+          </div>
+          <div class="flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <img src="./assets/bell.svg" class="w-[24px] cursor-pointer h-[24px] object-cover" alt="" />
+            <div
+              class="w-[35px] md:hidden flex sm:w-[40px] border-[2px] border-white-2 rounded-lg justify-center items-center h-[35px] sm:h-[40px]">
+              <img src="./assets/blackPlus.svg" class="w-[16px] h-[16px] object-fill cursor-pointer" alt="" />
+            </div>
+            <img src="./assets/setting.svg" class="w-[24px] cursor-pointer md:block hidden h-[24px] object-cover"
+              alt="" />
+            <img src="./assets/profile.svg" class="w-[42px] cursor-pointer h-[42px] object-cover" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Store section -->
+      <div class="w-full bg-gray-2 p-4 md:pr-9 md:pl-8 md:py-10 sm:rounded-s-xl rounded-xl">
+        <!-- sub-title -->
+        <div class="pb-4 lg:pb-7">
+          <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+            Connected Stores
+          </h2>
+        </div>
+        <!-- stores -->
+        <div class="p-4 lg:p-5 flex flex-col gap-5 lg:gap-8 bg-white-1 rounded-xl productCardShadow">
+          <div class="flex gap-5 lg:gap-10 justify-center items-center">
+            <div class="w-[50px]">
+              <img src="./assets/shopify-2.svg" class="w-full" alt="" />
+            </div>
+            <div class="flex-1">
+              <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
+                <!-- shop -->
+                <div class="flex justify-between lg:justify-start items-center lg:space-y-4">
+                  <div>
+                    <h3 class="font-bold text-base text-black-2 hidden lg:block">
+                      Shopify
+                    </h3>
+                  </div>
+                  <button
+                    class="w-[42px] h-[40px] bg-gray-3/10 flex lg:hidden items-center justify-center rounded-[4px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M4 2C4 3.1046 3.10457 4 2 4C0.89543 4 0 3.1046 0 2C0 0.8954 0.89543 0 2 0C3.10457 0 4 0.8954 4 2ZM10 2C10 3.1046 9.1046 4 8 4C6.8954 4 6 3.1046 6 2C6 0.8954 6.8954 0 8 0C9.1046 0 10 0.8954 10 2ZM16 2C16 3.1046 15.1046 4 14 4C12.8954 4 12 3.1046 12 2C12 0.8954 12.8954 0 14 0C15.1046 0 16 0.8954 16 2Z"
+                        fill="#171717" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- name -->
+                <div class="hidden md:block">
+                  <div class="text-start lg:text-center flex justify-start items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">
+                      RealHomeArt
+                    </p>
+                  </div>
+                </div>
+                <!-- location -->
+                <div class="hidden md:block">
+                  <div class="text-start flex justify-start items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm text-start">
+                      Store region - North America
+                    </p>
+                  </div>
+                </div>
+                <!-- options -->
+                <div class="hidden md:block">
+                  <div class="text-start lg:text-center flex justify-end items-center gap-5">
+                    <button
+                      class="px-6 w-[140px] h-[40px] md:block text-[14px] bg-purple-1 hover:bg-gray-2 active:-translate-y-[2px] text-white-1 border-[2px] border-purple-1 hover:text-purple-1 rounded-lg font-semibold">
+                      Add Product
+                    </button>
+
+                    <button class="w-[42px] h-[40px] bg-gray-3/10 flex items-center justify-center rounded-[4px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M4 2C4 3.1046 3.10457 4 2 4C0.89543 4 0 3.1046 0 2C0 0.8954 0.89543 0 2 0C3.10457 0 4 0.8954 4 2ZM10 2C10 3.1046 9.1046 4 8 4C6.8954 4 6 3.1046 6 2C6 0.8954 6.8954 0 8 0C9.1046 0 10 0.8954 10 2ZM16 2C16 3.1046 15.1046 4 14 4C12.8954 4 12 3.1046 12 2C12 0.8954 12.8954 0 14 0C15.1046 0 16 0.8954 16 2Z"
+                          fill="#171717" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- mobile part -->
+          <div class="gap-4 lg:hidden flex flex-col">
+            <!-- price -->
+            <h3 class="font-bold text-[14px] lg:text-lg text-black-2">
+              Shopify
+            </h3>
+
+            <p class="text-black-1 lg:text-base text-sm">RealHomeArt</p>
+            <p class="text-black-1 lg:text-base text-sm">
+              Store region - North America
+            </p>
+            <!-- button -->
+            <div class="w-full">
+              <button
+                class="px-6 w-full h-[52px] md:block text-[14px] bg-purple-1 hover:bg-gray-2 active:-translate-y-[2px] text-white-1 border-[2px] border-purple-1 hover:text-purple-1 rounded-lg font-semibold">
+                Add Product
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- stores -->
+        <div class="p-4 lg:p-5 flex flex-col gap-5 lg:gap-8 bg-white-1 rounded-xl mt-3 lg:mt-5 productCardShadow">
+          <div class="flex gap-5 lg:gap-10 justify-center items-center">
+            <div class="w-[50px]">
+              <img src="./assets/esty.svg" class="w-full" alt="" />
+            </div>
+            <div class="flex-1">
+              <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
+                <!-- shop -->
+                <div class="flex justify-between lg:justify-start items-center lg:space-y-4">
+                  <div>
+                    <h3 class="font-bold text-base text-black-2 hidden lg:block">
+                      Etsy
+                    </h3>
+                  </div>
+                  <button
+                    class="w-[42px] h-[40px] bg-gray-3/10 flex lg:hidden items-center justify-center rounded-[4px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M4 2C4 3.1046 3.10457 4 2 4C0.89543 4 0 3.1046 0 2C0 0.8954 0.89543 0 2 0C3.10457 0 4 0.8954 4 2ZM10 2C10 3.1046 9.1046 4 8 4C6.8954 4 6 3.1046 6 2C6 0.8954 6.8954 0 8 0C9.1046 0 10 0.8954 10 2ZM16 2C16 3.1046 15.1046 4 14 4C12.8954 4 12 3.1046 12 2C12 0.8954 12.8954 0 14 0C15.1046 0 16 0.8954 16 2Z"
+                        fill="#171717" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- name -->
+                <div class="hidden md:block">
+                  <div class="text-start lg:text-center flex justify-start items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">
+                      RealHomeArt
+                    </p>
+                  </div>
+                </div>
+                <!-- location -->
+                <div class="hidden md:block">
+                  <div class="text-start flex justify-start items-center gap-12 mx-0">
+                    <p class="text-black-1 lg:text-base text-sm text-start">
+                      Europe
+                    </p>
+                  </div>
+                </div>
+                <!-- options -->
+                <div class="hidden md:block">
+                  <div class="text-start lg:text-center flex justify-end items-center gap-5">
+                    <button
+                      class="px-6 w-[140px] h-[40px] md:block text-[14px] bg-purple-1 hover:bg-gray-2 active:-translate-y-[2px] text-white-1 border-[2px] border-purple-1 hover:text-purple-1 rounded-lg font-semibold">
+                      Add Product
+                    </button>
+
+                    <button class="w-[42px] h-[40px] bg-gray-3/10 flex items-center justify-center rounded-[4px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M4 2C4 3.1046 3.10457 4 2 4C0.89543 4 0 3.1046 0 2C0 0.8954 0.89543 0 2 0C3.10457 0 4 0.8954 4 2ZM10 2C10 3.1046 9.1046 4 8 4C6.8954 4 6 3.1046 6 2C6 0.8954 6.8954 0 8 0C9.1046 0 10 0.8954 10 2ZM16 2C16 3.1046 15.1046 4 14 4C12.8954 4 12 3.1046 12 2C12 0.8954 12.8954 0 14 0C15.1046 0 16 0.8954 16 2Z"
+                          fill="#171717" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- mobile part -->
+          <div class="gap-4 lg:hidden flex flex-col">
+            <!-- price -->
+            <h3 class="font-bold text-[14px] lg:text-lg text-black-2">
+              Etsy
+            </h3>
+
+            <p class="text-black-1 lg:text-base text-sm">RealHomeArt</p>
+            <p class="text-black-1 lg:text-base text-sm">Europe</p>
+            <!-- button -->
+            <div class="w-full">
+              <button
+                class="px-6 w-full h-[52px] md:block text-[14px] bg-purple-1 hover:bg-gray-2 active:-translate-y-[2px] text-white-1 border-[2px] border-purple-1 hover:text-purple-1 rounded-lg font-semibold">
+                Add Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bottom section -->
+      <div
+        class="w-full min-h-[100vh] bg-gray-2 p-4 md:pr-9 md:pl-8 md:pt-10 md:pb-20 sm:rounded-s-xl rounded-xl mt-0 lg:mt-5 pb-10">
+        <!-- sub-title -->
+        <div class="pb-4 lg:pb-7">
+          <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+            Suggested for you
+          </h2>
+        </div>
+        <!-- banner -->
+        <div class="mx-auto pb-5 lg:pb-8">
+          <div
+            class="bg-gettingPrintumo bg-cover bg-right-top p-5 flex md:flex-row flex-col justify-between items-center rounded-xl space-y-6 md:space-y-0 h-auto md:h-[95px]">
+            <!-- 1 -->
+
+            <h3 class="text-base lg:text-2xl font-bold text-black-1 leading-[24px] text-center md:text-start">
+              Step - by - step guide how to connect a new store
+            </h3>
+            <!-- 2 -->
+            <div class="w-full md:w-auto hidden md:flex justify-center md:justify-end">
+              <button
+                class="px-10 w-full md:w-[190px] h-[42px] md:block text-[14px] bg-black-4 hover:bg-transparent active:-translate-y-[2px] text-white-1 border-[2px] border-black-4 hover:text-black-4 rounded-lg font-bold">
+                View
+              </button>
+            </div>
+            <!-- mobile -->
+            <div class="w-full md:w-auto flex md:hidden justify-center md:justify-end">
+              <button
+                class="px-10 w-full h-[52px] md:block text-[14px] bg-black-4 hover:bg-transparent active:-translate-y-[2px] text-white-1 border-[2px] border-black-4 hover:text-black-4 rounded-lg font-bold">
+                Explore
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- upcoming -->
+        <div class="grid grid-cols-2 sm:grid-col-3 lg:grid-cols-6 gap-4">
+          <!-- 1 -->
+          <a href="#"
+            class="col-span-1 bg-white-1 rounded-xl flex flex-col justify-center items-center pt-4 pb-6 aspect-square productCardShadow">
+            <div class="w-[100px] h-[70px] flex justify-center items-end">
+              <img src="./assets/woocommerce.svg" alt="WooCommerce" />
+            </div>
+            <p class="text-base text-black-2 leading-[22px] pt-4">
+              WooCommerce
+            </p>
+          </a>
+          <!-- 2 -->
+          <a href="#"
+            class="col-span-1 bg-white-1 rounded-xl flex flex-col justify-center items-center pt-4 pb-6 aspect-square productCardShadow">
+            <div class="w-[100px] h-[70px] flex justify-center items-end">
+              <img src="./assets/wix.svg" alt="wix" />
+            </div>
+
+            <p class="text-base text-black-2 leading-[22px] pt-4">wix</p>
+          </a>
+          <!-- 3 -->
+          <a href="#"
+            class="col-span-1 bg-white-1 rounded-xl flex flex-col justify-center items-center pt-4 pb-6 aspect-square productCardShadow">
+            <div class="w-[100px] h-[70px] flex justify-center items-end">
+              <img src="./assets/squrespace.svg" alt="Squarespace" />
+            </div>
+
+            <p class="text-base text-black-2 leading-[22px] pt-4">
+              Squarespace
+            </p>
+          </a>
+          <!-- 4 -->
+          <a href="#"
+            class="col-span-1 bg-white-1 rounded-xl flex flex-col justify-center items-center pt-4 pb-6 aspect-square productCardShadow">
+            <div class="w-[100px] h-[70px] flex justify-center items-end">
+              <img src="./assets/bigcommerce.svg" alt="BigCommerce" />
+            </div>
+
+            <p class="text-base text-black-2 leading-[22px] pt-4">
+              BigCommerce
+            </p>
+          </a>
+          <!-- 5 -->
+          <a href="#"
+            class="col-span-1 bg-white-1 rounded-xl flex flex-col justify-center items-center pt-4 pb-6 aspect-square productCardShadow">
+            <div class="w-[100px] h-[70px] flex justify-center items-end">
+              <img src="./assets/amazon.svg" alt="Amazon" />
+            </div>
+
+            <p class="text-base text-black-2 leading-[22px] pt-4">Amazon</p>
+          </a>
+          <!-- 6 -->
+          <a href="#"
+            class="col-span-1 bg-white-1 rounded-xl flex flex-col justify-center items-center pt-4 pb-6 aspect-square productCardShadow">
+            <div class="w-[100px] h-[70px] flex justify-center items-end">
+              <img src="./assets/ebay.svg" alt="eBay" />
+            </div>
+
+            <p class="text-base text-black-2 leading-[22px] pt-4">eBay</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+</body>
+
+</html>

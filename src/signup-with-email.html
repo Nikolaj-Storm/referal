@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon">
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png">
+  <link rel="stylesheet" href="./styles/checkbox.css">
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <div class="w-full grid min-h-screen grid-cols-1 md:grid-cols-[1fr,1fr]">
+    <!-- product image -->
+    <div class="w-full h-full py-8 md:block hidden bg-gray-2"></div>
+    <!-- sign-in-form  -->
+    <div class="w-full py-8 md:py-14 flex justify-center items-center">
+      <div class="w-full h-full gap-3 flex-col px-4 flex justify-center items-start max-w-[470px]">
+        <img src="/assets/logo.svg" class="w-[160px] h-[55px] object-fill" alt="" />
+        <h3 class="text-[32px] text-black-3 mt-3 font-semibold">
+          Sing Up to Printumo
+        </h3>
+
+        <form action="" class="w-full flex flex-col gap-5">
+          <!-- full name -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="name">Full Name</label>
+            <input
+              class="w-full rounded-lg focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20] h-[48px] border-[1px] border-[#E0E0E0]"
+              type="text" id="name" name="name" />
+          </div>
+          <!-- email -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="email">Your email address</label>
+            <input
+              class="w-full rounded-lg focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20] h-[48px] border-[1px] border-[#E0E0E0]"
+              type="email" id="email" name="email" />
+          </div>
+          <!-- password -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="password">Your password</label>
+            <div
+              class="w-full grid rounded-lg justify-center items-center grid-cols-[1fr,40px] h-[48px] border-[1px] border-[#E0E0E0]">
+              <input class="w-full focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20]" type="password"
+                id="password" name="password" />
+
+              <img id="eye-icon" onclick="togglePassword()" src="/assets/eye.svg"
+                class="w-[22px] h-[15px] cursor-pointer" alt="Show Password" />
+              <img id="close-eye-icon" onclick="togglePassword()" src="/assets/closeEye.png"
+                class="w-[23px] h-[24px] hidden" alt="Hide Password" />
+            </div>
+          </div>
+          <!-- checkboxes -->
+          <div class="checkbox-wrapper-1 flex flex-col gap-1 justify-center items-start">
+            <input id="terms" class="substituted" type="checkbox" aria-hidden="true" />
+            <label class="text-[12px] font-normal text-black-3" for="terms">I accept the
+              <a href="#" class="underline"> API User Terms </a> and I have
+              read the <a href="#" class="underline">Data Processing Terms</a>
+            </label>
+          </div>
+          <div class="checkbox-wrapper-1 flex flex-col gap-1 justify-center items-start">
+            <input id="news" class="substituted" type="checkbox" aria-hidden="true" />
+            <label class="text-[12px] font-normal text-black-3" for="news">I would like to receive news, insights, and
+              best practices from
+              Printumo
+            </label>
+          </div>
+          <!-- login button -->
+          <button
+            class="w-full hover:opacity-80 my-3 h-[52px] rounded-lg bg-purple-1 text-[14px] font-medium text-white-1">
+            Create Account
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- script  -->
+  <script>
+    function togglePassword() {
+      var passwordInput = document.getElementById("password");
+      var eyeIcon = document.getElementById("eye-icon");
+      var closeEyeIcon = document.getElementById("close-eye-icon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.add("hidden");
+        closeEyeIcon.classList.remove("hidden");
+      } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove("hidden");
+        closeEyeIcon.classList.add("hidden");
+      }
+    }
+  </script>
+</body>
+
+</html>

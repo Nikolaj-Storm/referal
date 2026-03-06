@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>DashBoard - Home</title>
+</head>
+
+<body class="border-red-400">
+  <div class="w-full flex flex-col relative">
+    <!-- LEFT NAVIGATION ------->
+    <div id="left-navigation"
+      class="w-[300px] md:w-[250px] drawer fixed h-screen bg-white-1 justify-start md:justify-between flex flex-col gap-3 md:gap-0 p-5">
+      <!-- top section -->
+      <div class="flex flex-col">
+        <img src="./assets/logo.svg" class="w-[157px] left-0 top-0 h-[55px] object-fill" alt="" />
+        <!-- Links  -->
+        <div class="w-full flex flex-col gap-3 md:gap-5 mt-8 items-start">
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/home.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-semibold">Home</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/products.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Products</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/orders.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Orders</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/stores.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Stores</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/ana.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Analytics</p>
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:hidden block my-2 h-[1px] bg-[#D7D7D7]"></div>
+      <!-- down section -->
+      <div class="w-full flex flex-col gap-3 md:gap-5">
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/center.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Resource center</p>
+        </button>
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/call.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Customer support</p>
+        </button>
+      </div>
+    </div>
+    <!-- RIGHT PORTION  ------>
+    <div class="ml-0 md:ml-[250px] px-0 flex flex-col bg-white-1">
+      <!-- top Navibar  -->
+      <div
+        class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] lg:pr-9 productCardShadow">
+        <div class="hidden md:block">
+          <h2 class="text-black-1 text-2xl">Profile</h2>
+        </div>
+        <div class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto px-4 lg:px-0">
+          <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+            <!-- for small screen -->
+            <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block" alt="" />
+            <img src="./assets/logo.svg"
+              class="w-[130px] md:hidden block h-[40px] cursor-pointer sm:w-[157px] left-0 top-0 md:h-[55px] object-fill"
+              alt="" />
+            <!--create product button -->
+            <button
+              class="px-6 h-[42px] md:block hidden text-[14px] hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 rounded-lg font-semibold">
+              Create product
+            </button>
+          </div>
+          <div class="flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <img src="./assets/bell.svg" class="w-[24px] cursor-pointer h-[24px] object-cover" alt="" />
+            <div
+              class="w-[35px] md:hidden flex sm:w-[40px] border-[2px] border-white-2 rounded-lg justify-center items-center h-[35px] sm:h-[40px]">
+              <img src="./assets/blackPlus.svg" class="w-[16px] h-[16px] object-fill cursor-pointer" alt="" />
+            </div>
+            <img src="./assets/setting.svg" class="w-[24px] cursor-pointer md:block hidden h-[24px] object-cover"
+              alt="" />
+            <img src="./assets/profile.svg" class="w-[42px] cursor-pointer h-[42px] object-cover" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile section -->
+      <div
+        class="w-full bg-gray-2 p-3 py-10 md:pl-9 md:pr-8 lg:py-10 md:rounded-tl-xl min-h-[calc(100vh_-_60px)] md:min-h-[calc(100vh_-_90px)]">
+        <div class="max-w-[937px] gap-[26px] lg:gap-9">
+          <!-- acount -->
+          <div class="mx-auto md:pb-0">
+            <!-- sub-title -->
+            <div class="pb-[13px] lg:pb-4">
+              <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+                Account information
+              </h2>
+            </div>
+            <form action="" class="w-full bg-white-1 md:p-[20px] p-[14px] rounded-xl md:space-y-5 space-y-3">
+              <!-- name -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="first-name">
+                    First Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="last-name">
+                    Last Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- email + phone -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="email">
+                    Email
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="email" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="phone">
+                    Phone number (optional)
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="tel" placeholder="" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- Shipping Address -->
+          <div class="mx-auto md:pb-0 mt-[26px] lg:mt-[37px]">
+            <!-- sub-title -->
+            <div class="pb-[13px] lg:pb-4">
+              <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+                Shipping Address
+              </h2>
+            </div>
+            <form action="" class="w-full bg-white-1 md:p-[20px] p-[14px] rounded-xl md:space-y-5 space-y-3">
+              <!-- country -->
+              <div class="flex -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full px-3 md:mb-0 relative">
+                  <!-- Added relative positioning -->
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="first-name">
+                    Country
+                  </label>
+                  <select
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] pl-12 pr-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1">
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-[70%] right-5 flex items-center px-2 text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.29104 1.70743C9.92144 1.07759 9.47537 0 8.58425 0H1.41268C0.521988 0 0.0757232 1.07669 0.705251 1.70679L4.28781 5.29257C4.67815 5.68327 5.31132 5.68356 5.70202 5.29321L9.29104 1.70743Z"
+                        fill="#A4A4A4" />
+                    </svg>
+                  </div>
+                  <div class="pointer-events-none absolute inset-y-[67%] left-5 flex items-center px-2 text-gray-700">
+                    <img src="./assets/flag.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- address -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="addressOne">
+                    Address line 1
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="addressTwo">
+                    Address line 2 (optional)
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- company + post -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="company">
+                    Company name (optional)
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="postal">
+                    Post/Zip code
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- city + state -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="city">
+                    City
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="state">
+                    State / Province / Region
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- Billing Address  -->
+          <div class="mx-auto md:pb-0 mt-[26px] lg:mt-[37px]">
+            <!-- sub-title -->
+            <div class="pb-[13px] lg:pb-4">
+              <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+                Billing Address
+              </h2>
+            </div>
+            <form action="" class="w-full bg-white-1 md:p-[20px] p-[14px] rounded-xl md:space-y-5 space-y-3">
+              <!-- info -->
+              <div class="p-3 bg-[#F5F5F5] rounded-lg hidden lg:flex justify-between items-start gap-[14px]">
+                <img src="./assets/info.svg" class="w-5 h-5 mt-[6px]" alt="" />
+                <p class="tetx-sm text-black-2 leading-[160%] font-normal">
+                  If you are VAT registered in the EU and your selling to
+                  customers in EU, most orders will be VAT except due to the
+                  "Reverse charge" mechanism. Therefore, make sure to enter
+                  your VAT ID with country code, if applicable
+                </p>
+              </div>
+              <!-- name -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="first-name">
+                    First Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="last-name">
+                    Last Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- company -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="company">
+                    Company name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- country -->
+              <div class="flex -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full px-3 md:mb-0 relative">
+                  <!-- Added relative positioning -->
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="first-name">
+                    Country
+                  </label>
+                  <select
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] pl-12 pr-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1">
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                    <option class="">
+                      <img src="./assets/flag.png" alt="" />Denmark
+                    </option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-[70%] right-5 flex items-center px-2 text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.29104 1.70743C9.92144 1.07759 9.47537 0 8.58425 0H1.41268C0.521988 0 0.0757232 1.07669 0.705251 1.70679L4.28781 5.29257C4.67815 5.68327 5.31132 5.68356 5.70202 5.29321L9.29104 1.70743Z"
+                        fill="#A4A4A4" />
+                    </svg>
+                  </div>
+                  <div class="pointer-events-none absolute inset-y-[67%] left-5 flex items-center px-2 text-gray-700">
+                    <img src="./assets/flag.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Street + House number -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="street">
+                    Street
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1"
+                    for="houseNumber">
+                    House number
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+              <!-- postal + City -->
+              <div class="flex flex-wrap -mx-3 space-y-3 md:space-y-0">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="post">
+                    Postal code
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="block capitalize tracking-wide text-gray-700 text-sm font-medium mb-1" for="city">
+                    City
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-white-1 text-black-2 border border-gray-200 rounded-lg h-[48px] px-4 leading-[24px] focus:outline-none focus:bg-white focus:border-purple-1"
+                    type="text" placeholder="" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- payment method  -->
+          <div class="mx-auto md:pb-0 mt-[30px] lg:mt-[70px] pb-[70px] lg:pb-0">
+            <!-- sub-title -->
+            <div class="pb-[13px] lg:pb-4">
+              <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+                Payment details
+              </h2>
+            </div>
+            <div
+              class="bg-white-1 p-5 flex sm:flex-row flex-col justify-between items-start sm:items-center rounded-xl space-y-[22px] sm:space-y-0">
+              <!-- 1 -->
+              <div class="flex justify-center items-start gap-2">
+                <img src="./assets/card.svg" alt="" />
+                <h3 class="text-base font-bold text-black-1 leading-[20px]">
+                  ************9867
+                </h3>
+              </div>
+              <!-- 2 -->
+              <div class="w-full sm:w-[230px]">
+                <button
+                  class="px-6 w-full sm:w-auto h-[42px] md:block text-[14px] bg-black-4 hover:bg-gray-2 active:-translate-y-[2px] text-white-1 border-[2px] border-black-4 hover:text-black-4 rounded-lg font-bold">
+                  Change payment method
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- button -->
+          <div class="mx-auto md:pb-0 mt-[26px] lg:mt-[46px] pb-[80px] hidden md:block">
+            <!-- 2 -->
+            <div class="flex justify-center md:justify-end items-center gap-4 md:gap-5">
+              <button
+                class="px-6 w-[200px] h-[48px] md:block text-[14px] bg-transparent hover:bg-black-4 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 hover:text-white-1 hover:border-black-4 rounded-lg font-bold">
+                Cancel
+              </button>
+              <button
+                class="px-6 w-[200px] h-[48px] md:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-bold">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- btn -->
+    <div class="w-full bg-white-1 p-4 fixed bottom-0 md:hidden">
+      <div class="flex justify-center md:justify-end items-center gap-4 md:gap-5">
+        <button
+          class="px-6 w-full h-[48px] md:block text-[14px] bg-transparent hover:bg-black-4 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 hover:text-white-1 hover:border-black-4 rounded-lg font-bold">
+          Cancel
+        </button>
+        <button
+          class="px-6 w-full h-[48px] md:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-bold">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+</body>
+
+</html>

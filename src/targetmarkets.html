@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <title>Target Markets</title>
+</head>
+
+<body>
+    <!-- top Navibar  -->
+    <div
+        class="w-full flex fixed gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] bg-white-1 md:px-9 p-4 z-20">
+        <!-- back -->
+        <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7 ">
+            <button
+                class="px-0 md:px-2 h-[42px] md:flex justify-center items-center text-[16px] active:-translate-y-[2px] text-black-2 rounded-lg font-bold space-x-[13px] group hover:opacity-80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-gray-900" viewBox="0 0 18 12">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.5396 5.0002V7.0002H4.71135L7.95383 10.2428L6.53966 11.657L0.882812 6.0001L6.53966 0.343262L7.95383 1.75747L4.71112 5.0002H17.5396Z" />
+                </svg>
+
+                <span class="leading-[24px] hidden xl:inline-block">Back to products</span>
+            </button>
+        </div>
+
+        <!-- steps -->
+        <div class="flex justify-center items-center gap-[10px] sm:gap-8 xl:gap-10 mx-auto">
+            <a href="#" class="relative w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/globe-alt.svg" class="w-full" alt="">
+
+                <span
+                    class="absolute -bottom-5 md:-bottom-6 -left-[5px] w-[34px] h-[3px] md:h-[4px] md:w-[52px] bg-purple-1 z-10 rounded-tl-full rounded-tr-full"></span>
+            </a>
+
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/galleryw.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/file.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/edit.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/dollar.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg"
+                class="hidden lg:inline-block w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none" alt="" />
+
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] hidden lg:inline-block flex-none">
+                <img src="./assets/product/eye.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+        </div>
+
+        <!-- button -->
+        <div class="hidden lg:flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <!-- create product button -->
+            <button
+                class="px-[51px] h-[42px] lg:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-semibold leading-[24px]">
+                Continue
+            </button>
+        </div>
+    </div>
+
+    <!-- down section -->
+    <div id="product-section"
+        class="w-full min-h-[100vh] flex flex-col bg-gray-2 p-3 md:p-5 rounded-xl md:pt-[80px] pt-[60px]">
+        <div class="container max-w-[860px] mx-auto">
+            <!-- content -->
+            <div class="w-full">
+                <!-- warning bar  -->
+                <div
+                    class="border border-[#7B53E7] bg-[#f1ecff] py-[10px] px-[25px] lg:py-5 rounded-lg flex items-center gap-x-[10px] mt-5 mb-[25px] lg:my-[50px]">
+                    <div class="w-6 lg:w-[29px]">
+                        <img src="./assets/warning.svg" class="w-full" alt="">
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-[#696969] text-[14px] lg:text-[16px]">
+                            Choose the market where you want to sell your product. Please note, our size and frame
+                            options
+                            vary by market.
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <!-- Choose market  -->
+                <div>
+                    <h2 class="text-black-1 text-[20px] pb-3 md:pb-[15px]">Choose market</h2>
+                    <div class="flex gap-3 lg:gap-5 flex-col md:flex-row">
+                        <!-- left  -->
+                        <div class="flex-1 border-2 border-[#7B53E7] bg-[#F6F3FF] p-5 rounded-2xl">
+                            <!-- top part  -->
+                            <div class="flex items-center">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-black-2 text-[16px]">Europe & <br> United Kingdom</h3>
+                                </div>
+                                <div class="flex-1  text-purple-1 flex items-center justify-end gap-[7px]">
+                                    <h2 class="font-bold text-[46px] lg:text-[50px]">42</h2>
+                                    <p class="font-medium text-[14px]">sizes <br> available</p>
+                                </div>
+                            </div>
+                            <!-- img boxes  -->
+                            <div class="flex gap-[10px] items-center pt-5">
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/black.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">Black</h5>
+                                </div>
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/white.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">White</h5>
+                                </div>
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/oak.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">Oak</h5>
+                                </div>
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/noframe.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">No Frame</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- right  -->
+                        <div class="flex-1 border-2 border-[#F3F3F3] bg-white-1 p-5 rounded-2xl">
+                            <!-- top part  -->
+                            <div class="flex items-center justify-between">
+                                <div class="w-[65%]">
+                                    <h3 class="font-bold text-black-2 text-[16px]">Europe, United Kingdom, <br> United
+                                        States & Australia</h3>
+                                </div>
+                                <div class="w-[33%]  text-purple-1 flex items-center justify-end gap-[7px]">
+                                    <h2 class="font-bold text-[46px] lg:text-[50px]">19</h2>
+                                    <p class="font-medium text-[14px]">sizes <br> available</p>
+                                </div>
+                            </div>
+                            <!-- img boxes  -->
+                            <div class="flex gap-[10px] items-center pt-5">
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/black.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">Black</h5>
+                                </div>
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/white.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">White</h5>
+                                </div>
+                                <!-- single img box  -->
+                                <div class="w-16">
+                                    <img src="./assets/product/noframe.svg" class="w-full" alt="">
+                                    <h5 class="font-medium text-[12px] text-center text-black-5 pt-[5px]">No Frame</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Available sizes  -->
+                <div class="pt-[25px] lg:pt-[50px]">
+                    <h2 class="text-black-1 text-[20px] pb-3 md:pb-[15px]">Available sizes</h2>
+                    <div class="border-2 border-[#F3F3F3] bg-white-1 rounded-2xl p-5 lg:p-[30px]">
+                        <!-- measures unit row  -->
+                        <div class="flex items-center gap-3">
+                            <!-- left  -->
+                            <div class="flex items-center bg-[#f4f4f4] p-[2px] rounded-[7px] w-[114px]">
+                                <button
+                                    class="text-black-2 font-medium text-[12px] bg-white-1 py-[3px] w-[55px] text-center cmbtnshadow rounded-md">cm</button>
+                                <button
+                                    class="text-black-2 font-medium text-[12px] bg-transparent py-[3px] w-[55px] text-center  rounded-md">inch</button>
+
+                            </div>
+                            <!-- right  -->
+                            <div class="flex items-center bg-[#f4f4f4] p-[2px] rounded-[7px] w-[184px]">
+                                <button
+                                    class="text-black-2 font-medium text-[12px] bg-white-1 py-[3px] w-[60px] text-center cmbtnshadow rounded-md">$
+                                    USD</button>
+                                <button
+                                    class="text-black-2 font-medium text-[12px] bg-transparent py-[3px] w-[60px] text-center  rounded-md">€
+                                    EUR</button>
+                                <button
+                                    class="text-black-2 font-medium text-[12px] bg-transparent py-[3px] w-[60px] text-center  rounded-md">£
+                                    GBP</button>
+
+                            </div>
+                        </div>
+                        <!-- mesures boxes  -->
+                        <div class="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 items-start">
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r1.svg" class="w-[14px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 1:1</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>20 x 20 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>30 x 30 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>50 x 50 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>70 x 70 cm</span>
+                                        <span class="font-bold">$15</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>80 x 80 cm</span>
+                                        <span class="font-bold">$18</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>100 x 100 cm</span>
+                                        <span class="font-bold">$22</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>120 x 120 cm</span>
+                                        <span class="font-bold">$9</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>135 x 135 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r2.svg" class="w-[15px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 3:2 / 2:3</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>30 x 20 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>45 x 30 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>60 x 40 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>75 x 50 cm</span>
+                                        <span class="font-bold">$15</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>85 x 55 cm</span>
+                                        <span class="font-bold">$18</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>90 x 60 cm</span>
+                                        <span class="font-bold">$22</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>105 x 70 cm</span>
+                                        <span class="font-bold">$9</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>150 x 100 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r3.svg" class="w-[15px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 4:3 / 3:4</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>40 x 30 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>50 x 40 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>70 x 55 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>80 x 60 cm</span>
+                                        <span class="font-bold">$15</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>90 x 70 cm</span>
+                                        <span class="font-bold">$18</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>100 x 75 cm</span>
+                                        <span class="font-bold">$22</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>140 x 105 cm</span>
+                                        <span class="font-bold">$9</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>165 x 120 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r4.svg" class="w-[15px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 5:4 / 4:5</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>25 x 20 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>50 x 40 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>65 x 50 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>75 x 60 cm</span>
+                                        <span class="font-bold">$15</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>90 x 70 cm</span>
+                                        <span class="font-bold">$18</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>100 x 80 cm</span>
+                                        <span class="font-bold">$22</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>125 x 100 cm</span>
+                                        <span class="font-bold">$9</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>150 x 120 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r5.svg" class="w-[15px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 7:5</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>55 x 40 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>70 x 50 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>90 x 65 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>105 x 75 cm</span>
+                                        <span class="font-bold">$15</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>125 x 90 cm</span>
+                                        <span class="font-bold">$18</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>140 x 100 cm</span>
+                                        <span class="font-bold">$22</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>160 x 115 cm</span>
+                                        <span class="font-bold">$9</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>180 x 125 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r6.svg" class="w-[20px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 2:1</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>50 x 25 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>100 x 50 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>120 x 60 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>130 x 65 cm</span>
+                                        <span class="font-bold">$15</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>150 x 75 cm</span>
+                                        <span class="font-bold">$18</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- single box  -->
+                            <div class="bg-[#F4F4F4] p-3 rounded-[10px]">
+                                <!-- title  -->
+                                <div class="flex items-center gap-[5px] pb-[7px] border-b border-[#A4A4A4]">
+                                    <span><img src="./assets/product/r7.svg" class="w-[16px]" alt=""></span>
+                                    <span class="font-medium text-[14px] text-black-7">Ratio 16:9</span>
+                                </div>
+                                <!-- list items  -->
+                                <ul class="space-y-[7px] mt-[7px]">
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>80 x 45 cm</span>
+                                        <span class="font-bold">$10</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>120 x 70 cm</span>
+                                        <span class="font-bold">$20</span>
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between font-medium text-[#696969] text-[12px]">
+                                        <span>165 x 90 cm</span>
+                                        <span class="font-bold">$12</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production & Shipping  -->
+                <div class="pt-[25px] lg:pt-[50px] pb-24 sm:pb-0">
+                    <h2 class="text-black-1 text-[20px] pb-3 md:pb-[15px]">Production & Shipping</h2>
+                    <div class="px-[10px] py-5 lg:p-[30px] bg-white-1 rounded-2xl">
+                        <!-- map row  -->
+                        <div class="flex justify-between items-center flex-col lg:flex-row gap-5 lg:gap-10">
+                            <div class="w-full lg:w-[529px] text-[#696969] text-[14px] lg:text-[18px] space-y-4">
+                                <p>
+                                    Your product will be printed and shipped from the nearest production facility to
+                                    ensure
+                                    faster delivery and avoid
+                                    customs fees.
+                                </p>
+                                <p>
+                                    For orders within the EU, printing and shipping takes place in our facility in Czech
+                                    Republic, while UK orders are
+                                    printed and shipped directly within the UK.
+                                </p>
+                                <p>
+                                    When your order is shipped, you'll receive an email with a tracking link to monitor
+                                    its
+                                    journey
+                                </p>
+                            </div>
+                            <div class="w-[280px] mx-auto lg:w-[225px]">
+                                <img src="./assets/"
+                                    srcset="./assets/product/map1x.png 1x, ./assets/product/map2x.png 2x, ./assets/product/map3x.png 3x"
+                                    class="w-full" alt="Production & Shipping">
+                            </div>
+                        </div>
+                        <!-- country row  -->
+                        <div class="pt-5 lg:pt-[25px]">
+                            <h2 class="text-black-1 text-[20px] pb-3 md:pb-[15px]">Shipping destinations</h2>
+                            <!-- countries  -->
+                            <div
+                                class="bg-[#5E33B90D] grid grid-cols-2 md:grid-cols-3 font-medium text-xs lg:text-lg text-black-5 p-[10px] lg:p-[25px] rounded-[10px] lg:rounded-[30px] mt-[15px] lg:mt-8 gap-3 lg:gap-5">
+
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/australia.svg" class="w-[23px]"
+                                            alt="australia"></span>
+                                    <span class="">Australia <span
+                                            class="text-[#BCBCBC] text-[10px] lg:text-base font-normal">(soon)</span></span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/austria.svg" class="w-[23px]"
+                                            alt="Austria"></span>
+                                    <span class="">Austria </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/belgium.svg" class="w-[23px]"
+                                            alt="Belgium"></span>
+                                    <span class="">Belgium </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/bulgaria.svg" class="w-[23px]"
+                                            alt="Bulgaria"></span>
+                                    <span class="">Bulgaria </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/croatia.svg" class="w-[23px]"
+                                            alt="Croatia"></span>
+                                    <span class="">Croatia </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/czech.svg" class="w-[23px]" alt="Czechia"></span>
+                                    <span class="">Czechia </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/denmark.svg" class="w-[23px]"
+                                            alt="Denmark"></span>
+                                    <span class="">Denmark </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/estonia.svg" class="w-[23px]"
+                                            alt="Estonia"></span>
+                                    <span class="">Estonia </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/finland.svg" class="w-[23px]"
+                                            alt="Finland"></span>
+                                    <span class="">Finland </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/france.svg" class="w-[23px]" alt="France"></span>
+                                    <span class="">France </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/germany.svg" class="w-[23px]"
+                                            alt="Germany"></span>
+                                    <span class="">Germany</span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/greece.svg" class="w-[23px]" alt="Greece"></span>
+                                    <span class="">Greece </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/hungary.svg" class="w-[23px]"
+                                            alt="Hungary"></span>
+                                    <span class="">Hungary </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/ireland.svg" class="w-[23px]"
+                                            alt="Ireland"></span>
+                                    <span class="">Ireland </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/italy.svg" class="w-[23px]" alt="Italy"></span>
+                                    <span class="">Italy </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/latvia.svg" class="w-[23px]" alt="Latvia"></span>
+                                    <span class="">Latvia </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/lithuania.svg" class="w-[23px]"
+                                            alt="Lithuania"></span>
+                                    <span class="">Lithuania </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/luxembourg.svg" class="w-[23px]"
+                                            alt="Luxembourg"></span>
+                                    <span class="">Luxembourg </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/netherlands.svg" class="w-[23px]"
+                                            alt="Netherlands"></span>
+                                    <span class="">Netherlands </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/norway.svg" class="w-[23px]" alt="Norway"></span>
+                                    <span class="">Norway </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/poland.svg" class="w-[23px]" alt="Poland"></span>
+                                    <span class="">Poland</span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/portugal.svg" class="w-[23px]"
+                                            alt="Portugal"></span>
+                                    <span class="">Portugal </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/romania.svg" class="w-[23px]"
+                                            alt="Romania"></span>
+                                    <span class="">Romania </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/slovakia.svg" class="w-[23px]"
+                                            alt="Slovakia"></span>
+                                    <span class="">Slovakia </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/slovenia.svg" class="w-[23px]"
+                                            alt="Slovenia"></span>
+                                    <span class="">Slovenia </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/spain.svg" class="w-[23px]" alt="Spain"></span>
+                                    <span class="">Spain </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/sweden.svg" class="w-[23px]" alt="Sweden"></span>
+                                    <span class="">Sweden </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/switzerland.svg" class="w-[23px]"
+                                            alt="Switzerland"></span>
+                                    <span class="">Switzerland </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/united-kingdom.svg" class="w-[23px]"
+                                            alt="United Kingdom"></span>
+                                    <span class="">United Kingdom </span>
+                                </div>
+                                <!-- single country  -->
+                                <div class="flex items-center gap-2">
+                                    <span><img src="./assets/lp2/icons/united-states.svg" class="w-[23px]"
+                                            alt="United States"></span>
+                                    <span class="">United States <span
+                                            class="text-[#BCBCBC] text-[10px] lg:text-base font-normal">(soon)</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- buttons  -->
+                <div class="hidden sm:flex items-center justify-end sm:mt-[30px] sm:mb-5">
+                    <button
+                        class="w-[170px] lg:w-[200px] h-[48px] text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-xl font-bold ">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- float buttons  -->
+    <div class="w-full bg-white-1 p-4 fixed bottom-0 sm:hidden ">
+
+        <button
+            class="block h-[48px] text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-xl font-bold w-full">
+            Continue
+        </button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="w-full flex flex-col">
+    <!-- LEFT NAVIGATION ------->
+    <div id="left-navigation"
+      class="w-[300px] md:w-[250px] drawer fixed h-screen bg-white-1 justify-start md:justify-between flex flex-col gap-3 md:gap-0 p-5">
+      <!-- top section -->
+      <div class="flex flex-col">
+        <img src="./assets/logo.svg" class="w-[157px] left-0 top-0 h-[55px] object-fill" alt="" />
+        <!-- Links  -->
+        <div class="w-full flex flex-col gap-3 md:gap-5 mt-8 items-start">
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 hoverBgColor w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/home.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-semibold">Home</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/products.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Products</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/orders.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Orders</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/stores.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Stores</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/ana.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Analytics</p>
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:hidden block my-2 h-[1px] bg-[#D7D7D7]"></div>
+      <!-- down section -->
+      <div class="w-full flex flex-col gap-3 md:gap-5">
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/center.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Resource center</p>
+        </button>
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/call.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Customer support</p>
+        </button>
+      </div>
+    </div>
+    <!-- RIGHT PORTION  ------>
+    <div class="ml-0 md:ml-[250px] md:pl-5 md:pr-0 flex flex-col bg-white-1">
+      <!-- top Navibar  -->
+      <div
+        class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] md:pr-9 md:pl-0 px-4">
+        <div class="hidden md:block">
+          <h2 class="text-black-1 text-2xl">Home</h2>
+        </div>
+        <div class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto">
+          <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+            <!-- for small screen -->
+            <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block" alt="" />
+            <img src="./assets/logo.svg"
+              class="w-[130px] md:hidden block h-[40px] cursor-pointer sm:w-[157px] left-0 top-0 md:h-[55px] object-fill"
+              alt="" />
+            <!--create product button -->
+            <button
+              class="px-6 h-[42px] md:block hidden text-[14px] hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 rounded-lg font-semibold">
+              Create product
+            </button>
+          </div>
+          <div class="flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <img src="./assets/bell.svg" class="w-[24px] cursor-pointer h-[24px] object-cover" alt="" />
+            <div
+              class="w-[35px] md:hidden flex sm:w-[40px] border-[2px] border-white-2 rounded-lg justify-center items-center h-[35px] sm:h-[40px]">
+              <img src="./assets/blackPlus.svg" class="w-[16px] h-[16px] object-fill cursor-pointer" alt="" />
+            </div>
+            <img src="./assets/setting.svg" class="w-[24px] cursor-pointer md:block hidden h-[24px] object-cover"
+              alt="" />
+            <img src="./assets/profile.svg" class="w-[42px] cursor-pointer h-[42px] object-cover" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- product empty section  -->
+
+      <!-- dashboardHome section -->
+      <div id="dashboardHome" class="w-full pt-5 pb-8 md:px-0 px-4">
+        <div class="sm:mb-9 mb-4">
+          <h1 class="text-neutral-900 sm:text-[32px] text-base font-normal sm:leading-snug">
+            Welcome Amanda!
+          </h1>
+        </div>
+        <div
+          class="gettingPrintumo sm:px-16 sm:py-12 p-5 bg-gettingPrintumo bg-cover bg-right-top sm:rounded-s-xl sm:rounded-r-none rounded-xl">
+          <div class="grid lg:grid-cols-12 grid-cols-1 w-[1090px] max-w-full mx-auto gap-x-8">
+            <div class="lg:col-span-4 col-span-1 lg:block hidden">
+              <img src="./assets/gettingPrintumo.png" alt="gettingPrintumo" class="lg:mx-0 mx-auto" />
+            </div>
+            <div class="lg:col-span-8 col-span-1 flex flex-col sm:gap-8 gap-5">
+              <h2 class="text-[#141416] text-xl sm:text-2xl font-bold sm:leading-[33.60px]">
+                Getting started with Printumo
+              </h2>
+              <p class="text-[#141416] text-base font-normal leading-snug w-[600px] max-w-full">
+                Lorem ipsum dolor sit amet consectetur. Amet nullam metus at
+                elementum curabitur ligula cursus pretium et. Viverra ultrices
+                ultricies elit cursus maecenas urna nisi vel. Interdum turpis
+                sem sed amet. Sed turpis massa sed placerat cras id.
+              </p>
+              <div class="lg:hidden block text-center">
+                <img src="./assets/gettingPrintumo.png" alt="gettingPrintumo" class="mx-auto w-40" />
+              </div>
+              <div class="">
+                <button
+                  class="text-white-1 px-8 h-[52px] md:h-[42px] bg-[#272727] rounded-lg border-[2px] border-black-4 hover:bg-white-1 text-center text-white text-base font-bold transition-colors hover:text-black-1 lg:w-auto w-full">
+                  Create product
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Suggested for you section  -->
+      <div class="sm:mr-0 xl:overflow-auto overflow-hidden" id="suggestedYou">
+        <div class="w-full ">
+          <div class="sm:bg-[#908fa1] sm:bg-opacity-5 sm:px-8 py-9 rounded-s-xl min-h-screen">
+            <div class="mb-4 pl-4 sm:pl-0">
+              <h2 class="text-black text-base font-bold uppercase leading-tight tracking-wide">
+                Suggested for you
+              </h2>
+            </div>
+            <div class="xl:overflow-auto overflow-scroll">
+              <div class="grid grid-cols-4 sm:gap-9 gap-4 xl:w-auto w-[1102px] ">
+                <!-- prodcut card  -->
+                <div class="col-span-1">
+                  <div
+                    class="w-full productCardShadow w max-w-[300px] flex flex-col gap-4 bg-white-1 p-4 rounded-[10px] group transition-all">
+                    <div class="w-full relative overflow-hidden rounded-[10px]">
+                      <img src="./assets/1.png"
+                        class="w-full rounded-[10px] group-hover:scale-105 h-[175px]  object-cover  transition-all"
+                        alt="Blue and Coral Mood" />
+                    </div>
+                    <div class="flex gap-2 5 flex-col">
+                      <h4 class="text-[#141416] text-sm font-bold leading-tight">
+                        How to Start to Sell Prints
+                      </h4>
+                      <p class="text-[#141416] text-sm font-normal leading-tight">
+                        Use high-quality images and detailed descriptions for
+                        each product to give potential customers a clear
+                        understanding
+                      </p>
+                      <div class="">
+                        <a href=""
+                          class="text-[#7b53e7] text-sm font-normal leading-tight hover:translate-x-1 transition-all inline-block hover:text-black-1">Read
+                          more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- prodcut card  -->
+                <div class="col-span-1">
+                  <div
+                    class="w-full productCardShadow max-w-[300px] flex flex-col gap-4 bg-white-1 p-4 rounded-[10px] group transition-all">
+                    <div class="w-full relative overflow-hidden rounded-[10px]">
+                      <img src="./assets/2.png"
+                        class="w-full rounded-[10px] group-hover:scale-105 h-[175px] object-fill transition-all"
+                        alt="Blue and Coral Mood" />
+                    </div>
+                    <div class="flex gap-2 5 flex-col">
+                      <h4 class="text-[#141416] text-sm font-bold leading-tight">
+                        Expand Your Product Line
+                      </h4>
+                      <p class="text-[#141416] text-sm font-normal leading-tight">
+                        Use high-quality images and detailed descriptions for
+                        each product to give potential customers a clear
+                        understanding
+                      </p>
+                      <div class="">
+                        <a href=""
+                          class="text-[#7b53e7] text-sm font-normal leading-tight hover:translate-x-1 transition-all inline-block hover:text-black-1">Read
+                          more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- prodcut card  -->
+                <div class="col-span-1">
+                  <div
+                    class="w-full productCardShadow max-w-[300px] flex flex-col gap-4 bg-white-1 p-4 rounded-[10px] group transition-all">
+                    <div class="w-full relative overflow-hidden rounded-[10px]">
+                      <img src="./assets/3.png"
+                        class="w-full rounded-[10px] group-hover:scale-105 h-[175px] object-fill transition-all"
+                        alt="Blue and Coral Mood" />
+                    </div>
+                    <div class="flex gap-2 5 flex-col">
+                      <h4 class="text-[#141416] text-sm font-bold leading-tight">
+                        Engage with Your Customers
+                      </h4>
+                      <p class="text-[#141416] text-sm font-normal leading-tight">
+                        Use high-quality images and detailed descriptions for
+                        each product to give potential customers a clear
+                        understanding
+                      </p>
+                      <div class="">
+                        <a href=""
+                          class="text-[#7b53e7] text-sm font-normal leading-tight hover:translate-x-1 transition-all inline-block hover:text-black-1">Read
+                          more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- prodcut card  -->
+                <div class="col-span-1">
+                  <div
+                    class="w-full productCardShadow max-w-[300px] flex flex-col gap-4 bg-white-1 p-4 rounded-[10px] group transition-all">
+                    <div class="w-full relative overflow-hidden rounded-[10px]">
+                      <img src="./assets/4.png"
+                        class="w-full rounded-[10px] group-hover:scale-105 h-[175px] object-fill transition-all"
+                        alt="Blue and Coral Mood" />
+                    </div>
+                    <div class="flex gap-2 5 flex-col">
+                      <h4 class="text-[#141416] text-sm font-bold leading-tight">
+                        Optimize Your Online Shop
+                      </h4>
+                      <p class="text-[#141416] text-sm font-normal leading-tight">
+                        Use high-quality images and detailed descriptions for
+                        each product to give potential customers a clear
+                        understanding
+                      </p>
+                      <div class="">
+                        <a href=""
+                          class="text-[#7b53e7] text-sm font-normal leading-tight hover:translate-x-1 transition-all inline-block hover:text-black-1">Read
+                          more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+</body>
+
+</html>

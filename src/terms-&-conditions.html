@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Terms & Conditions</title>
+</head>
+
+<body>
+  <header class="shadow-headerboxshadow lg:shadow-none sticky top-0 left-0 z-50 bg-white-1">
+    <!-- Navbar -->
+    <div
+      class="flex items-center justify-between px-4 max-w-[1328px] mx-auto py-[12px] lg:pt-8 lg:pb-6 relative bg-white-1"
+      id="nav-main">
+      <!-- Hamburger Icon (Visible only on mobile) -->
+      <button id="drawer-button" class="lg:hidden me-3" aria-label="open sidebar" onclick="openDrawer()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-gray-800">
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <div class="text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+        <a href="/src/landingPage.html" class="block"><img src="./assets/logo.svg"
+            class="w-[133px] h-[40px] lg:h-[58px] lg:w-[203px]" alt=""></a>
+      </div>
+
+      <!-- Desktop Menu Items (Visible on large screens) -->
+      <ul class="hidden lg:flex lg:flex-1 lg:justify-center lg:space-x-4 2xl:space-x-6">
+        <li><a href="/src/about-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Why
+            Us</a></li>
+        <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">How It Works</a>
+        </li>
+
+
+
+        <li class="relative">
+          <button id="desktop-dropdown-button" onclick="toggleDeskDropdown()"
+            class="font-bold flex items-center gap-x-2 text-black-5 hover:text-purple-1 capitalize">
+            Products
+            <img src="./assets/down-chevron.svg" class="w-[13px]" alt="">
+          </button>
+          <ul id="desktop-dropdown-menu"
+            class="absolute left-0 hidden mt-2 w-40 bg-white rounded-md text-gray-800 shadow-lg z-50 p-3 space-y-2 bg-white-1">
+            <li><a href="/src/product-page.html"
+                class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+            </li>
+            <li><a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                2</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Store
+            Connection</a></li>
+        <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Story Case</a>
+        </li>
+        <li><a href="/src/contact-us.html"
+            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Contact
+            Us</a>
+        </li>
+      </ul>
+
+
+      <!-- Button -->
+      <div class="">
+        <button
+          class="h-9 w-[130px] lg:h-[53px] lg:w-[180px] bg-black-6 hover:bg-purple-1 text-sm lg:text-base font-bold text-white-1 rounded-lg lg:rounded-xl tracking-[0.25px]">
+          Sign up for free
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer Overlay -->
+    <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+    <!-- Sidebar Drawer -->
+    <div id="drawer"
+      class="w-[300px] md:w-[250px] fixed top-0 left-0  h-full bg-white shadow-lg transform -translate-x-full transition-transform bg-white-1">
+      <div class="px-[18px] pt-[91px] pb-4">
+        <div class="relative hidden" id="closebtn">
+          <button class="text-black-1 mb-4 absolute -top-5 -right-12" aria-label="close sidebar"
+            onclick="closeDrawer()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <!-- Sidebar Content -->
+        <ul class="space-y-8">
+          <li><a href="/src/about-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Why
+              Us</a>
+          </li>
+          <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">How It
+              Works</a></li>
+          <li class="relative">
+            <button class="flex items-center gap-x-2 w-full text-black-5 hover:text-purple-1 capitalize font-bold"
+              onclick="toggleDropdown()">
+              Products
+              <img src="./assets/down-chevron.svg" class="w-3" alt="">
+            </button>
+            <ul id="dropdown-menu" class="hidden mt-2 space-y-2 pl-4 border-l border-gray-200">
+              <li><a href="/src/product-page.html"
+                  class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+              </li>
+              <li><a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                  2</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Store
+              Connection</a></li>
+          <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Story
+              Case</a></li>
+          <li><a href="/src/contact-us.html"
+              class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Contact
+              Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- header ends here  -->
+  <main>
+    <!-- terms & conditions start -->
+    <section id="termsConditions" class="pt-[38px] pb-[28px] md:pt-[54px] md:pb-[120px]">
+      <div class="max-w-[1108px] mx-auto px-4">
+        <!-- content -->
+        <div class="flex flex-col text-[#000000] md:space-y-[38px] space-y-[30px]">
+          <h1 class="text-2xl font-bold leading-[24px] tracking-[-0.2px]">
+            Terms of Service
+          </h1>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>1. About Our Platform</strong><br />Printumo is a
+            specialized platform that caters to the unique needs of the
+            creative community. Unlike our competitors who serve a broader
+            range of clients, including companies and businesses, we are
+            singularly focused on providing exceptional on-demand printing
+            services for wall art, such as posters and canvas prints. Our
+            mission is to empower creatives like yourself by offering
+            high-quality, tailored solutions that help you bring your artistic
+            visions to life.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>2. User Accounts</strong><br />To use the services offered
+            by Printumo, you will be required to create a user account. During
+            the registration process, you will be asked to provide accurate
+            and complete information, including your name, email address,
+            billing details, and other relevant data. You are solely
+            responsible for maintaining the confidentiality of your account
+            credentials, including your username and password. You agree to
+            immediately notify us of any unauthorized access or use of your
+            account.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>3. User Content</strong><br />All content you upload,
+            create, or submit to our platform, including but not limited to
+            your artwork, designs, descriptions, and other materials, is and
+            shall remain your own intellectual property. By using our
+            services, you grant Printumo a non-exclusive, worldwide,
+            royalty-free license to use, reproduce, distribute, and display
+            your content in connection with the operation, promotion, and
+            improvement of our platform. We will not use your content for any
+            other purpose without your explicit written consent.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>4. Order Processing and Fulfillment</strong><br />We are
+            committed to processing and fulfilling your orders for posters and
+            canvas prints in a timely and efficient manner. Our production
+            partners utilizes high-quality printing materials and
+            state-of-the-art production techniques to ensure the best possible
+            results. While we strive to provide accurate delivery estimates,
+            please note that actual shipping times may vary depending on
+            factors such as your location, the complexity of your order, and
+            the availability of materials. In the event of any delays or
+            issues, we will make every reasonable effort to communicate with
+            you and provide updates.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>5. Pricing and Payments</strong><br />Our pricing for
+            poster and canvas prints is transparent and competitive. All
+            prices, including any applicable taxes, shipping fees, or other
+            charges, are clearly displayed on our platform. You can securely
+            make payments through our approved payment methods, which may
+            include credit/debit cards, digital wallets, or other secure
+            payment options. Please refer to our Refund Policy for information
+            regarding the circumstances under which refunds or exchanges may
+            be available.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>6. Acceptable Use</strong><br />By using our platform, you
+            agree to do so in a lawful, ethical, and responsible manner. This
+            includes, but is not limited to, refraining from uploading or
+            submitting any content that is illegal, abusive, or infringes on
+            the rights of others, such as copyrighted material, hate speech,
+            or explicit content. We reserve the right to remove or suspend
+            access to any content that violates our Acceptable Use Policy.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>7. Limitation of Liability</strong><br />Printumo shall
+            not be liable for any indirect, incidental, special, or
+            consequential damages arising from the use of our platform or the
+            inability to use it. Our total liability shall not exceed the
+            amount you have paid for the specific product or service in
+            question. We make no warranties, express or implied, regarding the
+            quality, accuracy, or reliability of our products or services.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>8. Governing Law and Jurisdiction</strong><br />These
+            Terms of Service shall be governed by and construed in accordance
+            with the laws of Denmark. Any disputes arising from these terms
+            shall be resolved in the courts of Denmark.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            <strong>9. Changes to the Terms of Service</strong><br />We
+            reserve the right to modify these Terms of Service at any time.
+            Any changes will be effective upon posting the revised terms on
+            our platform. Your continued use of our services after such
+            changes constitutes your acceptance of the new terms.
+          </p>
+          <p class="text-sm leading-[24px] tracking-[-0.2px]">
+            By using Printumo, you acknowledge that you have read, understood,
+            and agree to be bound by these Terms of Service. If you do not
+            agree to these terms, please refrain from using our platform or
+            services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- terms & conditions end -->
+  </main>
+
+  <!-- footer start here  -->
+  <footer class="bg-[#0C0F18]">
+    <div
+      class="text-white-1 px-4 max-w-[1328px] mx-auto pt-[43px] py-[58px] lg:py-20 flex flex-col lg:flex-row justify-center lg:items-center lg:gap-16 2xl:gap-[176px]">
+      <div class="w-full lg:max-w-[326px]">
+        <div class="w-[262px]">
+          <img src="./assets/lp/footerlogo.svg" class="w-full" alt="">
+        </div>
+        <p class="text-[#94959B] text-base lg:text-xl pt-[24px] pb-[41px] lg:pt-[34px] lg:pb-[48px]">Unleash
+          your creativity and start selling your printed artworks</p>
+        <div class="gap-5 hidden sm:flex pb-[41px] lg:pb-0">
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+          </a>
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+          </a>
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="flex-1 flex flex-col sm:flex-row sm:justify-between gap-y-[31px]">
+        <div>
+          <h3 class="text-2xl font-bold">Sitemap</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="/src/landingPage.html" class="hover:text-white-1">Home</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">How it works</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Services</a>
+            </li>
+            <li>
+              <a href="/src/about-us.html" class="hover:text-white-1">About</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">Landing</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="#" class="hover:text-white-1">Why Create with Us?</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">How It Works</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Store connection</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Customer reviews</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">Utility</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="#" class="hover:text-white-1">FAQ</a>
+            </li>
+            <li>
+              <a href="terms-&-conditions.html" class="hover:text-white-1">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="flex gap-5 sm:hidden mt-[46px]">
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script  -->
+
+  <script src="./script/navbar.js"></script>
+</body>
+
+</html>

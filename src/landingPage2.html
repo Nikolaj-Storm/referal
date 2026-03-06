@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <title>Landing page V2</title>
+</head>
+
+<body>
+    <header class=" sticky top-0 left-0 z-50 bg-white-1">
+        <!-- Navbar -->
+        <div class="flex items-center justify-between px-4 max-w-[1328px] mx-auto py-[12px] lg:py-6 relative bg-white-1"
+            id="nav-main">
+
+
+            <!--Desktop Logo -->
+            <div class="hidden sm:block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                <a href="/src/landingPage2.html" class="block"><img src="./assets/lp2/icons/logo.svg"
+                        class=" w-[133px] h-[40px] lg:h-[58px] lg:w-[203px]" alt=""></a>
+            </div>
+            <!--Mobile Logo -->
+            <div class=" sm:hidden block text-xl w-[35px] lg:flex-none font-semibold text-left">
+                <a href="/src/landingPage2.html" class="block"><img src="./assets/lp2/icons/logo-mobile.svg"
+                        class="w-[35px] h-[35px]" alt=""></a>
+            </div>
+
+            <div class="flex flex-1 justify-end lg:space-x-4 2xl:space-x-9 items-center">
+                <!-- Hamburger Icon (Visible only on mobile) -->
+                <button id="drawer-button" class="lg:hidden me-3" aria-label="open sidebar" onclick="openDrawer()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        class="w-6 h-6 text-gray-800">
+                        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <!-- Desktop Menu Items (Visible on large screens) -->
+                <ul class="hidden lg:flex  lg:space-x-4 2xl:space-x-7">
+
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">How
+                            It
+                            Works</a>
+                    </li>
+
+
+
+                    <li class="relative">
+                        <button id="desktop-dropdown-button" onclick="toggleDeskDropdown()"
+                            class="font-bold flex items-center gap-x-2 text-black-5 hover:text-purple-1 capitalize">
+                            Products
+                            <img src="./assets/down-chevron.svg" class="w-[13px]" alt="">
+                        </button>
+                        <ul id="desktop-dropdown-menu"
+                            class="absolute left-0 hidden mt-2 w-40 bg-white rounded-md text-gray-800 shadow-lg z-50 p-3 space-y-2 bg-white-1">
+                            <li><a href="/src/product-page.html"
+                                    class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                    Page</a>
+                            </li>
+                            <li><a href="#"
+                                    class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                    2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/src/about-us.html"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Why
+                            Us</a></li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">About</a>
+                    </li>
+
+                    <li><a href="/src/contact-us.html"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Contact</a>
+                    </li>
+                </ul>
+
+
+                <!-- Button -->
+                <div class="hidden lg:block">
+                    <button
+                        class="h-9 w-[130px] lg:h-[53px] lg:w-[180px] bg-black-6 hover:bg-purple-1 text-sm lg:text-base font-bold text-white-1 rounded-lg lg:rounded-xl tracking-[1px]">
+                        Sign up for free
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drawer Overlay -->
+        <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+        <!-- Sidebar Drawer -->
+        <div id="drawer"
+            class="w-[300px] md:w-[250px] fixed top-0 left-0  h-full bg-white shadow-lg transform -translate-x-full transition-transform bg-white-1">
+            <div class="px-[18px] pt-[91px] pb-4">
+                <div class="relative hidden" id="closebtn">
+                    <button class="text-black-1 mb-4 absolute -top-5 -right-12" aria-label="close sidebar"
+                        onclick="closeDrawer()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Sidebar Content -->
+                <ul class="space-y-8">
+                    <li><a href="/src/about-us.html"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Why
+                            Us</a>
+                    </li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">How
+                            It
+                            Works</a></li>
+                    <li class="relative">
+                        <button
+                            class="flex items-center gap-x-2 w-full text-black-5 hover:text-purple-1 capitalize font-bold"
+                            onclick="toggleDropdown()">
+                            Products
+                            <img src="./assets/down-chevron.svg" class="w-3" alt="">
+                        </button>
+                        <ul id="dropdown-menu" class="hidden mt-2 space-y-2 pl-4 border-l border-gray-200">
+                            <li><a href="/src/product-page.html"
+                                    class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                    Page</a>
+                            </li>
+                            <li><a href="#"
+                                    class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                    2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Store
+                            Connection</a></li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Story
+                            Case</a></li>
+                    <li><a href="/src/contact-us.html"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- header ends here  -->
+
+    <main>
+        <!-- hero start here  -->
+        <section
+            class="flex items-center justify-between flex-col-reverse lg:flex-row px-4 max-w-[1328px] mx-auto pt-[20px] pb-[30px] lg:pt-10 lg:pb-20 gap-[34px]">
+            <div class="flex-1">
+                <div class="text-center lg:text-start">
+                    <h3 class="text-purple-1 bg-[#7B53E726] rounded-xl px-3 py-2 inline-block font-bold">Running an
+                        Interior Design Webshop?</h3>
+                </div>
+                <h1
+                    class="font-bold text-black-5 text-[28px] sm:text-3xl lg:text-5xl 2xl:text-[58px] 2xl:leading-[76px] pt-5 lg:pt-6 text-center lg:text-start">
+                    Boost your <span class="text-purple-2">Revenue</span> by Adding <span class="text-purple-2">
+                        Canvas Prints</span>
+                </h1>
+                <div class="flex-1 block lg:hidden pt-8">
+                    <img src="./assets/lp2/img/banner-1x.png" srcset="
+                                    ./assets/lp2/img/banner-1x.png 1x,
+                                    ./assets/lp2/img/banner-2x.png 2x,
+                                    ./assets/lp2/img/banner-3x.png 3x" class="w-full sm:w-1/2 lg:w-full mx-auto"
+                        alt="Hero Img">
+                </div>
+                <ul class="text-[13px] sm:text-base lg:text-xl text-black-7 font-normal py-9 lg:py-12 space-y-3">
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1"><span class="font-semibold">Expand Your Product Portfolio</span> with
+                            no stock or risk</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1"><span class="font-semibold">Increase your order value</span> with Canvas
+                            Prints (<span class="font-semibold">€550</span> in avg.)</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Choose from <span class="font-semibold">200,000 unique artworks</span> in
+                            <span class="font-semibold">1 library</span></span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Sell and ship quickly and effortlessly to <span class="font-semibold">30
+                                countries</span></span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1"><span class="font-semibold">Shopify App</span> & on-demand
+                            production
+                            (<span class="font-semibold">no stock — no risk</span>)</span>
+                    </li>
+                </ul>
+
+                <div class="flex items-center flex-col sm:flex-row gap-x-6 gap-y-4">
+                    <a href="#"
+                        class="w-full sm:w-auto px-4  text-sm bg-purple-1 border-2 border-purple-1 flex items-center justify-center font-bold sm:text-base text-white-1 rounded-xl hover:bg-black-6 hover:border-black-6 tracking-[1px] h-[45px] lg:h-[56px]">
+                        Get started 100% free
+                    </a>
+                    <a href="#"
+                        class="w-full sm:w-auto px-8  text-sm bg-transparent border-2 border-purple-1 flex items-center justify-center font-bold sm:text-base text-purple-1 rounded-xl hover:bg-black-6 hover:border-black-6 hover:text-white-1 tracking-[1px] h-[45px] lg:h-[56px]">
+                        Book a free demo
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 lg:block hidden">
+                <img src="./assets/lp2/img/banner-1x.png" srcset="
+                    ./assets/lp2/img/banner-1x.png 1x,
+                    ./assets/lp2/img/banner-2x.png 2x,
+                    ./assets/lp2/img/banner-3x.png 3x" class="w-full sm:w-1/2 lg:w-full mx-auto" alt="Hero Img">
+            </div>
+        </section>
+
+
+
+        <!-- Artworks section strat here  -->
+        <section class="bg-purple-1">
+            <div class="px-4 max-w-[616px] mx-auto">
+                <h2 class="text-5xl 2xl:text-[100px] text-white-1 font-bold text-center pt-8 lg:pt-16">
+                    200k
+                </h2>
+                <p class="text-[22px] font-light lg:text-[45px] text-white-1 text-center">
+                    Artworks in one library
+                </p>
+                <ul
+                    class="text-[13px] sm:text-base lg:text-xl text-white-1 font-normal pt-[20px] pb-[25px] lg:pt-[25px] lg:pb-[40px] space-y-3">
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Make your own unique selection, or pick known bestsellers</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Artworks from thousands of talented artists worldwide</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Royalties are included in our pricing and paid
+                            automatically</span>
+                    </li>
+
+                </ul>
+                <div class="">
+                    <button
+                        class="px-8 bg-white-1 border-2 border-white-1  font-bold text-xs lg:text-xl text-black-5 rounded-xl hover:bg-black-5  hover:border-black-5 hover:text-white-1 mx-auto flex items-center justify-center tracking-[1px] h-10 lg:h-[62px]">See
+                        all artworks</button>
+                </div>
+
+            </div>
+            <div class="slider-wrapper mt-14">
+                <div class="artwork-slider">
+                    <div><img src="./assets/lp2/img/artwork.png" alt="Image 1" class="w-full"></div>
+                    <div><img src="./assets/lp2/img/artwork.png" alt="Image 2" class="w-full"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- <section
+            class="bg-purple-1 bg-[url('../src/assets/lp2/img/artwork-3x.png')] bg-cover bg-no-repeat  bg-bottom min-h-[600px] lg:min-h-[800px] 2xl:min-h-[900px] 3xl:min-h-[1000px]">
+            <div class="px-4 max-w-[616px] mx-auto">
+                <h2 class="text-5xl 2xl:text-[100px] text-white-1 font-bold text-center pt-8 lg:pt-16">
+                    200K+
+                </h2>
+                <p class="text-[22px] font-light lg:text-[45px] text-white-1 text-center">
+                    Artworks in one library
+                </p>
+                <ul
+                    class="text-[13px] sm:text-base lg:text-xl text-white-1 font-normal pt-[20px] pb-[25px] lg:pt-[25px] lg:pb-[40px] space-y-3">
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Start simply with bestsellers or choose your own favourites</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">New releases every week</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Designs from more than +1000 artists worldwide</span>
+                    </li>
+
+                </ul>
+                <div class="">
+                    <button
+                        class="px-8 bg-white-1 border-2 border-white-1  font-bold text-xs lg:text-xl text-black-5 rounded-xl hover:bg-black-5  hover:border-black-5 hover:text-white-1 mx-auto flex items-center justify-center tracking-[1px] h-10 lg:h-[62px]">See
+                        all artworks</button>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- 100% free section start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto py-8 lg:py-20">
+            <div
+                class="bg-purple-1 rounded-[20px] lg:rounded-[30px] text-white-1 px-[25px] pt-[35px] pb-5 lg:px-24 lg:py-16">
+                <div class="text-center">
+                    <h2 class="font-bold text-[30px] lg:text-[58px] text-center inline-block relative">
+                        <span class="relative z-10">100% free</span>
+                        <span
+                            class="block w-[76px] lg:w-[142px] h-[46px] lg:h-[73px] bg-[#8f6deb] rounded-[10px] absolute rotate-[355deg] top-0 lg:top-2 -right-3 lg:-right-5"></span>
+                    </h2>
+                </div>
+                <div class="flex items-center justify-between flex-col lg:flex-row pt-[25px] lg:pt-10">
+                    <div class="w-full lg:w-[40%]">
+                        <img src="./assets/lp2/img/free-1x.png" srcset="
+                                                    ./assets/lp2/img/free-1x.png 1x,
+                                                    ./assets/lp2/img/free-2x.png 2x,
+                                                    ./assets/lp2/img/free-3x.png 3x
+                                                  " class="w-full sm:w-1/2 lg:w-full mx-auto" alt="100% free Img">
+                    </div>
+                    <div class="w-full lg:w-[55%]">
+                        <h3 class="font-bold text-xl lg:text-3xl">Yes, Printumo is completely free to use!</h3>
+                        <ul
+                            class="text-xs sm:text-base lg:text-lg text-white-1 font-normal pt-[20px] pb-[25px] lg:pt-[25px] lg:pb-[40px] space-y-3">
+                            <li class="flex  gap-x-2">
+                                <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-3 sm:w-6"
+                                        alt="Check Icon"></span>
+                                <span class="flex-1"><span class="font-semibold">100% Free Platform:</span> Access all
+                                    features without any subscription fees or hidden costs.</span>
+                            </li>
+                            <li class="flex  gap-x-2">
+                                <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-3 sm:w-6"
+                                        alt="Check Icon"></span>
+                                <span class="flex-1"><span class="font-semibold"> No Risk— We Only Succeed When You
+                                        Do:</span> Our earnings come from a small commission on each sale, built into
+                                    the product
+                                    price.</span>
+                            </li>
+                            <li class="flex  gap-x-2">
+                                <span><img src="./assets//lp2/icons/whitecheck.svg" class="w-3 sm:w-6"
+                                        alt="Check Icon"></span>
+                                <span class="flex-1"><span class="font-semibold">Support Local Artists:</span> Every
+                                    sale helps artists earn their share, so you're supporting creativity while growing
+                                    your
+                                    business.</span>
+                            </li>
+
+                        </ul>
+                        <div class="">
+                            <button
+                                class="w-full lg:w-auto text-xs lg:text-xl px-8 py-3 hover:bg-white-1 border-2 hover:border-white-1 font-bold hover:text-black-5 rounded-xl bg-black-5  border-black-5 text-white-1  flex items-center justify-center tracking-[1px] h-[45px] lg:h-[62px]">Get
+                                started 100% free</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start in 10 minutes section start here  -->
+        <section class="bg-[#5E33B90D] pt-[35px] pb-[30px] lg:py-20">
+            <div class="px-4 max-w-[1328px] mx-auto">
+                <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[58px]">Start in 10 minutes with 3 steps
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 pt-[30px] pb-5 lg:py-16">
+                    <div class="space-y-2">
+                        <h3
+                            class="bg-[#554AB840] w-10 h-10 rounded-[50%] font-bold text-2xl flex items-center justify-center text-[#554AB8]">
+                            1</h3>
+                        <div>
+                            <h4 class="font-bold text-lg sm:text-xl text-black-7">Choose 10 unique artworks</h4>
+                            <p class=" text-[15px] sm:text-xl text-black-7 lg:max-w-[345px]">Choose from our extensive,
+                                categorized library of artwork created by talented artists from around the globe.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h3
+                            class="bg-[#554AB840] w-10 h-10 rounded-[50%] font-bold text-2xl flex items-center justify-center text-[#554AB8]">
+                            2</h3>
+                        <div>
+                            <h4 class="font-bold text-lg sm:text-xl text-black-7">Connect your webshop or start manually
+                            </h4>
+                            <p class=" text-[15px] sm:text-xl text-black-7 lg:max-w-[345px]">Seamlessly integrate your
+                                products with your Shopify store, or manually process orders through Printumo as they
+                                come.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h3
+                            class="bg-[#554AB840] w-10 h-10 rounded-[50%] font-bold text-2xl flex items-center justify-center text-[#554AB8]">
+                            3</h3>
+                        <div>
+                            <h4 class="font-bold text-lg sm:text-xl text-black-7">Start selling and keep going</h4>
+                            <p class=" text-[15px] sm:text-xl text-black-7 lg:max-w-[345px]">Once orders are received,
+                                Printumo handles production, shipping and royalties.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <button
+                        class="w-full lg:w-auto text-xs lg:text-xl px-8 py-3 hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 mx-auto flex items-center justify-center tracking-[1px] h-[45px] lg:h-[62px]">Get
+                        started 100% free</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- calculate section start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto pt-10 pb-6 lg:py-20 overflow-x-hidden lg:overflow-x-visible">
+            <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[58px]">Estimate Your Additional Revenue</h2>
+            <div class="flex flex-col lg:flex-row gap-12 pt-16 lg:pt-20">
+                <div class="flex-1">
+                    <div>
+                        <!-- Orders per month section -->
+                        <div class="flex">
+                            <h3 class="font-bold text-base lg:text-xl text-black-5 flex-1 items-center">Orders per month
+                            </h3>
+                            <h4 class="bg-[#F1F2F6] h-10 w-[115px] lg:w-[150px] font-bold text-base lg:text-xl flex items-center justify-end pr-3 rounded-[10px]"
+                                id="orderValue">5</h4>
+                        </div>
+                        <div class="mt-5">
+                            <input type="range" min="0" max="50" step="10" value="10" class="w-full" id="orderRange">
+                        </div>
+                    </div>
+
+                    <div class="mt-16">
+                        <!-- Average order value section -->
+                        <div class="flex">
+                            <h3 class="font-bold text-base lg:text-xl text-black-5 flex-1 items-center">Average order
+                                value</h3>
+                            <h4 class="bg-[#F1F2F6] h-10 w-[115px] lg:w-[150px] font-bold text-base lg:text-xl flex items-center justify-end pr-3 rounded-[10px]"
+                                id="averageValue">€50</h4>
+                        </div>
+                        <div class="mt-5">
+                            <input type="range" min="0" max="50" step="10" value="20" class="w-full"
+                                id="averageorderRange">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#f2eefd] flex-1 rounded-[30px] p-[25px] lg:p-[50px] relative">
+                    <h4 class="font-bold text-black-5 text-[15px] lg:text-[22px]">Total sales of canvas prints per month
+                    </h4>
+                    <h3 class="font-bold text-purple-1 text-[35px] lg:text-[40px] py-[5px] lg:py-2">€27.500</h3>
+                    <h5 class="text-[#5ED67C] font-base text-2xl lg:text-3xl">Profit: <span
+                            class="font-bold">€13.750</span></h5>
+                    <span class="block bg-[#dad6e3] w-full h-[2px] mt-3 mb-[15px] lg:mt-[15px] lg:mb-5"></span>
+                    <h6 class="font-bold text-black-5 text-2xl lg:text-3xl max-w-[360px]">Are you ready to boost your
+                        revenue?</h6>
+                    <p class="text-black-5 font-base text-sm lg:text-xl mt-[10px] lg:mt-[15px]">Improve your sales!</p>
+                    <div class="mt-5 lg:mt-[30px]">
+                        <a href="#"
+                            class="px-4 text-sm bg-purple-1 border-2 border-purple-1 inline-block font-bold sm:text-base text-white-1 rounded-xl hover:bg-black-6 hover:border-black-6 leading-[44px] lg:leading-[54px] tracking-[1px] h-[45px] lg:h-14">
+                            Get started 100% free
+                        </a>
+                    </div>
+                    <div class="absolute bottom-2 lg:bottom-0 -right-8 lg:-right-[70px]">
+                        <img src="./assets/lp2/icons/rocket.svg" class="w-[140px] lg:w-[240px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 max-w-[1328px] mx-auto pt-10 pb-6">
+            <!-- Why Canvas Prints  -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+                <div class="flex-1">
+                    <img src="./assets/lp2/img/canvas-1x.png" srcset="./assets/lp2/img/canvas-1x.png 1x,
+                                                                ./assets/lp2/img/canvas-2x.png 2x,
+                                                                ./assets/lp2/img/canvas-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="Canvas Img">
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Why Canvas Prints?</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Stylish Appeal:</span> Curate a unique
+                                selection of art. Unlike posters, canvas prints closely resemble true
+                                paintings.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Large Sizes:</span> Prints available up to
+                                135x135 cm for high-impact displays and significant profits.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Premium Frames:</span> Exclusive floating
+                                frames, such as oak, provide a luxurious finish.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+            </div>
+            <!-- You Support Artists -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row py-10 lg:py-16">
+
+                <div class="flex-1 order-2 lg:order-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">You Support Artists</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Direct Revenue Sharing:</span> A portion of
+                                each sale goes directly to the artist.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Empower Local Talent:</span> Every purchase
+                                helps boost the careers of emerging artists.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Promote Creativity:</span> Expand your
+                                offerings while fostering a vibrant artistic community.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="w-auto text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+                <div class="flex-1 order-1 lg:order-2">
+                    <img src="./assets/lp2/img/support-1x.png" srcset="./assets/lp2/img/support-1x.png 1x,
+                                                                                ./assets/lp2/img/support-2x.png 2x,
+                                                                                ./assets/lp2/img/support-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="support Img">
+                </div>
+            </div>
+            <!-- Sell & Ship in 30 countries  -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+                <div class="flex-1">
+                    <img src="./assets/lp2/img/sell-1x.png" srcset="./assets/lp2/img/sell-1x.png 1x,
+                                                                ./assets/lp2/img/sell-2x.png 2x,
+                                                                ./assets/lp2/img/sell-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="sell Img">
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Sell & Ship in 30 countries</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Global Reach:</span> Products are made and
+                                sent from within Europe and the UK. With US and AU coming soon.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Expand Your Market:</span> Access new
+                                customers without the hassle of international logistics.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Seamless Delivery:</span> We handle all
+                                shipping, so you can focus on growing your business.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Premium Framing Options -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row py-10 lg:py-16">
+
+                <div class="flex-1 order-2 lg:order-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Premium Framing Options</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Luxury Floating Frames:</span> Enhance any
+                                artwork with sleek, modern frames.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Elegant Oak Finish:</span> Add a natural
+                                touch with our exclusive oak frames.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Customizable Styles:</span> Choose from a
+                                variety of high-quality framing options to suit any piece.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="w-auto text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+                <div class="flex-1 order-1 lg:order-2">
+                    <img src="./assets/lp2/img/premium-1x.png" srcset="./assets/lp2/img/premium-1x.png 1x,
+                                                                                ./assets/lp2/img/premium-2x.png 2x,
+                                                                                ./assets/lp2/img/premium-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="premium Img">
+                </div>
+            </div>
+            <!-- Produce on demand. No risk.  -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+                <div class="flex-1">
+                    <img src="./assets/lp2/img/produce-1x.png" srcset="./assets/lp2/img/produce-1x.png 1x,
+                                                                ./assets/lp2/img/produce-2x.png 2x,
+                                                                ./assets/lp2/img/produce-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="produce Img">
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Produce on demand. No risk.</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Zero Inventory Needed:</span> Only pay when
+                                you make a sale—no upfront costs.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Reduce Waste:</span> Products are made to
+                                order, minimizing unsold stock.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Scalable Solution:</span> Easily expand
+                                your product range without financial risk.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Fast Fulfilment -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row py-10 lg:py-16">
+
+                <div class="flex-1 order-2 lg:order-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Fast Fulfilment</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Quick Production:</span> Orders are printed
+                                and shipped in just a few days.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Reliable Delivery:</span> Reach customers
+                                quickly with fast shipping from within Europe and the UK.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Track Every Order:</span> Stay updated with
+                                real-time tracking for smooth customer service.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="w-auto text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+                <div class="flex-1 order-1 lg:order-2">
+                    <img src="./assets/lp2/img/fast-1x.png" srcset="./assets/lp2/img/fast-1x.png 1x,
+                                                                                ./assets/lp2/img/fast-2x.png 2x,
+                                                                                ./assets/lp2/img/fast-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="fast Img">
+                </div>
+            </div>
+            <!-- Automatic or manual orders  -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+                <div class="flex-1">
+                    <img src="./assets/lp2/img/automatic-1x.png" srcset="./assets/lp2/img/automatic-1x.png 1x,
+                                                                ./assets/lp2/img/automatic-2x.png 2x,
+                                                                ./assets/lp2/img/automatic-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="automatic Img">
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Automatic or Manual Order Processing</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Hands-Free Automation:</span> Let orders
+                                process automatically for a seamless workflow.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Full Control:</span> Opt for manual
+                                handling to maintain complete control over orders from multiple channels.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Flexible Options:</span> Easily switch
+                                between automatic and manual modes as your business evolves.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+            </div>
+            <!-- We help B2B shops succeed -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row py-10 lg:py-16">
+
+                <div class="flex-1 order-2 lg:order-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">We Help Webshops Succeed</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Real-Time Insights:</span> Monitor sales
+                                data instantly to refine your strategy. </span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Trending Artworks:</span> Discover
+                                bestsellers in your market and stay ahead.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">200K+ Artworks:</span> Access a
+                                continuously growing library of high-quality art.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="w-auto text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+                <div class="flex-1 order-1 lg:order-2">
+                    <img src="./assets/lp2/img/b2b-1x.png" srcset="./assets/lp2/img/b2b-1x.png 1x,
+                                                                                ./assets/lp2/img/b2b-2x.png 2x,
+                                                                                ./assets/lp2/img/b2b-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="b2b Img">
+                </div>
+            </div>
+            <!-- Sales Reports  -->
+            <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+                <div class="flex-1">
+                    <img src="./assets/lp2/img/sale-1x.png" srcset="./assets/lp2/img/sale-1x.png 1x,
+                                                                            ./assets/lp2/img/sale-2x.png 2x,
+                                                                            ./assets/lp2/img/sale-3x.png 3x"
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="sale Img">
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">Sales Reports</h3>
+                    <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Detailed Reports:</span> Track your sales
+                                with easy-to-read data.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Performance Metrics:</span> See what's
+                                selling and identify growth opportunities.</span>
+                        </li>
+                        <li class="flex  gap-x-2">
+                            <span><img src="./assets//lp2/icons/check.svg" class="mt-[2px] w-5 sm:w-6"
+                                    alt="Check Icon"></span>
+                            <span class="flex-1"><span class="font-semibold">Custom Insights:</span> Filter reports to
+                                focus on what matters most.</span>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <button
+                            class="text-xs lg:text-lg px-8  hover:bg-purple-1 border-2 hover:border-purple-1 font-bold hover:text-white-1 rounded-xl bg-black-5  border-black-5 text-white-1 flex items-center justify-center tracking-[1px] h-10 lg:h-[45px]">Get
+                            started 100% free</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How print section start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto pt-10 pb-6 lg:py-20">
+            <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[58px]">How print on demand works</h2>
+            <div class="pt-[30px] lg:pt-[60px]">
+                <img src="./assets/lp2/img/print-1x.png"
+                    srcset="./assets/lp2/img/print-1x.png 1x, ./assets/lp2/img/print-2x.png 2x, ./assets/lp2/img/print-3x.png 3x"
+                    class="w-full" alt="print Img">
+            </div>
+        </section>
+        <!-- Real examples start here  -->
+        <section class="px-4 bg-purple-1 py-10 lg:py-20">
+            <h2
+                class="text-center font-bold text-white-1 text-3xl lg:text-[58px] max-w-[640px] mx-auto leading-tight tracking-[2px]">
+                Real examples from customers and artists</h2>
+            <div class="slider-wrapper mt-14">
+                <div class="real-slider">
+                    <div><img src="./assets/lp2/img/i1.png" alt="Image 1"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i2.png" alt="Image 2"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i3.png" alt="Image 3"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i4.png" alt="Image 4"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i5.png" alt="Image 5"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i1.png" alt="Image 6"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i2.png" alt="Image 2"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i3.png" alt="Image 3"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i4.png" alt="Image 4"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                    <div><img src="./assets/lp2/img/i5.png" alt="Image 5"
+                            class="rounded-[20px] lg:rounded-[30px] slideImgboxshadow w-[130px] lg:w-[246px]"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Sell & Ship start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto py-10 lg:py-20">
+            <div>
+                <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[58px] mx-auto">Sell & Ship to 30
+                    countries</h2>
+                <p class="text-black-7 text-sm lg:text-xl text-center mx-auto max-w-[900px] mt-5 lg:mt-[25px]">With our
+                    fast and reliable fulfillment, each canvas print is
+                    produced, framed, and ready to ship within days. With production facilities in the UK and central
+                    EU, we ensure your customers receive their art prints quickly and
+                    hassle-free.</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-5 lg:gap-[25px] justify-between items-center mt-7 lg:mt-16">
+                <div class="w-full lg:w-[40%]">
+                    <img src="./assets/lp2/img/map-1x.png" srcset="
+                                                                        ./assets/lp2/img/map-1x.png 1x,
+                                                                        ./assets/lp2/img/map-2x.png 2x,
+                                                                        ./assets/lp2/img/map-3x.png 3x "
+                        class="w-full sm:w-1/2 lg:w-full mx-auto" alt="100% map Img">
+                </div>
+                <div class="w-full lg:w-[57%]">
+                    <h3 class="font-bold text-center lg:text-start text-black-5 text-xl lg:text-[45px]">We ship to:</h3>
+                    <div
+                        class="bg-[#5E33B90D] grid grid-cols-2 md:grid-cols-3 font-medium text-xs lg:text-lg text-black-5 p-[15px] lg:p-[25px] rounded-[20px] lg:rounded-[30px] mt-[15px] lg:mt-8 gap-3 lg:gap-5">
+
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/australia.svg" class="w-[23px]" alt="australia"></span>
+                            <span class="">Australia <span
+                                    class="text-[#BCBCBC] text-[10px] lg:text-base font-normal">(soon)</span></span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/austria.svg" class="w-[23px]" alt="Austria"></span>
+                            <span class="">Austria </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/belgium.svg" class="w-[23px]" alt="Belgium"></span>
+                            <span class="">Belgium </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/bulgaria.svg" class="w-[23px]" alt="Bulgaria"></span>
+                            <span class="">Bulgaria </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/croatia.svg" class="w-[23px]" alt="Croatia"></span>
+                            <span class="">Croatia </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/czech.svg" class="w-[23px]" alt="Czechia"></span>
+                            <span class="">Czechia </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/denmark.svg" class="w-[23px]" alt="Denmark"></span>
+                            <span class="">Denmark </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/estonia.svg" class="w-[23px]" alt="Estonia"></span>
+                            <span class="">Estonia </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/finland.svg" class="w-[23px]" alt="Finland"></span>
+                            <span class="">Finland </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/france.svg" class="w-[23px]" alt="France"></span>
+                            <span class="">France </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/germany.svg" class="w-[23px]" alt="Germany"></span>
+                            <span class="">Germany</span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/greece.svg" class="w-[23px]" alt="Greece"></span>
+                            <span class="">Greece </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/hungary.svg" class="w-[23px]" alt="Hungary"></span>
+                            <span class="">Hungary </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/ireland.svg" class="w-[23px]" alt="Ireland"></span>
+                            <span class="">Ireland </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/italy.svg" class="w-[23px]" alt="Italy"></span>
+                            <span class="">Italy </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/latvia.svg" class="w-[23px]" alt="Latvia"></span>
+                            <span class="">Latvia </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/lithuania.svg" class="w-[23px]" alt="Lithuania"></span>
+                            <span class="">Lithuania </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/luxembourg.svg" class="w-[23px]" alt="Luxembourg"></span>
+                            <span class="">Luxembourg </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/netherlands.svg" class="w-[23px]"
+                                    alt="Netherlands"></span>
+                            <span class="">Netherlands </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/norway.svg" class="w-[23px]" alt="Norway"></span>
+                            <span class="">Norway </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/poland.svg" class="w-[23px]" alt="Poland"></span>
+                            <span class="">Poland</span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/portugal.svg" class="w-[23px]" alt="Portugal"></span>
+                            <span class="">Portugal </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/romania.svg" class="w-[23px]" alt="Romania"></span>
+                            <span class="">Romania </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/slovakia.svg" class="w-[23px]" alt="Slovakia"></span>
+                            <span class="">Slovakia </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/slovenia.svg" class="w-[23px]" alt="Slovenia"></span>
+                            <span class="">Slovenia </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/spain.svg" class="w-[23px]" alt="Spain"></span>
+                            <span class="">Spain </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/sweden.svg" class="w-[23px]" alt="Sweden"></span>
+                            <span class="">Sweden </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/switzerland.svg" class="w-[23px]"
+                                    alt="Switzerland"></span>
+                            <span class="">Switzerland </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/united-kingdom.svg" class="w-[23px]"
+                                    alt="United Kingdom"></span>
+                            <span class="">United Kingdom </span>
+                        </div>
+                        <!-- single country  -->
+                        <div class="flex items-center gap-2">
+                            <span><img src="./assets/lp2/icons/united-states.svg" class="w-[23px]"
+                                    alt="United States"></span>
+                            <span class="">United States <span
+                                    class="text-[#BCBCBC] text-[10px] lg:text-base font-normal">(soon)</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- How Printumo will help start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto py-10 lg:py-20">
+            <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[58px] mx-auto">How will Printumo help me?
+            </h2>
+            <div
+                class="flex flex-col lg:flex-row items-center justify-between gap-[15px] lg:gap-[30px] mt-[30px] lg:mt-[50px]">
+                <div class="p-5 lg:p-[50px] rounded-[20px] lg:rounded-[30px] bg-[#F1F2F6] flex-1">
+                    <h3 class="font-bold text-black-1 text-[22px] lg:text-[40px] mb-3 lg:mb-[25px]">Without Printumo
+                    </h3>
+                    <p class="text-[#7e7f81] text-base lg:text-xl font-light max-w-[470px]">You're selling what you sell
+                        today with your current product portfolio. <span class="font-medium text-[#585858]">No extra
+                            sales</span> and revenue.</p>
+                </div>
+                <div class="p-5 lg:p-[50px] rounded-[20px] lg:rounded-[30px] bg-purple-1 flex-1 relative">
+                    <h3
+                        class="font-bold text-white-1 flex items-center gap-[10px] lg:gap-4 text-[22px] lg:text-[40px] mb-3 lg:mb-[25px]">
+                        <span><img src="./assets/lp2/icons/cardicon2.svg" class="w-[26px] lg:w-12" alt="logo"></span>
+                        With Printumo
+                    </h3>
+                    <p class="text-[#e5ddfa] text-base lg:text-xl font-light max-w-[470px]"><span
+                            class="font-medium">Boost your revenue</span> by adding canvas prints to your product
+                        portfolio. <span class="font-medium">Risk free.</span></p>
+                    <img src="./assets/lp2/icons/cardicon.svg" class="w-12 lg:w-24 absolute right-5 top-5" alt="growth">
+                </div>
+            </div>
+            <div
+                class="bg-[#f2eefd] rounded-[20px] lg:rounded-[30px] py-[35px] px-[27px] lg:py-[45px] lg:px-24 mt-[30px] lg:mt-10 flex flex-col lg:flex-row gap-[35px] lg:gap-16 items-center text-center lg:text-start">
+                <div class="order-2 lg:order-1 flex-1">
+                    <h3 class=" font-bold text-black-5 text-3xl lg:text-[58px]">Support Team</h3>
+                    <p class="text-black-7 text-[15px] lg:text-xl py-5 lg:py-6">You'll have <span
+                            class="font-semibold">a dedicated Sales Manager</span> as your personal contact,
+                        ready to help you grow your sales!</p>
+                    <div>
+                        <a href="#"
+                            class=" px-4 text-sm bg-purple-1 border-2 border-purple-1 font-bold inline-block sm:text-base lg:text-xl text-white-1 rounded-xl hover:bg-black-6 hover:border-black-6 leading-[44px] lg:leading-[60px] tracking-[1px] h-[45px] lg:h-[62px]">
+                            Contact our support
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 flex-1">
+                    <img src="./assets/lp2/img/team-1x.png" srcset="
+                                                ./assets/lp2/img/team-1x.png 1x,
+                                                ./assets/lp2/img/team-2x.png 2x,
+                                                ./assets/lp2/img/team-3x.png 3x
+                                              " alt="" class="w-full sm:w-[372px] mx-auto" alt="Team Img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the founders strat here  -->
+        <section class="px-4 max-w-[1328px] mx-auto">
+            <div class="max-w-[705px] mx-auto">
+                <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[58px] mx-auto">Meet the founders</h2>
+                <ul
+                    class="text-[13px] sm:text-base lg:text-xl text-black-7 font-normal  pt-[25px] lg:pt-[35px] space-y-3">
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">We've been successfully selling canvas prints for over 4 years</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">And for more than a year, we've been helping others do the same</span>
+                    </li>
+                    <li class="flex items-center gap-x-3">
+                        <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                        <span class="flex-1">Now, we've built Printumo as <span class="font-bold">the
+                                go-to platform</span> for canvas prints</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div>
+                <img src="./assets/lp2/img/meet-1x.png" srcset="
+                                                ./assets/lp2/img/meet-1x.png 1x,
+                                                ./assets/lp2/img/meet-2x.png 2x,
+                                                ./assets/lp2/img/meet-3x.png 3x
+                                              " alt="" class="w-full mx-auto" alt="Meet Img">
+            </div>
+        </section>
+
+        <!-- faq section start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto pt-10 lg:pt-20">
+            <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[72px] leading-tight max-w-[600px] mx-auto">
+                Frequently Asked Questions
+            </h2>
+            <div class="max-w-[860px] mx-auto mt-[25px] lg:mt-[50px] space-y-[10px] lg:space-y-[15px]">
+                <!-- FAQ Item 1 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(1)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">How does Printumo's
+                            print-on-demand service work?</h3>
+                        <img id="arrow-1" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-1"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        It takes just 10 minutes to get started! Simply create an account, select the artworks you
+                        want to
+                        offer, and integrate them into your online store. You'll be ready to start selling in no time.
+                        When you get your first order, we'll send it for fulfillment in a production facility in the
+                        UK or central EU. We'll print, frame, and ship the canvas print directly to your customer, all
+                        under your brand. The entire process is automated, so you can focus on growing your business.
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(2)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">How long does it take
+                            to get set up with Printumo?</h3>
+                        <img id="arrow-2" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-2"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        It takes as little as 10 minutes to get started! Simply select the artworks you
+                        want to offer, and we'll add them for your Printumo account. When you've defined your prices,
+                        you
+                        can sync the products to Shopify, or add them manually to any other shop system. You'll be
+                        ready to start selling in no time.
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(3)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">What is the average
+                            order value for canvas prints?</h3>
+                        <img id="arrow-3" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-3"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        The average order value for large, framed canvas prints is around €550 based on our experience,
+                        making them a great way to increase
+                        your sales and profit.
+                        Additionally, our huge library of artworks combined with large convas sizes and framing options
+                        such as
+                        oak,
+                        allows you to offer products that customers love and doesn't find elsewhere.
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(4)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">In which countries can
+                            I sell and have canvas prints delivered?</h3>
+                        <img id="arrow-4" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-4"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        With Printumo, you can currently sell and deliver canvas prints in 30 countries across Europe
+                        and the UK.
+                        We handle the logistics,
+                        so you can focus on growing your business. Very soon, we'll also offer production and delivery
+                        in the USA and Australia.
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(5)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">Do I need to keep stock
+                            of the canvas prints or make any initial investments?</h3>
+                        <img id="arrow-5" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-5"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        No, there's no upfront cost or need to keep stock. You only pay for the canvas prints that you
+                        actually sell. This means you can offer a wide range of canvas prints without any financial
+                        risk.
+                    </div>
+                </div>
+                <!-- FAQ Item 6 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(6)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">Can I order a sample to
+                            check the quality?</h3>
+                        <img id="arrow-6" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-6"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        Yes, it's easy to order a sample to check the quality. Simply place an order from the Printumo
+                        dashboard, when the products have been set up.
+                    </div>
+                </div>
+                <!-- FAQ Item 7 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(7)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">Is there a cost to sign
+                            up for Printumo?</h3>
+                        <img id="arrow-7" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-7"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        No, it's completely free. You only pay for the canvas prints that you sell.
+                    </div>
+                </div>
+                <!-- FAQ Item 8 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(8)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">Can I integrate my
+                            webshop for automatic order processing?</h3>
+                        <img id="arrow-8" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-8"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        Yes, we currently have a Shopify app that makes syncronizing your products and orders with
+                        Printumo easy. Every order will automatically go into your Printumo account, and when the
+                        product is shipped, the tracking number is sent back to Shopify and your customer. We're also
+                        working on integrations with other platforms. Until then, you can always manually process orders
+                        from your Printumo dashboard. It wont take more than a few minutes per order.
+                    </div>
+                </div>
+                <!-- FAQ Item 9 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(9)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">What kind of artwork is
+                            available in the library?</h3>
+                        <img id="arrow-9" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-9"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        We have a wide range of artworks in the library we're given access to, pretty much everything
+                        you can think of. A huge amount of work have been put into categorizing the artworks, so you can
+                        easily find what you're looking for. We're continuously having more and more artworks added to
+                        the library, so you'll always have something new to offer your customers.
+                    </div>
+                </div>
+                <!-- FAQ Item 10 -->
+                <div class="bg-[#F1F2F6] py-4 px-5 rounded-[15px]">
+                    <button class="flex items-center justify-between w-full gap-[15px]" onclick="toggleAccordion(10)">
+                        <!-- Question -->
+                        <h3 class="text-black-5 font-bold text-sm lg:text-2xl text-start flex-1">How do I get in touch
+                            if I need help? Or, if an order arrive damaged?</h3>
+                        <img id="arrow-10" class="w-[14px] transition-transform duration-300"
+                            src="./assets/lp2/icons/arrow.svg" alt="arrow">
+                    </button>
+                    <!-- answer  -->
+                    <div id="content-10"
+                        class="accordion-content overflow-hidden text-[13px] lg:text-lg text-[#202224] transition-all duration-300 max-h-0 ">
+                        <span class="block bg-[#dad6e3] w-full h-[1px] my-3 lg:my-[15px]"></span>
+                        You will get a dedicated account manager, that will help you all the way. You can always reach
+                        out to us with any questions or concerns you might have. If an order arrives damaged, you can
+                        submit the image evidence to us, and we'll take care of the rest.
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+        <!-- Get started with us section start here  -->
+        <section class="px-4 py-10 lg:py-[90px]">
+            <div class="px-4 max-w-[1328px] mx-auto p-5 lg:p-[50px] bg-[#f2eefd] rounded-[30px]">
+                <div class=" flex justify-between lg:items-center flex-col lg:flex-row gap-y-[35px]">
+                    <div class="flex-1">
+                        <div>
+                            <h2 class="text-3xl lg:text-[50px] font-semibold text-purple-1 leading-tight">
+                                Get started with Printumo — 100% Free & Risk-Free!
+                            </h2>
+                            <h4
+                                class="font-bold text-[#202224] text-base lg:text-xl tracking-[.25px] pb-3 lg:pb-[15px] pt-[25px] lg:pt-[35px]">
+                                Ready to start selling canvas prints and boost your revenue?
+                            </h4>
+                            <p class=" text-[#202224] text-base lg:text-xl tracking-[.25px] max-w-[500px]">
+                                Sign up today to access all our features and +200K artworks. No upfront costs, no risk —
+                                just results.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-[#e0d7fa] rounded-[25px] lg:rounded-[33px] py-[25px] px-5 lg:py-[18px] lg:px-[22px] mt-[30px] mb-[15px] lg:my-[35px] flex items-center gap-5 lg:gap-[30px] flex-col lg:flex-row">
+                            <div class="w-full lg:w-[156px]">
+                                <img src="./assets/lp2/img/next-1x.png" srcset="
+                                    ./assets/lp2/img/next-1x.png 1x,
+                                    ./assets/lp2/img/next-2x.png 2x,
+                                    ./assets/lp2/img/next-3x.png 3x" class="w-full sm:w-1/2 lg:w-full mx-auto"
+                                    alt="Next Img">
+                            </div>
+                            <div class="flex-1">
+                                <h4
+                                    class="text-xl lg:text-[22px] text-center lg:text-start font-semibold text-purple-1">
+                                    What Happens Next?</h4>
+                                <p
+                                    class="text-sm lg:text-base tracking-[.25px] text-[#626380] text-center lg:text-start mt-[9px] lg:mt-3">
+                                    Once you sign up, our team will reach out to guide you through the setup process and
+                                    get you up and running quickly.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class=" text-[#202224] text-xs lg:text-base tracking-[.25px] italic">
+                                We'll contact you shortly to activate your account and help you start testing Printumo
+                                for free!
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-white-1 max-w-full lg:max-w-[456px] ms-auto p-6 rounded-[24px]">
+                            <h3 class="font-semibold text-base lg:text-2xl text-black-5">Fill the form to get started
+                            </h3>
+                            <form action="" class="space-y-[10px] lg:space-y-[15px] mt-[10px] lg:mt-[15px]">
+
+                                <input type="email" name=""
+                                    class="w-full h-[42px] lg:h-[62px] rounded-xl bg-[#F6F6F6] ps-4 textxs lg:text-lg focus-visible:outline-none"
+                                    placeholder="Email" id="">
+                                <input type="text" name=""
+                                    class="w-full h-[42px] lg:h-[62px] rounded-xl bg-[#F6F6F6] ps-4 textxs lg:text-lg focus-visible:outline-none"
+                                    placeholder="Phone Number" id="">
+                                <input type="text" name=""
+                                    class="w-full h-[42px] lg:h-[62px] rounded-xl bg-[#F6F6F6] ps-4 textxs lg:text-lg focus-visible:outline-none"
+                                    placeholder="Website" id="">
+                                <textarea name="" placeholder="Introduction to your business, target markets and goals"
+                                    class="w-full h-[162px] rounded-xl bg-[#F6F6F6] ps-4 pt-[10px] textxs lg:text-lg focus-visible:outline-none"
+                                    id=""></textarea>
+                                <button
+                                    class="w-full py-[10px] lg:py-[14px] rounded-lg lg:rounded-xl font-semibold text-xs lg:text-lg text-white-1 bg-purple-1 border-purple-1 hover:bg-[#0D152E] border-2 hover:border-[#0D152E] tracking-[1px]">Get
+                                    Free Access Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer start here  -->
+    <footer class="bg-[#0C0F18]">
+        <div
+            class="text-white-1 px-4 max-w-[1328px] mx-auto pt-[43px] py-[58px] lg:py-20 flex flex-col lg:flex-row justify-center lg:items-center lg:gap-16 2xl:gap-[176px]">
+            <div class="w-full lg:max-w-[326px]">
+                <div class="w-[262px]">
+                    <img src="./assets/lp/footerlogo.svg" class="w-full" alt="">
+                </div>
+                <p class="text-[#94959B] text-base lg:text-xl pt-[24px] pb-[41px] lg:pt-[34px] lg:pb-[48px]">premium
+                    print-on-demand platform for artists, featuring high-quality canvas and poster options.</p>
+                <div class="gap-5 hidden sm:flex pb-[41px] lg:pb-0">
+                    <a href="#"
+                        class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                        <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+                    </a>
+                    <a href="#"
+                        class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                        <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+                    </a>
+                    <a href="#"
+                        class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                        <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col sm:flex-row sm:justify-between gap-y-[31px]">
+                <div>
+                    <h3 class="text-2xl font-bold">Sitemap</h3>
+                    <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+                        <li>
+                            <a href="/src/landingPage.html" class="hover:text-white-1">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">How it works</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">Services</a>
+                        </li>
+                        <li>
+                            <a href="/src/about-us.html" class="hover:text-white-1">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Landing</h3>
+                    <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+                        <li>
+                            <a href="#" class="hover:text-white-1">Why Create with Us?</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">How It Works</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">Store connection</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">Customer reviews</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Utility</h3>
+                    <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+                        <li>
+                            <a href="#" class="hover:text-white-1">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="terms-&-conditions.html" class="hover:text-white-1">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="flex gap-5 sm:hidden mt-[46px]">
+                <a href="#"
+                    class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                    <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+                </a>
+                <a href="#"
+                    class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                    <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+                </a>
+                <a href="#"
+                    class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                    <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+                </a>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Script  -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="./script/navbar.js"></script>
+    <script src="./script/slider.js"></script>
+    <script src="./script/faq.js"></script>
+    <script src="./script/calculate.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Sell Licensed Wall Art & Grow Your Business - Printumo</title>
+  <style>
+    @keyframes pulse-white {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+    @keyframes pulse-purple {
+      0% {
+        box-shadow: 0 0 0 0 rgba(123, 83, 231, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(123, 83, 231, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(123, 83, 231, 0);
+      }
+    }
+    .animate-pulse-white {
+      animation: pulse-white 2s infinite;
+    }
+    .animate-pulse-purple {
+      animation: pulse-purple 2s infinite;
+    }
+    
+    /* Custom Scrollbar Styling */
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background: #f7f5fb;
+      border-radius: 10px;
+    }
+
+    /* Firefox */
+    .overflow-x-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #f7f5fb transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- Hero Section -->
+    <section id="resellerHero" class="pt-[40px] pb-[60px] md:pt-[80px] md:pb-[100px]">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="grid grid-cols-12 md:gap-8 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center justify-center md:justify-start order-1 md:order-1">
+            <!-- content -->
+            <div class="text-center md:text-left">
+              <div class="mb-6">
+                <p class="text-purple-1 bg-[#7B53E726] rounded-xl px-3 py-2 inline-block font-bold text-xs sm:text-base">
+                    🎨 200,000+ Licensed Artworks
+                </p>
+              </div>
+              <h1 class="md:max-w-[576px] max-w-[343px] md:text-[58px] text-[32px] text-[#222222] font-bold md:leading-[76px]">
+                Sell Licensed Wall Art & Grow Your Business
+              </h1>
+              <ul class="text-sm lg:text-xl text-black-7 font-normal py-6 space-y-3">
+                <li class="flex text-left items-center gap-x-3">
+                    <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                    <span class="flex-1">Expand your product portfolio with
+                        zero stock</span>
+                </li>
+                <li class="flex text-left items-center gap-x-3">
+                    <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                    <span class="flex-1">Increase your order value with Prints</span>
+                </li>
+                <li class="flex text-left items-center gap-x-3">
+                    <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                    <span class="flex-1">Choose from 200k+ unique artworks in 1 library</span>
+                </li>
+              </ul>
+
+              
+              <!-- Email Signup Component -->
+              <div class="w-full max-w-[494px] mx-auto md:mx-0">
+                <!-- Product Type Toggle Buttons -->
+                 <div class="mb-4">
+                   <div class="flex rounded-xl bg-[#f7f5fb] p-1">
+                     <button 
+                       type="button" 
+                       class="product-type-btn active flex-1 py-3 px-4 text-sm font-bold rounded-lg bg-[#7B53E7] text-white-1 transition-all duration-200"
+                       data-type="canvas"
+                     >
+                       Canvas
+                     </button>
+                     <button 
+                       type="button" 
+                       class="product-type-btn flex-1 py-3 px-4 text-sm font-medium rounded-lg bg-transparent text-black-5 transition-all duration-200 hover:text-[#7B53E7]"
+                       data-type="paper"
+                     >
+                       Fine Art Paper
+                     </button>
+                   </div>
+                 </div>
+                
+                                 <!-- Email Signup -->
+                 <div class="relative">
+                   <input 
+                     type="email" 
+                     id="heroEmail"
+                     placeholder="Enter your email" 
+                     class="w-full h-[56px] pl-4 pr-[160px] border-2 border-gray-200 rounded-xl focus:border-purple-1 focus:outline-none text-base"
+                     required
+                   />
+                   <button 
+                     type="button" 
+                     onclick="openAccessPopup()"
+                     class="absolute right-2 top-2 bottom-2 px-4 bg-[#7B53E7] text-white-1 rounded-lg hover:bg-[#6B46C1] font-bold text-sm transition-colors whitespace-nowrap"
+                   >
+                     Get Free Access
+                   </button>
+                 </div>
+                
+                <!-- Free access text and Talk to Sales button -->
+                 <div class="flex flex-col items-start sm:flex-row sm:justify-between mt-2 gap-4">
+                   <p class="text-xs text-gray-500">
+                     Free access · Browse 200k+ artworks · No commitment
+                   </p>
+                   <a href="#" class="inline-flex items-center gap-1 text-xs text-gray-600 hover:text-purple-1 transition-colors duration-200">
+                     <span>Talk to sales</span>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                       <path d="M5 12h14"></path>
+                       <path d="M12 5l7 7-7 7"></path>
+                     </svg>
+                   </a>
+                 </div>
+               </div>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 flex items-center lg:justify-end justify-center md:justify-start order-2 md:order-2">
+            <!-- Hero Image/Video -->
+            <div class="w-full relative">
+              <div class="shadow-2xl rounded-xl overflow-hidden">
+                  <div class="w-full h-auto">
+                    <img src="./assets/reseller/art-library-preview.gif" alt="Art library preview showing 200k+ licensed artworks" class="w-full h-full object-cover"
+                    />
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Art Library Preview Section -->
+    <section class="px-0 md:px-4 md:max-w-[1328px] md:mx-auto py-16 md:py-24">
+      <div class="relative md:rounded-[20px] overflow-hidden">
+        <!-- Art Library Image with Blur -->
+        <img 
+          src="./assets/reseller/art-library.png" 
+          alt="Art library preview showing 200k+ licensed artworks"
+          class="w-full h-auto object-cover blur-sm"
+        />
+        
+        <!-- Overlay Component -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="bg-white rounded-2xl p-4 md:p-8 max-w-xs md:max-w-sm mx-4 shadow-2xl border border-gray-200" style="background-color: #ffffff !important; backdrop-filter: none !important;">
+            <div class="text-center">
+              <h2 class="text-xl md:text-3xl font-bold text-black-5 mb-3 md:mb-4">
+                Art Library
+              </h2>
+              <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
+                Browse 200k+ licensed artworks for free.
+              </p>
+              <button 
+                onclick="openAccessPopup()"
+                class="w-full h-[48px] md:h-[56px] bg-[#7B53E7] text-white-1 rounded-xl hover:bg-[#6B46C1] font-bold text-sm md:text-base transition-colors flex items-center justify-center gap-2"
+              >
+                <span>Get Access Now</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+     <!-- Collections Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-black-5 text-3xl lg:text-[40px] mb-6">
+          Browse 200k+ Licensed Artworks Instantly
+        </h2>
+        <p class="text-base lg:text-xl text-black-5 max-w-[600px] mx-auto">
+          No signup required. Click below to explore our massive collection of ready-to-sell licensed artwork.
+        </p>
+      </div>
+      
+      <div class="space-y-16">
+        
+        <!-- Best Sellers Collection -->
+                  <div class="space-y-6">
+            <div class="space-y-1">
+              <h3 class="text-2xl lg:text-3xl font-bold text-black-5">Best Sellers</h3>
+              <p class="text-gray-500 text-sm">2,847 artworks in this collection</p>
+            </div>
+          <div class="relative">
+            <div class="flex overflow-x-auto scrollbar-hide gap-4 pb-4 -mx-4 md:mx-0 px-4 md:px-0">
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/1.png" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/2.png" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/3.png" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/4.png" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women.svg" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/sun.svg" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/strawberry.svg" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women2.svg" alt="Best seller artwork" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex justify-end mt-4">
+              <button 
+                onclick="openAccessPopup()"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-purple-1 text-white-1 rounded-xl hover:bg-[#6B46C1] font-semibold transition-colors"
+              >
+                <span>Explore the full collection</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Collection -->
+                  <div class="space-y-6">
+            <div class="space-y-1">
+              <h3 class="text-2xl lg:text-3xl font-bold text-black-5">New</h3>
+              <p class="text-gray-500 text-sm">1,423 artworks in this collection</p>
+            </div>
+          <div class="relative">
+            <div class="flex overflow-x-auto scrollbar-hide gap-4 pb-4 -mx-4 md:mx-0 px-4 md:px-0">
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women2.svg" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/4.png" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/1.png" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/sun.svg" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/3.png" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/strawberry.svg" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/2.png" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women.svg" alt="New artwork" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex justify-end mt-4">
+              <button 
+                onclick="openAccessPopup()"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-purple-1 text-white-1 rounded-xl hover:bg-[#6B46C1] font-semibold transition-colors"
+              >
+                <span>Explore the full collection</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Illustrations Collection -->
+                  <div class="space-y-6">
+            <div class="space-y-1">
+              <h3 class="text-2xl lg:text-3xl font-bold text-black-5">Illustrations</h3>
+              <p class="text-gray-500 text-sm">34,562 artworks in this collection</p>
+            </div>
+          <div class="relative">
+            <div class="flex overflow-x-auto scrollbar-hide gap-4 pb-4 -mx-4 md:mx-0 px-4 md:px-0">
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women.svg" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/strawberry.svg" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/sun.svg" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women2.svg" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/1.png" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/2.png" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/3.png" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/4.png" alt="Illustration artwork" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex justify-end mt-4">
+              <button 
+                onclick="openAccessPopup()"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-purple-1 text-white-1 rounded-xl hover:bg-[#6B46C1] font-semibold transition-colors"
+              >
+                <span>Explore the full collection</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Black & White Collection -->
+                  <div class="space-y-6">
+            <div class="space-y-1">
+              <h3 class="text-2xl lg:text-3xl font-bold text-black-5">Black & White</h3>
+              <p class="text-gray-500 text-sm">18,934 artworks in this collection</p>
+            </div>
+          <div class="relative">
+            <div class="flex overflow-x-auto scrollbar-hide gap-4 pb-4 -mx-4 md:mx-0 px-4 md:px-0">
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/3.png" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/1.png" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women.svg" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/4.png" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/2.png" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/sun.svg" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/strawberry.svg" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women2.svg" alt="Black & White artwork" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex justify-end mt-4">
+              <button 
+                onclick="openAccessPopup()"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-purple-1 text-white-1 rounded-xl hover:bg-[#6B46C1] font-semibold transition-colors"
+              >
+                <span>Explore the full collection</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maps Collection -->
+                  <div class="space-y-6">
+            <div class="space-y-1">
+              <h3 class="text-2xl lg:text-3xl font-bold text-black-5">Maps</h3>
+              <p class="text-gray-500 text-sm">7,856 artworks in this collection</p>
+            </div>
+          <div class="relative">
+            <div class="flex overflow-x-auto scrollbar-hide gap-4 pb-4 -mx-4 md:mx-0 px-4 md:px-0">
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/2.png" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/4.png" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/1.png" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/3.png" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women.svg" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/sun.svg" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/strawberry.svg" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" onclick="openAccessPopup()">
+                <img src="./assets/product/arts/women2.svg" alt="Map artwork" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="flex justify-end mt-4">
+              <button 
+                onclick="openAccessPopup()"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-purple-1 text-white-1 rounded-xl hover:bg-[#6B46C1] font-semibold transition-colors"
+              >
+                <span>Explore the full collection</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Explore All Collections - Blurred -->
+                <div class="relative">
+          <!-- Everything Blurred -->
+          <div class="space-y-6 blur-sm">
+            <div class="space-y-1">
+              <h3 class="text-2xl lg:text-3xl font-bold text-black-5">All Collections</h3>
+              <p class="text-gray-500 text-sm">200,000+ artworks</p>
+            </div>
+            <div class="flex gap-4 pb-4 -mx-4 md:mx-0 px-4 md:px-0 overflow-hidden">
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/1.png" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/product/arts/women.svg" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/2.png" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/product/arts/sun.svg" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/3.png" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/product/arts/strawberry.svg" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/4.png" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex-shrink-0 w-48 h-60 bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="./assets/product/arts/women2.svg" alt="All collections artwork" class="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fade-out Gradient Overlay -->
+                      <div class="absolute bottom-0 h-60 pointer-events-none z-10" style="left: 50%; right: auto; width: 100vw; margin-left: -50vw; background: linear-gradient(to top, #ffffff 0%, #ffffff 20%, rgba(255,255,255,0.8) 60%, transparent 100%);"></div>
+          
+          <!-- Simple Button Overlay -->
+          <div class="absolute inset-0 flex items-center justify-center z-20">
+            <button 
+              onclick="openAccessPopup()"
+              class="px-8 py-3 bg-[#7B53E7] text-white-1 rounded-xl hover:bg-[#6B46C1] font-bold text-base transition-colors inline-flex items-center gap-2"
+            >
+              <span>Explore All 254,875 artworks</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="px-8 max-w-[1328px] mx-auto py-16 bg-[#f7f5fb] rounded-[40px] my-10">
+      <div class="text-center mb-16">
+        <h2 class="font-bold text-black-5 text-3xl lg:text-[40px] mb-6">
+          Start Selling in 3 Simple Steps
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6 bg-purple-1 rounded-full flex items-center justify-center">
+            <span class="text-white-1 text-2xl font-bold">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-black-5 mb-4">Browse Art Library</h3>
+          <p class="text-black-7 text-base lg:text-lg">
+            Explore our 200k+ licensed artworks. No signup required - start browsing immediately.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6 bg-purple-1 rounded-full flex items-center justify-center">
+            <span class="text-white-1 text-2xl font-bold">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-black-5 mb-4">Add to Your Store</h3>
+          <p class="text-black-7 text-base lg:text-lg">
+            One-click integration with your existing store. Works with Etsy, Shopify, and more.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6 bg-purple-1 rounded-full flex items-center justify-center">
+            <span class="text-white-1 text-2xl font-bold">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-black-5 mb-4">Start Earning</h3>
+          <p class="text-black-7 text-base lg:text-lg">
+            We handle printing and shipping. You keep the profits and grow your business.
+          </p>
+                 </div>
+       </div>
+       
+       <div class="text-center mt-12">
+         <button onclick="openAccessPopup()" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+           Unlock Free Art Library
+         </button>
+               </div>
+      </section>
+
+      <!-- Our Products Section -->
+      <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+        <div class="text-center mb-16">
+          <h2 class="font-bold text-3xl lg:text-5xl mb-6">
+            Our products
+          </h2>
+        </div>
+        
+        <div class="w-full">
+          <img 
+            src="./assets/reseller/products.png" 
+            alt="Our products preview showing canvas prints and wall art options"
+            class="w-full h-auto object-cover rounded-xl"
+          />
+        </div>
+      </section>
+     
+      <!-- Sell & Ship start here  -->
+      <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+        <div>
+          <h2
+            class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 font-extrabold text-center">
+            Sell, print & ship to 28 countries
+          </h2>
+          <p
+            class="text-black-7 text-base lg:text-xl text-center mx-auto max-w-[900px] mt-5 lg:mt-[25px]">
+            Each canvas print is printed, framed, and ready to ship within days.
+            With production facilities in the EU, UK, USA, Canada, and
+            Australia, we ensure fast, reliable, and hassle-free delivery to you
+            and your customers.
+          </p>
+        </div>
+        <div class="w-full max-w-[800px] mx-auto py-8 lg:py-16">
+          <img
+            src="./assets/lp3/printing-shipping-world.jpg"
+            srcset="
+              ./assets/lp3/printing-shipping-world.jpg   1x,
+              ./assets/lp3/printing-shipping-world-2.jpg 2x,
+              ./assets/lp3/printing-shipping-world-3.jpg 3x
+            "
+            class=""
+            alt="printing & shipping" />
+        </div>
+        <div
+          class="flex flex-col lg:flex-row gap-5 lg:gap-[25px] justify-between">
+          <div class="w-full lg:w-1/3">
+            <h3
+              class="font-extrabold text-center lg:text-start text-black-5 text-xl lg:text-[35px]">
+              We ship from
+            </h3>
+            <div
+              class="bg-[#5E33B90D] grid grid-cols-2 font-medium text-xs lg:text-base text-black-5 p-[15px] lg:p-[25px] rounded-[20px] lg:rounded-[30px] mt-[15px] lg:mt-8 gap-3 lg:gap-5">
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-kingdom.svg"
+                    class="w-[23px]"
+                    alt="united kingdom"
+                /></span>
+                <span class="">London, UK</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/spain.svg"
+                    class="w-[23px]"
+                    alt="spain"
+                /></span>
+                <span class="">Barcelona, Spain</span>
+              </div>
+
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-states.svg"
+                    class="w-[23px]"
+                    alt="United States"
+                /></span>
+                <span class="">Dallas, US</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-states.svg"
+                    class="w-[23px]"
+                    alt="United States"
+                /></span>
+                <span class="">Los Angeles, US</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-states.svg"
+                    class="w-[23px]"
+                    alt="United States"
+                /></span>
+                <span class="">Sacramento, US</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-states.svg"
+                    class="w-[23px]"
+                    alt="United States"
+                /></span>
+                <span class="">Raleigh, US</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp3/canada.svg"
+                    class="w-[23px]"
+                    alt="canada"
+                /></span>
+                <span class="">Toronto, CA</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp3/canada.svg"
+                    class="w-[23px]"
+                    alt="canada"
+                /></span>
+                <span class="">Vancouver, CA</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/czech.svg"
+                    class="w-[23px]"
+                    alt="czech"
+                /></span>
+                <span class="">Prague, Czechia</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/australia.svg"
+                    class="w-[23px]"
+                    alt="australia"
+                /></span>
+                <span class="">Melbourne, AU</span>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-2/3">
+            <h3
+              class="font-extrabold text-center lg:text-start text-black-5 text-xl lg:text-[35px]">
+              We ship to
+            </h3>
+            <div
+              class="bg-[#5E33B90D] grid grid-cols-2 md:grid-cols-4 font-medium text-xs lg:text-base text-black-5 p-[15px] lg:p-[25px] rounded-[20px] lg:rounded-[30px] mt-[15px] lg:mt-8 gap-3 lg:gap-5">
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/australia.svg"
+                    class="w-[23px]"
+                    alt="australia"
+                /></span>
+                <span class="">Australia</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/austria.svg"
+                    class="w-[23px]"
+                    alt="Austria"
+                /></span>
+                <span class="">Austria </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/belgium.svg"
+                    class="w-[23px]"
+                    alt="Belgium"
+                /></span>
+                <span class="">Belgium </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/bulgaria.svg"
+                    class="w-[23px]"
+                    alt="Bulgaria"
+                /></span>
+                <span class="">Bulgaria </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/croatia.svg"
+                    class="w-[23px]"
+                    alt="Croatia"
+                /></span>
+                <span class="">Croatia </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/czech.svg"
+                    class="w-[23px]"
+                    alt="Czechia"
+                /></span>
+                <span class="">Czechia </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/denmark.svg"
+                    class="w-[23px]"
+                    alt="Denmark"
+                /></span>
+                <span class="">Denmark </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/estonia.svg"
+                    class="w-[23px]"
+                    alt="Estonia"
+                /></span>
+                <span class="">Estonia </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/finland.svg"
+                    class="w-[23px]"
+                    alt="Finland"
+                /></span>
+                <span class="">Finland </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/france.svg"
+                    class="w-[23px]"
+                    alt="France"
+                /></span>
+                <span class="">France </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/germany.svg"
+                    class="w-[23px]"
+                    alt="Germany"
+                /></span>
+                <span class="">Germany</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/greece.svg"
+                    class="w-[23px]"
+                    alt="Greece"
+                /></span>
+                <span class="">Greece </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/hungary.svg"
+                    class="w-[23px]"
+                    alt="Hungary"
+                /></span>
+                <span class="">Hungary </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/ireland.svg"
+                    class="w-[23px]"
+                    alt="Ireland"
+                /></span>
+                <span class="">Ireland </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/italy.svg"
+                    class="w-[23px]"
+                    alt="Italy"
+                /></span>
+                <span class="">Italy </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/latvia.svg"
+                    class="w-[23px]"
+                    alt="Latvia"
+                /></span>
+                <span class="">Latvia </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/lithuania.svg"
+                    class="w-[23px]"
+                    alt="Lithuania"
+                /></span>
+                <span class="">Lithuania </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/luxembourg.svg"
+                    class="w-[23px]"
+                    alt="Luxembourg"
+                /></span>
+                <span class="">Luxembourg </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/netherlands.svg"
+                    class="w-[23px]"
+                    alt="Netherlands"
+                /></span>
+                <span class="">Netherlands </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/norway.svg"
+                    class="w-[23px]"
+                    alt="Norway"
+                /></span>
+                <span class="">Norway </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/poland.svg"
+                    class="w-[23px]"
+                    alt="Poland"
+                /></span>
+                <span class="">Poland</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/portugal.svg"
+                    class="w-[23px]"
+                    alt="Portugal"
+                /></span>
+                <span class="">Portugal </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/romania.svg"
+                    class="w-[23px]"
+                    alt="Romania"
+                /></span>
+                <span class="">Romania </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/slovakia.svg"
+                    class="w-[23px]"
+                    alt="Slovakia"
+                /></span>
+                <span class="">Slovakia </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/slovenia.svg"
+                    class="w-[23px]"
+                    alt="Slovenia"
+                /></span>
+                <span class="">Slovenia </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/spain.svg"
+                    class="w-[23px]"
+                    alt="Spain"
+                /></span>
+                <span class="">Spain </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/sweden.svg"
+                    class="w-[23px]"
+                    alt="Sweden"
+                /></span>
+                <span class="">Sweden </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/switzerland.svg"
+                    class="w-[23px]"
+                    alt="Switzerland"
+                /></span>
+                <span class="">Switzerland </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-kingdom.svg"
+                    class="w-[23px]"
+                    alt="United Kingdom"
+                /></span>
+                <span class="">United Kingdom </span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp2/icons/united-states.svg"
+                    class="w-[23px]"
+                    alt="United States"
+                /></span>
+                <span class="">United States</span>
+              </div>
+              <!-- single country  -->
+              <div class="flex items-center gap-2">
+                <span
+                  ><img
+                    src="./assets/lp3/canada.svg"
+                    class="w-[23px]"
+                    alt="canada"
+                /></span>
+                <span class="">Canada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Integrations Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+        <div class="text-center mb-16">
+            <h2 class="font-extrabold text-black-5 text-3xl sm:text-5xl xl:text-[58px]">Seamless Integrations</h2>
+            <p class="text-black-7 text-base lg:text-xl mx-auto max-w-[800px] mt-5">Currently live with Shopify, with more platforms coming soon. Selling 10+ prints monthly? We'll help set up your integration regardless of platform.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Shopify -->
+            <div class="bg-[#f7f5fb] rounded-[30px] p-8">
+                <div class="flex justify-left items-end mb-6">
+                    <img src="./assets/integrations/shopify.svg" alt="Shopify" class="h-[45px] w-auto" />
+                </div>
+                <h3 class="text-2xl font-bold text-black-5 mb-4">Shopify</h3>
+                <p class="text-black-7 text-base lg:text-xl">Automatically sync your Shopify products and orders</p>
+            </div>
+
+            <!-- Etsy -->
+            <div class="bg-[#f7f5fb] rounded-[30px] p-8">
+                <div class="flex justify-left items-end mb-6">
+                    <img src="./assets/integrations/etsy.svg" alt="Etsy" class="h-[45px] w-auto" />
+                </div>
+                <h3 class="text-2xl font-bold text-black-5 mb-4">Etsy</h3>
+                <p class="text-black-7 text-base lg:text-xl">Connect your Etsy shop for seamless order fulfillment</p>
+            </div>
+
+            <!-- Other Integrations -->
+            <div class="bg-[#f7f5fb] rounded-[30px] p-8">
+                <h3 class="text-2xl font-bold text-black-5 mb-2">+6 Other Integrations</h3>
+                
+                <!-- Overlapping logos -->
+                <div class="flex mb-4">
+                    <!-- Stack of overlapping logos -->
+                    <div class="flex -space-x-4">
+                        <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[7]">
+                            <img src="./assets/integrations/woocommerce.svg" alt="WooCommerce" class="w-10 h-10 object-contain" />
+                        </div>
+                        <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[6]">
+                            <img src="./assets/integrations/wix.svg" alt="Wix" class="w-10 h-10 object-contain" />
+                        </div>
+                        <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[5]">
+                            <img src="./assets/integrations/squarespace.svg" alt="Squarespace" class="w-10 h-10 object-contain" />
+                        </div>
+                        <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[4]">
+                            <img src="./assets/integrations/bigcommerce.svg" alt="BigCommerce" class="w-10 h-10 object-contain" />
+                        </div>
+                        <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[3]">
+                            <img src="./assets/integrations/amazon.svg" alt="Amazon" class="w-10 h-10 object-contain" />
+                        </div>
+                        <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[2]">
+                            <img src="./assets/integrations/ebay.svg" alt="eBay" class="w-10 h-10 object-contain" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API section -->
+                <div>
+                    <p class="text-gray-600 text-sm mb-4">Or use our API:</p>
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-1">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        <span class="text-base font-semibold text-black-5">Printumo API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <button onclick="openAccessPopup()" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+            Unlock Free Art Library
+          </button>
+        </div>
+    </section>
+
+      <!-- feature  -->
+      <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24 space-y-24">
+        <!-- Mockup-generator   -->
+        <div
+          class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+          <div class="flex-1">
+            <img
+              src="./assets/lp3/f2-1x.png"
+              srcset="
+                ./assets/lp3/f2-1x.png 1x,
+                ./assets/lp3/f2-2x.png 2x,
+                ./assets/lp3/f2-3x.png 3x
+              "
+              class="w-full sm:w-1/2 lg:w-full mx-auto"
+              alt="sell Img" />
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">
+              Mockup generator
+            </h3>
+            <ul
+              class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Mockups that sell:</span> Create
+                  stunning, realistic mockups to boost your sales.</span
+                >
+              </li>
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Showcase your design:</span> We
+                  make it easy to showcase your art, so selling can be
+                  too.</span
+                >
+              </li>
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Simple and fast:</span> Upload
+                  your art, and let the mockup generator do the rest.</span
+                >
+              </li>
+            </ul>
+            <div class="">
+              <button onclick="openAccessPopup()" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                Unlock Free Art Library
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Affordable Prints -->
+        <div
+          class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+          <div class="flex-1 order-2 lg:order-1">
+            <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">
+              Affordable prints
+            </h3>
+            <ul
+              class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Competitive pricing:</span>
+                  Quality prints at some of the lowest prices in the
+                  market.</span
+                >
+              </li>
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">No upfront costs:</span> Only pay
+                  when you make a sale — making it risk-free.</span
+                >
+              </li>
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">High profit margins:</span>
+                  Affordable for customers, profitable for your business.</span
+                >
+              </li>
+            </ul>
+            <div class="">
+              <button onclick="openAccessPopup()" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                Unlock Free Art Library
+              </button>
+            </div>
+          </div>
+          <div class="flex-1 order-1 lg:order-2">
+            <img
+              src="./assets/lp3/f3-1x.png"
+              srcset="
+                ./assets/lp3/f3-1x.png 1x,
+                ./assets/lp3/f3-2x.png 2x,
+                ./assets/lp3/f3-3x.png 3x
+              "
+              class="w-full sm:w-1/2 lg:w-full mx-auto"
+              alt="premium Img" />
+          </div>
+        </div>
+        <!-- Fast Fulfilment -->
+        <div
+          class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+          <div class="flex-1 order-1 lg:order-1">
+            <img
+              src="./assets/lp3/f5-1x.png"
+              srcset="
+                ./assets/lp3/f5-1x.png 1x,
+                ./assets/lp3/f5-2x.png 2x,
+                ./assets/lp3/f5-3x.png 3x
+              "
+              class="w-full sm:w-1/2 lg:w-full mx-auto"
+              alt="fast Img" />
+          </div>
+          <div class="flex-1 order-2 lg:order-2">
+            <h3 class="font-bold text-black-5 text-2xl lg:text-[40px]">
+              Fast fulfilment
+            </h3>
+            <ul
+              class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Fast production:</span> Orders
+                  are printed and shipped in just a few days.</span
+                >
+              </li>
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Reliable delivery:</span> Reach
+                  customers quickly with fast shipping across the EU, UK, USA,
+                  Canada and Australia.</span
+                >
+              </li>
+              <li class="flex gap-x-2">
+                <span class="flex-1"
+                  ><span class="font-semibold">Track every order:</span> Stay
+                  updated with real-time tracking for smooth customer
+                  service.</span
+                >
+              </li>
+            </ul>
+            <div class="">
+              <button onclick="openAccessPopup()" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                Unlock Free Art Library
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us section start here  -->
+      <section
+        class="px-4 max-w-[1328px] mx-auto py-[60px] lg:py-[110px] flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16 2xl:gap-[139px]">
+        <div class="w-full sm:w-[481px] relative">
+          <img
+            src="./assets/lp/about-us.jpg"
+            srcset="
+              ./assets/lp/about-us.jpg    1x,
+              ./assets/lp/about-us-2x.jpg 2x,
+              ./assets/lp/about-us-2x.jpg 3x
+            "
+            class="w-full rounded-tl-[0px] rounded-tr-[99px] rounded-br-[100px] rounded-bl-[100px]"
+            alt="" />
+          <div class="absolute w-4 lg:w-[27px] -top-8 lg:-top-14 left-[50%]">
+            <img src="./assets/lp/about1.svg" class="w-full" alt="" />
+          </div>
+          <div
+            class="absolute w-[135px] lg:w-[246px] -top-10 lg:-top-16 -left-4 lg:-left-[50px] -z-10">
+            <img src="./assets/lp/about2.svg" class="w-full" alt="" />
+          </div>
+        </div>
+        <div class="flex-1 text-black-5">
+          <h2 class="text-3xl lg:text-[40px] font-extrabold">About us</h2>
+          <h4 class="my-4 lg:mt-9 lg:mb-6 font-bold text-xl lg:text-[26px]">
+            For Artist, by Artists
+          </h4>
+          <div class="w-full max-w-[600px]">
+            <p class="text-base lg:text-xl">
+              Our journey began as artists selling our own art through our
+              webshop, but it was difficult to find a reliable print-on-demand
+              partner that offered the variety of sizes and framing options we
+              needed.
+            </p>
+            <p class="my-6 text-base lg:text-xl">
+              Frustrated by the lack of options for artists and creative
+              individuals, we decided to built a platform designed specifically
+              for canvas and posters.
+            </p>
+            <p class="mt-6 mb-6 lg:mb-[40px] text-base lg:text-xl">
+              At Printumo, we are dedicated to delivering the quality,
+              flexibility, and support artists need, so your creative vision can
+              shine in every print
+            </p>
+            <a href="/about-us" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+              Learn More About Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-purple-1" id="final-cta">
+      <div class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+          <!-- Left side - Content -->
+          <div class="flex-1 text-center md:text-left">
+            <h2 class="text-4xl lg:text-5xl text-white-1 font-bold mb-6">
+              Ready to Grow Your Business?
+            </h2>
+            <p class="text-lg lg:text-xl text-white-1 mb-10">
+              Access 200,000+ licensed artworks instantly. Start selling premium wall art today with zero upfront costs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <button onclick="openAccessPopup()" class="inline-block px-8 py-4 bg-white-1 border-2 border-white-1 text-black-5 rounded-xl hover:bg-transparent hover:text-white-1 font-semibold transition-all duration-150 text-lg animate-pulse-white">
+                Unlock Free Art Library
+              </button>
+            </div>
+          </div>
+          
+          <!-- Right side - Image -->
+          <div class="flex-1 flex items-center justify-center">
+            <img 
+              src="./assets/lp3/design-1x.png"
+              srcset="
+                ./assets/lp3/design-1x.png 1x,
+                ./assets/lp3/design-2x.png 2x,
+                ./assets/lp3/design-3x.png 3x
+              "
+              alt="Premium wall art design preview"
+              class="w-full max-w-md h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Access Popup -->
+  <div id="accessPopup" class="fixed inset-0 bg-gray-400 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+    <div class="rounded-2xl p-4 md:p-8 max-w-sm md:max-w-4xl mx-4 shadow-2xl relative z-10 border border-gray-300" style="background-color: #ffffff !important; backdrop-filter: none !important;">
+      
+      <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+        <!-- Left side - Form Content -->
+        <div class="flex-1 order-2 md:order-1">
+          <!-- Popup content -->
+          <div class="text-center md:text-left mb-6">
+            <h3 class="text-2xl font-bold text-black-5 mb-2">Unlock +200K Art Library</h3>
+            <p class="text-gray-600">Sell Licensed Wall Art & Grow your business (100% free to use)</p>
+          </div>
+          
+          <!-- Form -->
+          <form id="accessForm" class="space-y-4">
+            <!-- Product Type Toggle Buttons -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Choose your product type</label>
+              <div class="flex rounded-xl bg-[#f7f5fb] p-1">
+                <button 
+                  type="button" 
+                  class="popup-product-btn active flex-1 py-3 px-4 text-sm font-bold rounded-lg bg-[#7B53E7] text-white-1 transition-all duration-200"
+                  data-type="canvas"
+                >
+                  Canvas
+                </button>
+                <button 
+                  type="button" 
+                  class="popup-product-btn flex-1 py-3 px-4 text-sm font-medium rounded-lg bg-transparent text-black-5 transition-all duration-200 hover:text-[#7B53E7]"
+                  data-type="paper"
+                >
+                  Fine Art Paper
+                </button>
+              </div>
+            </div>
+            
+            <!-- Email Field -->
+            <div>
+              <label for="popupEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+              <input 
+                type="email" 
+                id="popupEmail"
+                class="w-full h-[56px] px-4 border-2 border-gray-200 rounded-xl focus:border-purple-1 focus:outline-none text-base"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            
+            <!-- Website Field (Optional) -->
+            <div>
+              <label for="popupWebsite" class="block text-sm font-medium text-gray-700 mb-2">
+                Website <span class="text-gray-400 font-normal">(optional)</span>
+              </label>
+              <input 
+                type="url" 
+                id="popupWebsite"
+                class="w-full h-[56px] px-4 border-2 border-gray-200 rounded-xl focus:border-purple-1 focus:outline-none text-base"
+                placeholder="https://yourwebsite.com"
+              />
+            </div>
+            
+            <!-- Continue Button -->
+            <div class="pt-4">
+              <button 
+                type="submit" 
+                class="w-full h-[56px] bg-[#7B53E7] text-white-1 rounded-xl hover:bg-[#6B46C1] font-bold text-base transition-colors flex items-center justify-center gap-2"
+              >
+                <span>Continue</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Right side - Mockup Image -->
+        <div class="flex-1 flex items-center justify-center order-1 md:order-2">
+          <img 
+            src="./assets/lp3/design-1x.png"
+            srcset="
+              ./assets/lp3/design-1x.png 1x,
+              ./assets/lp3/design-2x.png 2x,
+              ./assets/lp3/design-3x.png 3x
+            "
+            alt="Mockup generator preview showing canvas wall art"
+            class="w-full max-w-[200px] md:max-w-sm h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Product type toggle functionality
+    let selectedProductType = 'canvas'; // Default selection
+    let savedEmail = ''; // Store email between popup opens
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButtons = document.querySelectorAll('.product-type-btn');
+      
+      toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const selectedType = this.getAttribute('data-type');
+          
+          // Update stored selection
+          selectedProductType = selectedType;
+          
+          // Remove active state from all buttons
+          toggleButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.className = 'product-type-btn flex-1 py-3 px-4 text-sm font-medium rounded-lg bg-transparent text-black-5 transition-all duration-200 hover:text-[#7B53E7]';
+          });
+          
+          // Add active state to clicked button
+          this.classList.add('active');
+          this.className = 'product-type-btn active flex-1 py-3 px-4 text-sm font-bold rounded-lg bg-[#7B53E7] text-white-1 transition-all duration-200';
+          
+          console.log('Selected product type:', selectedProductType);
+        });
+      });
+    });
+    
+    // Function to get selected product type (for popup or form submission)
+    function getSelectedProductType() {
+      return selectedProductType;
+    }
+    
+    // Function to set product type programmatically
+    function setProductType(type) {
+      const button = document.querySelector(`[data-type="${type}"]`);
+      if (button) {
+        button.click();
+      }
+    }
+    
+    // Popup functionality
+    function openAccessPopup() {
+      const heroEmail = document.getElementById('heroEmail');
+      const popupEmail = document.getElementById('popupEmail');
+      const popup = document.getElementById('accessPopup');
+      
+      // Pre-fill email - use saved email or hero email, prioritizing saved email
+      if (savedEmail) {
+        popupEmail.value = savedEmail;
+        heroEmail.value = savedEmail; // Sync back to hero
+      } else if (heroEmail.value) {
+        popupEmail.value = heroEmail.value;
+        savedEmail = heroEmail.value; // Save to memory
+      }
+      
+      // Sync product type selection with popup buttons
+      updatePopupProductTypeButtons();
+      
+      // Show popup
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      
+      // Focus on email field if empty, otherwise website field
+      setTimeout(() => {
+        if (!popupEmail.value) {
+          popupEmail.focus();
+        } else {
+          document.getElementById('popupWebsite').focus();
+        }
+      }, 100);
+    }
+    
+    function updatePopupProductTypeButtons() {
+      const popupButtons = document.querySelectorAll('.popup-product-btn');
+      
+      popupButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.className = 'popup-product-btn flex-1 py-3 px-4 text-sm font-medium rounded-lg bg-transparent text-black-5 transition-all duration-200 hover:text-[#7B53E7]';
+      });
+      
+      // Set active button based on selectedProductType
+      const activeButton = document.querySelector(`.popup-product-btn[data-type="${selectedProductType}"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+        activeButton.className = 'popup-product-btn active flex-1 py-3 px-4 text-sm font-bold rounded-lg bg-[#7B53E7] text-white-1 transition-all duration-200';
+      }
+    }
+    
+    function closeAccessPopup() {
+      const popup = document.getElementById('accessPopup');
+      popup.classList.add('hidden');
+      document.body.style.overflow = ''; // Re-enable background scrolling
+    }
+    
+    // Close popup when clicking outside
+    document.addEventListener('DOMContentLoaded', function() {
+      const popup = document.getElementById('accessPopup');
+      
+      // Add event listeners for popup product type buttons
+      const popupToggleButtons = document.querySelectorAll('.popup-product-btn');
+      popupToggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const selectedType = this.getAttribute('data-type');
+          
+          // Update global selection
+          selectedProductType = selectedType;
+          
+          // Update popup buttons
+          updatePopupProductTypeButtons();
+          
+          // Also update hero toggle buttons to stay in sync
+          const heroButtons = document.querySelectorAll('.product-type-btn');
+          heroButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.className = 'product-type-btn flex-1 py-3 px-4 text-sm font-medium rounded-lg bg-transparent text-black-5 transition-all duration-200 hover:text-[#7B53E7]';
+          });
+          
+          const activeHeroButton = document.querySelector(`.product-type-btn[data-type="${selectedType}"]`);
+          if (activeHeroButton) {
+            activeHeroButton.classList.add('active');
+            activeHeroButton.className = 'product-type-btn active flex-1 py-3 px-4 text-sm font-bold rounded-lg bg-[#7B53E7] text-white-1 transition-all duration-200';
+          }
+          
+          console.log('Product type changed in popup:', selectedProductType);
+        });
+      });
+      
+      popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+          closeAccessPopup();
+        }
+      });
+      
+      // Save email changes in real-time
+      document.getElementById('popupEmail').addEventListener('input', function() {
+        savedEmail = this.value;
+        // Also sync to hero email
+        document.getElementById('heroEmail').value = this.value;
+      });
+      
+      // Open popup when pressing Enter in hero email field
+      document.getElementById('heroEmail').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          openAccessPopup();
+        }
+      });
+      
+      // Handle form submission
+      document.getElementById('accessForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Save email before submitting
+        savedEmail = document.getElementById('popupEmail').value;
+        
+        const formData = {
+          productType: selectedProductType,
+          email: document.getElementById('popupEmail').value,
+          website: document.getElementById('popupWebsite').value
+        };
+        
+        console.log('Form submitted:', formData);
+        
+        // Here you would typically send the data to your backend
+        // For now, just log the data and close the popup
+        closeAccessPopup();
+      });
+      
+      // Close popup with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeAccessPopup();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html> 

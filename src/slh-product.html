@@ -1,0 +1,3333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"/>
+
+  <!-- fancybox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+  <!-- Splide.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+  
+  <script>
+    // Ensure extensions are properly loaded
+    window.addEventListener('load', function() {
+      console.log('Window loaded. Available:', {
+        Splide: typeof Splide,
+        splideExtensions: window.splide?.Extensions,
+        AutoScroll: typeof AutoScroll !== 'undefined' ? AutoScroll : 'not found'
+      });
+    });
+  </script>
+
+  <title>Canvas Prints - Printumo</title>
+</head>
+
+<body class="position-relative pb-20"">
+  <main>
+    <!-- Product Header Section -->
+    <section class="py-8 md:py-12">
+      <!-- Component Styles -->
+      <style>
+        @keyframes pulse-purple {
+          0% {
+            box-shadow: 0 0 0 0 rgba(123, 83, 231, 0.7);
+          }
+          70% {
+            box-shadow: 0 0 0 10px rgba(123, 83, 231, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(123, 83, 231, 0);
+          }
+        }
+        .animate-pulse-purple {
+          animation: pulse-purple 2s infinite;
+        }
+        
+        /* Selected option styling */
+        .option-selected {
+          background-color: #7B53E7 !important;
+          color: white !important;
+        }
+        
+        .frame-selected {
+          border-color: #7B53E7 !important;
+          border-width: 3px !important;
+        }
+        
+
+        
+        /* Custom dropdown styling */
+        #country-dropdown:checked ~ label svg {
+          transform: rotate(180deg);
+        }
+        
+        #country-dropdown:checked ~ div:last-child {
+          display: block !important;
+          background-color: white !important;
+        }
+        
+        /* Size dropdown styling */
+        #size-dropdown:checked ~ label svg {
+          transform: rotate(180deg);
+        }
+        
+        #size-dropdown:checked ~ div:last-child {
+          display: block !important;
+          background-color: white !important;
+        }
+        
+
+        /* Mobile fixed buttons */
+        .page-fixed-buttons {
+          position: fixed;
+          z-index: 1000;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: white;
+          border-top: 1px solid #E0E0E0;
+          border-radius: 20px 20px 0 0;
+        }
+        /* Hide on larger screens */
+        @media (min-width: 1024px) {
+          .page-fixed-buttons {
+            display: none;
+          }
+        }
+
+        /* Desktop floating buttons - centered bottom */
+        .desktop-floating-buttons {
+          position: fixed;
+          z-index: 1000;
+          bottom: 24px;
+          left: 50%;
+          transform: translateX(-50%) translateY(120px);
+          background: white;
+          border: 1px solid #E0E0E0;
+          border-radius: 16px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+          padding: 16px;
+          width: 480px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Show floating buttons when visible */
+        .desktop-floating-buttons.visible {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        /* Hide on smaller screens */
+        @media (max-width: 1023px) {
+          .desktop-floating-buttons {
+            display: none !important;
+          }
+        }
+
+        /* Size option visibility */
+        .size-option {
+          display: none;
+        }
+        
+        .size-option.visible {
+          display: flex;
+        }
+        
+        .size-section {
+          display: none;
+        }
+        
+        .size-section.visible {
+          display: block;
+        }
+      </style>
+      
+      <div class="max-w-[1328px] mx-auto px-4">
+
+
+        <!-- Main Product Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16">
+          <!-- Product Images -->
+          <div class="order-1">
+            <div class="image-gallery">
+              <!-- Main Product Image -->
+              <div class="relative mb-6">
+                <div class="aspect-square">
+                  <a href="./assets/lp3/printumo-canvas-product-1.jpg" data-fancybox="gallery">
+                    <img
+                      src="./assets/lp3/printumo-canvas-product-1.jpg"
+                      alt="Canvas Print Example"
+                      class="w-full h-full object-cover rounded-xl cursor-pointer"
+                    />
+                  </a>
+                  
+                  <!-- +10 Images Card -->
+                  <div class="absolute bottom-3 right-3 rounded-lg px-3 md:px-5 py-1 md:py-3 shadow-lg flex items-center gap-1" style="background-color: rgba(0, 0, 0, 0.8);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] md:w-6 md:h-6 text-white-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                      <circle cx="9" cy="9" r="2"/>
+                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                    </svg>
+                    <span class="text-lg md:text-xl font-bold text-white-1">+10 images</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thumbnail Images -->
+              <div class="grid grid-cols-4 gap-3">
+                <a href="./assets/lp3/printumo-canvas-product-1.jpg" data-fancybox="gallery" class="aspect-square cursor-pointer border-2 border-transparent hover:border-purple-1 transition-colors rounded-xl overflow-hidden">
+                  <img
+                    src="./assets/lp3/printumo-canvas-product-1.jpg"
+                    alt="Canvas thumbnail 1"
+                    class="w-full h-full object-cover product-gallery-image"
+                  />
+                </a>
+                <a href="./assets/lp3/printumo-canvas-product-2.jpg" data-fancybox="gallery" class="aspect-square cursor-pointer border-2 border-transparent hover:border-purple-1 transition-colors rounded-xl overflow-hidden">
+                  <img
+                    src="./assets/lp3/printumo-canvas-product-2.jpg"
+                    alt="Canvas thumbnail 2"
+                    class="w-full h-full object-cover product-gallery-image"
+                  />
+                </a>
+                <a href="./assets/lp3/printumo-canvas-product-3.jpg" data-fancybox="gallery" class="aspect-square cursor-pointer border-2 border-transparent hover:border-purple-1 transition-colors rounded-xl overflow-hidden">
+                  <img
+                    src="./assets/lp3/printumo-canvas-product-3.jpg"
+                    alt="Canvas thumbnail 3"
+                    class="w-full h-full object-cover product-gallery-image"
+                  />
+                </a>
+                <a href="./assets/lp3/printumo-canvas-product-4.jpg" data-fancybox="gallery" class="aspect-square cursor-pointer border-2 border-transparent hover:border-purple-1 transition-colors rounded-xl overflow-hidden">
+                  <img
+                    src="./assets/lp3/printumo-canvas-product-4.jpg"
+                    alt="Canvas thumbnail 4"
+                    class="w-full h-full object-cover product-gallery-image"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="order-2">
+            <!-- Product Title and Info -->
+            <div class="mb-8">
+              <h1 class="text-5xl font-bold text-[#222222] leading-tight mb-2">
+                Canvas
+              </h1>
+              <p class="text-base text-[#3A3A3A] font-normal tracking-[.25px] mb-6">
+                Bring your artwork to life with our premium canvas giclée prints, designed to showcase every detail with rich depth and vibrant colors.
+              </p>
+              
+              <!-- Key Features -->
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span class="bg-[#7B53E726] text-purple-1 px-3 py-2 rounded-xl text-sm font-bold">
+                  ✨ Museum quality
+                </span>
+                <span class="bg-[#7B53E726] text-purple-1 px-3 py-2 rounded-xl text-sm font-bold">
+                  🖼️ Giclée prints
+                </span>
+                <span class="bg-[#7B53E726] text-purple-1 px-3 py-2 rounded-xl text-sm font-bold">
+                  🌍 Ships to 32 countries
+                </span>
+              </div>
+            </div>
+
+            <!-- Configuration Options -->
+            <div class="space-y-6 mb-8">
+              <!-- Orientation -->
+              <div>
+                <h3 class="text-lg font-bold text-[#222222] mb-3">Orientation</h3>
+                <div class="flex gap-3">
+                  <!-- Hidden input to store selected orientation for form submission -->
+                  <input type="hidden" name="orientation" id="selected-orientation-input" value="vertical">
+                  
+                  <div class="orientation-option cursor-pointer px-4 py-2 bg-[#f7f5fb] text-[#222222] rounded-xl font-medium text-sm hover:bg-[#f0ebf8] transition-colors option-selected" data-orientation="vertical">
+                      Vertical
+                  </div>
+                  <div class="orientation-option cursor-pointer px-4 py-2 bg-[#f7f5fb] text-[#222222] rounded-xl font-medium text-sm hover:bg-[#f0ebf8] transition-colors" data-orientation="horizontal">
+                      Horizontal
+                  </div>
+                  <div class="orientation-option cursor-pointer px-4 py-2 bg-[#f7f5fb] text-[#222222] rounded-xl font-medium text-sm hover:bg-[#f0ebf8] transition-colors" data-orientation="square">
+                      Square
+                  </div>
+                </div>
+              </div>
+
+              <!-- Frame Options -->
+              <div>
+                <h3 class="text-lg font-bold text-[#222222] mb-3">Frame</h3>
+                <div class="flex gap-3">
+                  <!-- Hidden input to store selected frame for form submission -->
+                  <input type="hidden" name="frame" id="selected-frame-input" value="noframe">
+                  
+                  <div class="frame-option cursor-pointer w-16 h-16 rounded-xl border-2 border-transparent hover:border-purple-1 transition-colors flex items-center justify-center bg-[#f7f5fb] frame-selected" data-frame="noframe">
+                      <svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="30" fill="none" stroke="#666666" stroke-width="4"/>
+                        <line x1="10" y1="10" x2="54" y2="54" stroke="#666666" stroke-width="4"/>
+                      </svg>
+                    </div>
+                  <div class="frame-option cursor-pointer w-16 h-16 rounded-xl border-2 border-gray-300 hover:border-purple-1 transition-colors overflow-hidden" data-frame="black">
+                    <img src="./assets/frames/black.png" class="w-full h-full" alt="Black Frame">
+                  </div>
+                  <div class="frame-option cursor-pointer w-16 h-16 rounded-xl border-2 border-gray-300 hover:border-purple-1 transition-colors overflow-hidden" data-frame="white">
+                    <img src="./assets/frames/white.png" class="w-full h-full" alt="White Frame">
+                  </div>
+                  <div class="frame-option cursor-pointer w-16 h-16 rounded-xl border-2 border-gray-300 hover:border-purple-1 transition-colors overflow-hidden" data-frame="oak">
+                    <img src="./assets/frames/oak.png" class="w-full h-full" alt="Oak Frame">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sizes -->
+              <div>
+                <h3 class="text-lg font-bold text-[#222222] mb-3">Size</h3>
+                <div class="relative">
+                  <input type="checkbox" id="size-dropdown" class="sr-only">
+                  
+                  <!-- Hidden input to store selected size for form submission -->
+                  <input type="hidden" name="size" id="selected-size-input" value="40x60">
+                  
+                  <label for="size-dropdown" class="flex items-center justify-between w-full h-[62px] rounded-xl bg-[#f7f5fb] px-4 text-lg font-medium text-[#222222] cursor-pointer hover:bg-[#f0ebf8] transition-colors">
+                    <span id="selected-size-display">40x60 cm / 16x24"</span>
+                    
+                    <svg class="w-5 h-5 text-[#222222] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </label>
+                  
+                  <!-- Dropdown Menu -->
+                  <div id="size-dropdown-menu" class="absolute top-full left-0 right-0 mt-1 bg-white-1 border border-gray-300 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto hidden">
+                    <!-- Square Aspect Ratio -->
+                    <div class="size-section visible" data-orientation="square">
+                    <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                      <span class="text-sm font-bold text-[#222222]">Square (1:1)</span>
+                    </div>
+                      <label for="size-20x20" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="20x20" data-orientation="square">
+                      <span class="text-sm font-medium text-[#222222]">20x20 cm / 8x8"</span>
+                    </label>
+                      <label for="size-30x30" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="30x30" data-orientation="square">
+                      <span class="text-sm font-medium text-[#222222]">30x30 cm / 12x12"</span>
+                    </label>
+                      <label for="size-50x50" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x50" data-orientation="square">
+                      <span class="text-sm font-medium text-[#222222]">50x50 cm / 20x20"</span>
+                    </label>
+                      <label for="size-70x70" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x70" data-orientation="square">
+                        <span class="text-sm font-medium text-[#222222]">70x70 cm / 28x28"</span>
+                    </label>
+                      <label for="size-80x80" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="80x80" data-orientation="square">
+                      <span class="text-sm font-medium text-[#222222]">80x80 cm / 32x32"</span>
+                    </label>
+                      <label for="size-100x100" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x100" data-orientation="square">
+                        <span class="text-sm font-medium text-[#222222]">100x100 cm / 40x40"</span>
+                      </label>
+                      <label for="size-120x120" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="120x120" data-orientation="square">
+                        <span class="text-sm font-medium text-[#222222]">120x120 cm / 48x48"</span>
+                      </label>
+                      <label for="size-135x135" class="size-option visible flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="135x135" data-orientation="square">
+                        <span class="text-sm font-medium text-[#222222]">135x135 cm / 54x54"</span>
+                      </label>
+                    </div>
+                    
+                    <!-- Vertical Aspect Ratios -->
+                    <div class="size-section" data-orientation="vertical">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Portrait (1:2)</span>
+                      </div>
+                      <label for="size-25x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="25x50" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">25x50 cm / 10x20"</span>
+                      </label>
+                      <label for="size-50x100" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x100" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">50x100 cm / 20x40"</span>
+                      </label>
+                      <label for="size-60x120" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="60x120" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">60x120 cm / 24x48"</span>
+                      </label>
+                      <label for="size-65x125" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="65x125" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">65x125 cm / 26x50"</span>
+                      </label>
+                      <label for="size-75x150" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="75x150" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">75x150 cm / 30x60"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="vertical">
+                    <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                      <span class="text-sm font-bold text-[#222222]">Portrait (2:3)</span>
+                    </div>
+                      <label for="size-20x30" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="20x30" data-orientation="vertical">
+                      <span class="text-sm font-medium text-[#222222]">20x30 cm / 8x12"</span>
+                    </label>
+                      <label for="size-30x45" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="30x45" data-orientation="vertical">
+                      <span class="text-sm font-medium text-[#222222]">30x45 cm / 12x18"</span>
+                    </label>
+                      <label for="size-40x60" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="40x60" data-orientation="vertical">
+                      <span class="text-sm font-medium text-[#222222]">40x60 cm / 16x24"</span>
+                    </label>
+                      <label for="size-50x75" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x75" data-orientation="vertical">
+                      <span class="text-sm font-medium text-[#222222]">50x75 cm / 20x30"</span>
+                    </label>
+                      <label for="size-55x85" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="55x85" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">55x85 cm / 22x34"</span>
+                      </label>
+                      <label for="size-60x90" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="60x90" data-orientation="vertical">
+                      <span class="text-sm font-medium text-[#222222]">60x90 cm / 24x36"</span>
+                    </label>
+                      <label for="size-70x105" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x105" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">70x105 cm / 28x42"</span>
+                      </label>
+                      <label for="size-80x120" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="80x120" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">80x120 cm / 32x48"</span>
+                      </label>
+                      <label for="size-100x150" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x150" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">100x150 cm / 40x60"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="vertical">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Portrait (3:4)</span>
+                      </div>
+                      <label for="size-30x40" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="30x40" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">30x40 cm / 12x16"</span>
+                      </label>
+                      <label for="size-40x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="40x50" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">40x50 cm / 16x20"</span>
+                      </label>
+                      <label for="size-55x70" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="55x70" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">55x70 cm / 22x28"</span>
+                      </label>
+                      <label for="size-60x80" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="60x80" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">60x80 cm / 24x32"</span>
+                      </label>
+                      <label for="size-70x90" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x90" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">70x90 cm / 28x36"</span>
+                      </label>
+                      <label for="size-75x100" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="75x100" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">75x100 cm / 30x40"</span>
+                      </label>
+                      <label for="size-105x140" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="105x140" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">105x140 cm / 42x56"</span>
+                      </label>
+                      <label for="size-120x165" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="120x165" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">120x165 cm / 48x66"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="vertical">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Portrait (4:5)</span>
+                      </div>
+                      <label for="size-20x25" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="20x25" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">20x25 cm / 8x10"</span>
+                      </label>
+                      <label for="size-40x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="40x50" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">40x50 cm / 16x20"</span>
+                      </label>
+                      <label for="size-50x65" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x65" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">50x65 cm / 20x26"</span>
+                      </label>
+                      <label for="size-60x75" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="60x75" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">60x75 cm / 24x30"</span>
+                      </label>
+                      <label for="size-70x90" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x90" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">70x90 cm / 28x36"</span>
+                      </label>
+                      <label for="size-80x100" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="80x100" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">80x100 cm / 32x40"</span>
+                      </label>
+                      <label for="size-100x125" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x125" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">100x125 cm / 40x50"</span>
+                      </label>
+                      <label for="size-120x150" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="120x150" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">120x150 cm / 48x60"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="vertical">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Portrait (5:7)</span>
+                      </div>
+                      <label for="size-40x55" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="40x55" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">40x55 cm / 16x22"</span>
+                      </label>
+                      <label for="size-50x70" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x70" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">50x70 cm / 20x28"</span>
+                      </label>
+                      <label for="size-65x90" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="65x90" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">65x90 cm / 26x36"</span>
+                      </label>
+                      <label for="size-75x105" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="75x105" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">75x105 cm / 30x42"</span>
+                      </label>
+                      <label for="size-90x125" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="90x125" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">90x125 cm / 36x50"</span>
+                      </label>
+                      <label for="size-100x140" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x140" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">100x140 cm / 40x56"</span>
+                      </label>
+                      <label for="size-115x160" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="115x160" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">115x160 cm / 46x64"</span>
+                      </label>
+                      <label for="size-125x180" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="125x180" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">125x180 cm / 50x72"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="vertical">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Portrait (9:16)</span>
+                      </div>
+                      <label for="size-45x80" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="45x80" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">45x80 cm / 18x32"</span>
+                      </label>
+                      <label for="size-70x120" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x120" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">70x120 cm / 28x48"</span>
+                      </label>
+                      <label for="size-90x165" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="90x165" data-orientation="vertical">
+                        <span class="text-sm font-medium text-[#222222]">90x165 cm / 36x66"</span>
+                      </label>
+                    </div>
+                    
+                    <!-- Horizontal Aspect Ratios -->
+                    <div class="size-section" data-orientation="horizontal">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Landscape (2:1)</span>
+                      </div>
+                      <label for="size-50x25" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x25" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">50x25 cm / 20x10"</span>
+                      </label>
+                      <label for="size-100x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x50" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">100x50 cm / 40x20"</span>
+                      </label>
+                      <label for="size-120x60" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="120x60" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">120x60 cm / 48x24"</span>
+                      </label>
+                      <label for="size-125x65" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="125x65" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">125x65 cm / 50x26"</span>
+                      </label>
+                      <label for="size-150x75" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="150x75" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">150x75 cm / 60x30"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="horizontal">
+                    <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                      <span class="text-sm font-bold text-[#222222]">Landscape (3:2)</span>
+                    </div>
+                      <label for="size-30x20" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="30x20" data-orientation="horizontal">
+                      <span class="text-sm font-medium text-[#222222]">30x20 cm / 12x8"</span>
+                    </label>
+                      <label for="size-45x30" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="45x30" data-orientation="horizontal">
+                      <span class="text-sm font-medium text-[#222222]">45x30 cm / 18x12"</span>
+                    </label>
+                      <label for="size-60x40" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="60x40" data-orientation="horizontal">
+                      <span class="text-sm font-medium text-[#222222]">60x40 cm / 24x16"</span>
+                    </label>
+                      <label for="size-75x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="75x50" data-orientation="horizontal">
+                      <span class="text-sm font-medium text-[#222222]">75x50 cm / 30x20"</span>
+                    </label>
+                      <label for="size-85x55" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="85x55" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">85x55 cm / 34x22"</span>
+                      </label>
+                      <label for="size-90x60" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="90x60" data-orientation="horizontal">
+                      <span class="text-sm font-medium text-[#222222]">90x60 cm / 36x24"</span>
+                    </label>
+                      <label for="size-105x70" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="105x70" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">105x70 cm / 42x28"</span>
+                      </label>
+                      <label for="size-120x80" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="120x80" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">120x80 cm / 48x32"</span>
+                      </label>
+                      <label for="size-150x100" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="150x100" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">150x100 cm / 60x40"</span>
+                      </label>
+                  </div>
+                    
+                    <div class="size-section" data-orientation="horizontal">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Landscape (4:3)</span>
+                </div>
+                      <label for="size-40x30" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="40x30" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">40x30 cm / 16x12"</span>
+                      </label>
+                      <label for="size-50x40" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x40" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">50x40 cm / 20x16"</span>
+                      </label>
+                      <label for="size-70x55" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x55" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">70x55 cm / 28x22"</span>
+                      </label>
+                      <label for="size-80x60" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="80x60" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">80x60 cm / 32x24"</span>
+                      </label>
+                      <label for="size-90x70" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="90x70" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">90x70 cm / 36x28"</span>
+                      </label>
+                      <label for="size-100x75" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x75" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">100x75 cm / 40x30"</span>
+                      </label>
+                      <label for="size-140x105" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="140x105" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">140x105 cm / 56x42"</span>
+                      </label>
+                      <label for="size-165x120" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="165x120" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">165x120 cm / 66x48"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="horizontal">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Landscape (5:4)</span>
+                      </div>
+                      <label for="size-25x20" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="25x20" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">25x20 cm / 10x8"</span>
+                      </label>
+                      <label for="size-50x40" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="50x40" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">50x40 cm / 20x16"</span>
+                      </label>
+                      <label for="size-65x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="65x50" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">65x50 cm / 26x20"</span>
+                      </label>
+                      <label for="size-75x60" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="75x60" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">75x60 cm / 30x24"</span>
+                      </label>
+                      <label for="size-90x70" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="90x70" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">90x70 cm / 36x28"</span>
+                      </label>
+                      <label for="size-100x80" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="100x80" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">100x80 cm / 40x32"</span>
+                      </label>
+                      <label for="size-125x100" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="125x100" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">125x100 cm / 50x40"</span>
+                      </label>
+                      <label for="size-150x120" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="150x120" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">150x120 cm / 60x48"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="horizontal">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Landscape (7:5)</span>
+                      </div>
+                      <label for="size-55x40" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="55x40" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">55x40 cm / 22x16"</span>
+                      </label>
+                      <label for="size-70x50" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="70x50" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">70x50 cm / 28x20"</span>
+                      </label>
+                      <label for="size-90x65" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="90x65" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">90x65 cm / 36x26"</span>
+                      </label>
+                      <label for="size-105x75" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="105x75" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">105x75 cm / 42x30"</span>
+                      </label>
+                      <label for="size-125x90" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="125x90" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">125x90 cm / 50x36"</span>
+                      </label>
+                      <label for="size-140x100" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="140x100" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">140x100 cm / 56x40"</span>
+                      </label>
+                      <label for="size-160x115" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="160x115" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">160x115 cm / 64x46"</span>
+                      </label>
+                      <label for="size-180x125" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="180x125" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">180x125 cm / 72x50"</span>
+                      </label>
+                    </div>
+                    
+                    <div class="size-section" data-orientation="horizontal">
+                      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200">
+                        <span class="text-sm font-bold text-[#222222]">Landscape (16:9)</span>
+                      </div>
+                      <label for="size-80x45" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="80x45" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">80x45 cm / 32x18"</span>
+                      </label>
+                      <label for="size-120x70" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="120x70" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">120x70 cm / 48x28"</span>
+                      </label>
+                      <label for="size-165x90" class="size-option flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer" data-size="165x90" data-orientation="horizontal">
+                        <span class="text-sm font-medium text-[#222222]">165x90 cm / 66x36"</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-2 gap-2 lg:gap-4 mb-8">
+              <!-- Product Price Card -->
+              <div class="bg-[#f7f5fb] rounded-[20px] p-3 lg:p-6 relative flex flex-col justify-between">
+                <!-- First Order Discount Badge -->
+                <div class="absolute -top-2 -right-2 bg-[#7B53E7] text-white-1 text-xs font-bold px-2 lg:px-3 py-1 rounded-full">
+                  30% OFF
+                </div>
+                
+                <div>
+                  <h3 class="text-sm lg:text-lg font-bold text-[#222222] mb-1">Product price</h3>
+                  <div class="mb-1">
+                    <div class="flex items-baseline gap-2">
+                      <p class="text-xl lg:text-3xl font-bold text-[#222222]">€5.03</p>
+                      <p class="text-xs text-[#3A3A3A]">excl. VAT</p>
+                    </div>
+                    <p class="text-sm lg:text-lg text-[#999999] line-through">€7.19</p>
+                  </div>
+                  <div class="flex items-center gap-1 mt-1">
+                    <p class="text-[10px] lg:text-sm text-[#7B53E7] font-bold">Save 30% on first order!</p>
+                    <div class="relative group">
+                      <svg class="w-4 h-4 text-gray-500 cursor-help" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                      </svg>
+                      <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 px-3 py-2 bg-gray-900 text-white-1 text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                        You will get the discount code in the first email after you sign up.
+                        <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Pricing Details Link -->
+                <a href="#pricing-accordion" class="inline-flex items-center gap-1 text-xs lg:text-sm text-[#3a3a3a] font-medium hover:text-[#6841d4] transition-colors mt-4">
+                  View pricing details
+                  <svg class="w-2 h-2 lg:w-3 lg:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Shipping Price Card -->
+              <div class="bg-[#f7f5fb] rounded-[20px] p-3 lg:p-6 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-sm lg:text-lg font-bold text-[#222222] mb-1">Shipping</h3>
+                  <p class="text-xl lg:text-3xl font-bold text-[#222222]">€6.49</p>
+                  
+                  <!-- Delivery Info -->
+                  <div class="mt-2">
+                    <span class="text-xs font-medium text-[#222222] block">Delivery to</span>
+                    <div class="relative">
+                      <input type="checkbox" id="country-dropdown" class="sr-only">
+                      
+                      <!-- Hidden input to store selected country for form submission -->
+                      <input type="hidden" name="country" id="selected-country-input" value="united-kingdom">
+                      
+                      <label for="country-dropdown" class="flex items-center gap-1 cursor-pointer bg-white rounded-lg py-1 lg:py-2 hover:text-purple-1 transition-colors relative">
+                        <div id="selected-country-display" class="flex items-center gap-1 lg:gap-2">
+                          <img src="./assets/lp2/icons/united-kingdom.svg" alt="United Kingdom" class="w-3 h-3 lg:w-4 lg:h-4" />
+                          <span class="text-xs lg:text-sm font-medium text-[#222222]">United Kingdom</span>
+                        </div>
+                        
+                        <svg class="w-3 h-3 lg:w-4 lg:h-4 text-[#222222] transition-transform ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </label>
+                      
+                      <!-- Dropdown Menu -->
+                      <div id="country-dropdown-menu" class="absolute top-full left-0 right-0 mt-1 bg-white-1 border border-gray-300 rounded-lg shadow-lg z-10 max-h-48 overflow-y-auto hidden">
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="australia">
+                        <img src="./assets/lp2/icons/australia.svg" alt="Australia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Australia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="austria">
+                        <img src="./assets/lp2/icons/austria.svg" alt="Austria" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Austria</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="belgium">
+                        <img src="./assets/lp2/icons/belgium.svg" alt="Belgium" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Belgium</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="bulgaria">
+                        <img src="./assets/lp2/icons/bulgaria.svg" alt="Bulgaria" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Bulgaria</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="canada">
+                        <img src="./assets/lp3/canada.svg" alt="Canada" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Canada</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="croatia">
+                        <img src="./assets/lp2/icons/croatia.svg" alt="Croatia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Croatia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="cyprus">
+                        <img src="./assets/lp2/icons/cyprus.svg" alt="Cyprus" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Cyprus</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="czech">
+                        <img src="./assets/lp2/icons/czech.svg" alt="Czechia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Czechia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="denmark">
+                        <img src="./assets/lp2/icons/denmark.svg" alt="Denmark" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Denmark</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="estonia">
+                        <img src="./assets/lp2/icons/estonia.svg" alt="Estonia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Estonia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="finland">
+                        <img src="./assets/lp2/icons/finland.svg" alt="Finland" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Finland</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="france">
+                        <img src="./assets/lp2/icons/france.svg" alt="France" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">France</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="germany">
+                        <img src="./assets/lp2/icons/germany.svg" alt="Germany" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Germany</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="greece">
+                        <img src="./assets/lp2/icons/greece.svg" alt="Greece" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Greece</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="hungary">
+                        <img src="./assets/lp2/icons/hungary.svg" alt="Hungary" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Hungary</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="ireland">
+                        <img src="./assets/lp2/icons/ireland.svg" alt="Ireland" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Ireland</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="italy">
+                        <img src="./assets/lp2/icons/italy.svg" alt="Italy" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Italy</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="latvia">
+                        <img src="./assets/lp2/icons/latvia.svg" alt="Latvia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Latvia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="lithuania">
+                        <img src="./assets/lp2/icons/lithuania.svg" alt="Lithuania" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Lithuania</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="luxembourg">
+                        <img src="./assets/lp2/icons/luxembourg.svg" alt="Luxembourg" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Luxembourg</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="netherlands">
+                        <img src="./assets/lp2/icons/netherlands.svg" alt="Netherlands" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Netherlands</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="new-zealand">
+                        <img src="./assets/lp2/icons/new-zealand.svg" alt="New Zealand" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">New Zealand</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="norway">
+                        <img src="./assets/lp2/icons/norway.svg" alt="Norway" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Norway</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="poland">
+                        <img src="./assets/lp2/icons/poland.svg" alt="Poland" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Poland</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="portugal">
+                        <img src="./assets/lp2/icons/portugal.svg" alt="Portugal" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Portugal</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="romania">
+                        <img src="./assets/lp2/icons/romania.svg" alt="Romania" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Romania</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="slovakia">
+                        <img src="./assets/lp2/icons/slovakia.svg" alt="Slovakia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Slovakia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="slovenia">
+                        <img src="./assets/lp2/icons/slovenia.svg" alt="Slovenia" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Slovenia</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="spain">
+                        <img src="./assets/lp2/icons/spain.svg" alt="Spain" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Spain</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="sweden">
+                        <img src="./assets/lp2/icons/sweden.svg" alt="Sweden" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Sweden</span>
+                    </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="switzerland">
+                        <img src="./assets/lp2/icons/switzerland.svg" alt="Switzerland" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">Switzerland</span>
+                  </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="united-kingdom">
+                        <img src="./assets/lp2/icons/united-kingdom.svg" alt="United Kingdom" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">United Kingdom</span>
+                      </div>
+                      <div class="country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="united-states">
+                        <img src="./assets/lp2/icons/united-states.svg" alt="United States" class="w-4 h-4" />
+                        <span class="text-sm font-medium text-[#222222]">United States</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Shipping Details Link -->
+              <a href="#shipping-accordion" class="inline-flex items-center gap-1 text-xs lg:text-sm text-[#3a3a3a] font-medium hover:text-[#6841d4] transition-colors mt-4">
+                View shipping details
+                <svg class="w-2 h-2 lg:w-3 lg:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-4 hidden lg:block">
+              <button class="w-full h-[56px] bg-[#7B53E7] text-white-1 rounded-xl font-bold text-base tracking-[0.25px] transition-all hover:bg-[#6841d4]">
+                Start selling
+              </button>
+              <button class="w-full h-[56px] bg-white-1 text-[#7B53E7] border-2 border-[#7B53E7] rounded-xl font-bold text-base tracking-[0.25px] transition-all hover:bg-[#f7f5fb]">
+                Order sample
+              </button>
+            </div>
+
+            <!-- Fulfillment Info -->
+            <div class="mt-6 flex items-center gap-2">
+              <div class="w-3 h-3 bg-[#7B53E7] rounded-full animate-pulse-purple"></div>
+              <span class="text-base text-[#3A3A3A] font-medium">Fulfilled in <span class="font-bold">32</span> countries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Size and Orientation Management
+        document.addEventListener('DOMContentLoaded', function() {
+          // Size data mapping
+          const sizeData = {
+            // Square (1:1)
+            '20x20': '20x20 cm / 8x8"',
+            '30x30': '30x30 cm / 12x12"',
+            '50x50': '50x50 cm / 20x20"',
+            '70x70': '70x70 cm / 28x28"',
+            '80x80': '80x80 cm / 32x32"',
+            '100x100': '100x100 cm / 40x40"',
+            '120x120': '120x120 cm / 48x48"',
+            '135x135': '135x135 cm / 54x54"',
+            
+            // Vertical (1:2)
+            '25x50': '25x50 cm / 10x20"',
+            '50x100': '50x100 cm / 20x40"',
+            '60x120': '60x120 cm / 24x48"',
+            '65x125': '65x125 cm / 26x50"',
+            '75x150': '75x150 cm / 30x60"',
+            
+            // Vertical (2:3)
+            '20x30': '20x30 cm / 8x12"',
+            '30x45': '30x45 cm / 12x18"',
+            '40x60': '40x60 cm / 16x24"',
+            '50x75': '50x75 cm / 20x30"',
+            '55x85': '55x85 cm / 22x34"',
+            '60x90': '60x90 cm / 24x36"',
+            '70x105': '70x105 cm / 28x42"',
+            '80x120': '80x120 cm / 32x48"',
+            '100x150': '100x150 cm / 40x60"',
+            
+            // Vertical (3:4)
+            '30x40': '30x40 cm / 12x16"',
+            '40x50': '40x50 cm / 16x20"',
+            '55x70': '55x70 cm / 22x28"',
+            '60x80': '60x80 cm / 24x32"',
+            '70x90': '70x90 cm / 28x36"',
+            '75x100': '75x100 cm / 30x40"',
+            '105x140': '105x140 cm / 42x56"',
+            '120x165': '120x165 cm / 48x66"',
+            
+            // Vertical (4:5)
+            '20x25': '20x25 cm / 8x10"',
+            '40x50': '40x50 cm / 16x20"',
+            '50x65': '50x65 cm / 20x26"',
+            '60x75': '60x75 cm / 24x30"',
+            '70x90': '70x90 cm / 28x36"',
+            '80x100': '80x100 cm / 32x40"',
+            '100x125': '100x125 cm / 40x50"',
+            '120x150': '120x150 cm / 48x60"',
+            
+            // Vertical (5:7)
+            '40x55': '40x55 cm / 16x22"',
+            '50x70': '50x70 cm / 20x28"',
+            '65x90': '65x90 cm / 26x36"',
+            '75x105': '75x105 cm / 30x42"',
+            '90x125': '90x125 cm / 36x50"',
+            '100x140': '100x140 cm / 40x56"',
+            '115x160': '115x160 cm / 46x64"',
+            '125x180': '125x180 cm / 50x72"',
+            
+            // Vertical (9:16)
+            '45x80': '45x80 cm / 18x32"',
+            '70x120': '70x120 cm / 28x48"',
+            '90x165': '90x165 cm / 36x66"',
+            
+            // Horizontal (2:1)
+            '50x25': '50x25 cm / 20x10"',
+            '100x50': '100x50 cm / 40x20"',
+            '120x60': '120x60 cm / 48x24"',
+            '125x65': '125x65 cm / 50x26"',
+            '150x75': '150x75 cm / 60x30"',
+            
+            // Horizontal (3:2)
+            '30x20': '30x20 cm / 12x8"',
+            '45x30': '45x30 cm / 18x12"',
+            '60x40': '60x40 cm / 24x16"',
+            '75x50': '75x50 cm / 30x20"',
+            '85x55': '85x55 cm / 34x22"',
+            '90x60': '90x60 cm / 36x24"',
+            '105x70': '105x70 cm / 42x28"',
+            '120x80': '120x80 cm / 48x32"',
+            '150x100': '150x100 cm / 60x40"',
+            
+            // Horizontal (4:3)
+            '40x30': '40x30 cm / 16x12"',
+            '50x40': '50x40 cm / 20x16"',
+            '70x55': '70x55 cm / 28x22"',
+            '80x60': '80x60 cm / 32x24"',
+            '90x70': '90x70 cm / 36x28"',
+            '100x75': '100x75 cm / 40x30"',
+            '140x105': '140x105 cm / 56x42"',
+            '165x120': '165x120 cm / 66x48"',
+            
+            // Horizontal (5:4)
+            '25x20': '25x20 cm / 10x8"',
+            '50x40': '50x40 cm / 20x16"',
+            '65x50': '65x50 cm / 26x20"',
+            '75x60': '75x60 cm / 30x24"',
+            '90x70': '90x70 cm / 36x28"',
+            '100x80': '100x80 cm / 40x32"',
+            '125x100': '125x100 cm / 50x40"',
+            '150x120': '150x120 cm / 60x48"',
+            
+            // Horizontal (7:5)
+            '55x40': '55x40 cm / 22x16"',
+            '70x50': '70x50 cm / 28x20"',
+            '90x65': '90x65 cm / 36x26"',
+            '105x75': '105x75 cm / 42x30"',
+            '125x90': '125x90 cm / 50x36"',
+            '140x100': '140x100 cm / 56x40"',
+            '160x115': '160x115 cm / 64x46"',
+            '180x125': '180x125 cm / 72x50"',
+            
+            // Horizontal (16:9)
+            '80x45': '80x45 cm / 32x18"',
+            '120x70': '120x70 cm / 48x28"',
+            '165x90': '165x90 cm / 66x36"'
+          };
+
+          // Orientation to size mapping
+          const orientationSizes = {
+            'square': ['20x20', '30x30', '50x50', '70x70', '80x80', '100x100', '120x120', '135x135'],
+            'vertical': ['25x50', '50x100', '60x120', '65x125', '75x150', '20x30', '30x45', '40x60', '50x75', '55x85', '60x90', '70x105', '80x120', '100x150', '30x40', '40x50', '55x70', '60x80', '70x90', '75x100', '105x140', '120x165', '20x25', '40x50', '50x65', '60x75', '70x90', '80x100', '100x125', '120x150', '40x55', '50x70', '65x90', '75x105', '90x125', '100x140', '115x160', '125x180', '45x80', '70x120', '90x165'],
+            'horizontal': ['50x25', '100x50', '120x60', '125x65', '150x75', '30x20', '45x30', '60x40', '75x50', '85x55', '90x60', '105x70', '120x80', '150x100', '40x30', '50x40', '70x55', '80x60', '90x70', '100x75', '140x105', '165x120', '25x20', '50x40', '65x50', '75x60', '90x70', '100x80', '125x100', '150x120', '55x40', '70x50', '90x65', '105x75', '125x90', '140x100', '160x115', '180x125', '80x45', '120x70', '165x90']
+          };
+
+          // Standard/default sizes for each orientation
+          const standardSizes = {
+            'square': '20x20',
+            'vertical': '20x25', 
+            'horizontal': '25x20'
+          };
+
+          // Country data mapping
+          const countryData = {
+            'australia': {
+              name: 'Australia',
+              flag: './assets/lp2/icons/australia.svg'
+            },
+            'austria': {
+              name: 'Austria',
+              flag: './assets/lp2/icons/austria.svg'
+            },
+            'belgium': {
+              name: 'Belgium',
+              flag: './assets/lp2/icons/belgium.svg'
+            },
+            'bulgaria': {
+              name: 'Bulgaria',
+              flag: './assets/lp2/icons/bulgaria.svg'
+            },
+            'canada': {
+              name: 'Canada',
+              flag: './assets/lp3/canada.svg'
+            },
+            'croatia': {
+              name: 'Croatia',
+              flag: './assets/lp2/icons/croatia.svg'
+            },
+            'cyprus': {
+              name: 'Cyprus',
+              flag: './assets/lp2/icons/cyprus.svg'
+            },
+            'czech': {
+              name: 'Czechia',
+              flag: './assets/lp2/icons/czech.svg'
+            },
+            'denmark': {
+              name: 'Denmark',
+              flag: './assets/lp2/icons/denmark.svg'
+            },
+            'estonia': {
+              name: 'Estonia',
+              flag: './assets/lp2/icons/estonia.svg'
+            },
+            'finland': {
+              name: 'Finland',
+              flag: './assets/lp2/icons/finland.svg'
+            },
+            'france': {
+              name: 'France',
+              flag: './assets/lp2/icons/france.svg'
+            },
+            'germany': {
+              name: 'Germany',
+              flag: './assets/lp2/icons/germany.svg'
+            },
+            'greece': {
+              name: 'Greece',
+              flag: './assets/lp2/icons/greece.svg'
+            },
+            'hungary': {
+              name: 'Hungary',
+              flag: './assets/lp2/icons/hungary.svg'
+            },
+            'ireland': {
+              name: 'Ireland',
+              flag: './assets/lp2/icons/ireland.svg'
+            },
+            'italy': {
+              name: 'Italy',
+              flag: './assets/lp2/icons/italy.svg'
+            },
+            'latvia': {
+              name: 'Latvia',
+              flag: './assets/lp2/icons/latvia.svg'
+            },
+            'lithuania': {
+              name: 'Lithuania',
+              flag: './assets/lp2/icons/lithuania.svg'
+            },
+            'luxembourg': {
+              name: 'Luxembourg',
+              flag: './assets/lp2/icons/luxembourg.svg'
+            },
+            'netherlands': {
+              name: 'Netherlands',
+              flag: './assets/lp2/icons/netherlands.svg'
+            },
+            'new-zealand': {
+              name: 'New Zealand',
+              flag: './assets/lp2/icons/new-zealand.svg'
+            },
+            'norway': {
+              name: 'Norway',
+              flag: './assets/lp2/icons/norway.svg'
+            },
+            'poland': {
+              name: 'Poland',
+              flag: './assets/lp2/icons/poland.svg'
+            },
+            'portugal': {
+              name: 'Portugal',
+              flag: './assets/lp2/icons/portugal.svg'
+            },
+            'romania': {
+              name: 'Romania',
+              flag: './assets/lp2/icons/romania.svg'
+            },
+            'slovakia': {
+              name: 'Slovakia',
+              flag: './assets/lp2/icons/slovakia.svg'
+            },
+            'slovenia': {
+              name: 'Slovenia',
+              flag: './assets/lp2/icons/slovenia.svg'
+            },
+            'spain': {
+              name: 'Spain',
+              flag: './assets/lp2/icons/spain.svg'
+            },
+            'sweden': {
+              name: 'Sweden',
+              flag: './assets/lp2/icons/sweden.svg'
+            },
+            'switzerland': {
+              name: 'Switzerland',
+              flag: './assets/lp2/icons/switzerland.svg'
+            },
+            'united-kingdom': {
+              name: 'United Kingdom',
+              flag: './assets/lp2/icons/united-kingdom.svg'
+            },
+            'united-states': {
+              name: 'United States',
+              flag: './assets/lp2/icons/united-states.svg'
+            }
+          };
+
+          // Get DOM elements
+          const selectedOrientationInput = document.getElementById('selected-orientation-input');
+          const selectedSizeInput = document.getElementById('selected-size-input');
+          const selectedFrameInput = document.getElementById('selected-frame-input');
+          const sizeDropdown = document.getElementById('size-dropdown');
+          const sizeDropdownMenu = document.getElementById('size-dropdown-menu');
+          const selectedSizeDisplay = document.getElementById('selected-size-display');
+          const sizeSections = document.querySelectorAll('.size-section');
+          const sizeOptions = document.querySelectorAll('.size-option');
+          
+          // Orientation and frame options
+          const orientationOptions = document.querySelectorAll('.orientation-option');
+          const frameOptions = document.querySelectorAll('.frame-option');
+          
+          // Country dropdown elements
+          const selectedCountryInput = document.getElementById('selected-country-input');
+          const countryDropdown = document.getElementById('country-dropdown');
+          const countryDropdownMenu = document.getElementById('country-dropdown-menu');
+          const selectedCountryDisplay = document.getElementById('selected-country-display');
+          const countryOptions = document.querySelectorAll('.country-option');
+
+          // Function to update size visibility based on orientation
+          function updateSizeVisibility(orientation) {
+            // Hide all size sections and options
+            sizeSections.forEach(section => {
+              section.classList.remove('visible');
+            });
+            sizeOptions.forEach(option => {
+              option.classList.remove('visible');
+            });
+
+            // Show all relevant sections for the orientation
+            const relevantSections = document.querySelectorAll(`.size-section[data-orientation="${orientation}"]`);
+            relevantSections.forEach(section => {
+              section.classList.add('visible');
+              
+              // Show all options in each relevant section
+              const relevantOptions = section.querySelectorAll('.size-option');
+              relevantOptions.forEach(option => {
+                option.classList.add('visible');
+              });
+            });
+
+            // Auto-select standard size for the orientation
+            const standardSize = standardSizes[orientation];
+            if (standardSize) {
+              selectedSizeInput.value = standardSize;
+              selectedSizeDisplay.textContent = sizeData[standardSize];
+              
+              // Update selected styling in dropdown
+              handleSizeSelection(standardSize);
+            }
+          }
+
+          // Function to handle size selection
+          function handleSizeSelection(sizeValue) {
+            selectedSizeInput.value = sizeValue;
+            selectedSizeDisplay.textContent = sizeData[sizeValue];
+            
+            // Update selected styling in dropdown
+            sizeOptions.forEach(option => {
+              const span = option.querySelector('span');
+              if (option.getAttribute('data-size') === sizeValue) {
+                span.style.color = '#7B53E7';
+                span.style.fontWeight = 'bold';
+              } else {
+                span.style.color = '#222222';
+                span.style.fontWeight = 'normal';
+              }
+            });
+          }
+
+          // Function to handle dropdown toggle
+          function toggleDropdown() {
+            const isOpen = sizeDropdown.checked;
+            const dropdownLabel = document.querySelector('label[for="size-dropdown"] svg');
+            
+            if (isOpen) {
+              sizeDropdownMenu.classList.remove('hidden');
+              dropdownLabel.style.transform = 'rotate(180deg)';
+            } else {
+              sizeDropdownMenu.classList.add('hidden');
+              dropdownLabel.style.transform = 'rotate(0deg)';
+            }
+          }
+
+          // Function to handle orientation selection
+          function handleOrientationSelection(orientationValue) {
+            selectedOrientationInput.value = orientationValue;
+            
+            // Update selected styling
+            orientationOptions.forEach(option => {
+              if (option.getAttribute('data-orientation') === orientationValue) {
+                option.classList.add('option-selected');
+              } else {
+                option.classList.remove('option-selected');
+              }
+            });
+            
+            // Update size visibility based on orientation
+            updateSizeVisibility(orientationValue);
+          }
+
+          // Function to handle frame selection
+          function handleFrameSelection(frameValue) {
+            selectedFrameInput.value = frameValue;
+            
+            // Update selected styling
+            frameOptions.forEach(option => {
+              if (option.getAttribute('data-frame') === frameValue) {
+                option.classList.add('frame-selected');
+              } else {
+                option.classList.remove('frame-selected');
+              }
+            });
+          }
+
+          // Function to handle country selection
+          function handleCountrySelection(countryValue) {
+            selectedCountryInput.value = countryValue;
+            
+            const country = countryData[countryValue];
+            if (country) {
+              const img = selectedCountryDisplay.querySelector('img');
+              const span = selectedCountryDisplay.querySelector('span');
+              
+              img.src = country.flag;
+              img.alt = country.name;
+              span.textContent = country.name;
+            }
+            
+            // Update selected styling in dropdown
+            countryOptions.forEach(option => {
+              const span = option.querySelector('span');
+              if (option.getAttribute('data-country') === countryValue) {
+                span.style.color = '#7B53E7';
+                span.style.fontWeight = 'bold';
+              } else {
+                span.style.color = '#222222';
+                span.style.fontWeight = 'normal';
+              }
+            });
+          }
+
+          // Function to handle country dropdown toggle
+          function toggleCountryDropdown() {
+            const isOpen = countryDropdown.checked;
+            const dropdownLabel = document.querySelector('label[for="country-dropdown"] svg');
+            
+            if (isOpen) {
+              countryDropdownMenu.classList.remove('hidden');
+              dropdownLabel.style.transform = 'rotate(180deg)';
+            } else {
+              countryDropdownMenu.classList.add('hidden');
+              dropdownLabel.style.transform = 'rotate(0deg)';
+            }
+          }
+
+          // Event listeners for orientation selection
+          orientationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+              const orientationValue = this.getAttribute('data-orientation');
+              handleOrientationSelection(orientationValue);
+            });
+          });
+
+          // Event listeners for frame selection
+          frameOptions.forEach(option => {
+            option.addEventListener('click', function() {
+              const frameValue = this.getAttribute('data-frame');
+              handleFrameSelection(frameValue);
+            });
+          });
+
+          // Event listeners for size selection
+          sizeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+              const sizeValue = this.getAttribute('data-size');
+              handleSizeSelection(sizeValue);
+              
+              // Close dropdown after selection
+              setTimeout(() => {
+                sizeDropdown.checked = false;
+                toggleDropdown();
+              }, 100);
+            });
+          });
+
+          // Event listener for dropdown toggle
+          sizeDropdown.addEventListener('change', toggleDropdown);
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', function(event) {
+            const dropdownContainer = sizeDropdown.parentElement;
+            if (!dropdownContainer.contains(event.target)) {
+              sizeDropdown.checked = false;
+              toggleDropdown();
+            }
+          });
+
+          // Event listeners for country selection
+          countryOptions.forEach(option => {
+            option.addEventListener('click', function() {
+              const countryValue = this.getAttribute('data-country');
+              handleCountrySelection(countryValue);
+              
+              // Close dropdown after selection
+              setTimeout(() => {
+                countryDropdown.checked = false;
+                toggleCountryDropdown();
+              }, 100);
+            });
+          });
+
+          // Event listener for country dropdown toggle
+          countryDropdown.addEventListener('change', toggleCountryDropdown);
+
+          // Close country dropdown when clicking outside
+          document.addEventListener('click', function(event) {
+            const countryDropdownContainer = countryDropdown.parentElement;
+            if (!countryDropdownContainer.contains(event.target)) {
+              countryDropdown.checked = false;
+              toggleCountryDropdown();
+            }
+          });
+
+          // Initialize with default orientation (vertical)
+          updateSizeVisibility('vertical');
+          
+          // Initialize with default country (United Kingdom)
+          handleCountrySelection('united-kingdom');
+          
+          // Shipping country dropdown functionality
+          const shippingCountryDropdown = document.getElementById('shipping-country-dropdown');
+          const shippingCountryDropdownMenu = document.getElementById('shipping-country-dropdown-menu');
+          const shippingSelectedCountryDisplay = document.getElementById('shipping-selected-country-display');
+          const shippingCountryOptions = document.querySelectorAll('.shipping-country-option');
+
+          // Function to handle shipping country selection
+          function handleShippingCountrySelection(countryValue) {
+            const country = countryData[countryValue];
+            if (country) {
+              const img = shippingSelectedCountryDisplay.querySelector('img');
+              const span = shippingSelectedCountryDisplay.querySelector('span');
+              
+              img.src = country.flag;
+              img.alt = country.name;
+              span.textContent = country.name;
+            }
+            
+            // Update selected styling in dropdown
+            shippingCountryOptions.forEach(option => {
+              const span = option.querySelector('span');
+              if (option.getAttribute('data-country') === countryValue) {
+                span.style.color = '#7B53E7';
+                span.style.fontWeight = 'bold';
+              } else {
+                span.style.color = '#222222';
+                span.style.fontWeight = 'normal';
+              }
+            });
+          }
+
+          // Function to handle shipping country dropdown toggle
+          function toggleShippingCountryDropdown() {
+            const isOpen = shippingCountryDropdown.checked;
+            const dropdownLabel = document.querySelector('label[for="shipping-country-dropdown"] svg');
+            
+            if (isOpen) {
+              shippingCountryDropdownMenu.classList.remove('hidden');
+              dropdownLabel.style.transform = 'rotate(180deg)';
+            } else {
+              shippingCountryDropdownMenu.classList.add('hidden');
+              dropdownLabel.style.transform = 'rotate(0deg)';
+            }
+          }
+
+          // Event listeners for shipping country selection
+          shippingCountryOptions.forEach(option => {
+            option.addEventListener('click', function() {
+              const countryValue = this.getAttribute('data-country');
+              handleShippingCountrySelection(countryValue);
+              
+              // Close dropdown after selection
+              setTimeout(() => {
+                shippingCountryDropdown.checked = false;
+                toggleShippingCountryDropdown();
+              }, 100);
+            });
+          });
+
+          // Event listener for shipping country dropdown toggle
+          shippingCountryDropdown.addEventListener('change', toggleShippingCountryDropdown);
+
+          // Close shipping country dropdown when clicking outside
+          document.addEventListener('click', function(event) {
+            const shippingDropdownContainer = shippingCountryDropdown.parentElement;
+            if (!shippingDropdownContainer.contains(event.target)) {
+              shippingCountryDropdown.checked = false;
+              toggleShippingCountryDropdown();
+            }
+          });
+
+          // Initialize with default shipping country (United Kingdom)
+          handleShippingCountrySelection('united-kingdom');
+        });
+
+        // Accordion anchor link functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          // Handle pricing accordion link
+          const pricingLink = document.querySelector('a[href="#pricing-accordion"]');
+          if (pricingLink) {
+            pricingLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              const pricingAccordion = document.getElementById('pricing-accordion');
+              if (pricingAccordion) {
+                pricingAccordion.checked = true;
+                pricingAccordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
+          }
+
+          // Handle shipping accordion link
+          const shippingLink = document.querySelector('a[href="#shipping-accordion"]');
+          if (shippingLink) {
+            shippingLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              const shippingAccordion = document.getElementById('shipping-accordion');
+              if (shippingAccordion) {
+                shippingAccordion.checked = true;
+                shippingAccordion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            });
+          }
+        });
+      </script>
+    </section>
+
+    <!-- Mobile fixed buttons -->
+    <div class="page-fixed-buttons">
+      <div class="max-w-[1328px] mx-auto px-4 py-5">
+        <div class="grid grid-cols-2 gap-4">
+          <button class="w-full h-[56px] bg-[#7B53E7] text-white-1 rounded-xl font-bold text-base tracking-[0.25px] transition-all hover:bg-[#6841d4]">
+            Start selling
+          </button>
+          <button class="w-full h-[56px] bg-white-1 text-[#7B53E7] border-2 border-[#7B53E7] rounded-xl font-bold text-base tracking-[0.25px] transition-all hover:bg-[#f7f5fb]">
+            Order sample
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop floating buttons -->
+    <div class="desktop-floating-buttons" id="desktop-floating-buttons">    
+        <!-- Action Buttons -->
+        <div class="flex flex-row gap-3">
+          <button class="w-full h-[48px] bg-[#7B53E7] text-white-1 rounded-xl font-bold text-sm tracking-[0.25px] transition-all hover:bg-[#6841d4]">
+            Start selling
+          </button>
+          <button class="w-full h-[48px] bg-white-1 text-[#7B53E7] border-2 border-[#7B53E7] rounded-xl font-bold text-sm tracking-[0.25px] transition-all hover:bg-[#f7f5fb]">
+            Order sample
+          </button>
+        </div>
+    </div>
+
+    <!-- Desktop floating buttons Script -->
+    <script>
+      // Desktop floating buttons scroll handler
+      document.addEventListener('DOMContentLoaded', function() {
+        const floatingButtons = document.getElementById('desktop-floating-buttons');
+        const productHeaderSection = document.querySelector('section.py-8.md\\:py-12'); // Product header section
+        
+        function handleScroll() {
+          // Only run on desktop screens (1024px and above)
+          if (window.innerWidth >= 1024) {
+            const rect = productHeaderSection.getBoundingClientRect();
+            const headerBottom = rect.bottom;
+            
+            // Show floating buttons when user scrolls past the product header section
+            if (headerBottom < 0) {
+              floatingButtons.classList.add('visible');
+            } else {
+              floatingButtons.classList.remove('visible');
+            }
+          } else {
+            // Ensure buttons are hidden on mobile/tablet
+            floatingButtons.classList.remove('visible');
+          }
+        }
+        
+        // Initial check
+        handleScroll();
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', handleScroll);
+        
+        // Listen for resize events to handle screen size changes
+        window.addEventListener('resize', handleScroll);
+      });
+    </script>
+
+    <!-- Accordion styles -->
+    <style>
+      .accordion-item input[type="checkbox"]:checked ~ label svg {
+        transform: rotate(180deg);
+      }
+      
+      .accordion-item input[type="checkbox"]:not(:checked) ~ .accordion-content {
+        display: none;
+      }
+      
+      .accordion-item input[type="checkbox"]:checked ~ .accordion-content {
+        display: block;
+      }
+    </style>
+
+    <!-- Description Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- Description Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="description-accordion" class="sr-only" checked>
+            <label for="description-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">Description</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <div class="prose prose-lg max-w-none mb-6">
+                  <p class="text-base leading-relaxed">
+                    Enhance any interior with our premium canvas prints. Our prints are crafted using museum-quality giclée printing technology, ensuring exceptional detail and color accuracy that brings your artwork to life. Each print is carefully produced with sustainably sourced materials, making Printumo the eco-friendly choice.
+                  </p>
+                </div>
+                <ul class="list-disc list-inside mb-6">
+                <li>
+                  Made from sustainably sourced materials
+                </li> 
+                <li>
+                  Choose between 88 different sizes and 4 frame options
+                </li>
+                <li>
+                  Made on demand. No minimum order quantity.
+                </li>
+                <li>
+                  Sawtooth hanging hardware included. Comes pre-installed.
+                </li>
+              </ul>
+              <div class="prose prose-lg max-w-none">
+                <p class="text-base leading-relaxed">
+                  Care instructions: If the product gathers dust, use a clean soft damp cloth to wipe it clean gently.
+                </p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-8 md:py-12">
+
+
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 font-extrabold mb-2">
+            Canvas Gallery
+          </h2>
+          <p class="text-base md:text-xl text-[#3A3A3A] max-w-2xl mx-auto">
+            Discover the stunning quality and detail of our canvas prints through this curated gallery of customer favorites.
+          </p>
+        </div>
+        
+                <!-- Gallery Grid - Mobile: 1 large + 3 small in row, Desktop: complex grid -->
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-6 lg:grid-rows-6 lg:gap-6 h-auto lg:h-[600px]">
+          
+          <!-- First image - Large on mobile, normal position on desktop -->
+          <div class="lg:col-span-2 lg:row-span-4 relative overflow-hidden rounded-2xl h-[300px] lg:h-full">
+              <a href="./assets/lp3/printumo-canvas-product-3.jpg" data-fancybox="gallery">
+                <img 
+                src="./assets/lp3/printumo-canvas-product-3.jpg" 
+                alt="Featured canvas print" 
+                class="w-full h-full object-cover cursor-pointer"
+              />
+            </a>
+            
+            <!-- +10 Images Card - Show on mobile, hide on desktop -->
+            <div class="lg:hidden absolute bottom-3 right-3 rounded-lg px-3 md:px-5 py-1 md:py-3 shadow-lg flex items-center gap-1" style="background-color: rgba(0, 0, 0, 0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] md:w-6 md:h-6 text-white-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+              </svg>
+              <span class="text-lg md:text-xl font-bold text-white-1">+10 images</span>
+            </div>
+          </div>
+          
+          <!-- Mobile: Row of 3 small images, Desktop: Normal grid position -->
+          <div class="grid grid-cols-3 gap-4 lg:contents">
+            <!-- Second image -->
+            <div class="lg:col-span-1 lg:row-span-2 relative overflow-hidden rounded-2xl h-[120px] lg:h-full">
+              <a href="./assets/lp3/printumo-canvas-product-6.jpg" data-fancybox="gallery">
+                <img 
+                  src="./assets/lp3/printumo-canvas-product-6.jpg" 
+                  alt="Canvas print example" 
+                  class="w-full h-full object-cover object-top cursor-pointer"
+                />
+              </a>
+            </div>
+
+            <!-- Third image -->
+            <div class="lg:col-span-1 lg:row-span-2 relative overflow-hidden rounded-2xl h-[120px] lg:h-full">
+              <a href="./assets/lp3/printumo-canvas-product-7.jpg" data-fancybox="gallery">
+                <img 
+                  src="./assets/lp3/printumo-canvas-product-7.jpg" 
+                  alt="Canvas print example" 
+                  class="w-full h-full object-cover cursor-pointer"
+                />
+              </a>
+            </div>
+
+            <!-- Fourth image -->
+            <div class="lg:col-span-2 lg:row-span-3 relative overflow-hidden rounded-2xl h-[120px] lg:h-full">
+              <a href="./assets/lp3/printumo-canvas-product-4.jpg" data-fancybox="gallery">
+                <img 
+                  src="./assets/lp3/printumo-canvas-product-4.jpg" 
+                  alt="Canvas print example" 
+                  class="w-full h-full object-cover cursor-pointer"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Fifth image - Hidden on mobile, show on desktop -->
+          <div class="lg:col-span-2 lg:row-span-4 relative overflow-hidden rounded-2xl hidden lg:block">
+            <a href="./assets/lp3/printumo-canvas-product-1.jpg" data-fancybox="gallery">
+              <img 
+                src="./assets/lp3/printumo-canvas-product-1.jpg" 
+                alt="Canvas print example" 
+                class="w-full h-full object-cover cursor-pointer"
+              />
+            </a>
+          </div>
+
+          <!-- Sixth image - Hidden on mobile, show on desktop -->
+          <div class="lg:col-span-1 lg:row-span-2 relative overflow-hidden rounded-2xl hidden lg:block">
+            <a href="./assets/lp3/printumo-canvas-product-2.jpg" data-fancybox="gallery">
+              <img 
+                src="./assets/lp3/printumo-canvas-product-2.jpg" 
+                alt="Canvas print example" 
+                class="w-full h-full object-cover cursor-pointer"
+              />
+            </a>
+          </div>
+          
+          <!-- Seventh image - Hidden on mobile, show on desktop -->
+          <div class="lg:col-span-1 lg:row-span-2 relative overflow-hidden rounded-2xl hidden lg:block">
+            <a href="./assets/lp3/p3-2x.png" data-fancybox="gallery">
+              <img 
+                src="./assets/lp3/p3-2x.png" 
+                alt="Canvas print example" 
+                class="w-full h-full object-cover cursor-pointer"
+              />
+            </a>
+          </div>
+
+          <!-- Eighth image with "+10 images" overlay - Hidden on mobile, show on desktop -->
+          <div class="lg:col-span-2 lg:row-span-3 lg:row-start-4 lg:col-start-5 relative overflow-hidden rounded-2xl hidden lg:block">
+            <a href="./assets/lp3/printumo-canvas-product-5.jpg" data-fancybox="gallery">
+              <img 
+                src="./assets/lp3/printumo-canvas-product-5.jpg" 
+                alt="Canvas print example" 
+                class="w-full h-full object-cover cursor-pointer"
+              />
+            </a>
+            
+            <!-- +10 Images Card - Only show on desktop -->
+             <div class="absolute bottom-3 right-3 rounded-lg px-3 md:px-5 py-1 md:py-3 shadow-lg flex items-center gap-1" style="background-color: rgba(0, 0, 0, 0.8);">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] md:w-6 md:h-6 text-white-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+              <circle cx="9" cy="9" r="2"/>
+                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+              </svg>
+              <span class="text-lg md:text-xl font-bold text-white-1">+10 images</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden images for the gallery -->
+        <div style="display: none;">
+          <a href="./assets/lp3/printumo-canvas-product-4.jpg" data-fancybox="gallery"></a>
+          <a href="./assets/lp3/printumo-canvas-product-3.jpg" data-fancybox="gallery"></a>
+          <a href="./assets/lp3/printumo-canvas-product-7.jpg" data-fancybox="gallery"></a>
+          <!-- remaining images here -->
+        </div>
+      </div>
+      <script>
+        // Initialize Fancybox with zoom and minimal UI
+        Fancybox.bind("[data-fancybox]", {
+          // Thumbnail settings
+          Thumbs: {
+            showOnStart: true,
+            hideOnClose: true,
+            axis: "x"
+          },
+          
+          // Toolbar customization - remove close button and info
+          Toolbar: {
+            display: {
+              left: [],                    // Remove infobar (text below image)
+              right: ["slideshow", "download", "close"]
+            },
+          },
+          
+          // Image settings - enable zoom
+          Images: {
+            zoom: true,
+            click: "toggleZoom",      // Click to zoom in/out
+            wheel: "zoom"             // Mouse wheel to zoom
+          },
+          
+          // UI settings
+          closeButton: false,         // Disable close button completely
+          dragToClose: true,          // Can still drag to close on mobile
+          keyboard: {
+            Escape: "close",          // ESC key still works to close
+            Delete: "close",
+            Backspace: "close"
+          },
+          
+          // Animation
+          showClass: "fancybox-zoomIn",
+          
+          // Navigation
+          wheel: true,
+          touch: {
+            vertical: true,
+            momentum: true
+          },
+          
+          // Click backdrop to close
+          backdropClick: "close"
+        });
+      </script>
+    </section>
+
+    <!-- Switch to Printumo CTA  -->
+    <section class="bg-[url('./assets/lp3/frames-bg.png')] bg-center relative min-h-[300px] flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-1 to-[#563e82] opacity-90"></div>
+        <div class="text-center px-5 py-10 relative z-10">
+        <h2 class="text-white-1 font-bold text-[35px] lg:text-[40px] leading-[40px] lg:leading-none tracking-[1px]">
+            Already selling prints?
+        </h2>
+        <p class="text-white-1 lg:text-[20px] tracking-[1px] leading-5 pt-[25px] lg:pt-[16px] pb-8">
+            Switch to Printumo: Lower costs, offer XL sizes, reach 28 countries,
+            boost your profits
+        </p>
+        <a href="#" class="inline-block px-10 py-2 bg-black-1 border-2 border-black-1 font-semibold text-base lg:text-lg text-white-1 rounded-xl hover:bg-white-1 hover:text-black-1 transition-all duration-150">
+            Learn more
+        </a>
+        </div>
+    </section>
+
+    <!-- Framing Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- Framing Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="framing-accordion" class="sr-only">
+            <label for="framing-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">Framing</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <div>
+                  <ul class="list-disc list-inside mb-6 text-base leading-relaxed text-[#222222]">
+                    <li>
+                      Canvas depth: 3.18cm (1.25")
+                    </li>
+                    <li>
+                      Frame depth: 4.45cm (1.75")
+                    </li>
+                  </ul>
+                  <!-- Black Frame Section -->
+                  <div class="mb-8">
+                    <div class="flex flex-col lg:flex-row gap-6 items-start">
+                      <div class="w-full h-auto lg:w-1/2 rounded-xl">
+                        <img src="./assets/frames/black.png" class="w-full h-full rounded-xl" alt="Black Frame">
+                      </div>
+                      <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">Black Frame</h3>
+                        <p class="text-base leading-relaxed text-[#222222]">
+                          Classic black wooden frame that provides elegant contrast and modern appeal. Perfect for contemporary artwork and modern interior designs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- White Frame Section -->
+                  <div class="mb-8">
+                    <div class="flex flex-col lg:flex-row gap-6 items-start">
+                      <div class="w-full h-auto lg:w-1/2 rounded-xl">
+                        <img src="./assets/frames/white.png" class="w-full h-full rounded-xl" alt="White Frame">
+                      </div>
+                      <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">White Frame</h3>
+                        <p class="text-base leading-relaxed text-[#222222]">
+                          Clean white frame that creates a bright, contemporary look perfect for light spaces. Ideal for minimalist designs and bright artwork.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Oak Frame Section -->
+                  <div class="mb-8">
+                    <div class="flex flex-col lg:flex-row gap-6 items-start">
+                      <div class="w-full h-auto lg:w-1/2 rounded-xl">
+                        <img src="./assets/frames/oak.png" class="w-full h-full rounded-xl" alt="Oak Frame">
+                      </div>
+                      <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">Oak Frame</h3>
+                        <p class="text-base leading-relaxed text-[#222222]">
+                          Natural oak wood frame that adds warmth and traditional elegance to your artwork. Perfect for classic and rustic interior styles.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Materials Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- Materials Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="materials-accordion" class="sr-only">
+            <label for="materials-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">Materials</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                  <!-- Text Content -->
+                  <div class="flex-1">
+                    <div class="prose prose-lg max-w-none mb-6">
+                      <p class="text-base leading-relaxed">
+                        Made with sustainably sourced materials. Our premium canvas prints are crafted using museum-quality giclée printing technology, ensuring exceptional detail and color accuracy that brings your artwork to life. Each print is carefully produced on archival-grade canvas that's designed to last for generations.
+                      </p>
+                    </div>
+                    <ul class="list-disc list-inside mb-6">
+                      <li><b>Material:</b> Poly cotton blend with a matte/satin finish. Scratch, crack, & warp resistant. 344 gsm weight & 17.5 mil thickness.</li>
+                      <li><b>Printing:</b> Strong vibrant colors from sustainable water based HP latex inks and protected with UV coatings.</li>
+                      <li><b>Strecher bar:</b> A depth of 3.2cm and made from 100% renewable, kiln-dried, knot-free, finger jointed wood</li>
+                      <li><b>Floater frames:</b> 4.45cm deep solid wood, black, white or oak finish.</li>
+                      <li><b>Whiteness & Brightness:</b> 126 min & 98 min</li>
+                     </ul>
+                     <div class="prose prose-lg max-w-none">
+                      <p class="text-base leading-relaxed">
+                        Please note: Due to the production process of the canvases, please allow for slight size deviations with a tolerance +/- 1/8" (3.2mm).                  </p>
+                    </div>
+                  </div>
+                  
+                  <!-- Materials Images Grid -->
+                  <div class="lg:w-80">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="aspect-square rounded-lg overflow-hidden">
+                        <img src="./assets/lp3/printumo-canvas-product-1.jpg" alt="Canvas material detail 1" class="w-full h-full object-cover">
+                      </div>
+                      <div class="aspect-square rounded-lg overflow-hidden">
+                        <img src="./assets/lp3/printumo-canvas-product-2.jpg" alt="Canvas material detail 2" class="w-full h-full object-cover">
+                      </div>
+                      <div class="aspect-square rounded-lg overflow-hidden">
+                        <img src="./assets/lp3/printumo-canvas-product-3.jpg" alt="Canvas material detail 3" class="w-full h-full object-cover">
+                      </div>
+                      <div class="aspect-square rounded-lg overflow-hidden">
+                        <img src="./assets/lp3/printumo-canvas-product-4.jpg" alt="Canvas material detail 4" class="w-full h-full object-cover">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packaging & custom branding Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- Packaging & custom branding Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="packaging-accordion" class="sr-only">
+            <label for="packaging-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">Packaging & Custom Branding</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <!-- Packaging Section -->
+                <div class="mb-8">
+                  <div class="flex flex-col lg:flex-row gap-6 items-center">
+                    <div class="flex-1">
+                      <h3 class="text-xl font-bold mb-2">Packaging</h3>
+                      <p class="text-base leading-relaxed text-[#222222]">
+                        We offer premium packaging solutions to ensure your artwork arrives in perfect condition. Our packaging is designed to protect your prints during transit while maintaining a professional appearance that reflects the quality of your artwork.
+                      </p>
+                      <ul class="list-disc list-inside mt-4">
+                        <li>
+                          <b>White-label packaging:</b> All shipments are shipped in white-label packaging. There is zero Printumo branding on the packaging.
+                        </li>
+                        <li>
+                          <b>Premium packaging:</b> All shipments are shipped in premium packaging that ensures your artwork arrives in perfect condition.
+                        </li>
+                        <li>
+                          <b>Custom branding:</b> Add your logo, message, or branding information to the packaging.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                      <img src="./assets/product-page-canvus.png" alt="Packaging" class="max-w-full h-auto rounded-lg">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Custom Branding Section -->
+                <div class="mb-8">
+                  <h3 class="text-xl font-bold mb-2">Custom Branding</h3>
+                  <p class="text-base leading-relaxed text-[#222222] mb-6">
+                    Add your personal touch with our custom branding options. Available for EU & UK orders only.
+                  </p>
+                  
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Card Insert -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm border">
+                      <h4 class="text-lg font-semibold mb-2">Card Insert</h4>
+                      <p class="text-sm text-[#222222] mb-4">
+                        Include a custom card insert with your logo, message, or branding information inside each package.
+                      </p>
+                      <img src="./assets/product1.png" alt="Card Insert" class="w-full h-auto rounded">
+                    </div>
+                    
+                    <!-- Packaging Sticker -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm border">
+                      <h4 class="text-lg font-semibold mb-2">Packaging Sticker</h4>
+                      <p class="text-sm text-[#222222] mb-4">
+                        Add your custom sticker to the exterior of the packaging for brand recognition and professional presentation.
+                      </p>
+                      <img src="./assets/product2.png" alt="Packaging Sticker" class="w-full h-auto rounded">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- Pricing Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="pricing-accordion" class="sr-only">
+            <label for="pricing-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">Pricing</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <img src="./assets/canvas-sizes.png" alt="Pricing" class="w-full">
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shipping Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- Shipping Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="shipping-accordion" class="sr-only">
+            <label for="shipping-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">Shipping</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <div class="prose prose-lg max-w-none">
+                  <ul class="list-disc list-inside mb-6">
+                    <li>
+                      <b>Fast Shipping:</b> Orders are shipped to customers within 3-7 business days.
+                    </li>
+                    <li>
+                      <b>Global fulfillment:</b> We fulfill globally in 32 different countries.
+                    </li>
+                    <li>
+                      <b>Premium Couriers:</b> FedEx, GLS, UPS and Postnord are our preferred couriers.
+                    </li>
+                  </ul>
+                  <!-- Country Selection -->
+                  <div class="mb-6">
+                    <h3 class="text-lg font-bold text-[#222222] mb-3">Select Country</h3>
+                    <div class="relative inline-block">
+                      <input type="checkbox" id="shipping-country-dropdown" class="sr-only">
+                      
+                      <label for="shipping-country-dropdown" class="flex items-center gap-1 cursor-pointer bg-white rounded-lg py-3 px-4 relative border border-gray-300">
+                        <div id="shipping-selected-country-display" class="flex items-center gap-2">
+                          <img src="./assets/lp2/icons/united-kingdom.svg" alt="United Kingdom" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">United Kingdom</span>
+                        </div>
+                        
+                        <svg class="w-4 h-4 text-[#222222] transition-transform ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </label>
+                      
+                      <!-- Dropdown Menu -->
+                      <div id="shipping-country-dropdown-menu" class="absolute top-full left-0 mt-1 bg-white-1 border border-gray-300 rounded-lg shadow-lg z-10 max-h-48 overflow-y-auto hidden min-w-[200px]">
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="australia">
+                          <img src="./assets/lp2/icons/australia.svg" alt="Australia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Australia</span>
+              </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="austria">
+                          <img src="./assets/lp2/icons/austria.svg" alt="Austria" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Austria</span>
+              </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="belgium">
+                          <img src="./assets/lp2/icons/belgium.svg" alt="Belgium" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Belgium</span>
+            </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="bulgaria">
+                          <img src="./assets/lp2/icons/bulgaria.svg" alt="Bulgaria" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Bulgaria</span>
+          </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="canada">
+                          <img src="./assets/lp3/canada.svg" alt="Canada" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Canada</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="croatia">
+                          <img src="./assets/lp2/icons/croatia.svg" alt="Croatia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Croatia</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="cyprus">
+                          <img src="./assets/lp2/icons/cyprus.svg" alt="Cyprus" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Cyprus</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="czech">
+                          <img src="./assets/lp2/icons/czech.svg" alt="Czechia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Czechia</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="denmark">
+                          <img src="./assets/lp2/icons/denmark.svg" alt="Denmark" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Denmark</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="estonia">
+                          <img src="./assets/lp2/icons/estonia.svg" alt="Estonia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Estonia</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="finland">
+                          <img src="./assets/lp2/icons/finland.svg" alt="Finland" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Finland</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="france">
+                          <img src="./assets/lp2/icons/france.svg" alt="France" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">France</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="germany">
+                          <img src="./assets/lp2/icons/germany.svg" alt="Germany" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Germany</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="greece">
+                          <img src="./assets/lp2/icons/greece.svg" alt="Greece" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Greece</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="hungary">
+                          <img src="./assets/lp2/icons/hungary.svg" alt="Hungary" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Hungary</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="ireland">
+                          <img src="./assets/lp2/icons/ireland.svg" alt="Ireland" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Ireland</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="italy">
+                          <img src="./assets/lp2/icons/italy.svg" alt="Italy" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Italy</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="latvia">
+                          <img src="./assets/lp2/icons/latvia.svg" alt="Latvia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Latvia</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="lithuania">
+                          <img src="./assets/lp2/icons/lithuania.svg" alt="Lithuania" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Lithuania</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="luxembourg">
+                          <img src="./assets/lp2/icons/luxembourg.svg" alt="Luxembourg" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Luxembourg</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="netherlands">
+                          <img src="./assets/lp2/icons/netherlands.svg" alt="Netherlands" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Netherlands</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="new-zealand">
+                          <img src="./assets/lp2/icons/new-zealand.svg" alt="New Zealand" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">New Zealand</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="norway">
+                          <img src="./assets/lp2/icons/norway.svg" alt="Norway" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Norway</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="poland">
+                          <img src="./assets/lp2/icons/poland.svg" alt="Poland" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Poland</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="portugal">
+                          <img src="./assets/lp2/icons/portugal.svg" alt="Portugal" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Portugal</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="romania">
+                          <img src="./assets/lp2/icons/romania.svg" alt="Romania" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Romania</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="slovakia">
+                          <img src="./assets/lp2/icons/slovakia.svg" alt="Slovakia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Slovakia</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="slovenia">
+                          <img src="./assets/lp2/icons/slovenia.svg" alt="Slovenia" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Slovenia</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="spain">
+                          <img src="./assets/lp2/icons/spain.svg" alt="Spain" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Spain</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="sweden">
+                          <img src="./assets/lp2/icons/sweden.svg" alt="Sweden" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Sweden</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="switzerland">
+                          <img src="./assets/lp2/icons/switzerland.svg" alt="Switzerland" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">Switzerland</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="united-kingdom">
+                          <img src="./assets/lp2/icons/united-kingdom.svg" alt="United Kingdom" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">United Kingdom</span>
+                        </div>
+                        <div class="shipping-country-option flex items-center gap-2 px-3 py-2 hover:bg-gray-50 cursor-pointer" data-country="united-states">
+                          <img src="./assets/lp2/icons/united-states.svg" alt="United States" class="w-4 h-4" />
+                          <span class="text-sm font-medium text-[#222222]">United States</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Special Pricing CTA -->
+                  <div class="mb-2">
+                    <p class="text-base">
+                      Handling a high order volume? 
+                      <a href="#" class="inline-flex items-center text-[#7B53E7] font-semibold hover:text-[#6841d4] transition-colors">
+                        Get special pricing
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+                  
+                  <!-- Shipping Prices Table -->
+                  <div class="overflow-y-auto max-h-[500px] relative">
+                    <table class="w-full border border-gray-300 bg-white-1">
+                      <thead class="bg-gray-100">
+                        <tr>
+                          <th class="border border-gray-300 px-4 py-3 text-left font-bold">Size</th>
+                          <th class="border border-gray-300 px-4 py-3 text-left font-bold">First Unit</th>
+                          <th class="border border-gray-300 px-4 py-3 text-left font-bold">Additional Unit</th>
+                        </tr>
+                      </thead>
+                                              <tbody class="bg-white">
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Square (1:1)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">20x20 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€2.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">30x30 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">80x80 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">120x120 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">135x135 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Portrait (1:2)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">25x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">60x120 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">65x125 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">75x150 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Portrait (2:3)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">20x30 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€2.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">30x45 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">40x60 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x75 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">55x85 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">60x90 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x105 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">80x120 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x150 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Portrait (3:4)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">30x40 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">40x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">55x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">60x80 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x90 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">75x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">105x140 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">120x165 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€13.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Portrait (4:5)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">20x25 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€2.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">40x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x65 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">60x75 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x90 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">80x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x125 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">120x150 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€14.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Portrait (5:7)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">40x55 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">65x90 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">75x105 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">90x125 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x140 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">115x160 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€14.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">125x180 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€15.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€13.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Portrait (9:16)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">45x80 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x120 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">90x165 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€13.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Landscape (2:1)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x25 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">120x60 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">125x65 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">150x75 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Landscape (3:2)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">30x20 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€2.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">45x30 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">60x40 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">75x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">85x55 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">90x60 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">105x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">120x80 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">150x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Landscape (4:3)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">40x30 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€3.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x40 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x55 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">80x60 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">90x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x75 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">140x105 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">165x120 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€13.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Landscape (5:4)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">25x20 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€2.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">50x40 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">65x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">75x60 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">90x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">100x80 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">125x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">150x120 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€14.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Landscape (7:5)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">55x40 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€4.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">70x50 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€5.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">90x65 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€7.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">105x75 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">125x90 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">140x100 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€10.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">160x115 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€14.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€12.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">180x125 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€15.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€13.99</td>
+                         </tr>
+                         
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]">Landscape (16:9)</td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                           <td class="border border-gray-300 px-4 py-3 font-bold text-[#222222]"></td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">80x45 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€8.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€6.99</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">120x70 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.49</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€9.49</td>
+                         </tr>
+                         <tr>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">165x90 cm</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€13.99</td>
+                           <td class="border border-gray-300 px-4 py-3 text-sm text-[#222222]">€11.99</td>
+                         </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EU GSPR Information Accordion Section -->
+    <section class="py-4">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="mx-auto">
+          <!-- EU GSPR Information Accordion Container -->
+          <div class="accordion-item rounded-2xl overflow-hidden bg-[#f7f5fb]">
+            <!-- Accordion Header -->
+            <input type="checkbox" id="gspr-accordion" class="sr-only">
+            <label for="gspr-accordion" class="flex items-center justify-between p-6 cursor-pointer">
+              <h2 class="text-2xl md:text-3xl font-bold">EU GSPR Information</h2>
+              <svg class="w-6 h-6 text-[#222222] transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </label>
+            
+            <!-- Accordion Content -->
+            <div class="accordion-content">
+              <div class="p-6 pt-0">
+                <div class="prose prose-lg max-w-none">
+                  <ul class="list-disc list-inside">
+                    <li>Manufacturer contact information
+                    <ul class="list-disc list-inside ml-4">
+                    <li>Name: Printumo</li>
+                    <li>Email address: help@printumo.com</li>
+                    <li>Postal address: Store Kongensgade 17 A 1 th, 1264 København K</li>
+                    </ul>
+                    </li>
+                    <li>Age guidelines: For adults</li>
+                    <li>EU Warranty: 2 years</li>
+                    </ul>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- UGC Marquee Slider Section -->
+    <section class="py-8 md:py-12">
+      <style>
+        /* UGC Marquee Slider Styles */
+        .ugc-marquee .splide__slide {
+          width: 280px;
+          flex-shrink: 0;
+        }
+        
+        .ugc-marquee .splide__list {
+          align-items: center;
+        }
+
+        /* Video Overlay Styles */
+        .video-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .video-overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .video-wrapper {
+          position: relative;
+          width: 90%;
+          max-width: 800px;
+          transform: scale(0.8);
+          transition: transform 0.3s ease;
+        }
+
+        .video-overlay.active .video-wrapper {
+          transform: scale(1);
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #000;
+          border-radius: 12px;
+          overflow: hidden;
+        }
+
+        .video-container iframe {
+          width: 100%;
+          height: 100%;
+        }
+
+        .video-close-btn {
+          position: absolute;
+          top: -60px;
+          right: 0;
+          background: white;
+          border: none;
+          border-radius: 50%;
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          z-index: 10001;
+          color: #333;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-close-btn:hover {
+          background: #f0f0f0;
+        }
+
+        .video-close-btn svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        @media (max-width: 768px) {
+          .video-wrapper {
+            width: 95%;
+            max-width: none;
+          }
+          
+          .video-close-btn {
+            top: -55px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+          }
+
+          .video-close-btn svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      </style>
+
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 font-extrabold mb-4">
+            Loved by Artists
+          </h2>
+          <p class="text-base md:text-xl text-[#3A3A3A] max-w-2xl mx-auto">
+            See how our community is using Printumo to showcase their artwork and grow their business
+          </p>
+        </div>
+      </div>
+      
+      <!-- UGC Marquee Slider - Full Width -->
+      <div class="w-full overflow-hidden">
+        <div class="splide ugc-marquee" id="ugc-marquee-slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <!-- Slide 1 - Video -->
+              <li class="splide__slide">
+                <button onclick="openVideoOverlay('dQw4w9WgXcQ')" class="block relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px] w-full cursor-pointer">
+                  <img src="./assets/product/arts/women.svg" class="w-full h-full object-cover" alt="UGC Video">
+                  
+                  <!-- Play Button Overlay -->
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-16 h-16 bg-[#7B53E7] rounded-full flex items-center justify-center shadow-lg hover:bg-[#6841d4] transition-colors">
+                      <svg class="w-8 h-8 text-white-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Emma Parker">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Emma Parker</h4>
+                        <p class="text-xs text-black-7">"The quality blew me away!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              
+              <!-- Slide 2 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-1.jpg" class="w-full h-full object-cover" alt="UGC Image 1">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avata2.png" class="w-full h-full object-cover" alt="Michael Smith">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Michael Smith</h4>
+                        <p class="text-xs text-black-7">"My customers are amazed!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <!-- Slide 3 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-2.jpg" class="w-full h-full object-cover" alt="UGC Image 2">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avatar3.png" class="w-full h-full object-cover" alt="Sarah Johnson">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Sarah Johnson</h4>
+                        <p class="text-xs text-black-7">"Fast shipping every time!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <!-- Slide 4 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-3.jpg" class="w-full h-full object-cover" alt="UGC Image 3">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avata4.png" class="w-full h-full object-cover" alt="David Chen">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">David Chen</h4>
+                        <p class="text-xs text-black-7">"Colors are so vibrant!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <!-- Slide 5 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-4.jpg" class="w-full h-full object-cover" alt="UGC Image 4">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avata5.png" class="w-full h-full object-cover" alt="Lisa Rodriguez">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Lisa Rodriguez</h4>
+                        <p class="text-xs text-black-7">"Best quality I've found!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <!-- Slide 6 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-5.jpg" class="w-full h-full object-cover" alt="UGC Image 5">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avata6.png" class="w-full h-full object-cover" alt="Tom Wilson">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Tom Wilson</h4>
+                        <p class="text-xs text-black-7">"Exceeded my expectations!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <!-- Slide 7 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-6.jpg" class="w-full h-full object-cover" alt="UGC Image 6">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Anna Taylor">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Anna Taylor</h4>
+                        <p class="text-xs text-black-7">"Perfect for my art studio!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              
+              <!-- Slide 8 - Image -->
+              <li class="splide__slide">
+                <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                  <img src="./assets/lp3/printumo-canvas-product-7.jpg" class="w-full h-full object-cover" alt="UGC Image 7">
+                  
+                  <!-- User Card -->
+                  <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                        <img src="./assets/avata2.png" class="w-full h-full object-cover" alt="Mark Garcia">
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-bold text-black-5 text-sm">Mark Garcia</h4>
+                        <p class="text-xs text-black-7">"Customers love the quality!"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- UGC Marquee Slider Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Initialize UGC Marquee Slider
+          if (document.getElementById('ugc-marquee-slider')) {
+            console.log('Initializing Splide...'); // Debug log
+            console.log('Splide Extensions:', window.splide?.Extensions); // Debug log
+            
+            const splide = new Splide('#ugc-marquee-slider', {
+              type: 'loop',
+              drag: 'free',
+              focus: 'center',
+              perPage: 8,
+              gap: '1rem',
+              arrows: false,
+              pagination: false,
+              autoScroll: {
+                speed: 0.7,
+              },
+              breakpoints: {
+                2245: {
+                  perPage: 7,
+                  gap: '1.25rem',
+                },
+                1920: {
+                  perPage: 6,
+                  gap: '1.25rem',
+                },
+                1680: {
+                  perPage: 5,
+                  gap: '1rem',
+                },
+                1440: {
+                  perPage: 4,
+                  gap: '0.75rem',
+                },
+                1200: {
+                  perPage: 3,
+                  gap: '0.5rem',
+                },
+                1024: {
+                  perPage: 3,
+                  gap: '0.5rem',
+                },
+                900: {
+                  perPage: 2,
+                  gap: '0.25rem',
+                },
+                480: {
+                  perPage: 1.5,
+                  gap: '0.5rem',
+                },
+              },
+            });
+            
+            // Mount with all available extensions
+            try {
+              splide.mount(window.splide.Extensions);
+            } catch (error) {
+              console.error('Error mounting with extensions:', error);
+              // Fallback to basic mount
+              splide.mount();
+            }
+          }
+        });
+      </script>
+
+      <!-- Video Overlay -->
+      <div id="videoOverlay" class="video-overlay" onclick="closeVideoOverlay(event)">
+        <div class="video-wrapper">
+          <button class="video-close-btn" onclick="closeVideoOverlay()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="video-container">
+            <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Overlay JavaScript -->
+      <script>
+        function openVideoOverlay(videoId) {
+          const overlay = document.getElementById('videoOverlay');
+          const iframe = document.getElementById('videoFrame');
+          
+          // Set the YouTube embed URL with autoplay
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+          
+          // Show the overlay
+          overlay.classList.add('active');
+          
+          // Prevent body scrolling
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoOverlay(event) {
+          // Only close if clicked on overlay background or close button
+          if (event && event.target.closest('.video-wrapper') && !event.target.closest('.video-close-btn')) {
+            return;
+          }
+          
+          const overlay = document.getElementById('videoOverlay');
+          const iframe = document.getElementById('videoFrame');
+          
+          // Hide the overlay
+          overlay.classList.remove('active');
+          
+          // Stop the video by clearing the src
+          iframe.src = '';
+          
+          // Restore body scrolling
+          document.body.style.overflow = '';
+        }
+
+        // Close overlay on Escape key
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            closeVideoOverlay();
+          }
+        });
+      </script>
+
+    </section>
+
+    <!-- Free sample CTA  -->
+    <section class="py-10">
+      <div class="max-w-[1328px] mx-auto px-4 bg-purple-1 rounded-2xl">
+      <div class="max-w-[616px] mx-auto py-16 md:py-24 text-center px-4">
+        <h2 class="text-5xl text-white-1 font-bold">
+          Free Sample
+        </h2>
+        <p class="text-lg lg:text-xl text-white-1 mt-6 mb-10">
+          Already selling 10+ prints/month? Get your free sample and experience the premium quality that's making sellers switch to Printumo. No cost, no commitment - just quality you can feel.
+        </p>
+        <div>
+          <a href="/free-sample" class="inline-block px-8 py-3 bg-white-1 border-2 border-white-1 text-black-5 rounded-xl hover:bg-transparent hover:text-white-1 font-semibold transition-all duration-150 text-lg">
+            Get your free sample now
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html> 

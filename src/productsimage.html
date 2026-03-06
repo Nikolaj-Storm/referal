@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <title>Products Image</title>
+</head>
+
+<body>
+    <!--  header  -->
+    <header
+        class="w-full flex fixed gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] bg-white-1 md:px-9 p-4 z-20">
+        <!-- back -->
+        <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7 ">
+            <button
+                class="px-0 md:px-2 h-[42px] md:flex justify-center items-center text-[16px] active:-translate-y-[2px] text-black-2 rounded-lg font-bold space-x-[13px] group hover:opacity-80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-gray-900" viewBox="0 0 18 12">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.5396 5.0002V7.0002H4.71135L7.95383 10.2428L6.53966 11.657L0.882812 6.0001L6.53966 0.343262L7.95383 1.75747L4.71112 5.0002H17.5396Z" />
+                </svg>
+
+                <span class="leading-[24px] hidden xl:inline-block">Back to products</span>
+            </button>
+        </div>
+
+        <!-- steps -->
+        <div class="flex justify-center items-center gap-[10px] sm:gap-8 xl:gap-10 mx-auto">
+            <a href="#" class="relative w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/gallery.svg" class="w-full" alt="">
+
+                <span
+                    class="absolute -bottom-5 md:-bottom-6 -left-[5px] w-[34px] h-[3px] md:h-[4px] md:w-[52px] bg-purple-1 z-10 rounded-tl-full rounded-tr-full"></span>
+            </a>
+
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/file.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/edit.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg" class="w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none"
+                alt="" />
+
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/dollar.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+            <img src="./assets/product/right.svg"
+                class="inline-block w-[16px] h-[16px] md:w-6 md:h-6 object-fill flex-none" alt="" />
+
+            <a href="#" class="w-[24px] h-[24px] md:w-[42px] md:h-[42px] inline-block flex-none">
+                <img src="./assets/product/eye.svg" class="w-full h-full object-fill" alt="" />
+            </a>
+        </div>
+
+        <!-- button -->
+        <div class="hidden lg:flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <!-- create product button -->
+            <button
+                class="px-[51px] h-[42px] lg:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-semibold leading-[24px]">
+                Continue
+            </button>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main class="w-full  bg-gray-2 p-3 md:p-5  md:pt-[80px] pt-[60px]">
+        <div class="container max-w-[1130px] mx-auto">
+            <!-- content -->
+            <div class="w-full">
+                <!-- warning bar  -->
+                <div
+                    class="border border-[#54AA72] bg-[#54AA721A] pl-[15px] pr-[25px] py-[10px] lg:p-3 rounded-lg flex items-center gap-x-[15px] lg:gap-x-[7px] mt-5 mb-[15px] 
+                    lg:mt-[50px] lg:mb-[30px]">
+                    <div class="w-5 lg:w-4">
+                        <img src="./assets/product/arts/info.svg" class="w-full" alt="">
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-[#696969] text-[14px]">
+                            Quick Tip: Simply click on the design(s) you want to use, and start creating your products in just a few clicks!
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- filter body  -->
+                <div class="w-full flex flex-col lg:relative">
+                    <!-- LEFT NAVIGATION ------->
+                    <div id="left-productnavigation"
+                        class="w-[300px] lg:w-[250px] drawer2 fixed lg:absolute h-screen bg-white-1 lg:bg-transparent  top-0 left-0 lg:top-auto lg:left-auto 
+                        overflow-y-auto lg:overflow-visible no-scrollbar">
+                        <!-- filter  -->
+                        <div class="flex items-center justify-between px-5 lg:px-0 pt-20 lg:pt-0 relative">
+                            <h2 class="font-normal text-black-1 text-[22px] lg:text-[20px] flex-1">Filters</h2>
+                            <div class="flex items-center justify-end gap-1 flex-1">
+                                <button
+                                    class="px-[15px] py-[7px] text-purple-1 font-bold text-[16px] lg:text-[12px] hover:bg-[#7a53e78e] rounded-[8px]">Reset</button>
+                                <button
+                                    class="px-[15px] py-[7px] text-white-1 font-bold text-[14px] lg:text-[12px] bg-purple-1 rounded-[8px] hover:opacity-80">Apply</button>
+                            </div>
+                            <div class="w-3.5 block lg:hidden absolute top-8 right-5" onclick="closeDrawer()">
+                                <img src="./assets/product/closeside.svg" class="w-3.5" alt="">
+                            </div>
+                        </div>
+                        <!-- list items  -->
+                        <div class="bg-white-1 p-[15px] mt-[10px] lg:mt-[15px] rounded-2xl">
+                            <!-- Category -->
+                            <div>
+                                <h2 class="text-black-1 text-[18px] lg:text-[16px] font-bold">Category</h2>
+                                <div class="mt-[10px] flex items-center gap-x-3 gap-y-[10px] lg:gap-y-[7px] flex-wrap">
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="abstract-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="abstract-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Abstract</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Animals-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Animals-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Animals</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Action-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Action-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Action</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Architecture-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Architecture-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Architecture</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Buildings-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Buildings-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Buildings</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Kids-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Kids-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Kids</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Maps-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Maps-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Maps</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="flowersplants-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="flowersplants-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Flowers &
+                                            plants</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Figurative-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Figurative-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Figurative</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Paintings-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Paintings-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Paintings</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Macro-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Macro-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Macro</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Illustration-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Illustration-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Illustration</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="LineArt-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="LineArt-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Line Art</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Surreal-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Surreal-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Surreal</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="NatureLandscapes-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="NatureLandscapes-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Nature &
+                                            Landscapes</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Watercolor-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Watercolor-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Watercolor</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Textquotes-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Textquotes-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Text &
+                                            quotes</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Geometric-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Geometric-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Geometric</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Drawing-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Drawing-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Drawing</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="FoodDrinks-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="FoodDrinks-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Food &
+                                            Drinks</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Places-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Places-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Places</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Patterns-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Patterns-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Patterns</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="People-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="People-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">People</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Performance-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Performance-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Performance</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="SurfaceDesign-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="SurfaceDesign-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Surface
+                                            Design</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Holiday-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Holiday-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Holiday</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Street-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Street-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Street</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Night-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Night-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Night</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Artists -->
+                            <div class="mt-[15px]">
+                                <div
+                                    class="bg-[#F9F9FA] rounded-[5px] px-[10px] lg:px-[7px] py-[7px] lg:py-[3px] flex items-center justify-between">
+                                    <span class="font-bold text-black-1 text-[16px] lg:text-[14px]">Artists (1042)</span>
+                                    <span><img src="./assets/product/uparrow.svg" class="w-[11px] h-[6px]"
+                                            alt="Up Arrow"></span>
+                                </div>
+                                <!-- Search  -->
+                                <div
+                                    class="bg-[#F9F9FA] rounded-[5px] px-[7px] py-3 lg:py-[3px] flex items-center gap-[5px] my-[10px]">
+                                    <label for="searchArtist"><img src="./assets/product/search.svg"
+                                            class="w-3.5 h-3.5 flex-shrink-0" alt="search"></label>
+                                    <input type="text" id="searchArtist" placeholder="Search for artists"
+                                        class="bg-transparent outline-none text-black-1 placeholder-[#8F92A1] flex-1 lg:text-[12px] text-[14px]" />
+                                </div>
+                                <div class="h-[155px] overflow-y-auto space-y-[7px] scrollbar-thin">
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="AliGulec-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="AliGulec-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Ali
+                                            Gulec</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="AnaRutBre-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="AnaRutBre-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Ana Rut
+                                            Bre</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Annick-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Annick-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Annick</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="ArtyGuava-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="ArtyGuava-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Arty
+                                            Guava</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="AtheneFritsch-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="AtheneFritsch-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Athene
+                                            Fritsch</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="BeaMüller-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="BeaMüller-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Bea
+                                            Müller</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="AnaRutBre-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="AnaRutBre-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Ana Rut
+                                            Bre</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Annick-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Annick-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Annick</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="ArtyGuava-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="ArtyGuava-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Arty
+                                            Guava</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="AtheneFritsch-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="AtheneFritsch-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Athene
+                                            Fritsch</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="BeaMüller-checkbox" type="checkbox"
+                                            class="w-3.5 h-3.5 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="BeaMüller-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Bea
+                                            Müller</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Artwork type -->
+                            <div class="mt-[15px]">
+                                <h2 class="text-black-1 text-[18px] lg:text-[16px] font-bold">Artwork type</h2>
+                                <div class="mt-[10px] flex items-center gap-x-3 gap-y-[7px] flex-wrap">
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Photography-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Photography-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Photography</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="Illustration-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="Illustration-checkbox"
+                                            class="text-black-1 text-[15px] lg:text-[12px]">Illustration</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="WallMural-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="WallMural-checkbox" class="text-black-1 text-[15px] lg:text-[12px]">Wall
+                                            Mural</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Geometry -->
+                            <div class="mt-[15px]">
+                                <h2 class="text-black-1 text-[18px] lg:text-[16px] font-bold">Geometry</h2>
+                                <div class="mt-[10px] flex items-center gap-x-3 gap-y-[7px] flex-wrap">
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[7px]">
+                                        <input id="g1-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g1-checkbox" class="text-black-1 text-[15px] lg:text-[12px]"><span><img
+                                                    src="./assets/product/g1.svg" class="w-6" alt=""></span></label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[7px]">
+                                        <input id="g2-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g2-checkbox" class="text-black-1 text-[15px] lg:text-[12px]"><span><img
+                                                    src="./assets/product/g2.svg" class="w-6" alt=""></span></label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[7px]">
+                                        <input id="g3-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g3-checkbox" class="text-black-1 text-[15px] lg:text-[12px]"><span><img
+                                                    src="./assets/product/g3.svg" class="w-6" alt=""></span></label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[7px]">
+                                        <input id="g4-checkbox" type="checkbox"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g4-checkbox" class="text-black-1 text-[15px] lg:text-[12px]"><span><img
+                                                    src="./assets/product/g4.svg" class="w-6" alt=""></span></label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                            <!-- Resolution -->
+                            <div class="mt-[15px]">
+                                <h2 class="text-black-1 text-[18px] lg:text-[16px] font-bold">Resolution</h2>
+                                <div class="mt-[10px] flex items-center gap-x-3 gap-y-[7px] flex-wrap">
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="g1-radio" type="radio" name="camera"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g1-radio" class="text-black-1 text-[15px] lg:text-[12px]">>20MP</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="g2-radio" type="radio" name="camera"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g2-radio" class="text-black-1 text-[15px] lg:text-[12px]">>30MP</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="g3-radio" type="radio" name="camera"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g3-radio" class="text-black-1 text-[15px] lg:text-[12px]">>40MP</label>
+                                    </div>
+                                    <!-- single item  -->
+                                    <div class="flex items-center gap-[5px]">
+                                        <input id="g4-radio" type="radio" name="camera"
+                                            class="w-3 h-3 accent-purple-1  bg-gray-100 border-gray-300 rounded " />
+                                        <label for="g4-radio" class="text-black-1 text-[15px] lg:text-[12px]">>50MP</label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                            <!-- color  -->
+                            <div class="mt-[15px]">
+                                <label class="text-black font-bold">Color</label>
+                                <div class="flex gap-[5px] mt-[10px]">
+                                    <!-- Red -->
+                                    <input type="checkbox" id="color-red" value="red" class="checkbox peer hidden" />
+                                    <label for="color-red"
+                                        class="color-label w-[18px] h-[18px] bg-[#D02424] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Orange -->
+                                    <input type="checkbox" id="color-orange" value="orange"
+                                        class="checkbox peer hidden" />
+                                    <label for="color-orange"
+                                        class="color-label w-[18px] h-[18px] bg-[#F07807] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Yellow -->
+                                    <input type="checkbox" id="color-yellow" value="yellow"
+                                        class="checkbox peer hidden" />
+                                    <label for="color-yellow"
+                                        class="color-label w-[18px] h-[18px] bg-[#FFE802] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Green -->
+                                    <input type="checkbox" id="color-green" value="green"
+                                        class="checkbox peer hidden" />
+                                    <label for="color-green"
+                                        class="color-label w-[18px] h-[18px] bg-[#3AC423] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Turquoise -->
+                                    <input type="checkbox" id="color-turquoise" value="turquoise"
+                                        class="checkbox peer hidden" />
+                                    <label for="color-turquoise"
+                                        class="color-label w-[18px] h-[18px] bg-[#23CDB5] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Blue -->
+                                    <input type="checkbox" id="color-blue" value="blue" class="checkbox peer hidden" />
+                                    <label for="color-blue"
+                                        class="color-label w-[18px] h-[18px] bg-[#2479CD] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Purple -->
+                                    <input type="checkbox" id="color-purple-1" value="purple"
+                                        class="checkbox peer hidden" />
+                                    <label for="color-purple-1"
+                                        class="color-label w-[18px] h-[18px] bg-[#A424CD] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Purple -->
+                                    <input type="checkbox" id="gray" value="gray" class="checkbox peer hidden" />
+                                    <label for="gray"
+                                        class="color-label w-[18px] h-[18px] bg-[#DDDDDD] rounded-[3px] cursor-pointer"></label>
+
+                                    <!-- Purple -->
+                                    <input type="checkbox" id="black" value="purple" class="checkbox peer hidden" />
+                                    <label for="black"
+                                        class="color-label w-[18px] h-[18px] bg-[#000] rounded-[3px] cursor-pointer"></label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- RIGHT PORTION  ------>
+                    <div class="ml-0 lg:ml-[250px]  md:pl-5 md:pr-0 flex flex-col pb-20 lg:pb-[106px] lg:mt-[-8px]">
+                        <!-- top Navibar  -->
+                        <div class="flex flex-col-reverse lg:flex-row lg:items-center justify-between gap-5">
+                            <div class="flex-1 flex items-center gap-[10px]">
+                                <h2 class="text-[16px] lg:text-[20px] text-black-1">Choose design</h2>
+                                <p class="font-medium text-[14px] text-[#696969] bg-[#6969691A] py-1 px-[10px] rounded-lg inline-block">187.044 available</p>
+                            </div>
+                            <!-- Search  -->
+                            <div class="w-full lg:w-[286px] flex items-center gap-[10px]">
+                                <button id="toggle-drawer" class="font-medium text-purple-1 text-[14px] px-5 py-[10px] rounded-xl bg-[#7B53E71A] block lg:hidden">Filters</button>
+                                <div class="bg-white-1 rounded-xl px-3 py-2 flex items-center gap-3 w-[260px] flex-1">
+                                    <label for="searchArt"><img src="./assets/product/search.svg" class="w-6 flex-shrink-0" alt="search"></label>
+                                    <input type="text" id="searchArt" placeholder="Search for art"
+                                        class="bg-transparent outline-none text-black-1 placeholder-[#8F92A1] flex-1 font-medium text-[14px]" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- arts and select them  -->
+                       <div class="bg-white-1 p-3 lg:p-[30px] rounded-2xl mt-[10px] lg:mt-[15px]">
+                        <!-- select item  -->
+                         <div class="flex items-center justify-between bg-[#F9F9FA] p-[10px] rounded-[10px]">
+                            <div class="flex-1 flex items-center gap-[10px]">
+                                <!-- single item  -->
+                                <div class="relative w-[50px] rounded-[5px] border border-[#A4A4A4]">
+                                    <img src="./assets/product/s1.svg" class="w-full rounded-[5px]" alt="">
+                                    <div class="w-[14px] absolute -top-2 -right-2">
+                                        <img src="./assets/product/close.svg" class="w-full" alt="">
+                                    </div>
+                                </div>
+                                <!-- single item  -->
+                                <div class="relative w-[50px] rounded-[5px] border border-[#A4A4A4]">
+                                    <img src="./assets/product/s2.svg" class="w-full rounded-[5px]" alt="">
+                                    <div class="w-[14px] absolute -top-2 -right-2">
+                                        <img src="./assets/product/close.svg" class="w-full" alt="">
+                                    </div>
+                                </div>
+                                <!-- single item  -->
+                                <div class="relative w-[50px] rounded-[5px] border border-[#A4A4A4]">
+                                    <img src="./assets/product/s3.svg" class="w-full rounded-[5px]" alt="">
+                                    <div class="w-[14px] absolute -top-2 -right-2">
+                                        <img src="./assets/product/close.svg" class="w-full" alt="">
+                                    </div>
+                                </div>
+                                <!-- single item  -->
+                                <div class="relative w-[50px] rounded-[5px] border border-[#A4A4A4]">
+                                    <img src="./assets/product/s4.svg" class="w-full rounded-[5px]" alt="">
+                                    <div class="w-[14px] absolute -top-2 -right-2">
+                                        <img src="./assets/product/close.svg" class="w-full" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:block w-[147px]">
+                                <p class="text-[14px] flex items-center justify-end gap-[5px] text-[#696969] tracking-[-0.2px]">
+                                    4 Artworks selected
+                                    <span><img src="./assets/product/check-pur.svg" class="w-4" alt=""></span>
+                                </p>
+                            </div>
+                         </div>
+
+                         <!-- grid items  -->
+                         <div class="mt-4 grid grid-cols-3 sm:grid-cols-5 xl:grid-cols-6 gap-4">
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/horse.svg" class="w-[62px] md:w-[77px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/flower.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/rock.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/women.svg" class="w-[64px] md:w-[78px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                             <div class="border-2 border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA] relative flex items-center justify-center">
+                                <img src="./assets/product/arts/mashroom.svg" class="w-[64px] md:w-[79px]" alt="">
+                                <span class="absolute right-[7px] bottom-[7px] rounded-[50%] h-6 w-6 bg-purple-1 font-medium text-[12px] text-white-1 flex items-center justify-center">4</span>
+                             </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/bar.svg" class="w-[90px] md:w-[110px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/women2.svg" class="w-[71px] md:w-[87px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div data-popup-target="popup1"
+                                class="border-2 border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA] relative flex items-center justify-center">
+                                <img src="./assets/product/arts/cookie.svg" class="w-[64px] md:w-[79px]" alt="">
+                                <span
+                                    class="absolute right-[7px] bottom-[7px] rounded-[50%] h-6 w-6 bg-purple-1 font-medium text-[12px] text-white-1 flex items-center justify-center">1</span>
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/cow.svg" class="w-[90px] md:w-[110px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/sun.svg" class="w-[60px] md:w-[73px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/flower-1.svg" class="w-[90px] md:w-[110px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/strawberry.svg" class="w-[62px] md:w-[77px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/art1.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/disco.svg" class="w-[60px] md:w-[73px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/happyPlace.svg" class="w-[62px] md:w-[77px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA] relative flex items-center justify-center">
+                                <img src="./assets/product/arts/hat.svg" class="w-[90px] md:w-[110px]" alt="">
+                                <span
+                                    class="absolute right-[7px] bottom-[7px] rounded-[50%] h-6 w-6 bg-purple-1 font-medium text-[12px] text-white-1 flex items-center justify-center">3</span>
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/disc.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/womenlying.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/horse.svg" class="w-[62px] md:w-[77px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/flower.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/rock.svg" class="w-[66px] md:w-[82px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/women.svg" class="w-[64px] md:w-[78px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/mashroom.svg" class="w-[64px] md:w-[79px]" alt="">
+                                
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/bar.svg" class="w-[90px] md:w-[110px]" alt="">
+                            </div>
+                            
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/more.svg" class="w-[64px] md:w-[78px]" alt="">
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA] relative flex items-center justify-center">
+                                <img src="./assets/product/arts/ss.svg" class="w-[66px] md:w-[82px]" alt="">
+                                <span
+                                    class="absolute right-[7px] bottom-[7px] rounded-[50%] h-6 w-6 bg-purple-1 font-medium text-[12px] text-white-1 flex items-center justify-center">2</span>
+                            </div>
+                            <!-- single item  -->
+                            <div
+                                class="border-2 border-[#F9F9FA] hover:border-purple-1 w-[98px] h-[98px] md:w-[120px] md:h-[120px] rounded-[10px] bg-[#F9F9FA]  flex items-center justify-center">
+                                <img src="./assets/product/arts/cat.svg" class="w-[68px] md:w-[84px]" alt="">
+                            </div>
+                         </div>
+
+                       </div>
+                    </div>
+                </div>
+
+                <div id="overlay2" class="overlay2" onclick="closeDrawer()"></div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- float buttons  -->
+    <div class="w-full bg-white-1 p-4 fixed bottom-0 lg:hidden flex items-center justify-between gap-[10px]">
+      <button
+        class="flex-1 block h-[48px] text-[14px] bg-[#7B53E726] hover:opacity-80 active:-translate-y-[2px] text-purple-1 rounded-xl font-bold">
+        Back
+      </button>
+      <button
+        class="flex-1 block h-[48px] text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-xl font-bold ">
+        Continue
+      </button>
+    </div>
+  </div>
+
+    <!-- Overlay -->
+    <div id="overlay3" class="overlay3">
+    </div>
+
+    <!-- Popup 1 -->
+    <div id="popup1" class="popup">
+        <div class="bg-white-1 w-[350px] xl:w-[590px] rounded-[30px] xl:rounded-[40px] p-5 xl:p-[35px] no-scrollbar">
+            <div class="bg-[#F9F9FA] rounded-[20px] relative">
+                <img src="./assets/product/arts/cookie1x.png" srcset="./assets/product/arts/cookie1x.png 1x, ./assets/product/arts/cookie2x.png 2x, ./assets/product/arts/cookie3x.png 3x" class="w-[202px] xl:w-[340px] py-[14px] xl:py-5 mx-auto" alt="">
+                <button class="close-popup absolute top-[25px] right-[25px] ">
+                    <img src="./assets/product/arts/closepop.svg" class="w-[14px] xl:w-5" alt="">
+                </button>
+            </div>
+            
+            <div class="mt-[25px]">
+                <h2 class="text-black-1 font-bold text-[22px] xl:text-[28px]">“Macaron”</h2>
+                <div class="flex items-center justify-between mt-3 xl:mt-[15px]">
+                    <div class="w-1/2 flex items-center gap-[10px] xl:gap-[15px]">
+                        <div>
+                            <img src="./assets/product/arts/avatar.svg" class="w-10 xl:w-[50px]" alt="">
+                        </div>
+                        <div class="text-black-1">
+                            <h3 class="font-bold text-[16px] xl:text-[20px]">Anna White</h3>
+                            <p class="text-[14px] xl:text-[16px] mt-[3px]">105 designs</p>
+                        </div>
+                    </div>
+                    <div class="w-1/2 text-end">
+                        <button class="text-[12px] font-bold text-purple-1 bg-[#7B53E726] hover:bg-[#6c49ce3f] py-[8px] px-[15px] rounded-[8px]">See all designs</button>
+                    </div>
+                </div>
+                <div class="mt-[30px] xl:mt-[35px]">
+                    <button class="w-full py-[12px] font-bold text-[14px] bg-purple-1 hover:bg-opacity-80 text-white-1 rounded-lg">Select this design</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <!-- Script  -->
+
+    <script src="./script/productimgsidebar.js"></script>
+    <script src="./script/colorpick.js"></script>
+    <script src="./script/productpopup.js"></script>
+</body>
+
+</html>

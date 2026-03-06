@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Pricing - Printumo</title>
+  <style>
+    @keyframes pulse-purple {
+      0% {
+        box-shadow: 0 0 0 0 rgba(123, 83, 231, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(123, 83, 231, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(123, 83, 231, 0);
+      }
+    }
+    .animate-pulse-purple {
+      animation: pulse-purple 2s infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- hero start -->
+    <section id="pricingHero" class="pt-[22px] pb-[20px] md:pt-[58px] md:pb-[52px]">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="text-center">
+          <!-- content -->
+          <div class="mx-auto">
+            <h1
+              class="md:text-[58px] text-3xl text-[#222222] font-bold md:leading-[70px] leading-[45px] mb-6">
+              Start for free, pay only when you sell
+            </h1>
+            <p
+              class="max-w-3xl mx-auto md:text-xl text-base md:leading-8 text-[#3A3A3A] font-normal tracking-[.25px] mb-4">
+              Printumo is completely free to use. You only pay for the products your customers order plus shipping - that's it.
+            </p>
+            
+            <!-- Bullet points for key benefits -->
+            <div class="max-w-2xl mx-auto mb-10">
+              <ul class="text-center space-y-3 text-base md:text-lg text-[#3A3A3A]">
+                <li class="flex items-center justify-center gap-3">
+                  <span class="text-red-500 font-bold text-xl">✗</span>
+                  <span>No commission on your sales</span>
+                </li>
+                <li class="flex items-center justify-center gap-3">
+                  <span class="text-red-500 font-bold text-xl">✗</span>
+                  <span>No monthly subscription</span>
+                </li>
+                <li class="flex items-center justify-center gap-3">
+                  <span class="text-red-500 font-bold text-xl">✗</span>
+                  <span>No setup costs</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="flex justify-center">
+              <button
+                class="text-white-1 px-8 h-[56px] bg-[#7B53E7] rounded-xl border-[2px] border-[#7B53E7] hover:bg-white-1 text-center text-base font-bold tracking-[0.25px] transition-colors hover:text-[#7B53E7] animate-pulse-purple">
+                Get started for free
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- hero end -->
+
+    <!-- Product Cards Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Canvas Card -->
+        <a href="#canvas-pricing" class="block group">
+          <div class="bg-[#f7f5fb] rounded-[30px] p-8 lg:p-10 flex flex-col h-full transition-all duration-300 group-hover:bg-[#f0ebf8]">
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+              <div class="flex-1">
+                <h3 class="font-bold text-black-7 text-2xl lg:text-[32px] mb-4">Canvas Prints</h3>
+                <p class="text-black-7 text-base lg:text-xl mb-6">Competitive pricing for premium canvas prints with professional framing options and exclusive XL formats.</p>
+                <span class="text-purple-1 font-semibold text-base lg:text-xl flex items-center gap-2 group-hover:gap-3 transition-all">
+                  View pricing
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="w-full lg:w-48 flex-shrink-0">
+                <img 
+                  src="./assets/lp3/printumo-canvas-product-1.jpg"
+                  class="w-full rounded-2xl"
+                  alt="Canvas Print Example" 
+                />
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fine Art Paper Card -->
+        <a href="#paper-pricing" class="block group">
+          <div class="bg-[#f7f5fb] rounded-[30px] p-8 lg:p-10 flex flex-col h-full transition-all duration-300 group-hover:bg-[#f0ebf8]">
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+              <div class="flex-1">
+                <h3 class="font-bold text-black-7 text-2xl lg:text-[32px] mb-4">Fine Art Paper</h3>
+                <p class="text-black-7 text-base lg:text-xl mb-6">Affordable pricing for museum-quality fine art paper prints with optional framing for detailed artwork.</p>
+                <span class="text-purple-1 font-semibold text-base lg:text-xl flex items-center gap-2 group-hover:gap-3 transition-all">
+                  View pricing
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="w-full lg:w-48 flex-shrink-0">
+                <img 
+                  src="./assets/lp2/img/produce-1x.png"
+                  srcset="./assets/lp2/img/produce-1x.png 1x, ./assets/lp2/img/produce-2x.png 2x, ./assets/lp2/img/produce-3x.png 3x"
+                  class="w-full rounded-2xl"
+                  alt="Fine Art Paper Print Example" 
+                />
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Canvas Pricing Section -->
+    <section id="canvas-pricing" class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+      <div>
+        <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 mb-16 font-extrabold text-center">
+          Canvas Print Pricing
+        </h2>
+      </div>
+      
+      <div>
+        <img 
+          src="./assets/canvas-sizes.png" 
+          alt="Canvas print pricing table" 
+          class="w-full"
+        />
+      </div>
+    </section>
+
+    <!-- Fine Art Paper Pricing Section -->
+    <section id="paper-pricing" class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+      <div>
+        <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 mb-16 font-extrabold text-center">
+          Fine Art Paper Pricing
+        </h2>
+      </div>
+      
+      <div>
+        <img 
+          src="./assets/paper-sizes.png" 
+          alt="Fine art paper pricing table" 
+          class="w-full"
+        />
+      </div>
+    </section>
+
+    <!-- Shipping Rates Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <div class="bg-purple-1 rounded-[32px] p-8 lg:p-12">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+          <div class="w-full lg:flex-1 text-center lg:text-left">
+            <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-white-1 font-extrabold">Shipping Rates</h2>
+            <p class="text-white-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+              Transparent shipping costs with no surprises. We deliver to 28 countries worldwide with competitive rates and fast delivery times from our global network of facilities.
+            </p>
+            <ul class="text-base lg:text-xl text-white-1 font-normal py-3 lg:py-4 space-y-3">
+                <li class="flex gap-x-2">
+                  <span class="flex-1"><span class="font-semibold">Global Coverage:</span> Shipping to 28 countries across EU, UK, USA, Canada, and Australia.</span>
+                </li>
+                <li class="flex gap-x-2">
+                  <span class="flex-1"><span class="font-semibold">Competitive Rates:</span> Fair pricing with no hidden fees or unexpected charges.</span>
+                </li>
+                <li class="flex gap-x-2">
+                  <span class="flex-1"><span class="font-semibold">Fast Delivery:</span> Local production facilities ensure quick turnaround times.</span>
+                </li>
+              </ul>
+            <div class="mt-6">
+              <a href="shipping.html" class="inline-block px-8 py-3 bg-white-1 border-2 border-white-1 text-purple-1 rounded-xl hover:bg-transparent hover:text-white-1 font-semibold transition-all duration-150">
+                See shipping rates
+              </a>
+            </div>
+          </div>
+          <div class="w-full lg:flex-1">
+            <img 
+              src="./assets/lp3/f5-1x.png"
+              srcset="./assets/lp3/f5-1x.png 1x, ./assets/lp3/f5-2x.png 2x, ./assets/lp3/f5-3x.png 3x"
+              class="w-full rounded-2xl"
+              alt="Global Shipping Network" 
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- already selling canvas start here  -->
+<section
+class="bg-[url('./assets/lp3/frames-bg.png')] bg-center relative min-h-[300px] flex items-center justify-center">
+<div
+  class="absolute inset-0 bg-gradient-to-r from-purple-1 to-[#563e82] opacity-90"></div>
+<div class="text-center px-5 py-10 relative z-10">
+  <h2
+    class="text-white-1 font-bold text-[35px] lg:text-[40px] leading-[40px] lg:leading-none tracking-[1px]">
+    Already selling prints?
+  </h2>
+  <p
+    class="text-white-1 lg:text-[20px] tracking-[1px] leading-5 pt-[25px] lg:pt-[16px] pb-8">
+    Switch to Printumo: Lower costs, offer XL sizes, reach 28 countries,
+    boost your profits
+  </p>
+  <a
+    href="#"
+    class="inline-block px-10 py-2 bg-black-1 border-2 border-black-1 font-semibold text-base lg:text-lg text-white-1 rounded-xl hover:bg-white-1 hover:text-black-1 transition-all duration-150">
+    Learn more
+  </a>
+</div>
+</section>
+
+<!-- Shipping Features Section -->
+<section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24 space-y-24">
+     <!-- High Quality Prints -->
+  <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+    <div class="flex-1">
+        <img
+            src="./assets/lp2/img/canvas-1x.png"
+            class="w-full sm:w-1/2 lg:w-full mx-auto rounded-2xl"
+            alt="High quality canvas print showing vibrant colors and sharp details" />
+    </div>
+    <div class="flex-1">
+        <h3 class="font-bold text-black-5 text-2xl lg:text-[40px] mb-6">
+            Premium Quality Prints
+        </h3>
+        <p class="text-base lg:text-xl text-black-5 mt-4 lg:mt-6">
+            Experience exceptional print quality that brings your artwork to life. Our advanced printing technology and premium materials ensure every detail is captured with stunning clarity and vibrant colors that last.
+        </p>
+        <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+            <li class="flex gap-x-2">
+                <span class="text-purple-1 font-bold">✓</span>
+                <span class="flex-1">Professional-grade printing technology</span>
+            </li>
+            <li class="flex gap-x-2">
+                <span class="text-purple-1 font-bold">✓</span>
+                <span class="flex-1">Vibrant, fade-resistant colors</span>
+            </li>
+            <li class="flex gap-x-2">
+                <span class="text-purple-1 font-bold">✓</span>
+                <span class="flex-1">Premium canvas and paper materials</span>
+            </li>
+        </ul>
+        <div class="mt-6">
+            <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                Get started for free
+            </a>
+        </div>
+    </div>
+  </div>
+
+  <!-- Custom Packaging -->
+  <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+      <div class="flex-1 order-2 lg:order-1">
+          <h3 class="font-bold text-black-5 text-2xl lg:text-[40px] mb-6">
+              Branded Packaging
+          </h3>
+          <p class="text-base lg:text-xl text-black-5 mt-4 lg:mt-6">
+              Make every delivery a branded experience with our customizable packaging options. Upload your own designs to personalize your shipments, or keep it clean with our white-label packaging. Available for all canvas orders in EU and UK.
+          </p>
+          <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+              <li class="flex gap-x-2">
+                  <span class="text-purple-1 font-bold">✓</span>
+                  <span class="flex-1">Custom card insert for a personal touch</span>
+              </li>
+              <li class="flex gap-x-2">
+                  <span class="text-purple-1 font-bold">✓</span>
+                  <span class="flex-1">Branded packaging sticker for exterior branding</span>
+              </li>
+              <li class="flex gap-x-2">
+                  <span class="text-purple-1 font-bold">✓</span>
+                  <span class="flex-1">White-label option with no Printumo branding</span>
+              </li>
+          </ul>
+          <div class="mt-6">
+              <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                  Get started for free
+              </a>
+          </div>
+      </div>
+      <div class="flex-1 order-1 lg:order-2">
+          <img
+              src="./assets/lp2/img/sell-1x.png"
+              class="w-full sm:w-1/2 lg:w-full mx-auto rounded-2xl"
+              alt="Custom packaging" />
+      </div>
+  </div>
+
+    <!-- White Label Shipping -->
+    <div class="flex items-center justify-between gap-6 lg:gap-24 flex-col lg:flex-row">
+        <div class="flex-1">
+            <img
+                src="./assets/lp3/f5-1x.png"
+                class="w-full sm:w-1/2 lg:w-full mx-auto rounded-2xl"
+                alt="White label shipping package" />
+        </div>
+        <div class="flex-1">
+            <h3 class="font-bold text-black-5 text-2xl lg:text-[40px] mb-6">
+                White Label Shipping
+            </h3>
+            <p class="text-base lg:text-xl text-black-5 mt-4 lg:mt-6">
+                Offer a seamless, fully branded experience for your customers from start to finish. Our complete white label solution ensures your brand remains front and center throughout the entire customer journey.
+            </p>
+            <ul class="text-base lg:text-xl text-black-5 font-normal py-5 lg:py-[30px] space-y-3">
+                <li class="flex gap-x-2">
+                    <span class="text-purple-1 font-bold">✓</span>
+                    <span class="flex-1">Branded shipping notifications</span>
+                </li>
+                <li class="flex gap-x-2">
+                    <span class="text-purple-1 font-bold">✓</span>
+                    <span class="flex-1">Custom packaging and shipping labels</span>
+                </li>
+                <li class="flex gap-x-2">
+                    <span class="text-purple-1 font-bold">✓</span>
+                    <span class="flex-1">No Printumo branding on products or materials</span>
+                </li>
+            </ul>
+            <div class="mt-6">
+                <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                    Get started for free
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- User Reviews -->
+<section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+<div class="text-center mb-16">
+    <h2 class="font-extrabold text-black-5 text-3xl sm:text-5xl xl:text-[58px]">What Our Users Say</h2>
+    <p class="text-black-7 text-base lg:text-xl mx-auto max-w-[800px] mt-5">Real feedback from artists and businesses who trust Printumo for their print-on-demand needs.</p>
+</div>
+
+<!-- Reviews Marquee with Fade Effect -->
+<div class="testimonials-container relative">
+    <!-- Scrolling content -->
+    <div class="flex animate-marquee py-6 h-[320px] items-stretch">
+        <!-- Review Card 1 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"Printumo has been a game-changer for my business. The print quality exceeds everything I've tried before, and my customers praise the vibrant colors!"</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Jessica Williams">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Jessica Williams</h4>
+                    <p class="text-sm text-black-7">Watercolor Artist</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Card 2 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"As a retail business, we needed reliable fulfillment. Printumo delivers fast shipping and handles all customer service issues promptly."</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Modern Prints Co.">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Modern Prints Co.</h4>
+                    <p class="text-sm text-black-7">Retail Business</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Card 1 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"Printumo has been a game-changer for my business. The print quality exceeds everything I've tried before, and my customers praise the vibrant colors!"</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Jessica Williams">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Jessica Williams</h4>
+                    <p class="text-sm text-black-7">Watercolor Artist</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Card 2 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"As a retail business, we needed reliable fulfillment. Printumo delivers fast shipping and handles all customer service issues promptly."</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Modern Prints Co.">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Modern Prints Co.</h4>
+                    <p class="text-sm text-black-7">Retail Business</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Card 3 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"The integration with my Shopify store was seamless. Now I can focus on creating art while Printumo handles everything else!"</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Thomas Reed">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Thomas Reed</h4>
+                    <p class="text-sm text-black-7">Digital Artist</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Card 4 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"Since switching to Printumo, I've been able to offer more products without worrying about inventory or shipping logistics. Game changer!"</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Sarah Johnson">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Sarah Johnson</h4>
+                    <p class="text-sm text-black-7">Abstract Artist</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Card 5 -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"The customer support team at Printumo is exceptional. They've helped me optimize my store and improve my product offerings."</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="ArtHouse Gallery">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">ArtHouse Gallery</h4>
+                    <p class="text-sm text-black-7">Art Retailer</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Duplicate first card for continuous scrolling -->
+        <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+            <!-- Stars and review text -->
+            <div>
+                <!-- Stars -->
+                <div class="flex gap-1 mb-4">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                </div>
+                <!-- Review text -->
+                <p class="text-black-5">"Printumo has been a game-changer for my business. The print quality exceeds everything I've tried before, and my customers praise the vibrant colors!"</p>
+            </div>
+            
+            <!-- User info -->
+            <div class="flex items-center mt-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Jessica Williams">
+                </div>
+                <div>
+                    <h4 class="font-bold text-black-5">Jessica Williams</h4>
+                    <p class="text-sm text-black-7">Watercolor Artist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Left fade overlay -->
+    <div class="fade-left"></div>
+    
+    <!-- Right fade overlay -->
+    <div class="fade-right"></div>
+</div>
+    <!-- Marquee Animation Script and Custom CSS -->
+<style>
+/* Marquee animation */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 35s linear infinite;
+}
+
+/* Container setup */
+.testimonials-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fade effects */
+.fade-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(to right, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%);
+}
+
+.fade-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(to left, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%);
+}
+</style>
+</section>
+
+<!-- Community section start here  -->
+<section class="bg-[#110C18]">
+<div
+  class="px-4 max-w-[1328px] mx-auto pt-[22px] pb-[35px] md:pt-[76px] md:pb-[73px] text-center relative">
+  <div class="block lg:hidden">
+    <img
+      src="./assets/lp/avatargrp.png"
+      srcset="
+        ./assets/lp/avatargrp.png  1x,
+        ./assets/lp/avatargrp2.png 2x,
+        ./assets/lp/avatargrp3.png 3x
+      "
+      class="w-[313px] mx-auto"
+      alt="" />
+  </div>
+  <h2
+    class="font-bold text-white-1 text-[35px] leading-none lg:text-5xl mt-[13px] lg:mt-0">
+    +1K Artist Community
+  </h2>
+  <p
+    class="text-sm lg:text-xl text-white-1 max-w-[840px] mx-auto mt-[16px] lg:mt-[23px] mb-[29px] lg:mb-[44px] tracking-[0.25px]">
+    We're building a vibrant community where artists connect, share
+    experiences, and exchange knowledge. By learning from your journey
+    and feedback, we continually refine our print-on-demand service to
+    empower your growth and creativity.
+  </p>
+  <div class="text-center">
+    <button
+      class="w-auto text-base lg:text-lg px-8 font-semibold rounded-xl text-white-1 tracking-normal h-10 lg:h-[45px] bg-purple-1 border-2 border-purple-1 hover:bg-white-1 hover:text-purple-1 hover:border-purple-1 transition-all duration-150">
+      Join our Facebook Group
+    </button>
+  </div>
+  <!-- avatar images  -->
+  <div
+    class="w-[75px] h-[75px] rounded-[50%] absolute top-[44px] left-[19%] hidden lg:block animate-avatar-1">
+    <img
+      src="./assets/lp/a1-1x.png"
+      srcset="
+        ./assets/lp/a1-1x.png 1x,
+        ./assets/lp/a1-2x.png 2x,
+        ./assets/lp/a1-3x.png 3x
+      "
+      class="w-full"
+      alt="" />
+  </div>
+  <div
+    class="w-[60px] h-[60px] rounded-[50%] absolute bottom-[65px] left-[12%] hidden lg:block animate-avatar-2">
+    <img
+      src="./assets/lp/a2-1x.png"
+      srcset="
+        ./assets/lp/a2-1x.png 1x,
+        ./assets/lp/a2-2x.png 2x,
+        ./assets/lp/a2-3x.png 3x
+      "
+      class="w-full"
+      alt="" />
+  </div>
+  <div
+    class="w-[39px] h-[39px] rounded-[50%] absolute top-[29px] right-[20%] hidden lg:block animate-avatar-4">
+    <img
+      src="./assets/lp/a1-1x.png"
+      srcset="
+        ./assets/lp/a3-1x.png 1x,
+        ./assets/lp/a3-2x.png 2x,
+        ./assets/lp/a3-3x.png 3x
+      "
+      class="w-full"
+      alt="" />
+  </div>
+  <div
+    class="w-[50px] h-[50px] rounded-[50%] absolute bottom-[90px] right-[30%] hidden lg:block animate-avatar-5">
+    <img
+      src="./assets/lp/a1-1x.png"
+      srcset="
+        ./assets/lp/a4-1x.png 1x,
+        ./assets/lp/a4-2x.png 2x,
+        ./assets/lp/a4-3x.png 3x
+      "
+      class="w-full"
+      alt="" />
+  </div>
+  <div
+    class="w-[75px] h-[75px] rounded-[50%] absolute bottom-[46px] right-[10%] hidden lg:block animate-avatar-6">
+    <img
+      src="./assets/lp/a1-1x.png"
+      srcset="
+        ./assets/lp/a5-1x.png 1x,
+        ./assets/lp/a5-2x.png 2x,
+        ./assets/lp/a5-3x.png 3x
+      "
+      class="w-full"
+      alt="" />
+  </div>
+  <div
+    class="w-[30px] h-[30px] rounded-[50%] absolute top-[79px] right-[5%] hidden lg:block animate-avatar-7">
+    <img
+      src="./assets/lp/a1-1x.png"
+      srcset="
+        ./assets/lp/a6-1x.png 1x,
+        ./assets/lp/a6-2x.png 2x,
+        ./assets/lp/a6-3x.png 3x
+      "
+      class="w-full"
+      alt="" />
+  </div>
+  <div class="block lg:hidden mt-7">
+    <img
+      src="./assets/lp3/people-b.webp"
+      srcset="
+        ./assets/lp3/people-b.webp    1x,
+        ./assets/lp3/people-b-2x.webp 2x,
+        ./assets/lp3/people-b-3x.webp 3x
+      "
+      class="w-[313px] mx-auto"
+      alt="" />
+  </div>
+</div>
+</section>
+
+<!-- About Us section start here  -->
+<section
+  class="px-4 max-w-[1328px] mx-auto py-[60px] lg:py-[110px] flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16 2xl:gap-[139px]">
+  <div class="w-full sm:w-[481px] relative">
+    <img
+      src="./assets/lp/about-us.jpg"
+      srcset="
+        ./assets/lp/about-us.jpg    1x,
+        ./assets/lp/about-us-2x.jpg 2x,
+        ./assets/lp/about-us-2x.jpg 3x
+      "
+      class="w-full rounded-tl-[0px] rounded-tr-[99px] rounded-br-[100px] rounded-bl-[100px]"
+      alt="" />
+    <div class="absolute w-4 lg:w-[27px] -top-8 lg:-top-14 left-[50%]">
+      <img src="./assets/lp/about1.svg" class="w-full" alt="" />
+    </div>
+    <div
+      class="absolute w-[135px] lg:w-[246px] -top-10 lg:-top-16 -left-4 lg:-left-[50px] -z-10">
+      <img src="./assets/lp/about2.svg" class="w-full" alt="" />
+    </div>
+  </div>
+  <div class="flex-1 text-black-5">
+    <h2 class="text-3xl lg:text-[40px] font-extrabold">About us</h2>
+    <h4 class="my-4 lg:mt-9 lg:mb-6 font-bold text-xl lg:text-[26px]">
+      For Artist, by Artists
+    </h4>
+    <div class="w-full max-w-[600px]">
+      <p class="text-base lg:text-xl">
+        Our journey began as artists selling our own art through our
+        webshop, but it was difficult to find a reliable print-on-demand
+        partner that offered the variety of sizes and framing options we
+        needed.
+      </p>
+      <p class="my-6 text-base lg:text-xl">
+        Frustrated by the lack of options for artists and creative
+        individuals, we decided to built a platform designed specifically
+        for canvas and posters.
+      </p>
+      <p class="mt-6 mb-6 lg:mb-[40px] text-base lg:text-xl">
+        At Printumo, we are dedicated to delivering the quality,
+        flexibility, and support artists need, so your creative vision can
+        shine in every print
+      </p>
+      <button
+        class="w-auto text-base lg:text-lg px-8 font-semibold rounded-xl text-white-1 tracking-normal h-10 lg:h-[45px] bg-purple-1 border-2 border-purple-1 hover:bg-white-1 hover:text-purple-1 hover:border-purple-1 transition-all duration-150">
+        Read more
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Get started with us section start here  -->
+<section
+  class="2xl:max-w-[1296px] xl:max-w-[1210px] xl:mx-auto mx-4 md:mx-8 bg-purple-1 rounded-[24px] lg:rounded-[32px] mb-10 lg:mb-[90px]">
+  <div
+    class="lg:bg-[url('../src/assets/form.svg')] bg-[length:163%] xl:bg-[length:638px] bg-no-repeat bg-[bottom_center] lg:bg-right flex justify-between lg:items-center flex-col lg:flex-row gap-y-[46px] px-[17px] pt-[31px] pb-[17px] lg:py-0 xl:px-8 2xl:px-12">
+    <div class="flex-1">
+      <h2
+        class="text-[40px] lg:text-6xl font-bold text-white-1 max-w-[400px] lg:leading-snug">
+        Get started
+      </h2>
+      <p
+        class="lg:text-xl text-white-1 pt-[17px] lg:pt-[44px] font-light w-full max-w-[520px] tracking-[.25px]">
+        Curious about Printumo and how we can support your art business?
+        Feel free to reach out - we're here to help!
+      </p>
+    </div>
+    <div class="flex-1 lg:pt-[56px] lg:pb-[53px]">
+      <div
+        class="bg-white-1 max-w-full lg:max-w-[456px] ms-auto p-6 rounded-[24px]">
+        <h3 class="font-semibold text-xl lg:text-[30px] text-black-5">
+          Got any questions?
+        </h3>
+        <form action="" class="space-y-6 mt-6">
+          <input
+            type="text"
+            name=""
+            class="w-full h-[62px] rounded-xl bg-[#F6F6F6] ps-4 text-lg focus-visible:outline-none"
+            placeholder="Full Name"
+            id="" />
+          <input
+            type="email"
+            name=""
+            class="w-full h-[62px] rounded-xl bg-[#F6F6F6] ps-4 text-lg focus-visible:outline-none"
+            placeholder="Email"
+            id="" />
+          <textarea
+            name=""
+            placeholder="Note"
+            class="w-full h-[162px] rounded-xl bg-[#F6F6F6] ps-4 pt-[10px] text-lg focus-visible:outline-none"
+            id=""></textarea>
+          <button
+            class="w-full h-12 lg:h-[59px] flex items-center justify-center font-semibold text-base lg:text-lg rounded-xl text-white-1 bg-black-1 border-2 border-black-1 hover:bg-white-1 hover:text-black-1 hover:border-black-1 transition-all duration-150 tracking-[0.25px]">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+</body>
+
+</html> 

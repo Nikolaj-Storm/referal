@@ -1,0 +1,153 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+AI Agent Rules: Ruby to HTML/Tailwind Converter
+Here are comprehensive rules for an AI agent designed to convert Ruby code to HTML with Tailwind CSS styling:
+Core Responsibilities
+
+Convert Ruby code snippets into equivalent HTML structure with Tailwind CSS styling
+Maintain the functional intent of the original Ruby code in the HTML output
+Use provided Ruby sections as reference templates for creating new HTML sections
+Apply modern Tailwind CSS classes for styling instead of custom CSS
+
+Workflow Steps
+
+Analyze Input: Review the provided Ruby code snippet thoroughly
+
+Identify structural elements (containers, headers, content blocks)
+Note functional components (forms, buttons, navigation)
+Recognize styling patterns and visual hierarchies
+
+
+Create HTML Structure:
+
+Convert Ruby elements to semantic HTML5 tags
+Preserve the nested structure and relationships between elements
+Maintain content organization and flow
+
+
+Apply Tailwind Classes:
+
+Map Ruby styling to appropriate Tailwind utility classes
+Use responsive design classes where needed (sm:, md:, lg:, etc.)
+Implement consistent spacing, typography, and color schemes
+
+
+Output Quality Checks:
+
+Ensure HTML is valid and properly formatted
+Verify all functional elements are preserved
+Confirm visual appearance matches the intent of the original Ruby code
+
+
+
+Conversion Guidelines
+
+Ruby Views/ERB to HTML:
+
+Replace Ruby loops with appropriate HTML repetition
+Convert conditional logic to static HTML representations
+Transform Ruby variables into placeholder content
+
+
+Ruby Layout Patterns to Tailwind:
+
+Map Ruby positioning to Tailwind flex/grid systems
+Convert Ruby margins/padding to Tailwind spacing utilities
+Transform Ruby color schemes to Tailwind color classes
+
+
+Component Handling:
+
+Convert Ruby components to HTML component patterns
+Preserve component relationships and hierarchies
+Maintain component functionality where possible
+
+
+
+Special Considerations
+
+Forms:
+
+Convert Ruby form helpers to HTML form elements
+Preserve form validation concepts in HTML attributes
+Ensure proper form structure and accessibility
+
+
+Dynamic Content:
+
+Replace Ruby dynamic content with appropriate static HTML
+Add comments indicating where dynamic content would be inserted
+Preserve data relationships implied by Ruby variables
+
+
+Ruby-Specific Features:
+
+Handle Ruby partials by creating corresponding HTML sections
+Convert Ruby helpers to pure HTML/Tailwind solutions
+Document any Ruby functionality that requires JavaScript in HTML
+
+
+
+Output Format
+
+Provide clean, properly indented HTML code
+Include Tailwind CSS classes directly in HTML elements
+Add helpful comments explaining complex conversions
+Organize output into logical sections matching the original Ruby structure
+
+Project structure:
+```
+.
+├── bs-config.json
+├── dist
+│   └── output.css
+├── package-lock.json
+├── package.json
+├── src
+│   ├── about-us.html
+│   ├── assets
+│   ├── contact-us.html
+│   ├── dashboard.html
+│   ├── dashboardAnalytics.html
+│   ├── dashboardAnalytics2.html
+│   ├── font
+│   ├── index.html
+│   ├── landingPage.html
+│   ├── landingPage2.html
+│   ├── landingPage3.html
+│   ├── monetumo-about.html
+│   ├── monetumo-apply.html
+│   ├── monetumo-privacy.html
+│   ├── monetumo.html
+│   ├── orderDetails.html
+│   ├── orderDetailsPending.html
+│   ├── orders.html
+│   ├── ordersList.html
+│   ├── ordersListV2.html
+│   ├── output.css
+│   ├── product-address.html
+│   ├── product-final.html
+│   ├── product-page-2.html
+│   ├── product-page-description.html
+│   ├── product-page-new.html
+│   ├── product-page-pricing.html
+│   ├── product-page-shipping.html
+│   ├── product-properties.html
+│   ├── productsimage.html
+│   ├── profile.html
+│   ├── reset-password.html
+│   ├── script
+│   ├── signin.html
+│   ├── signup-with-email.html
+│   ├── signup.html
+│   ├── storeOne.html
+│   ├── storeTwo.html
+│   ├── styles
+│   ├── targetmarkets.html
+│   └── terms-&-conditions.html
+├── tailwind.config.js
+└── vercel.json
+```

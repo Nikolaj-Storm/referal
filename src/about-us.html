@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>About Us</title>
+</head>
+
+<body>
+  <header class="shadow-headerboxshadow lg:shadow-none sticky top-0 left-0 z-50 bg-white-1">
+    <!-- Navbar -->
+    <div
+      class="flex items-center justify-between px-4 max-w-[1328px] mx-auto py-[12px] lg:pt-8 lg:pb-6 relative bg-white-1"
+      id="nav-main">
+      <!-- Hamburger Icon (Visible only on mobile) -->
+      <button id="drawer-button" class="lg:hidden me-3" aria-label="open sidebar" onclick="openDrawer()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-gray-800">
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <div class="text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+        <a href="/src/landingPage.html" class="block"><img src="./assets/logo.svg"
+            class="w-[133px] h-[40px] lg:h-[58px] lg:w-[203px]" alt=""></a>
+      </div>
+
+      <!-- Desktop Menu Items (Visible on large screens) -->
+      <ul class="hidden lg:flex lg:flex-1 lg:justify-center lg:space-x-4 2xl:space-x-6">
+        <li><a href="/src/about-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Why
+            Us</a></li>
+        <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">How It Works</a>
+        </li>
+
+
+
+        <li class="relative">
+          <button id="desktop-dropdown-button" onclick="toggleDeskDropdown()"
+            class="font-bold flex items-center gap-x-2 text-black-5 hover:text-purple-1 capitalize">
+            Products
+            <img src="./assets/down-chevron.svg" class="w-[13px]" alt="">
+          </button>
+          <ul id="desktop-dropdown-menu"
+            class="absolute left-0 hidden mt-2 w-40 bg-white rounded-md text-gray-800 shadow-lg z-50 p-3 space-y-2 bg-white-1">
+            <li><a href="/src/product-page.html"
+                class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+            </li>
+            <li><a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                2</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Store
+            Connection</a></li>
+        <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Story Case</a>
+        </li>
+        <li><a href="/src/contact-us.html"
+            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Contact
+            Us</a>
+        </li>
+      </ul>
+
+
+      <!-- Button -->
+      <div class="">
+        <button
+          class="h-9 w-[130px] lg:h-[53px] lg:w-[180px] bg-black-6 hover:bg-purple-1 text-sm lg:text-base font-bold text-white-1 rounded-lg lg:rounded-xl tracking-[0.25px]">
+          Sign up for free
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer Overlay -->
+    <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+    <!-- Sidebar Drawer -->
+    <div id="drawer"
+      class="w-[300px] md:w-[250px] fixed top-0 left-0  h-full bg-white shadow-lg transform -translate-x-full transition-transform bg-white-1">
+      <div class="px-[18px] pt-[91px] pb-4">
+        <div class="relative hidden" id="closebtn">
+          <button class="text-black-1 mb-4 absolute -top-5 -right-12" aria-label="close sidebar"
+            onclick="closeDrawer()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <!-- Sidebar Content -->
+        <ul class="space-y-8">
+          <li><a href="/src/about-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Why
+              Us</a>
+          </li>
+          <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">How It
+              Works</a></li>
+          <li class="relative">
+            <button class="flex items-center gap-x-2 w-full text-black-5 hover:text-purple-1 capitalize font-bold"
+              onclick="toggleDropdown()">
+              Products
+              <img src="./assets/down-chevron.svg" class="w-3" alt="">
+            </button>
+            <ul id="dropdown-menu" class="hidden mt-2 space-y-2 pl-4 border-l border-gray-200">
+              <li><a href="/src/product-page.html"
+                  class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+              </li>
+              <li><a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                  2</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Store
+              Connection</a></li>
+          <li><a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Story
+              Case</a></li>
+          <li><a href="/src/contact-us.html"
+              class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Contact
+              Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- header ends here  -->
+  <main>
+    <!-- hero start -->
+    <section id="aboutHero" class="pt-[22px] pb-[20px] md:pt-[58px] md:pb-[52px]">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="grid grid-cols-12 md:gap-4 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center order-2 md:order-1">
+            <!-- content -->
+            <div class="">
+              <h1
+                class="md:max-w-[576px] max-w-[343px] md:text-[58px] text-[28px] text-[#222222] font-bold md:leading-[76px]">
+                Printumo’s vision is to enable the artist
+              </h1>
+              <p
+                class="max-w-[494px] md:text-xl text-base md:leading-8 text-[#3A3A3A] font-normal tracking-[.25px] md:pt-[45px] md:pb-[45px] pt-[14px] pb-[29px]">
+                By unlocking a borderless demand for unique wall art. Sell
+                anywhere through print on demand
+              </p>
+              <div class="w-full">
+                <button
+                  class="text-white-1 px-[17px] h-[56px] md:h-[56px] bg-[#7B53E7] rounded-xl border-[2px] border-[#7B53E7] hover:bg-white-1 text-center text-base font-bold tracking-[0.25px] transition-colors hover:text-[#7B53E7] md:w-auto w-full">
+                  Start selling for free
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 md:col-span-6 flex items-center lg:justify-end justify-center md:justify-start order-1 md:order-2">
+            <!-- img -->
+            <div>
+              <img src="./assets/about-us.png" srcset="
+                    ./assets/about-us.png   1x,
+                    ./assets/about-us-2.png 1.5x,
+                    ./assets/about-us-3.png 3x
+                  " alt="" class="lg:max-w-[565px] max-w-[80%] w-full lg:ml-auto lg:mr-0 mx-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- hero end -->
+    <!-- why start -->
+    <section id="why" class="pt-[20px] pb-[24px] md:pt-[52px] md:pb-[122px]">
+      <div class="max-w-[1328px] mx-auto px-4 relative">
+        <div class="grid grid-cols-12 md:gap-5 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center md:justify-start justify-center">
+            <!-- img -->
+            <div>
+              <img src="./assets/about-us-started.png" srcset="
+                    ./assets/about-us-started.png   1x,
+                    ./assets/about-us-started-2.png 1.5x,
+                    ./assets/about-us-started-3.png 3x
+                  " alt="" class="lg:max-w-[572px] max-w-[80%] mx-auto" />
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 flex items-center">
+            <!-- content -->
+            <div>
+              <h2 class="text-[28px] md:text-[40px] text-[#222222] font-bold leading-[150%] tracking-[.25px]">
+                Why we started Printumo
+              </h2>
+              <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] md:pt-9 pt-[18px]">
+                Our journey began as artists selling our own art through our
+                webshop. We were excited to connect with customers from all
+                over the world who were interested in our art prints.
+              </p>
+              <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] pt-7">
+                But we always faced a major hurdle: finding a reliable
+                print-on-demand partner. The search for a service that could
+                provide the variety of sizes and framing options we needed was
+                a frustrating experience.
+              </p>
+              <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] pt-7">
+                Many providers had limited selections or lacked the quality we
+                were looking for, making it difficult to present our art the
+                way we envisioned.
+              </p>
+            </div>
+            <div class="absolute right-0 xl:-bottom-14 -bottom-24 hidden md:block">
+              <img src="./assets/about-us-dots.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- why end -->
+    <!-- quality start -->
+    <section id="quality" class="pt-[24px] pb-[20px] md:pt-[122px] md:pb-[146px]">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="grid grid-cols-12 md:gap-5 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center order-2 md:order-1">
+            <!-- content -->
+            <div>
+              <h2 class="text-[28px] md:text-[40px] text-[#222222] font-bold leading-[150%] tracking-[.25px]">
+                Print-on-demand for artists
+              </h2>
+              <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] md:pt-9 pt-[18px]">
+                So we started building Printumo. We realized that none of the
+                existing print-on-demand providers truly focused on artists
+                and creative individuals. Instead of offering tailored
+                solutions, they catered primarily to broader markets.
+              </p>
+              <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] pt-7">
+                We wanted to change that by creating a platform specifically
+                designed for artists like us, providing the quality, variety,
+                and support that truly addresses the unique needs of the
+                creative community.
+              </p>
+              <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] pt-7">
+                With Printumo, our mission is to empower artists to bring
+                their visions to life and share their art with the world.
+              </p>
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 flex items-center md:justify-end justify-center order-1 md:order-2">
+            <!-- img -->
+            <div>
+              <img src="./assets/about-us-quality.png" srcset="
+                    ./assets/about-us-quality.png   1x,
+                    ./assets/about-us-quality-2.png 1.5x,
+                    ./assets/about-us-quality-3.png 3x
+                  " alt="" class="lg:max-w-[504px] max-w-[80%] mx-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- quality end -->
+    <!-- whyPrintumo start -->
+    <section id="whyPrintumo" class="pt-[20px] pb-[32] md:pt-[146px] md:pb-[120px]">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="grid grid-cols-12 md:gap-5 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center md:justify-start justify-center">
+            <!-- img -->
+            <div>
+              <img src="./assets/about-us-why.png" srcset="
+                    ./assets/about-us-why.png   1x,
+                    ./assets/about-us-why-2.png 1.5x,
+                    ./assets/about-us-why-3.png 3x
+                  " alt="" class="lg:max-w-[535px] max-w-[80%] mx-auto" />
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 flex items-center">
+            <!-- content -->
+            <div class="max-w-[583px] w-full">
+              <h2 class="text-[28px] md:text-[40px] text-[#222222] font-bold leading-[150%] tracking-[.25px]">
+                Why Printumo?
+              </h2>
+              <div class="max-w-[583px] w-full">
+                <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] md:pt-9 pt-[18px]">
+                  We’re more than just a print-on-demand - we’re a platform
+                  created by artists, for artists. We understand the passion and
+                  creativity that goes into every piece of art, and we’ve built
+                  our service around supporting those who live to create.
+                </p>
+                <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] pt-7">
+                  We specialize exclusively in wall art - canvas and poster
+                  prints. Our platform is designed to be simple and intuitive,
+                  so you can easily upload your art, connect to your webshop, or
+                  place direct orders without hassle.
+                </p>
+                <p class="md:max-w-[606px] text-xl text-[#222222] tracking-[.25px] pt-7">
+                  We make it easy to sell your art. our support team is here to
+                  help with everything from technical assistance to marketing
+                  advice, ensuring your journey is smooth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- whyPrintumo end -->
+    <!-- meet start -->
+    <section id="aboutMeet" class="pt-[32px] pb-[41px] md:pt-[120px] md:pb-[107px] relative">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="grid grid-cols-12 md:gap-5 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center order-2 md:order-1">
+            <!-- content -->
+            <div
+              class="z-10 md:bg-transparent bg-[#F3F4F7] text-center md:text-start md:p-0 px-[15px] pt-9 pb-6 md:rounded-t-0 rounded-t-[36px] md:w-auto w-full">
+              <h2 class="md:max-w-[400px] md:text-[72px] text-[28px] text-[#222222] font-semibold leading-[115%]">
+                Meet the team
+              </h2>
+              <p
+                class="lg:max-w-[501px] max-w-[317px] md:text-xl text-base md:leading-8 text-[#707070] font-normal tracking-[.25px] md:pt-[32px] md:pb-[44px] pt-[14px] pb-[29px] md:ml-0 mx-auto">
+                The people behind Printumo, turning passion into print for
+                artists across the globe.
+              </p>
+              <div class="w-full">
+                <button
+                  class="text-white-1 px-[17px] h-[56px] md:h-[56px] bg-[#7B53E7] rounded-xl border-[2px] border-[#7B53E7] hover:bg-white-1 text-center text-base font-bold tracking-[0.25px] transition-colors hover:text-[#7B53E7] md:w-auto w-full">
+                  Start selling for free
+                </button>
+              </div>
+            </div>
+            <div class="absolute bg-[#F3F4F7] h-[520px] w-[48%] left-0 z-1 rounded-r-[48px] md:block hidden">
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6 flex items-center md:justify-end justify-center order-1 md:order-2">
+            <!-- img -->
+            <div>
+              <img src="./assets/about-us-meet.png" srcset="
+                    ./assets/about-us-meet.png   1x,
+                    ./assets/about-us-meet-2.png 1.5x,
+                    ./assets/about-us-meet-3.png 3x
+                  " alt="" class="lg:max-w-[506px] max-w-[80%] mx-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- meet end -->
+  </main>
+
+  <!-- footer start here  -->
+  <footer class="bg-[#0C0F18]">
+    <div
+      class="text-white-1 px-4 max-w-[1328px] mx-auto pt-[43px] py-[58px] lg:py-20 flex flex-col lg:flex-row justify-center lg:items-center lg:gap-16 2xl:gap-[176px]">
+      <div class="w-full lg:max-w-[326px]">
+        <div class="w-[262px]">
+          <img src="./assets/lp/footerlogo.svg" class="w-full" alt="">
+        </div>
+        <p class="text-[#94959B] text-base lg:text-xl pt-[24px] pb-[41px] lg:pt-[34px] lg:pb-[48px]">Unleash
+          your creativity and start selling your printed artworks</p>
+        <div class="gap-5 hidden sm:flex pb-[41px] lg:pb-0">
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+          </a>
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+          </a>
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="flex-1 flex flex-col sm:flex-row sm:justify-between gap-y-[31px]">
+        <div>
+          <h3 class="text-2xl font-bold">Sitemap</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="/src/landingPage.html" class="hover:text-white-1">Home</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">How it works</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Services</a>
+            </li>
+            <li>
+              <a href="/src/about-us.html" class="hover:text-white-1">About</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">Landing</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="#" class="hover:text-white-1">Why Create with Us?</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">How It Works</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Store connection</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Customer reviews</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">Utility</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="#" class="hover:text-white-1">FAQ</a>
+            </li>
+            <li>
+              <a href="terms-&-conditions.html" class="hover:text-white-1">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="flex gap-5 sm:hidden mt-[46px]">
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script  -->
+
+  <script src="./script/navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/monetumo/fav.svg" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/monetumo/fav-16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/monetumo/fav-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/monetumo/fav-32.png" sizes="192x192" type="image/png" />
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <title>Monetumo</title>
+
+    <style>
+        @font-face {
+            font-family: "Avenir Next Cyr Medium";
+            src: url("./font/Avenir Next Cyr Medium.ttf") format("truetype");
+        }
+
+        body {
+            font-family: "Avenir Next Cyr Medium", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- header start here  -->
+    <header class="sticky top-0 left-0 z-50 bg-[#132D46] momentoheader">
+        <!-- Navbar -->
+        <div class="flex items-center justify-between px-5 max-w-[1240px] mx-auto py-5 lg:py-6 relative bg-[#132D46]"
+            id="nav-main">
+            <!-- Desktop Logo -->
+            <div class="block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                <a href="/src/monetumo.html" class="block">
+                    <img src="./assets/monetumo/logo.svg" class="w-[124px] sm:w-[174px]" alt="Logo">
+                </a>
+            </div>
+            <div class="flex flex-1 justify-end lg:space-x-4 2xl:space-x-9 items-center">
+                <!-- Hamburger Icon (Visible only on mobile) -->
+                <button id="momentodrawer-button" class="lg:hidden me-3" aria-label="open sidebar">
+                    <img src="./assets/monetumo/hamburger.png" alt="Menu Icon">
+                </button>
+                <!-- Desktop Menu Items (Visible on large screens) -->
+                <ul class="hidden lg:flex lg:space-x-4 2xl:space-x-7">
+                    <li><a href="#"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">About
+                            Us</a></li>
+                    <li><a href="/src/about-us.html"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Book
+                            a Demo</a></li>
+                    <li><a href="#"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Join
+                            the Waitlist</a></li>
+                    <li><a href="/src/contact-us.html"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Referral
+                            Program</a></li>
+                </ul>
+                <!-- Sign Up Button -->
+                <div class="hidden lg:flex lg:items-center lg:gap-4">
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#FCFEFD] py-[10px] px-[18px] tracking-[0.5px] text-sm xl:text-lg font-medium rounded-lg flex items-center gap-2">
+                        <span>Book a Free</span> <span><img src="./assets/monetumo/arr-ford.svg" class="w-6"
+                                alt=""></span>
+                    </a>
+                    <a href="#"
+                        class="bg-[#FCFEFD] hover:bg-[#00E980] py-[10px] px-[18px] tracking-[0.5px] text-sm xl:text-lg font-medium rounded-lg">
+                        Join the Waitlist
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar Drawer -->
+        <div id="momentodrawer"
+            class="w-full fixed top-0 left-0 h-full bg-[#132D46] shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="p-5 h-screen flex flex-col">
+                <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                        <div class="block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                            <a href="/src/monetumo.html" class="block">
+                                <img src="./assets/monetumo/logo.svg" class="w-[124px]" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- Close Button -->
+                        <button class="w-9" aria-label="close sidebar" onclick="closeMomentoDrawer()">
+                            <img src="./assets/monetumo/close.svg" alt="">
+                        </button>
+                    </div>
+                    <!-- Sidebar Content -->
+                    <ul class="space-y-5 mt-16">
+                        <li><a href="#"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">About
+                                Us</a></li>
+                        <li><a href="/src/about-us.html"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Book
+                                a Demo</a></li>
+                        <li><a href="#"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Join
+                                the Waitlist</a></li>
+                        <li><a href="/src/contact-us.html"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Referral
+                                Program</a></li>
+                    </ul>
+                </div>
+                <div class="p-[1px] rounded-xl bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                    <div class="rounded-xl bg-[#243C53] p-5">
+                        <p class="text-base text-[#FCFEFD] font-semibold tracking-[1px]">Have any questions?</p>
+                        <form action="" class="mt-5 space-y-3">
+                            <div class="relative">
+                                <label for="subscribeInput"
+                                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
+                                    <img src="./assets/monetumo/mail.svg" alt="Mail Icon" class="w-full h-full">
+                                </label>
+                                <input type="text" id="subscribeInput" placeholder="Enter your email..." class="pl-10 pr-3 py-[10px] bg-[#F2F4F8] font-medium text-base text-[#132D46] 
+                                           placeholder:text-[#697077] focus-visible:outline-none w-full rounded-md">
+                            </div>
+                            <button
+                                class="text-[#132D46] font-medium text-lg bg-[#00E980] hover:bg-[#FCFEFD] w-full py-[10px] rounded-lg tracking-[0.5px]">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- main content  -->
+    <main class="">
+        <!-- hero section start here  -->
+        <section class="bg-[#132D46]">
+            <div
+                class="px-5 2xl:pl-[120px] 2xl:pr-0 xl:max-w-[1240px] 2xl:max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between py-10 lg:py-0">
+                <div class="w-full lg:w-[468px]">
+                    <div class="text-center lg:text-start">
+                        <h3
+                            class="bg-[#37E4792E] p-3 text-center font-bold text-xs lg:text-sm text-[#0DB368] rounded inline-block tracking-[1px] uppercase">
+                            Your success is our mission</h3>
+                        <h1 class="text-[#FCFEFD] font-bold text-[28px] lg:text-[42px] leading-tight py-5 lg:py-8">Boost
+                            Your Ad
+                            Revenue by Up to 40%
+                        </h1>
+                    </div>
+                    <ul class="list-disc text-[#FCFEFD] text-sm lg:text-base font-semibold space-y-1 lg:space-y-3 pl-4">
+                        <li>Unlock Your Full Revenue Potential: <span class="font-medium text-[#9EA4B4]">Transform your
+                                impressions into unmatched
+                                earnings with cutting-edge solutions.</span></li>
+                        <li>Seamless Integration: <span class="font-medium text-[#9EA4B4]">Instantly compatible with any
+                                website, including SPAs</span></li>
+                        <li>No Hidden Fees - Only Results: <span class="font-medium text-[#9EA4B4]">Work with a trusted
+                                partner who prioritizes your
+                                success.</span></li>
+                    </ul>
+                    <div class="mt-10 hidden lg:block">
+                        <a
+                            class="bg-[#00E980] hover:bg-[#FCFEFD] font-medium text-lg text-[#132D46] flex items-center gap-2 justify-center py-[14px] rounded-lg cursor-pointer">
+                            <span>Get Started</span>
+                            <span><img src="./assets/monetumo/arr-ford.svg" class="w-6" alt=""></span>
+                        </a>
+                    </div>
+                    <div class="mt-8 mb-3 flex lg:hidden gap-4">
+                        <a
+                            class="bg-[#00E980] hover:bg-[#FCFEFD] font-medium text-sm text-[#132D46] block text-center py-[10px] rounded-lg cursor-pointer flex-1">Book
+                            a Free Demo</a>
+                        <a
+                            class="hover:bg-[#00E980] bg-[#FCFEFD] font-medium text-sm text-[#132D46] block text-center py-[10px] rounded-lg cursor-pointer flex-1">Join
+                            the Waitlist</a>
+                    </div>
+                    <p class="block lg:hidden text-center font-normal text-[#6A6E79] text-xs">Get started with a 30-day
+                        free trial and see how we outperform your current setup.</p>
+                </div>
+                <div class="flex-1">
+                    <img src="./assets/monetumo/hero-1x.png" srcset="
+                            ./assets/monetumo/hero-1x.png 1x,
+                            ./assets/monetumo/hero-2x.png 2x,
+                            ./assets/monetumo/hero-3x.png 3x
+                        " class="w-full hidden lg:block" alt="Hero Image">
+
+                    <img src="./assets/monetumo/hero-mobile.png" class="w-full mx-auto lg:hidden block" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- logo marque section  -->
+        <section class="bg-[#132D46]">
+            <div class="mx-auto py-8 max-w-[1200px]">
+                <div class="logos-slider">
+                    <div><img src="./assets/monetumo/s1.svg" alt="Image 1" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s2.svg" alt="Image 2" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s3.svg" alt="Image 3" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s4.svg" alt="Image 4" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s5.svg" alt="Image 5" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s6.svg" alt="Image 6" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s7.svg" alt="Image 7" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s8.svg" alt="Image 8" class="w-full"></div>
+                    <div><img src="./assets/monetumo/s9.svg" alt="Image 9" class="w-full"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Effective Advertising  -->
+        <section class="bg-[#132D46] py-9 lg:pt-16 lg:pb-0">
+            <div class="mx-auto py-8 max-w-[1200px]">
+                <div class="px-5 xl:px-0 text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">Seamless
+                    </h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#FCFEFD]">Effective Advertising Across All
+                        Devices</h2>
+                    <p class="font-normal text-[12px] lg:text-[18px] text-[#9EA4B4] max-w-[826px] mx-auto">Place ads
+                        that look great on any screen — from desktops to smartphones. Maximum visibility and convenience
+                        for your
+                        users.</p>
+                </div>
+            </div>
+            <div
+                class="px-5 lg:px-0 lg:bg-[url('/src/assets/monetumo/seamless-bg.png')] bg-auto bg-no-repeat seamlessCard lg:pt-16">
+                <!-- advertising cards  -->
+                <div class="mx-auto max-w-[880px] grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-5 lg:pb-[50px]">
+                    <!-- left  -->
+                    <div class="flex flex-col gap-3 lg:gap-5">
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                            <div class="rounded-[24px] bg-[#354B6080]">
+                                <div class="p-6 pb-0">
+                                    <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">Header Biding
+                                    </h3>
+                                    <p class="text-sm text-[#9EA4B4] font-normal">Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Iaculis aenean aliquet morbi eros hac ut no.</p>
+                                </div>
+                                <div class="flex items-center justify-between px-8 lg:px-12 lg:pt-2">
+                                    <img src="./assets/monetumo/h1.svg" class="w-10 lg:w-auto" alt="">
+                                    <img src="./assets/monetumo/h2-1x.png" srcset="
+                                                        ./assets/monetumo/h2-1x.png 1x,
+                                                        ./assets/monetumo/h2-2x.png 2x,
+                                                        ./assets/monetumo/h2-3x.png 3x
+                                                    " class="w-32 lg:w-auto pb-3" alt="">
+                                    <img src="./assets/monetumo/h3.svg" class="w-10 lg:w-auto pb-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                            <div
+                                class="rounded-[24px] bg-[#354B6080] px-3 py-5 lg:p-6 flex gap-2 lg:gap-3 items-center">
+                                <div class="w-[52px] lg:w-[68px]">
+                                    <img src="./assets/monetumo/intelligent.svg" class="w-full" alt="">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">Inteligent
+                                        Dynamic Ads</h3>
+                                    <p class="text-sm text-[#9EA4B4] font-normal">Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Iaculis aenean aliquet morbi
+                                        eros hac ut no.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right  -->
+                    <div class="flex flex-col-reverse lg:flex-col gap-3 lg:gap-5">
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                            <div
+                                class="rounded-[24px] bg-[#354B6080] px-3 py-5 lg:p-6 flex gap-2 lg:gap-3 items-center">
+                                <div class="w-[52px] lg:w-[68px]">
+                                    <img src="./assets/monetumo/native.svg" class="w-full" alt="">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">Native
+                                        advertising formats
+                                    </h3>
+                                    <p class="text-sm text-[#9EA4B4] font-normal">Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Iaculis aenean aliquet
+                                        morbi
+                                        eros hac ut no.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                            <div class="rounded-[24px] bg-[#354B6080]">
+                                <div class="p-6 pb-0">
+                                    <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">Unique demand
+                                    </h3>
+                                    <p class="text-sm text-[#9EA4B4] font-normal">Lorem ipsum dolor sit amet
+                                        consectetur.
+                                        Iaculis aenean aliquet morbi eros hac ut no.</p>
+                                </div>
+                                <div class="flex items-center justify-between px-8 lg:px-12 pt-2 lg:min-h-[132px]">
+                                    <img src="./assets/monetumo/uni1.svg" class="w-10 lg:w-auto" alt="">
+                                    <img src="./assets/monetumo/uni2-1x.png" srcset="
+                                                        ./assets/monetumo/uni2-1x.png 1x,
+                                                        ./assets/monetumo/uni2-2x.png 2x,
+                                                        ./assets/monetumo/uni2-3x.png 3x
+                                                    " class="w-32 lg:w-auto pb-3 lg:pb-0" alt="">
+                                    <img src="./assets/monetumo/uni3.svg" class="w-10 lg:w-auto pb-7 lg:pb-0" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ad images  -->
+                <div class="grid grid-cols-3 gap-4 mx-auto max-w-[787px] pt-7 lg:py-[86px]">
+                    <!-- First Row: 3 columns (33.33% each) -->
+                    <div class="col-span-1">
+                        <img src="./assets/monetumo/ad1-1x.png" srcset="
+                                            ./assets/monetumo/ad1-1x.png 1x,
+                                            ./assets/monetumo/ad1-2x.png 2x,
+                                            ./assets/monetumo/ad1-3x.png 3x
+                                        " class="w-full" alt="">
+                    </div>
+                    <div class="col-span-1">
+                        <img src="./assets/monetumo/ad2-1x.png" srcset="
+                                                                ./assets/monetumo/ad2-1x.png 1x,
+                                                                ./assets/monetumo/ad2-2x.png 2x,
+                                                                ./assets/monetumo/ad2-3x.png 3x
+                                                            " class="w-full" alt="">
+                    </div>
+                    <div class="col-span-1">
+                        <img src="./assets/monetumo/ad3-1x.png" srcset="
+                                                                ./assets/monetumo/ad3-1x.png 1x,
+                                                                ./assets/monetumo/ad3-2x.png 2x,
+                                                                ./assets/monetumo/ad3-3x.png 3x
+                                                            " class="w-full" alt="">
+                    </div>
+
+                    <!-- Second Row: 2 columns (50% each) -->
+                    <div class="col-span-3 flex">
+                        <div class="max-w-[367]">
+                            <img src="./assets/monetumo/ad4-1x.png" srcset="
+                                                                    ./assets/monetumo/ad4-1x.png 1x,
+                                                                    ./assets/monetumo/ad4-2x.png 2x,
+                                                                    ./assets/monetumo/ad4-3x.png 3x
+                                                                " class="w-full" alt="">
+                        </div>
+                        <div class="max-w-[400px]">
+                            <img src="./assets/monetumo/ad5-1x.png" srcset="
+                                                                    ./assets/monetumo/ad5-1x.png 1x,
+                                                                    ./assets/monetumo/ad5-2x.png 2x,
+                                                                    ./assets/monetumo/ad5-3x.png 3x
+                                                                " class="w-full" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- stats  -->
+        <section class="bg-[#132D46] py-9 lg:py-20 hidden lg:block">
+            <div class="max-w-[1080px] mx-auto px-5 xl:px-0 grid grid-cols-3 gap-2 lg:gap-8 xl:gap-[72px]">
+                <div class="p-[1px] rounded-lg lg:rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                    <div class="rounded-lg lg:rounded-[24px] bg-[#354B6080] p-3 lg:p-10 text-center">
+                        <h2 class="font-bold text-[#00E980] text-[24px] lg:text-[70px]">40%</h2>
+                        <p class="font-normal text-[#E7EAEE] text-[10px] lg:text-[20px]">Avg. Revenue <br> Increase</p>
+                    </div>
+                </div>
+                <div class="p-[1px] rounded-lg lg:rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                    <div class="rounded-lg lg:rounded-[24px] bg-[#354B6080] p-3 lg:p-10 text-center">
+                        <h2 class="font-bold text-[#00E980] text-[24px] lg:text-[70px]">+39</h2>
+                        <p class="font-normal text-[#E7EAEE] text-[10px] lg:text-[20px]">Demand <br> Partners</p>
+                    </div>
+                </div>
+                <div class="p-[1px] rounded-lg lg:rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                    <div class="rounded-lg lg:rounded-[24px] bg-[#354B6080] p-3 lg:p-10 text-center">
+                        <h2 class="font-bold text-[#00E980] text-[24px] lg:text-[70px]">97%</h2>
+                        <p class="font-normal text-[#E7EAEE] text-[10px] lg:text-[20px]">Customer <br> Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- How It Works?  -->
+        <section class="bg-[#132D46] py-9 lg:py-20">
+            <div class="px-5 xl:px-0 max-w-[1120px] mx-auto">
+                <div class="text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">How It
+                        Works?</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#FCFEFD]">Start Earning More with Monetumo in
+                        3 Simple Steps</h2>
+                </div>
+                <div class="mt-6 lg:mt-12">
+                    <div
+                        class="p-[1px] rounded-lg lg:rounded-xl bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full md:w-[430px] md:mx-auto">
+                        <div class="rounded-lg lg:rounded-xl bg-[#243C53] p-2 lg:p-[18px] flex gap-4 items-center">
+                            <div class="w-[50px] h-[50px] bg-[#00E98033] rounded flex items-center justify-center">
+                                <img src="./assets/monetumo/rocket.svg" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[16px] lg:text-[18px] text-[#E7EAEE] font-bold">Get Started:</h3>
+                                <p class="text-[12px] lg:text-[15px] text-[#9EA4B4] font-normal">We'll provide you with
+                                    tags within 24
+                                    hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-10 mt-4 lg:mt-10">
+                        <div class="p-[1px] rounded-lg lg:rounded-xl bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                            <div class="rounded-lg lg:rounded-xl bg-[#243C53] p-2 lg:p-[18px] flex gap-4 items-center">
+                                <div class="w-[50px] h-[50px] bg-[#00E98033] rounded flex items-center justify-center">
+                                    <img src="./assets/monetumo/testing-report.svg" alt="">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-[16px] lg:text-[18px] text-[#E7EAEE] font-bold">Set Up Testing:</h3>
+                                    <p class="text-[12px] lg:text-[15px] text-[#9EA4B4] font-normal">Implement tags on
+                                        your testing site while we perform a QA.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-[1px] rounded-lg lg:rounded-xl bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                            <div class="rounded-lg lg:rounded-xl bg-[#243C53] p-2 lg:p-[18px] flex gap-4 items-center">
+                                <div class="w-[50px] h-[50px] bg-[#00E98033] rounded flex items-center justify-center">
+                                    <img src="./assets/monetumo/play.svg" alt="">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-[16px] lg:text-[18px] text-[#E7EAEE] font-bold">Go Live:</h3>
+                                    <p class="text-[12px] lg:text-[15px] text-[#9EA4B4] font-normal">Access our full
+                                        demand stack and start generating revenue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-6 lg:mt-12">
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#FCFEFD] font-medium text-lg text-[#132D46] px-12 inline-flex items-center gap-2 justify-center py-[14px] rounded-lg cursor-pointer">
+                        <span>Get Started</span>
+                        <span><img src="./assets/monetumo/arr-ford.svg" class="w-6" alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- smart tools  -->
+        <section class="bg-[#F7FBFF] py-9 lg:pb-0 lg:pt-20">
+            <div class="max-w-[1240px] mx-auto">
+                <div class="text-center space-y-4 lg:space-y-6 px-5">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">Smart
+                        tools. Bigger revenue</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#132D46]">Tailored Solutions for Every
+                        Publisher</h2>
+                    <p class="font-normal text-[12px] lg:text-[18px] text-[#9EA4B4] max-w-[550px] mx-auto">Maximize your
+                        ad revenue with Monetumo's cutting-edge tools and strategies, customized for your unique needs.
+                    </p>
+                </div>
+                <div class="max-w-[824px] mx-auto relative">
+                    <img src="./assets/monetumo/tailor-graphic.svg" class="hidden w-full lg:block" alt="">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:block gap-6 mt-6 lg:mt-0 bg-[url('/src/assets/monetumo/smart.png')] lg:bg-none bg-cover bg-center bg-no-repeat px-5">
+                        <!-- card 1  -->
+                        <div
+                            class="ml-3 lg:ml-0 rounded-2xl bg-[#FFFFFF] p-3 lg:p-4 flex gap-4 items-center border border-[#9EA4B433] w-[95%] lg:w-[437px] lg:absolute lg:left-[40%] lg:top-[22%]">
+                            <div class="w-[44px] lg:w-[60px] h-[44px] lg:h-[60px] rounded-[50%] ">
+                                <img src="./assets/monetumo/ad.svg" class="w-full" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] lg:text-[20] text-[#243C53] font-bold mb-2">Ad Optimization</h3>
+                                <p class="text-[12px] lg:text-[16px] text-[#6A6E79] font-normal">Unlike many
+                                    competitors, we work with.</p>
+                            </div>
+                        </div>
+                        <!-- card 2  -->
+                        <div
+                            class="rounded-2xl bg-[#FFFFFF] p-3 lg:p-4 flex gap-4 items-center border border-[#9EA4B433] w-[95%] lg:w-[437px] lg:absolute lg:-left-[6%] lg:top-[40%]">
+                            <div class="w-[44px] lg:w-[60px] h-[44px] lg:h-[60px] rounded-[50%] ">
+                                <img src="./assets/monetumo/flexible.svg" class="w-full" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] lg:text-[20] text-[#243C53] font-bold mb-2">Flexible Integration
+                                </h3>
+                                <p class="text-[12px] lg:text-[16px] text-[#6A6E79] font-normal">Unlike many
+                                    competitors, we work with.</p>
+                            </div>
+                        </div>
+                        <!-- card 3  -->
+                        <div
+                            class="ml-3 lg:ml-0 rounded-2xl bg-[#FFFFFF] p-3 lg:p-4 flex gap-4 items-center border border-[#9EA4B433] w-[95%] lg:w-[437px] lg:absolute -right-[6%] lg:top-[50%]">
+                            <div class="w-[44px] lg:w-[60px] h-[44px] lg:h-[60px] rounded-[50%] ">
+                                <img src="./assets/monetumo/revenue.svg" class="w-full" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] lg:text-[20] text-[#243C53] font-bold mb-2">Revenue Insights</h3>
+                                <p class="text-[12px] lg:text-[16px] text-[#6A6E79] font-normal">Unlike many
+                                    competitors, we work with.</p>
+                            </div>
+                        </div>
+                        <!-- card 4  -->
+                        <div
+                            class="rounded-2xl bg-[#FFFFFF] p-3 lg:p-4 flex gap-4 items-center border border-[#9EA4B433] w-[95%] lg:w-[437px] lg:absolute lg:left-[12%] lg:top-[70%]">
+                            <div class="w-[44px] lg:w-[60px] h-[44px] lg:h-[60px] rounded-[50%] ">
+                                <img src="./assets/monetumo/global.svg" class="w-full" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] lg:text-[20] text-[#243C53] font-bold mb-2">Global Reach</h3>
+                                <p class="text-[12px] lg:text-[16px] text-[#6A6E79] font-normal">Unlike many
+                                    competitors, we work with.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose  -->
+        <section class="bg-[#132D46] py-9 lg:py-20">
+            <div class="mx-auto max-w-[1240px] px-5">
+                <div class=" text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">Why Choose
+                        Monetumo Over Competitors?</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#FCFEFD] max-w-[760px] mx-auto">Monetumo vs.
+                        Competitors: The Clear Choice for Publishers</h2>
+                    <p class="font-normal text-[12px] lg:text-[18px] text-[#9EA4B4] max-w-[550px] mx-auto">Discover why
+                        publishers prefer Monetumo for better revenue, flexibility, and faster payouts.</p>
+                </div>
+                <div class="text-center mt-8 lg:mt-16">
+                    <h3
+                        class="bg-[#37E4792E] p-3 text-center font-bold text-xs lg:text-sm text-[#0DB368] rounded inline-block tracking-[1px] uppercase">
+                        Comparison Highlights (3 Key Benefits):</h3>
+                </div>
+                <div
+                    class="flex flex-col lg:flex-row justify-between items-stretch gap-4 lg:gap-6 xl:gap-10 2xl:gap-[44px] my-5 lg:my-10">
+                    <!-- single item  -->
+                    <div
+                        class="p-[1px] rounded-[20px] lg:rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full lg:w-[29%]">
+                        <div class="rounded-[20px] lg:rounded-[24px] bg-[#354B6080] p-5 h-full flex flex-col gap-4">
+                            <div class="w-[52px] lg:w-[68px] mx-auto">
+                                <img src="./assets/monetumo/locatin.svg" class="w-full" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">High Acceptance
+                                    Rate:</h3>
+                                <p class="text-[12px] lg:text-sm text-[#9EA4B4] font-normal">Unlike competitors, we
+                                    welcome European
+                                    websites and have lower session requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div
+                        class="p-[1px] rounded-[20px] lg:rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full lg:w-[38%]">
+                        <div class="rounded-[20px] lg:rounded-[24px] bg-[#354B6080] h-full">
+                            <div class="p-6 pb-0">
+                                <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">Effortless
+                                    Integration:</h3>
+                                <p class="text-[12px] lg:text-sm text-[#9EA4B4] font-normal">Our technology supports
+                                    both standard
+                                    websites and SPAs out of the box — no extra setup required.</p>
+                            </div>
+                            <div class="flex items-center justify-between px-8 lg:px-12 pt-3">
+                                <img src="./assets/monetumo/effort.svg" class="w-[40px] lg:w-auto" alt="">
+                                <img src="./assets/monetumo/ef1x.png" srcset="
+                                                                            ./assets/monetumo/ef1x.png 1x,
+                                                                            ./assets/monetumo/ef2x.png 2x,
+                                                                            ./assets/monetumo/ef3x.png 3x
+                                                                        " class="w-32 lg:w-auto pb-1" alt="">
+                                <img src="./assets/monetumo/effort3.svg" class="w-[40px] lg:w-auto pb-8" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div
+                        class="p-[1px] rounded-[20px] lg:rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full lg:w-[29%]">
+                        <div
+                            class="rounded-[20px] lg:rounded-[24px] bg-[#354B6080] p-5 h-full flex flex-col-reverse lg:flex-col gap-4">
+                            <div class="w-[52px] lg:w-[68px] mx-auto">
+                                <img src="./assets/monetumo/locatin.svg" class="w-full" alt="">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] lg:text-[20px] text-[#E7EAEE] font-bold mb-2">Faster Payouts:
+                                </h3>
+                                <p class="text-[12px] lg:text-sm text-[#9EA4B4] font-normal">Get paid monthly, not in 60
+                                    days like
+                                    other platforms. Why wait when you can get paid faster?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-[352px] mx-auto">
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#FCFEFD] font-medium text-lg text-[#132D46] px-12 py-[14px] rounded-lg cursor-pointer block text-center">
+                        Book a Demo Now!
+                    </a>
+                    <p class="mt-4 lg:mt-5 text-[20px] lg:text-[18px] text-center font-normal text-[#9EA4B4]">Ready to
+                        switch? Book a free demo and see the difference!</p>
+                </div>
+            </div>
+        </section>
+        <!-- help start here  -->
+        <section class="bg-[#132D46] py-10 lg:py-16">
+            <div
+                class="px-5 2xl:pl-[120px] 2xl:pr-0 xl:max-w-[1240px] 2xl:max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between">
+                <div class="w-full lg:w-[696px] text-center lg:text-start">
+                    <h3
+                        class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px] lg:max-w-[600px]">
+                        How Monetumo Helps — No Matter Where You're Starting From</h3>
+                    <h2 class="text-[#FCFEFD] font-bold text-[28px] lg:text-[42px] leading-tight py-5 lg:leading-snug">
+                        Whether You're Using Google AdSense or a Competitor, We're Here to Help You Earn More
+                    </h2>
+                    <p class="font-normal text-[#9EA4B4] text-[12px] lg:text-[18px]">Tailored solutions to maximize your
+                        ad revenue, regardless of your current setup.</p>
+                </div>
+                <div class="max-w-[599px]">
+                    <img src="./assets/monetumo/help-1x.png" srcset="./assets/monetumo/help-1x.png 1x,
+                    ./assets/monetumo/help-2x.png 2x,
+                    ./assets/monetumo/help-3x.png 3x
+                    " class="w-full" alt="Help Image">
+
+                </div>
+            </div>
+        </section>
+        <!-- google Adsense  -->
+        <section class="bg-[#F7FBFF] py-9 lg:py-16 hidden lg:block">
+            <div
+                class="max-w-[1240px] px-5 mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-12 2xl:gap-[129px]">
+                <div class="w-full lg:w-[50%]">
+                    <img src="./assets/monetumo/googleAd-1x.png" srcset="./assets/monetumo/googleAd-1x.png 1x,
+                    ./assets/monetumo/googleAd-2x.png 2x,
+                    ./assets/monetumo/googleAd-3x.png 3x
+                    " class="w-full" alt="Help Image">
+                </div>
+                <div class="w-full lg:w-[35%]">
+                    <h2 class="font-bold text-[#132D46] text-[28px] lg:text-[42px] leading-tight">If You're Using Google
+                        AdSense</h2>
+                    <p class="font-normal text-[#6A6E79] text-[14px] lg:text-[18px] py-3 lg:py-6">Earn More with
+                        Monetumo — Upgrading from AdSense is Easy.</p>
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#132D46] font-medium text-lg text-[#132D46] hover:text-white-1 px-12 py-[14px] rounded-lg cursor-pointer block text-center">
+                        Book a Demo Now!
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Bidding -->
+        <section class="bg-[#FCFEFD] py-9 lg:py-16 hidden lg:block">
+            <div
+                class="max-w-[1240px] px-5 mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-5 lg:gap-12">
+                <div class="w-full lg:w-[38%]">
+                    <h2 class="font-bold text-[#132D46] text-[28px] lg:text-[42px] leading-tight">If you're already
+                        using Header Bidding</h2>
+                    <p class="font-normal text-[#6A6E79] text-[14px] lg:text-[18px] py-3 lg:py-6">Why Switch to
+                        Monetumo? Flexible, Transparent, and Open to Your Business.</p>
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#132D46] font-medium text-lg text-[#132D46] hover:text-white-1 px-12 py-[14px] rounded-lg cursor-pointer block text-center">
+                        Book a Demo Now!
+                    </a>
+                </div>
+                <div class="w-full lg:w-[55%]">
+                    <img src="./assets/monetumo/bidding-1x.png" srcset="
+                    ./assets/monetumo/bidding-1x.png 1x,
+                    ./assets/monetumo/bidding-2x.png 2x,
+                    ./assets/monetumo/bidding-3x.png 3x
+                    " class="w-full" alt="Help Image">
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Monetumo?  -->
+        <section class="bg-[#FCFEFD] py-9 lg:py-20 border-t">
+            <div class="max-w-[1240px] px-5 mx-auto">
+                <div class="text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">Why Choose
+                        Monetumo?</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#132D46]">Why Publishers Trust Monetumo</h2>
+                </div>
+                <!-- desktop cards  -->
+                <div class="hidden lg:flex justify-center gap-y-5 gap-x-9 flex-wrap mt-14">
+                    <!-- single item  -->
+                    <div
+                        class="w-[31%] border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="pt-5">
+                            <img src="./assets/monetumo/p1-1x.png" srcset="./assets/monetumo/p1-1x.png 1x,
+                            ./assets/monetumo/p1-2x.png 2x,
+                            ./assets/monetumo/p1-3x.png 3x
+                            " class="w-full" alt="">
+                        </div>
+                        <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px]">
+                            <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">Higher
+                                Revenue:</h2>
+                            <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">
+                                Maximize your earnings through advanced demand stack and yield strategies.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div
+                        class="w-[31%] border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="pt-5">
+                            <img src="./assets/monetumo/p2-1x.png" srcset="./assets/monetumo/p2-1x.png 1x,
+                            ./assets/monetumo/p2-2x.png 2x,
+                            ./assets/monetumo/p2-3x.png 3x
+                            " class="w-full" alt="">
+                        </div>
+                        <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px]">
+                            <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">
+                                Transparent Revenue Share:</h2>
+                            <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">Clear
+                                terms, no hidden fees, and competitive rates.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div
+                        class="w-[31%] border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="pt-5">
+                            <img src="./assets/monetumo/p3-1x.png" srcset="./assets/monetumo/p3-1x.png 1x,
+                            ./assets/monetumo/p3-2x.png 2x,
+                            ./assets/monetumo/p3-3x.png 3x
+                            " class="w-full" alt="">
+                        </div>
+                        <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px]">
+                            <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">Seamless
+                                Integration:</h2>
+                            <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">
+                                Effortlessly onboard on both web and app environments, on any web technology.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div
+                        class="w-[31%] border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="pt-5">
+                            <img src="./assets/monetumo/p4-1x.png" srcset="./assets/monetumo/p4-1x.png 1x,
+                            ./assets/monetumo/p4-2x.png 2x,
+                            ./assets/monetumo/p4-3x.png 3x
+                            " class="w-full" alt="">
+                        </div>
+                        <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px]">
+                            <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">24/7
+                                Support:</h2>
+                            <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">Custom
+                                solutions and reliable support whenever you need it.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div
+                        class="w-[31%] border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="pt-5">
+                            <img src="./assets/monetumo/p5-1x.png" srcset="./assets/monetumo/p5-1x.png 1x,
+                            ./assets/monetumo/p5-2x.png 2x,
+                            ./assets/monetumo/p5-3x.png 3x
+                            " class="w-full" alt="">
+                        </div>
+                        <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px]">
+                            <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">Proven
+                                Results:</h2>
+                            <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">On
+                                average, publishers with 10M impressions earn $30K+ monthly.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- mobile slider  -->
+                <div class="block lg:hidden mt-8  relative">
+                    <div class="choose-slider px-7">
+                        <!-- single item  -->
+                        <div class="w-full border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="pt-5">
+                                <img src="./assets/monetumo/p1-1x.png" srcset="./assets/monetumo/p1-1x.png 1x,
+                                                    ./assets/monetumo/p1-2x.png 2x,
+                                                    ./assets/monetumo/p1-3x.png 3x
+                                                    " class="w-full" alt="">
+                            </div>
+                            <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px] min-h-[122px]">
+                                <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">
+                                    Higher Revenue:</h2>
+                                <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">
+                                    Maximize your earnings
+                                    through advanced demand stack and yield strategies.</p>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="w-full border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="pt-5">
+                                <img src="./assets/monetumo/p2-1x.png" srcset="./assets/monetumo/p2-1x.png 1x,
+                                                    ./assets/monetumo/p2-2x.png 2x,
+                                                    ./assets/monetumo/p2-3x.png 3x
+                                                    " class="w-full" alt="">
+                            </div>
+                            <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px] min-h-[122px]">
+                                <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">
+                                    Transparent Revenue Share:
+                                </h2>
+                                <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">
+                                    Clear terms, no hidden
+                                    fees, and competitive rates.</p>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="w-full border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="pt-5">
+                                <img src="./assets/monetumo/p3-1x.png" srcset="./assets/monetumo/p3-1x.png 1x,
+                                                    ./assets/monetumo/p3-2x.png 2x,
+                                                    ./assets/monetumo/p3-3x.png 3x
+                                                    " class="w-full" alt="">
+                            </div>
+                            <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px] min-h-[122px]">
+                                <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">
+                                    Seamless Integration:</h2>
+                                <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">
+                                    Effortlessly onboard on
+                                    both web and app environments, on any web technology.</p>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="w-full border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="pt-5">
+                                <img src="./assets/monetumo/p4-1x.png" srcset="./assets/monetumo/p4-1x.png 1x,
+                                                    ./assets/monetumo/p4-2x.png 2x,
+                                                    ./assets/monetumo/p4-3x.png 3x
+                                                    " class="w-full" alt="">
+                            </div>
+                            <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px] min-h-[122px]">
+                                <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">24/7
+                                    Support:</h2>
+                                <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">
+                                    Custom solutions and
+                                    reliable support whenever you need it.</p>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="w-full border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="pt-5">
+                                <img src="./assets/monetumo/p5-1x.png" srcset="./assets/monetumo/p5-1x.png 1x,
+                                                    ./assets/monetumo/p5-2x.png 2x,
+                                                    ./assets/monetumo/p5-3x.png 3x
+                                                    " class="w-full" alt="">
+                            </div>
+                            <div class="pt-[15px] px-[28px] pb-4 lg:pb-[34px] min-h-[122px]">
+                                <h2 class="font-semibold text-[16px] lg:text-[18px]  text-[#132D46] tracking-[1px]">
+                                    Proven Results:</h2>
+                                <p class="text-[#21272A] font-normal text-[14px] lg:text-[16px] pt-1 tracking-[1px]">On
+                                    average, publishers with
+                                    10M impressions earn $30K+ monthly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Arrows -->
+                    <button class="choose-prev-arrow absolute top-1/2 -translate-y-1/2 left-0">
+                        <img src="./assets/monetumo/prev.svg" class="w-6" alt="">
+                    </button>
+                    <button class="choose-next-arrow absolute top-1/2 -translate-y-1/2 right-0">
+                        <img src="./assets/monetumo/next.svg" class="w-6" alt="">
+                    </button>
+
+                </div>
+            </div>
+        </section>
+        <!-- Revenue Potential Examples  -->
+        <section class="bg-[#F7FBFF] py-9 lg:py-20">
+            <div class="max-w-[1240px] px-5 mx-auto">
+                <div class="text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">Revenue
+                        Potential Examples</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#132D46]">How Much Can You Earn?</h2>
+                </div>
+                <!-- desktop cards  -->
+                <div class="hidden lg:grid grid-cols-3 gap-8 mt-14">
+                    <!-- single item  -->
+                    <div class="border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="px-3 lg:px-4 py-5 lg:py-12">
+                            <div class="text-center">
+                                <h2 class="font-medium text-[20px] lg:text-[32px]  text-[#132D46]">Scenario 1</h2>
+                                <p class="text-[#9EA4B4] font-normal text-[14px] lg:text-[16px]">Quisque donec nibh diam
+                                    tellus integer.</p>
+                            </div>
+                            <ul class="max-w-[182px] lg:max-w-[212px] mx-auto mt-4 lg:mt-6 space-y-[6px] lg:space-y-2">
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Impressions:
+                                        <span class="font-normal">10M</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Ad Density:
+                                        <span class="font-normal">3 ads/page</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">CPM: <span
+                                            class="font-normal"> $1</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Revenue: <span
+                                            class="font-normal">$30K/month</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="px-3 lg:px-4 py-5 lg:py-12">
+                            <div class="text-center">
+                                <h2 class="font-medium text-[20px] lg:text-[32px]  text-[#132D46]">Scenario 2</h2>
+                                <p class="text-[#9EA4B4] font-normal text-[14px] lg:text-[16px]">Quisque donec nibh diam
+                                    tellus integer.</p>
+                            </div>
+                            <ul class="max-w-[182px] lg:max-w-[212px] mx-auto mt-4 lg:mt-6 space-y-[6px] lg:space-y-2">
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Impressions:
+                                        <span class="font-normal">10M</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Ad Density:
+                                        <span class="font-normal">5 ads/page</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">CPM: <span
+                                            class="font-normal"> $3</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Revenue: <span
+                                            class="font-normal">$150K/month</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="border border-[#9EA4B433] bg-white-1 shadow-publishShadow rounded-xl lg:rounded-2xl">
+                        <div class="px-3 lg:px-4 py-5 lg:py-12">
+                            <div class="text-center">
+                                <h2 class="font-medium text-[20px] lg:text-[32px]  text-[#132D46]">Scenario 3</h2>
+                                <p class="text-[#9EA4B4] font-normal text-[14px] lg:text-[16px]">Quisque donec nibh diam
+                                    tellus integer.</p>
+                            </div>
+                            <ul class="max-w-[182px] lg:max-w-[212px] mx-auto mt-4 lg:mt-6 space-y-[6px] lg:space-y-2">
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Impressions:
+                                        <span class="font-normal">10M</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Ad Density:
+                                        <span class="font-normal">5 ads/page</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">CPM: <span
+                                            class="font-normal"> $2</span></span>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                    <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Revenue: <span
+                                            class="font-normal">$50K/month</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="block lg:hidden mt-4">
+                    <div class="revenue-slider">
+                        <!-- single item  -->
+                        <div class="border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="px-3 lg:px-4 py-5 lg:py-12">
+                                <div class="text-center">
+                                    <h2 class="font-medium text-[20px] lg:text-[32px]  text-[#132D46]">Scenario 1</h2>
+                                    <p class="text-[#9EA4B4] font-normal text-[14px] lg:text-[16px]">Quisque donec nibh
+                                        diam tellus integer.
+                                    </p>
+                                </div>
+                                <ul
+                                    class="max-w-[182px] lg:max-w-[212px] mx-auto mt-4 lg:mt-6 space-y-[6px] lg:space-y-2">
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span
+                                            class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Impressions:
+                                            <span class="font-normal">10M</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Ad
+                                            Density: <span class="font-normal">3 ads/page</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">CPM: <span
+                                                class="font-normal">
+                                                $1</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Revenue:
+                                            <span class="font-normal">$30K/month</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="px-3 lg:px-4 py-5 lg:py-12">
+                                <div class="text-center">
+                                    <h2 class="font-medium text-[20px] lg:text-[32px]  text-[#132D46]">Scenario 2</h2>
+                                    <p class="text-[#9EA4B4] font-normal text-[14px] lg:text-[16px]">Quisque donec nibh
+                                        diam tellus integer.
+                                    </p>
+                                </div>
+                                <ul
+                                    class="max-w-[182px] lg:max-w-[212px] mx-auto mt-4 lg:mt-6 space-y-[6px] lg:space-y-2">
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span
+                                            class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Impressions:
+                                            <span class="font-normal">10M</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Ad
+                                            Density: <span class="font-normal">5 ads/page</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">CPM: <span
+                                                class="font-normal">
+                                                $3</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Revenue:
+                                            <span class="font-normal">$150K/month</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="border border-[#9EA4B433] bg-white-1 rounded-xl lg:rounded-2xl">
+                            <div class="px-3 lg:px-4 py-5 lg:py-12">
+                                <div class="text-center">
+                                    <h2 class="font-medium text-[20px] lg:text-[32px]  text-[#132D46]">Scenario 3</h2>
+                                    <p class="text-[#9EA4B4] font-normal text-[14px] lg:text-[16px]">Quisque donec nibh
+                                        diam tellus integer.
+                                    </p>
+                                </div>
+                                <ul
+                                    class="max-w-[182px] lg:max-w-[212px] mx-auto mt-4 lg:mt-6 space-y-[6px] lg:space-y-2">
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span
+                                            class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Impressions:
+                                            <span class="font-normal">10M</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Ad
+                                            Density: <span class="font-normal">5 ads/page</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">CPM: <span
+                                                class="font-normal">
+                                                $2</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-1">
+                                        <span><img src="./assets/monetumo/check.svg" class="w-6" alt=""></span>
+                                        <span class="text-[#6A6E79] text-[14px] lg:text-[16px] font-semibold">Revenue:
+                                            <span class="font-normal">$50K/month</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-10 lg:mt-12">
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#132D46] font-medium text-lg text-[#132D46] hover:text-white-1 px-7 inline-flex items-center gap-2 justify-center py-[14px] rounded-lg cursor-pointer">
+                        Book a Demo Now!
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials  -->
+        <section class="bg-[#132D46] py-9 lg:py-20">
+            <div class="mx-auto max-w-[1240px] px-5">
+                <div class=" text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[20px] text-[#0DB368] uppercase tracking-[1px]">Testimonials</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#FCFEFD] max-w-[760px] mx-auto">What Our
+                        Publishers Say</h2>
+                </div>
+                <!-- slider  -->
+                <div class="my-8 lg:my-16 relative">
+                    <div class="testimonial-slider">
+                        <!-- single item  -->
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full">
+                            <div class="rounded-[24px] bg-[#354B6080] p-6 h-full">
+                                <div class="">
+                                    <img src="./assets/monetumo/rent.svg" class="mx-auto" alt="">
+                                </div>
+                                <p class="font-normal text-[#FCFEFD] lg:text-[18px] text-center py-4">"Monetumo helped
+                                    us increase our monthly
+                                    revenue by 50% compared to our previous setup. The integration was seamless,
+                                    and their support is unmatched."</p>
+                                <div class="pt-3">
+                                    <div class="mb-4">
+                                        <img src="./assets/monetumo/user.svg" class="mx-auto w-12" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <h3 class="font-bold text-[#FCFEFD] lg:text-[24px]">Cody Fisher</h3>
+                                        <p class="font-normal text-[#9EA4B4] lg:text-[18px]">Company manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full">
+                            <div class="rounded-[24px] bg-[#354B6080] p-6 h-full">
+                                <div class="">
+                                    <img src="./assets/monetumo/arono.svg" class="mx-auto" alt="">
+                                </div>
+                                <p class="font-normal text-[#FCFEFD] lg:text-[18px] text-center py-4">"Monetumo helped
+                                    us increase our monthly
+                                    revenue by 50% compared to our previous setup. The integration was seamless,
+                                    and their support is unmatched."</p>
+                                <div class="pt-3">
+                                    <div class="mb-4">
+                                        <img src="./assets/monetumo/user.svg" class="mx-auto w-12" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <h3 class="font-bold text-[#FCFEFD] lg:text-[24px]">Guy Hawkins</h3>
+                                        <p class="font-normal text-[#9EA4B4] lg:text-[18px]">Financial director</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full">
+                            <div class="rounded-[24px] bg-[#354B6080] p-6 h-full">
+                                <div class="">
+                                    <img src="./assets/monetumo/rent.svg" class="mx-auto" alt="">
+                                </div>
+                                <p class="font-normal text-[#FCFEFD] lg:text-[18px] text-center py-4">"Monetumo helped
+                                    us increase our monthly
+                                    revenue by 50% compared to our previous setup. The integration was seamless,
+                                    and their support is unmatched."</p>
+                                <div class="pt-3">
+                                    <div class="mb-4">
+                                        <img src="./assets/monetumo/user.svg" class="mx-auto w-12" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <h3 class="font-bold text-[#FCFEFD] lg:text-[24px]">Cody Fisher</h3>
+                                        <p class="font-normal text-[#9EA4B4] lg:text-[18px]">Company manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single item  -->
+                        <div class="p-[1px] rounded-[24px] bg-gradient-to-r from-[#526374] to-[#9ABADA66] w-full">
+                            <div class="rounded-[24px] bg-[#354B6080] p-6 h-full">
+                                <div class="">
+                                    <img src="./assets/monetumo/arono.svg" class="mx-auto" alt="">
+                                </div>
+                                <p class="font-normal text-[#FCFEFD] lg:text-[18px] text-center py-4">"Monetumo helped
+                                    us increase our monthly
+                                    revenue by 50% compared to our previous setup. The integration was seamless,
+                                    and their support is unmatched."</p>
+                                <div class="pt-3">
+                                    <div class="mb-4">
+                                        <img src="./assets/monetumo/user.svg" class="mx-auto w-12" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <h3 class="font-bold text-[#FCFEFD] lg:text-[24px]">Guy Hawkins</h3>
+                                        <p class="font-normal text-[#9EA4B4] lg:text-[18px]">Financial director</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Custom Arrows -->
+                    <div class="hidden lg:block">
+                        <button class="testimonial-prev-arrow absolute top-1/2 -translate-y-1/2 -left-4 2xl:-left-8">
+                            <img src="./assets/monetumo/chevron-left.svg" class="w-6" alt="">
+                        </button>
+                        <button class="testimonial-next-arrow absolute top-1/2 -translate-y-1/2 -right-4 2xl:-right-8">
+                            <img src="./assets/monetumo/chevron-right.svg" class="w-6" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="max-w-[508px] mx-auto text-center">
+                    <p class="mb-4 lg:mb-5 text-[18px] text-center font-normal text-[#9EA4B4]">Want results like this?
+                        Start your 30-day free trial!"</p>
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#FCFEFD] font-medium text-lg text-[#132D46] px-12 inline-flex items-center gap-2 justify-center py-[14px] rounded-lg cursor-pointer">
+                        <span>Book a Demo Now!</span>
+                        <span><img src="./assets/monetumo/arr-ford.svg" class="w-6" alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Why Switch to Monetumo?  -->
+        <section class="bg-white-1 py-9 lg:py-20">
+            <div class="max-w-[1240px] px-5 mx-auto">
+                <div class="text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[20px] text-[#0DB368] uppercase tracking-[1px] hidden lg:block">Why Switch
+                        to Monetumo?</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#132D46] hidden lg:block">We outperform
+                        competitors like AdSense, Ezoic, and PubGalaxy. Here's how:</h2>
+                    <h3 class="font-bold text-[20px] text-[#0DB368] uppercase tracking-[1px] lg:hidden">Switching to
+                        Monetumo</h3>
+                    <h2 class="font-bold text-[24px] text-[#132D46] lg:hidden">Why Switch to Monetumo?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-8 lg:my-16 gap-4">
+                    <!-- single item  -->
+                    <div>
+                        <div class="w-12 mx-auto h-12">
+                            <img src="./assets/monetumo/b1.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">Higher Revenue Potential</h3>
+                            <p class="text-[18px] text-[#6A6E79]">Unlock hidden opportunities with better monetization
+                                strategies.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div>
+                        <div class="w-12 mx-auto h-12">
+                            <img src="./assets/monetumo/b2.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">A/B Testing</h3>
+                            <p class="text-[18px] text-[#6A6E79]">Id eros pellentesque facilisi id mollis faucibus
+                                commodo enim.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div>
+                        <div class="w-12 mx-auto h-12">
+                            <img src="./assets/monetumo/b3.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">Custom Solutions</h3>
+                            <p class="text-[18px] text-[#6A6E79]">Tailored integrations for your site's needs.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div>
+                        <div class="w-12 mx-auto h-12">
+                            <img src="./assets/monetumo/b4.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">No Long-Term Commitment</h3>
+                            <p class="text-[18px] text-[#6A6E79]">30-day free trial to ensure we deliver results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-[721px] mx-auto text-center">
+                    <p class="mb-4 lg:mb-5 text-[20px] text-center font-normal text-[#132D46]">See why publishers are
+                        switching to Monetumo - book your free demo today!</p>
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-opacity-60 font-medium text-lg text-[#132D46] px-5 inline-flex items-center gap-2 justify-center py-[14px] rounded-lg cursor-pointer">
+                        <span>Book a Free</span>
+                        <span><img src="./assets/monetumo/arr-ford.svg" class="w-6" alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Referral Program!  -->
+        <section class="bg-[#F7FBFF] py-9 lg:py-20">
+            <div class="max-w-[1240px] px-5 mx-auto">
+                <div class="text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[20px] text-[#0DB368] uppercase tracking-[1px]">Referral Program!</h3>
+                    <h2 class="font-bold text-[24px] lg:text-[42px] text-[#132D46]">Bring Your Network and Earn More
+                    </h2>
+                </div>
+                <div class="my-8 lg:my-16 flex flex-col md:flex-row flex-wrap gap-6 justify-center lg:justify-between">
+                    <!-- single item  -->
+                    <div class="w-full md:w-[45%] lg:w-[24%]">
+                        <div class="w-[100px] mx-auto h-[100px]">
+                            <img src="./assets/monetumo/r1.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">Referral Rewards</h3>
+                            <p class="text-[18px] text-[#6A6E79]">Earn rewards by referring publishers to Monetumo.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="w-full md:w-[45%] lg:w-[30%] lg:relative">
+                        <div class="w-[100px] mx-auto h-[100px]">
+                            <img src="./assets/monetumo/r2.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">Refer & Earn</h3>
+                            <p class="text-[18px] text-[#6A6E79]">Happy customers bring more customers - and we reward
+                                you for it!</p>
+                        </div>
+                        <div class="hidden lg:block lg:absolute top-4 -left-[58%] w-[90%]">
+                            <img src="./assets/monetumo/linear-line.svg" class="w-full" alt="">
+                        </div>
+                        <div class="hidden lg:block lg:absolute top-4 -right-[58%] w-[90%]">
+                            <img src="./assets/monetumo/linear-line.svg" class="w-full" alt="">
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="w-full md:w-[45%] lg:w-[24%]">
+                        <div class="w-[100px] mx-auto h-[100px]">
+                            <img src="./assets/monetumo/r3.svg" alt="">
+                        </div>
+                        <div class="text-center mt-4 space-y-1">
+                            <h3 class="text-[#132D46] font-bold text-[20px]">Boost Your Income</h3>
+                            <p class="text-[18px] text-[#6A6E79]">Join our referral program and start building extra
+                                revenue streams.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-[721px] mx-auto text-center">
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-opacity-60 font-medium text-lg text-[#132D46] px-5 inline-flex items-center gap-2 justify-center py-[14px] rounded-lg cursor-pointer">
+                        <span>Learn More</span>
+                        <span><img src="./assets/monetumo/arr-ford.svg" class="w-6" alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Insights and Community Engagement  -->
+        <section class="bg-[#132D46] pb-9 lg:py-20">
+            <div class="mx-auto max-w-[1240px] px-5 flex items-center flex-col lg:flex-row">
+                <div class="flex-1">
+                    <img src="./assets/monetumo/stay-1x.png" srcset="./assets/monetumo/stay-1x.png 1x,
+                    ./assets/monetumo/stay-2x.png 2x,
+                    ./assets/monetumo/stay-3x.png 3x
+                    " class="w-full hidden lg:block" alt="">
+                    <img src="./assets/monetumo/staymob.png" class="mx-auto lg:hidden" alt="">
+                </div>
+                <div class="w-full lg:w-[574px] -mt-[100px] lg:mt-0">
+                    <h3 class="font-bold text-[20px] text-[#0DB368] uppercase tracking-[1px] lg:max-w-[600px]">Insights
+                        and Community Engagement</h3>
+                    <h2
+                        class="text-[#FCFEFD] font-bold text-[24px] lg:text-[42px] leading-tight pt-2 lg:py-5 lg:leading-snug">
+                        Stay Ahead with Industry Insights
+                    </h2>
+                    <div class="pt-6">
+                        <h3 class="text-[#FCFEFD] text-[20px] font-bold">Webinars</h3>
+                        <p class="font-normal text-[#9EA4B4] text-[18px] pt-1">Tailored solutions to maximize your
+                            ad revenue, regardless of your current setup.</p>
+                    </div>
+                    <div class="pt-3">
+                        <h3 class="text-[#FCFEFD] text-[20px] font-bold">Events</h3>
+                        <p class="font-normal text-[#9EA4B4] text-[18px] pt-1">Join us at Prebid conferences in the UK
+                            and Netherlands, or our hosted events.</p>
+                    </div>
+                    <div class="pt-3">
+                        <h3 class="text-[#FCFEFD] text-[20px] font-bold">Webinars</h3>
+                        <p class="font-normal text-[#9EA4B4] text-[18px] pt-1">Educational Resources</p>
+                    </div>
+                    <div class="pt-3">
+                        <h3 class="text-[#FCFEFD] text-[20px] font-bold">Webinars</h3>
+                        <p class="font-normal text-[#9EA4B4] text-[18px] pt-1">We show clients we're experts, not a shot
+                            in the dark.</p>
+                    </div>
+                    <div class="mt-10 text-center lg:text-start">
+                        <a
+                            class="hover:bg-[#00E980] bg-[#FCFEFD] font-medium text-lg text-[#132D46] px-[20px] py-[14px] inline-block rounded-lg cursor-pointer">
+                            Join Our Next Webinar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Let’s connect!  -->
+        <section class="bg-[#132D46] py-9 lg:py-20 hidden lg:block">
+            <div class="mx-auto max-w-[1240px] px-5">
+                <div class=" text-center space-y-4 lg:space-y-6">
+                    <h3 class="font-bold text-[16px] lg:text-[20px] text-[#0DB368] uppercase tracking-[1px]">Let's
+                        connect!</h3>
+                    <h2 class="font-bold text-[28px] lg:text-[42px] text-[#FCFEFD] max-w-[760px] mx-auto">Get in Touch
+                        with Us</h2>
+                    <p class="font-normal text-[12px] lg:text-[18px] text-[#9EA4B4] max-w-[580px] mx-auto">We're here to
+                        answer your questions, support your journey, and help you make the most of Monetumo. Contact us
+                        anytime!</p>
+                </div>
+                <!-- form section  -->
+                <div class="flex gap-9 justify-between mt-16 flex-col lg:flex-row">
+                    <div class="w-full lg:w-[70%]">
+                        <div class="border border-[#526374] rounded-[18px] p-7 bg-[#243C53]">
+                            <h2 class="text-center text-[#FCFEFD] font-medium text-[24px] lg:text-[32px]">Contact Us
+                            </h2>
+                            <form action="" class="mt-9">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 xl:gap-6 2xl:gap-9 mb-4 lg:mb-10">
+                                    <div class="space-y-4 lg:space-y-6">
+                                        <input type="text" placeholder="Full Name"
+                                            class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+                                        <input type="email" placeholder="Email"
+                                            class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+                                        <textarea placeholder="Message"
+                                            class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md h-[110px]"></textarea>
+                                    </div>
+                                    <div class="space-y-4 lg:space-y-6">
+                                        <input type="text" placeholder="Company Name"
+                                            class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+                                        <input type="text" placeholder="Phone Number"
+                                            class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+
+                                        <!-- Select Dropdown with Custom Arrow -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-3">
+                                            <div class="relative">
+                                                <select
+                                                    class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] 
+                                                                                            focus-visible:outline-none w-full rounded-md appearance-none">
+                                                    <option disabled selected>Budget (Optional)</option>
+                                                    <option>$10</option>
+                                                    <option>$20</option>
+                                                    <option>$30</option>
+                                                </select>
+                                                <!-- Custom Arrow -->
+                                                <img src="./assets/monetumo/down-arr.svg"
+                                                    class="w-6 absolute right-3 top-1/2 transform -translate-y-1/2"
+                                                    alt="">
+                                            </div>
+                                            <div class="relative">
+                                                <select
+                                                    class="px-3 py-[14px] bg-[#384B5D] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] 
+                                                                                            focus-visible:outline-none w-full rounded-md appearance-none">
+                                                    <option disabled selected>Contact Method</option>
+                                                    <option>Mail</option>
+                                                    <option>Phone</option>
+                                                </select>
+                                                <!-- Custom Arrow -->
+                                                <img src="./assets/monetumo/down-arr.svg"
+                                                    class="w-6 absolute right-3 top-1/2 transform -translate-y-1/2"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <!-- checkbox  -->
+                                        <label class="flex items-center gap-2" for="privacy-policy">
+                                            <input type="checkbox" class="hidden private-checkbox-input"
+                                                id="privacy-policy">
+                                            <span class="private-checkbox-custom cursor-pointer"></span>
+                                            <span class="text-[12px] text-[#9EA4B4] cursor-pointer flex-1">
+                                                I agree to the processing of my personal data in accordance with the
+                                                Privacy Policy.
+                                            </span>
+                                        </label>
+
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <button
+                                        class="bg-[#00E980] hover:bg-[#FCFEFD] font-medium text-lg text-[#132D46] block text-center py-[14px] rounded-lg w-full tracking-[0.5px]">
+                                        Contact Us
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-[25%]">
+                        <div class="border border-[#526374] rounded-[20px] px-4 py-8 bg-[#243C53] space-y-7">
+                            <div class="flex items-center gap-2">
+                                <img src="./assets/monetumo/contact.svg" class="max-w-[60px]" alt="">
+                                <div>
+                                    <h4 class="font-semibold text-[16px] text-[#FCFEFD] tracking-[1px]">Contact:</h4>
+                                    <p class="font-normal text-[14px] text-[#6A6E79]">Lorem ipsum dolor sit amet
+                                        consectetur.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <img src="./assets/monetumo/contact.svg" class="max-w-[60px]" alt="">
+                                <div>
+                                    <h4 class="font-semibold text-[16px] text-[#FCFEFD] tracking-[1px]">Contact:</h4>
+                                    <p class="font-normal text-[14px] text-[#6A6E79]">Lorem ipsum dolor sit amet
+                                        consectetur.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <img src="./assets/monetumo/contact.svg" class="max-w-[60px]" alt="">
+                                <div>
+                                    <h4 class="font-semibold text-[16px] text-[#FCFEFD] tracking-[1px]">Contact:</h4>
+                                    <p class="font-normal text-[14px] text-[#6A6E79]">Lorem ipsum dolor sit amet
+                                        consectetur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 mt-10 justify-between">
+                            <a href="#" class="block max-w-[72px]">
+                                <img src="./assets/monetumo/Instagram.svg" class="w-full" alt="">
+                            </a>
+                            <a href="#" class="block max-w-[72px]">
+                                <img src="./assets/monetumo/Facebook.svg" class="w-full" alt="">
+                            </a>
+                            <a href="#" class="block max-w-[72px]">
+                                <img src="./assets/monetumo/linkedin.svg" class="w-full" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Act Now  -->
+        <section class="bg-[#132D46] py-9 lg:py-16">
+            <div
+                class="px-5 max-w-[1240px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between">
+                <div class="w-full lg:w-[61%]">
+                    <h3 class="font-bold text-[20px] text-[#0DB368] uppercase tracking-[1px]">
+                        Act Now</h3>
+                    <h2
+                        class="text-[#FCFEFD] font-bold text-[24px] lg:text-[42px] leading-tight pt-1 pb-2 lg:leading-snug">
+                        Take Your Revenue to the Next Level
+                    </h2>
+                    <p class="font-normal text-[#9EA4B4] text-[16px] lg:text-[18px]">If your site has 10M+ monthly
+                        impressions, Monetumo is your key to unlocking $10K+ USD in revenue. Get started risk-free
+                        today.</p>
+                </div>
+                <div
+                    class="w-full md:w-[400px] lg:w-[35%] flex items-center gap-4 justify-between md:justify-center lg:justify-end">
+                    <a href="#"
+                        class="bg-[#FCFEFD] hover:bg-[#00E980] py-[10px] px-[18px] tracking-[0.5px] text-sm xl:text-lg font-medium rounded-lg flex items-center justify-center flex-1">
+                        Join the Waitlist
+                    </a>
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#FCFEFD] py-[10px] px-[18px] tracking-[0.5px] text-sm xl:text-lg font-medium rounded-lg flex items-center justify-center gap-2 flex-1">
+                        <span>Book a Free</span> <span><img src="./assets/monetumo/arr-ford.svg" class="w-6"
+                                alt=""></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- footer  -->
+    <footer class="bg-[#F7FBFF] py-12">
+        <div class="mx-auto px-5 max-w-[1240px]">
+            <!-- footer upper  -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-8 lg:pb-12">
+                <div class="w-[124px] lg:w-[174px]">
+                    <img src="./assets/monetumo/footer-logo.svg" class="w-full" alt="">
+                </div>
+                <div class="flex-1">
+                    <form action="" class="flex items-center justify-start md:justify-end gap-2 lg:gap-12">
+                        <div class="relative flex-grow md:flex-grow-0 md:w-[349px]">
+                            <label for="subscribeInput"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
+                                <img src="./assets/monetumo/mail.svg" alt="Mail Icon" class="w-full h-full">
+                            </label>
+                            <input type="text" id="subscribeInput"
+                                placeholder="Enter your email to get the latest news..."
+                                class="pl-12 pr-3 py-[11.5px] bg-[#9EA4B433] border-b border-[#9EA4B4] text-base text-[#6A6E79] focus-visible:outline-none w-full">
+                        </div>
+                        <button
+                            class="text-[#132D46] hover:text-[#fff] font-medium text-lg bg-[#00E980] hover:bg-[#132D46]  py-[10px] px-5 lg:px-[26px] rounded-lg tracking-[0.5px]">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <!-- footer menu  -->
+            <div class="border-y border-y-[#C1C7CD] py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-4 gap-3">
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">About
+                        Monetumo</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Book a
+                        Demo</a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Join the
+                        Waitlist</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Referral
+                        Program</a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Privacy
+                        Policy</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Terms of
+                        Service</a>
+                </div>
+                <div class="mt-12 lg:mt-0">
+                    <div class="flex items-center gap-2 justify-start lg:justify-end">
+                        <a href="#" class="block w-[120px]"><img src="./assets/monetumo/apple.svg" class="w-full"
+                                alt=""></a>
+                        <a href="#" class="block w-[135px]"><img src="./assets/monetumo/google.svg" class="w-full"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!-- copy right  -->
+            <div class="pt-8 lg:pt-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                <p class="font-normal text-[12px] md:text-[14px] text-[#243C53]">Monetumo @ 2025. All rights reserved.
+                </p>
+                <p class="font-medium text-[14px] md:text-[16px] text-[#243C53]">Monetumo: Your partner in maximizing
+                    website revenue, transparently and effortlessly.</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- Script  -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./script/momentuNavbar.js"></script>
+    <script src="./script/slider.js"></script>
+</body>
+
+</html>

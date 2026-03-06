@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Product Page Pricing</title>
+</head>
+
+<body>
+  <header class="shadow-headerboxshadow lg:shadow-none sticky top-0 left-0 z-50 bg-white-1">
+    <!-- Navbar -->
+    <div
+      class="flex items-center justify-between px-4 max-w-[1328px] mx-auto py-[12px] lg:pt-8 lg:pb-6 relative bg-white-1"
+      id="nav-main">
+      <!-- Hamburger Icon (Visible only on mobile) -->
+      <button id="drawer-button" class="lg:hidden me-3" aria-label="open sidebar" onclick="openDrawer()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-gray-800">
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <div class="text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+        <a href="/src/landingPage.html" class="block"><img src="./assets/logo.svg"
+            class="w-[133px] h-[40px] lg:h-[58px] lg:w-[203px]" alt="" /></a>
+      </div>
+
+      <!-- Desktop Menu Items (Visible on large screens) -->
+      <ul class="hidden lg:flex lg:flex-1 lg:justify-center lg:space-x-4 2xl:space-x-6">
+        <li>
+          <a href="/src/about-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Why
+            Us</a>
+        </li>
+        <li>
+          <a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">How It Works</a>
+        </li>
+
+        <li class="relative">
+          <button id="desktop-dropdown-button" onclick="toggleDeskDropdown()"
+            class="font-bold flex items-center gap-x-2 text-black-5 hover:text-purple-1 capitalize">
+            Products
+            <img src="./assets/down-chevron.svg" class="w-[13px]" alt="" />
+          </button>
+          <ul id="desktop-dropdown-menu"
+            class="absolute left-0 hidden mt-2 w-40 bg-white rounded-md text-gray-800 shadow-lg z-50 p-3 space-y-2 bg-white-1">
+            <li>
+              <a href="/src/product-page.html"
+                class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+            </li>
+            <li>
+              <a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product 2</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Store Connection</a>
+        </li>
+        <li>
+          <a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Story Case</a>
+        </li>
+        <li>
+          <a href="/src/contact-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Contact
+            Us</a>
+        </li>
+      </ul>
+
+      <!-- Button -->
+      <div class="">
+        <button
+          class="h-9 w-[130px] lg:h-[53px] lg:w-[180px] bg-black-6 hover:bg-purple-1 text-sm lg:text-base font-bold text-white-1 rounded-lg lg:rounded-xl tracking-[0.25px]">
+          Sign up for free
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer Overlay -->
+    <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+    <!-- Sidebar Drawer -->
+    <div id="drawer"
+      class="w-[300px] md:w-[250px] fixed top-0 left-0 h-full bg-white shadow-lg transform -translate-x-full transition-transform bg-white-1">
+      <div class="px-[18px] pt-[91px] pb-4">
+        <div class="relative hidden" id="closebtn">
+          <button class="text-black-1 mb-4 absolute -top-5 -right-12" aria-label="close sidebar"
+            onclick="closeDrawer()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Sidebar Content -->
+        <ul class="space-y-8">
+          <li>
+            <a href="/src/about-us.html" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Why
+              Us</a>
+          </li>
+          <li>
+            <a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">How It Works</a>
+          </li>
+          <li class="relative">
+            <button class="flex items-center gap-x-2 w-full text-black-5 hover:text-purple-1 capitalize font-bold"
+              onclick="toggleDropdown()">
+              Products
+              <img src="./assets/down-chevron.svg" class="w-3" alt="" />
+            </button>
+            <ul id="dropdown-menu" class="hidden mt-2 space-y-2 pl-4 border-l border-gray-200">
+              <li>
+                <a href="/src/product-page.html"
+                  class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+              </li>
+              <li>
+                <a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product 2</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Store Connection</a>
+          </li>
+          <li>
+            <a href="#" class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Story Case</a>
+          </li>
+          <li>
+            <a href="/src/contact-us.html"
+              class="font-bold text-base text-black-5 hover:text-purple-1 capitalize">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- header ends here  -->
+  <main>
+     <!-- hero start -->
+    <section id="productHero" class="pt-[24px] md:pt-[34px]">
+      <div class="max-w-[1017px] mx-auto px-4">
+        <div class="lg:grid grid-cols-12 md:gap-6 gap-y-3">
+          <!-- main image -->
+          <div class="col-span-12 lg:col-span-6 mx-auto flex flex-col gap-y-[13px]">
+            <div class="main-productImg">
+
+              <img src="./assets/product-max-content.png" srcset="
+                                    ./assets/product-max-content.png   1x,
+                                    ./assets/product-max-content-2.png 1.5x,
+                                    ./assets/product-max-content-3.png 3x
+                                  " alt="" class="object-cover object-center h-full rounded-xl w-full" />
+
+              <button
+                class="right-[12px] bottom-[13px] md:right-[10px] md:bottom-[11px] w-[38px] h-[38px] bg-black-1/40 rounded-full flex justify-center items-center main-product-icon"
+                id="zoomBtn">
+                <img src="./assets/zoom.svg" alt="" class="w-6 h-6" />
+              </button>
+            </div>
+            <!-- min-img -->
+            <div class="overflow-x-auto w-full overflow-y-hidden">
+              <div
+                class="flex flex-row lg:justify-between justify-center items-center gap-x-2 order-2 lg:order-1 mx-auto md:w-auto w-[512px] ">
+                <button
+                  class="bg-[#F3F4F7] hover:bg-[#e7e7e9] px-[11px] rounded-l-xl hidden lg:block min-w-8 min-h-[72.22px]">
+                  <img src="./assets/slide-left.svg" alt="" />
+                </button>
+                <a href="#">
+                  <img src="./assets/product-min-content.png" srcset="
+                                    ./assets/product-min-content.png   1x,
+                                    ./assets/product-min-content-2.png 1.5x,
+                                    ./assets/product-min-content-3.png 3x
+                                  " alt="" />
+                </a>
+                <a href="#">
+                  <img src="./assets/product-min-content.png" srcset="
+                                    ./assets/product-min-content.png   1x,
+                                    ./assets/product-min-content-2.png 1.5x,
+                                    ./assets/product-min-content-3.png 3x
+                                  " alt="" />
+                </a>
+                <a href="#">
+                  <img src="./assets/product-min-content.png" srcset="
+                                    ./assets/product-min-content.png   1x,
+                                    ./assets/product-min-content-2.png 1.5x,
+                                    ./assets/product-min-content-3.png 3x
+                                  " alt="" />
+                </a>
+                <a href="#">
+                  <img src="./assets/product-min-content.png" srcset="
+                                    ./assets/product-min-content.png   1x,
+                                    ./assets/product-min-content-2.png 1.5x,
+                                    ./assets/product-min-content-3.png 3x
+                                  " alt="" />
+                </a>
+                <a href="#">
+                  <img src="./assets/product-min-content.png" srcset="
+                                    ./assets/product-min-content.png   1x,
+                                    ./assets/product-min-content-2.png 1.5x,
+                                    ./assets/product-min-content-3.png 3x
+                                  " alt="" />
+                </a>
+                <button
+                  class="bg-[#F3F4F7] hover:bg-[#e7e7e9] px-[11px] h-full rounded-r-xl hidden lg:block min-w-8 min-h-[72.22px]">
+                  <img src="./assets/slide-right.svg" alt="" />
+                </button>
+              </div>
+            </div>
+
+          </div>
+          <!-- info -->
+          <div class="col-span-12 lg:col-span-6 flex flex-col lg:justify-between lg:pt-0 pt-[22px]">
+            <!-- top info -->
+            <div class="w-[504px] max-w-full">
+              <h1 class="text-[28px] md:text-[32px] text-[#000000] font-bold leading-[24px] tracking-[-0.2px]">
+                Premium Canvas
+              </h1>
+              <p
+                class="text-base md:text-sm font-normal text-[#000000] leading-[24px] tracking-[-0.2px] pt-[24px] pb-[34px] md:pt-[24px] md:pb-[35px]">
+                Our high-quality canvas prints bring your artwork to life with
+                rich depth and vibrant colors. Available in both unframed and
+                framed options, we offer a beautiful floater frame that
+                creates a "floating" effect, allowing the space between the
+                frame and the canvas to give your art an elegant, modern
+                presentation.
+              </p>
+              <p
+                class="text-base md:text-sm font-normal text-[#000000] leading-[24px] tracking-[-0.2px] pb-0 md:pb-[35px]">
+                Our canvas prints are customizable to suit any creative
+                vision, from large statement pieces to smaller, personal
+                works.
+              </p>
+              <p class="text-base md:text-sm font-normal text-[#000000] leading-[24px] tracking-[-0.2px]">
+                Printed with top-quality materials, our canvases are durable
+                and made to last. Whether you prefer a minimalist unframed
+                look or a sleek framed design, our canvas prints are perfect
+                for showcasing your creativity in any space.
+              </p>
+            </div>
+            <!-- bottom info -->
+            <div class="grid grid-cols-2 gap-6 pt-[30px]">
+              <div class="col-span-1">
+                <!-- item -->
+                <div
+                  class="bg-[#F6F3FF] p-[18px] md:p-[20px] w-full rounded-[16px] lg:min-h-[100px] min-h-[127px] h-full flex flex-col justify-center items-start">
+                  <h3 class="text-[16px] text-[#696969] font-bold leading-[24px] tracking-[-0.2px]">
+                    Starting from excl. VAT
+                  </h3>
+                  <h3 class="text-2xl text-[#3A3A3A] font-bold leading-[24px] tracking-[-0.2px] pt-3">
+                    € 11.0
+                  </h3>
+                </div>
+              </div>
+              <div class="col-span-1">
+                <!-- item -->
+                <div
+                  class="bg-[#F6F3FF] p-[18px] md:p-[20px] w-full rounded-[16px] lg:min-h-[100px] min-h-[127px] h-full flex flex-col justify-center items-start">
+                  <h3 class="text-[16px] text-[#696969] font-bold leading-[24px] tracking-[-0.2px]">
+                    Standard Shipping
+                  </h3>
+                  <h3 class="text-2xl text-[#3A3A3A] font-bold leading-[24px] tracking-[-0.2px] pt-3">
+                    € 17.0
+                  </h3>
+                </div>
+              </div>
+              <div class="col-span-2 md:col-span-1">
+                <!-- item -->
+                <div class="w-full">
+                  <button
+                    class="text-white-1 px-[17px] h-[56px] md:h-[72px] bg-[#7B53E7] rounded-xl border-[2px] border-[#7B53E7] hover:bg-[#6343bb] text-center text-base font-bold tracking-[2%] transition-colors w-full">
+                    Start selling for free
+                  </button>
+                </div>
+              </div>
+              <div class="col-span-2 md:col-span-1 md:-mt-0 -mt-[8px]">
+                <!-- item -->
+                <div class="w-full">
+                  <button
+                    class="text-[#7B53E7] px-[17px] h-[56px] md:h-[72px] bg-white-1 rounded-xl border-[2px] border-[#7B53E7] hover:bg-[#7B53E7] hover:text-white-1 text-center text-base font-bold tracking-[2%] transition-colors w-full">
+                    Order for myself
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- popup -->
+
+    <!-- hero end -->
+    <!-- canvas start -->
+    <section id="why" class="pt-[30px] pb-[36px] md:pt-[80px] md:pb-[50px]">
+      <div class="max-w-[1017px] mx-auto px-4 xl:px-0">
+        <div
+          class="flex justify-start items-center md:space-x-10 space-x-5 mb-[13px] md:mb-[23px] rounded-xl bg-[#F9F9FA] md:px-10 px-3">
+          <button class="min-h-[60px] md:min-h-[72px] text-sm md:text-base font-bold text-[#222222] px-2 md:px-3">
+            Description
+          </button>
+          <button
+            class="min-h-[60px] md:min-h-[72px] text-sm md:text-base font-bold text-[#222222] px-2 md:px-3 relative">
+            Pricing
+            <span class="absolute h-[4px] w-full bg-[#7B53E7] left-0 bottom-0 rounded-t-xl"></span>
+          </button>
+          <button class="min-h-[60px] md:min-h-[72px] text-sm md:text-base font-bold text-[#222222] px-2 md:px-3">
+            Shipping Rates
+          </button>
+        </div>
+        <div class="pt-[10px] pb-[12px] px-[10px] md:pt-[20px] md:pb-[22px] md:px-[17px] bg-[#F9F9FA] rounded-xl">
+          <!-- content -->
+          <div class="bg-white-1 w-full rounded-lg">
+            <!-- top -->
+            <div class="hidden md:grid grid-cols-5 gap-x-[11px] px-[20px] border-b-[1px] border-[#E2E2E2]">
+              <div class="col-span-2 py-[17px] flex items-center">
+                <h2 class="pl-[31px] text-sm text-black-2 font-bold leading-[20px] tracking-[-0.4px]">
+                  Size cm/inch
+                </h2>
+              </div>
+              <div class="col-span-1 flex items-center">
+                <h2
+                  class="text-sm text-black-2 font-bold leading-[20px] tracking-[-0.4px] py-[5px] w-full bg-[#F6F3FF] rounded-lg text-center">
+                  USD price
+                </h2>
+              </div>
+              <div class="col-span-1 flex items-center">
+                <h2
+                  class="text-sm text-black-2 font-bold leading-[20px] tracking-[-0.4px] py-[5px] w-full bg-[#F6F3FF] rounded-lg text-center">
+                  EUR price
+                </h2>
+              </div>
+              <div class="col-span-1 flex items-center">
+                <h2
+                  class="text-sm text-black-2 font-bold leading-[20px] tracking-[-0.4px] py-[5px] w-full bg-[#F6F3FF] rounded-lg text-center">
+                  GBP price
+                </h2>
+              </div>
+            </div>
+            <!-- ratio 1:1 -->
+            <div class="grid grid-cols-5 gap-x-[11px] px-[20px] border-b-[1px] border-[#E2E2E2]">
+              <div class="col-span-5 py-[17px] flex justify-between md:justify-start items-center md:gap-x-[20px]">
+                <img src="./assets/down-table-arrow.svg" alt="" class="pl-[1px] order-2 md:order-1" />
+                <h2 class="text-base text-black-2 font-bold leading-[20px] tracking-[-0.4px] order-1 md:order-2">
+                  Ratio 1:1
+                </h2>
+              </div>
+            </div>
+            <!-- ratio info 1 -->
+            <div
+              class="grid grid-cols-5 md:border-b-0 border-b-[1px] border-[#E2E2E2] pt-[20px] pb-[20px] md:pt-0 md:pb-0">
+              <div
+                class="col-span-5 md:col-span-2 px-5 md:px-0 pt-0 pb-0 md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="pl-0 md:pl-[51px] text-base text-black-2 font-bold md:font-medium leading-[20px] tracking-[-0.4px]">
+                  30 × 30 cm | 12 x 12 inch
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pt-[17px] pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  USD price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  $ 17.30
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  EUR price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  € 15.70
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 md:pt-[24px] md:pb-[16px]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  GBP price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  £ 14.20
+                </h2>
+              </div>
+            </div>
+            <!-- ratio info 2 -->
+            <div
+              class="grid grid-cols-5 md:border-b-0 border-b-[1px] border-[#E2E2E2] pt-[20px] pb-[20px] md:pt-0 md:pb-0">
+              <div
+                class="col-span-5 md:col-span-2 px-5 md:px-0 pt-0 pb-0 md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="pl-0 md:pl-[51px] text-base text-black-2 font-bold md:font-medium leading-[20px] tracking-[-0.4px]">
+                  40 × 40 cm | 16 x 16 inch
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pt-[17px] pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  USD price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  $ 23.80
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  EUR price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  € 21.60
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 md:pt-[24px] md:pb-[16px]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  GBP price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  £ 19.50
+                </h2>
+              </div>
+            </div>
+            <!-- ratio info 3 -->
+            <div
+              class="grid grid-cols-5 md:border-b-0 border-b-[1px] border-[#E2E2E2] pt-[20px] pb-[20px] md:pt-0 md:pb-0">
+              <div
+                class="col-span-5 md:col-span-2 px-5 md:px-0 pt-0 pb-0 md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="pl-0 md:pl-[51px] text-base text-black-2 font-bold md:font-medium leading-[20px] tracking-[-0.4px]">
+                  45 × 45 cm | 18 x 18 inch
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pt-[17px] pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  USD price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  $ 27.50
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  EUR price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  € 25.00
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 md:pt-[24px] md:pb-[16px]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  GBP price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  £ 22.50
+                </h2>
+              </div>
+            </div>
+            <!-- ratio info 4 -->
+            <div
+              class="grid grid-cols-5 md:border-b-0 border-b-[1px] border-[#E2E2E2] pt-[20px] pb-[20px] md:pt-0 md:pb-0">
+              <div
+                class="col-span-5 md:col-span-2 px-5 md:px-0 pt-0 pb-0 md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="pl-0 md:pl-[51px] text-base text-black-2 font-bold md:font-medium leading-[20px] tracking-[-0.4px]">
+                  50 × 50 cm | 20 x 20 inch
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pt-[17px] pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  USD price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  $ 31.40
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pb-[20px] md:pt-[24px] md:pb-[16px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  EUR price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  € 28.50
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 md:pt-[24px] md:pb-[16px]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  GBP price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  £ 25.70
+                </h2>
+              </div>
+            </div>
+            <!-- ratio info 5 -->
+            <div class="grid grid-cols-5 border-b-[1px] border-[#E2E2E2] pt-[20px] pb-[20px] md:pt-0 md:pb-0">
+              <div
+                class="col-span-5 md:col-span-2 px-5 md:px-0 pt-0 pb-0 md:pt-[16px] md:pb-[24px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="pl-0 md:pl-[51px] text-base text-black-2 font-bold md:font-medium leading-[20px] tracking-[-0.4px]">
+                  60 × 60 cm | 24 x 24 inch
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pt-[17px] pb-[20px] md:pt-[16px] md:pb-[24px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  USD price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  $ 39.40
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 pb-[20px] md:pt-[16px] md:pb-[24px] border-b-0 md:border-r-[1px] border-[#E2E2E2]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  EUR price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  € 35.80
+                </h2>
+              </div>
+              <div
+                class="col-span-5 md:col-span-1 flex flex-row justify-between md:justify-center px-5 md:px-0 md:pt-[16px] md:pb-[24px]">
+                <h2
+                  class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-start md:text-center inline-block md:hidden">
+                  GBP price
+                </h2>
+                <h2 class="text-base text-black-2 font-medium leading-[20px] tracking-[-0.4px] text-end md:text-center">
+                  £ 32.30
+                </h2>
+              </div>
+            </div>
+            <!-- ratio 2:1 -->
+            <div class="grid grid-cols-5 gap-x-[11px] px-[20px] border-b-[1px] border-[#E2E2E2]">
+              <div
+                class="col-span-5 pt-[20px] pb-[20px] md:pt-[18px] md:pb-[20px] flex justify-between md:justify-start items-center md:gap-x-[20px]">
+                <img src="./assets/down-table-arrow.svg" alt="" class="pl-[1px] order-2 md:order-1" />
+                <h2 class="text-base text-black-2 font-bold leading-[20px] tracking-[-0.4px] order-1 md:order-2">
+                  Ratio 2:1
+                </h2>
+              </div>
+            </div>
+            <!-- ratio 3:1 -->
+            <div class="grid grid-cols-5 gap-x-[11px] px-[20px]">
+              <div
+                class="col-span-5 pt-[20px] pb-[20px] md:pt-[18px] md:pb-[20px] flex justify-between md:justify-start items-center md:gap-x-[20px]">
+                <img src="./assets/down-table-arrow.svg" alt="" class="pl-[1px] order-2 md:order-1" />
+                <h2 class="text-base text-black-2 font-bold leading-[20px] tracking-[-0.4px] order-1 md:order-2">
+                  Ratio 3:1
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- canvas end -->
+  </main>
+
+  <!-- footer start here  -->
+  <footer class="bg-[#0C0F18]">
+    <div
+      class="text-white-1 px-4 max-w-[1328px] mx-auto pt-[43px] py-[58px] lg:py-20 flex flex-col lg:flex-row justify-center lg:items-center lg:gap-16 2xl:gap-[176px]">
+      <div class="w-full lg:max-w-[326px]">
+        <div class="w-[262px]">
+          <img src="./assets/lp/footerlogo.svg" class="w-full" alt="" />
+        </div>
+        <p class="text-[#94959B] text-base lg:text-xl pt-[24px] pb-[41px] lg:pt-[34px] lg:pb-[48px]">
+          Unleash your creativity and start selling your printed artworks
+        </p>
+        <div class="gap-5 hidden sm:flex pb-[41px] lg:pb-0">
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="" />
+          </a>
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="" />
+          </a>
+          <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+            <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="flex-1 flex flex-col sm:flex-row sm:justify-between gap-y-[31px]">
+        <div>
+          <h3 class="text-2xl font-bold">Sitemap</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="/src/landingPage.html" class="hover:text-white-1">Home</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">How it works</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Services</a>
+            </li>
+            <li>
+              <a href="/src/about-us.html" class="hover:text-white-1">About</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">Landing</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="#" class="hover:text-white-1">Why Create with Us?</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">How It Works</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Store connection</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-white-1">Customer reviews</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">Utility</h3>
+          <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+            <li>
+              <a href="#" class="hover:text-white-1">FAQ</a>
+            </li>
+            <li>
+              <a href="terms-&-conditions.html" class="hover:text-white-1">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex gap-5 sm:hidden mt-[46px]">
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="" />
+        </a>
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="" />
+        </a>
+        <a href="#" class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+          <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script  -->
+
+  <script src="./script/navbar.js"></script>
+</body>
+
+</html>

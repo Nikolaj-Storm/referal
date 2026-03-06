@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon">
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png">
+  <link rel="stylesheet" href="./styles/checkbox.css">
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="w-full grid min-h-screen grid-cols-1 md:grid-cols-[1fr,1fr]">
+    <!-- sign-in-form  -->
+    <div class="w-full flex justify-center items-center">
+      <div class="w-full h-full gap-3 flex-col px-4 py-8 md:py-4 flex justify-center items-start max-w-[470px]">
+        <img src="/assets/logo.svg" class="w-[160px] h-[55px] object-fill" alt="" />
+        <h3 id="form-title" class="text-[32px] text-black-3 mt-3 font-semibold">
+          Sign Up to Printumo
+        </h3>
+        <div class="flex justify-center gap-1 items-center">
+          <p class="text-base font-normal text-black-3">
+            Already have an account?
+          </p>
+          <a href="/signin.html" class="text-purple-1 text-base underline font-normal">Sign in</a>
+        </div>
+        <div class="w-full h-[1px] mt-3 bg-[#EEEEEE]"></div>
+        <div class="w-full my-5">
+          <!-- Google Sign In Button -->
+          <a href="#" class="w-full flex justify-center items-center h-[48px] bg-white border border-[#dadce0] rounded-lg hover:bg-[#f8f9fa] transition-colors duration-200 group">
+            <img src="/assets/integrations/google-icon.svg" class="w-[20px] h-[20px] mr-3" alt="Google" />
+            <span class="text-[#3c4043] text-[14px] font-medium">Continue with Google</span>
+          </a>
+        </div>
+        <div class="grid w-full justify-center items-center grid-cols-[1fr,40px,1fr]">
+          <div class="w-full h-[1px] bg-[#EEEEEE]"></div>
+          <div class="w-full flex justify-center items-center">
+            <p class="text-[14px] font-normal text-[#9E9E9E]">Or</p>
+          </div>
+          <div class="w-full h-[1px] bg-[#EEEEEE]"></div>
+        </div>
+        <!-- Step 1 Form -->
+        <form id="step1-form" action="" class="w-full flex flex-col gap-5">
+          <!-- email -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="email">Your email address</label>
+            <input
+              class="w-full rounded-lg focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20] h-[48px] border-[1px] border-[#E0E0E0]"
+              type="email" id="email" name="email" required />
+          </div>
+          <!-- password -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="password">Your password</label>
+            <div
+              class="w-full grid rounded-lg justify-center items-center grid-cols-[1fr,40px] h-[48px] border-[1px] border-[#E0E0E0]">
+              <input class="w-full focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20]" type="password"
+                id="password" name="password" required />
+
+              <img id="eye-icon" onclick="togglePassword()" src="/assets/eye.svg"
+                class="w-[22px] h-[15px] cursor-pointer" alt="Show Password" />
+              <img id="close-eye-icon" onclick="togglePassword()" src="/assets/closeEye.png"
+                class="w-[23px] h-[24px] hidden" alt="Hide Password" />
+            </div>
+          </div>
+          
+          <!-- consent checkboxes -->
+          <div class="flex flex-col gap-3">
+            <!-- Terms and Privacy consent -->
+            <div class="checkbox-wrapper-1 flex flex-col gap-1 justify-center items-start">
+              <input id="terms-consent" class="substituted" type="checkbox" aria-hidden="true" required />
+              <label class="text-[12px] font-normal text-black-3" for="terms-consent">
+                I agree to the <a href="/terms-&-conditions.html" class="underline" target="_blank">Terms & Conditions</a> and <a href="/monetumo-privacy.html" class="underline" target="_blank">Privacy Policy</a>
+              </label>
+            </div>
+            
+            <!-- Marketing consent -->
+            <div class="checkbox-wrapper-1 flex flex-col gap-1 justify-center items-start">
+              <input id="marketing-consent" class="substituted" type="checkbox" aria-hidden="true" />
+              <label class="text-[12px] font-normal text-black-3" for="marketing-consent">
+                I would like to receive marketing communications and updates about Printumo's services (optional)
+              </label>
+            </div>
+          </div>
+          
+          <!-- continue button -->
+          <button type="button" onclick="proceedToStep2()" 
+            class="w-full hover:opacity-80 my-3 h-[52px] rounded-lg bg-purple-1 text-[14px] font-medium text-white-1">
+            Sign up
+          </button>
+        </form>
+
+        <!-- Step 2 Form -->
+        <form id="step2-form" action="" class="w-full flex flex-col gap-5 hidden">
+          <!-- first name -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="first-name">First Name</label>
+            <input
+              class="w-full rounded-lg focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20] h-[48px] border-[1px] border-[#E0E0E0]"
+              type="text" id="first-name" name="first-name" required />
+          </div>
+          
+          <!-- prints per month dropdown -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="prints-per-month">How many prints do you sell per month?</label>
+            <select
+              class="w-full rounded-lg focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20] h-[48px] border-[1px] border-[#E0E0E0] bg-white"
+              id="prints-per-month" name="prints-per-month" required>
+              <option value="">Select an option</option>
+              <option value="0">I don't sell prints yet</option>
+              <option value="1-10">1-10 prints</option>
+              <option value="11-50">11-50 prints</option>
+              <option value="51-100">51-100 prints</option>
+              <option value="101-500">101-500 prints</option>
+              <option value="500+">500+ prints</option>
+            </select>
+          </div>
+          
+          <!-- art source dropdown -->
+          <div class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-black-3 font-medium" for="art-source">Plan to sell your own art or use our art library?</label>
+            <select
+              class="w-full rounded-lg focus:outline-none px-2 text-[14px] font-normal text-[#1E1F20] h-[48px] border-[1px] border-[#E0E0E0] bg-white"
+              id="art-source" name="art-source" required>
+              <option value="">Select an option</option>
+              <option value="own-art">Sell my own art</option>
+              <option value="art-library">Use Printumo's art library</option>
+              <option value="both">Both - my own art and art library</option>
+            </select>
+          </div>
+          
+          <!-- complete button -->
+          <button type="button"
+            class="w-full hover:opacity-80 my-3 h-[52px] rounded-lg bg-purple-1 text-[14px] font-medium text-white-1">
+            Complete
+          </button>
+        </form>
+      </div>
+    </div>
+        <!-- welcome section -->
+        <div class="w-full h-full hidden md:flex flex-col justify-center items-center bg-[#7B53E726] overflow-hidden relative">
+            <div class="max-w-md text-center z-20">
+              <!-- Welcome text -->
+              <h2 class="text-3xl lg:text-4xl font-bold text-black-5 mb-8">Welcome to Printumo</h2>
+              
+              <!-- Social proof with user avatars and ratings -->
+              <div class="flex items-center justify-center gap-x-3 mb-8">
+                <!-- User avatars stack -->
+                <div class="flex -space-x-3">
+                  <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden transition-transform duration-200 hover:-translate-y-1 relative z-[5]">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="User 1">
+                  </div>
+                  <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden transition-transform duration-200 hover:-translate-y-1 relative z-[4]">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="User 2">
+                  </div>
+                  <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden transition-transform duration-200 hover:-translate-y-1 relative z-[3]">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="User 3">
+                  </div>
+                  <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden transition-transform duration-200 hover:-translate-y-1 relative z-[2]">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="User 4">
+                  </div>
+                  <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden transition-transform duration-200 hover:-translate-y-1 relative z-[1]">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="User 5">
+                  </div>
+                </div>
+                <!-- Star rating and user count -->
+                <div class="flex flex-col">
+                  <div class="flex gap-x-1">
+                    <!-- 5 star icons -->
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                    </svg>
+                  </div>
+                  <p class="text-sm text-black-7 font-medium mt-1">Loved by 4000+ artists</p>
+                </div>
+              </div>
+            </div>
+              
+        <!-- Artists marquee - Positioned below welcome content -->
+        <div class="absolute left-0 right-0 top-1/2 translate-y-16 h-[360px] flex items-center">
+          <div class="flex gap-5 -ml-24">
+            <!-- Artist 1 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/adriaticasart-63e4039b.jpg" class="w-full h-full object-cover" alt="Adriatic Art">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Adriatic Art">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Adriatic Art</h4>
+                    <p class="text-[10px] text-black-7">"Beautiful prints!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 2 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/al-c7203220.jpg" class="w-full h-full object-cover" alt="Al">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Al">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Al</h4>
+                    <p class="text-[10px] text-black-7">"Amazing quality!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 3 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/customer-ba6fc62a.jpg" class="w-full h-full object-cover" alt="Sarah M">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Sarah M">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Sarah M.</h4>
+                    <p class="text-[10px] text-black-7">"Love the results!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 4 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/emilylouise-2ac617d5.jpg" class="w-full h-full object-cover" alt="Emily Louise">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Emily Louise">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Emily Louise</h4>
+                    <p class="text-[10px] text-black-7">"Perfect quality!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 5 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/emilylouise2-628ab615.jpg" class="w-full h-full object-cover" alt="Emily L">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Emily L">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Emily L.</h4>
+                    <p class="text-[10px] text-black-7">"Exceeded expectations!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 6 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/heiner-7bc1e371.jpg" class="w-full h-full object-cover" alt="Heiner">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Heiner">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Heiner</h4>
+                    <p class="text-[10px] text-black-7">"Great service!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 7 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/julia-980db731.jpg" class="w-full h-full object-cover" alt="Julia">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Julia">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Julia</h4>
+                    <p class="text-[10px] text-black-7">"Highly recommend!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Artist 8 -->
+            <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[320px] w-[180px] flex-shrink-0">
+              <img src="./assets/auth/paolo-d68515ba.jpg" class="w-full h-full object-cover" alt="Paolo">
+              
+              <!-- User Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden mr-2">
+                    <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Paolo">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-bold text-black-5 text-xs">Paolo</h4>
+                    <p class="text-[10px] text-black-7">"Outstanding prints!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+  </div>
+  <!-- script  -->
+  <script>
+    function togglePassword() {
+      var passwordInput = document.getElementById("password");
+      var eyeIcon = document.getElementById("eye-icon");
+      var closeEyeIcon = document.getElementById("close-eye-icon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.add("hidden");
+        closeEyeIcon.classList.remove("hidden");
+      } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove("hidden");
+        closeEyeIcon.classList.add("hidden");
+      }
+    }
+
+    function proceedToStep2() {
+      // Get form elements
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const termsConsent = document.getElementById("terms-consent");
+      
+      // Validate required fields
+      let isValid = true;
+      let errorMessage = "";
+
+      // Check email
+      if (!email.value.trim()) {
+        isValid = false;
+        errorMessage = "Please enter your email address.";
+        email.focus();
+      } else if (!email.validity.valid) {
+        isValid = false;
+        errorMessage = "Please enter a valid email address.";
+        email.focus();
+      }
+      // Check password
+      else if (!password.value.trim()) {
+        isValid = false;
+        errorMessage = "Please enter a password.";
+        password.focus();
+      }
+      // Check terms consent
+      else if (!termsConsent.checked) {
+        isValid = false;
+        errorMessage = "Please agree to the Terms & Conditions and Privacy Policy.";
+      }
+
+      if (!isValid) {
+        alert(errorMessage);
+        return;
+      }
+
+      // If validation passes, switch to step 2
+      document.getElementById("step1-form").classList.add("hidden");
+      document.getElementById("step2-form").classList.remove("hidden");
+      document.getElementById("form-title").textContent = "Tell us about yourself";
+      
+      // Hide the Google sign-in and "Or" divider
+      const googleSection = document.querySelector('.w-full.my-5');
+      const orDivider = document.querySelector('.grid.w-full.justify-center.items-center');
+      const alreadyAccount = document.querySelector('.flex.justify-center.gap-1.items-center');
+      
+      if (googleSection) googleSection.style.display = 'none';
+      if (orDivider) orDivider.style.display = 'none';
+      if (alreadyAccount) alreadyAccount.style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

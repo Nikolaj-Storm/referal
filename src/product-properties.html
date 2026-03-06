@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Product Properties</title>
+</head>
+
+<body class="border-red-400">
+  <div class="w-full flex flex-col relative">
+    <!-- top Navibar  -->
+    <div
+      class="w-full flex fixed gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] bg-white-1 md:px-9 p-4 z-20">
+      <!-- back -->
+      <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7 absolute md:static">
+        <button
+          class="px-0 md:px-2 h-[42px] md:flex justify-center items-center text-[16px] active:-translate-y-[2px] text-black-2 rounded-lg font-bold space-x-[13px] group hover:opacity-80">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-3 fill-current text-gray-900" viewBox="0 0 18 12">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.5396 5.0002V7.0002H4.71135L7.95383 10.2428L6.53966 11.657L0.882812 6.0001L6.53966 0.343262L7.95383 1.75747L4.71112 5.0002H17.5396Z" />
+          </svg>
+
+          <span class="leading-[24px] hidden md:inline-block">Back to products</span>
+        </button>
+      </div>
+
+      <!-- steps -->
+      <div class="flex justify-center items-center gap-5 sm:gap-8 xl:gap-10 mx-auto">
+        <a href="#" class="relative w-[22px] h-[22px] md:w-10 md:h-10 inline-block flex-none">
+          <svg class="w-[22px] h-[22px] md:w-10 md:h-10 fill-[#7B53E7]" viewBox="0 0 40 40" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M20 0.75C9.36852 0.75 0.75 9.36852 0.75 20C0.75 30.6314 9.36852 39.25 20 39.25C30.6314 39.25 39.25 30.6314 39.25 20C39.25 9.36852 30.6314 0.75 20 0.75ZM4.25 20C4.25 28.6986 11.3015 35.75 20 35.75C28.6986 35.75 35.75 28.6986 35.75 20C35.75 11.3015 28.6986 4.25 20 4.25C11.3015 4.25 4.25 11.3015 4.25 20ZM9.5 20.1243L16.9245 27.549L29.299 15.1746L26.8241 12.6997L16.9245 22.5993L11.9749 17.6494L9.5 20.1243Z" />
+          </svg>
+
+          <span
+            class="absolute -bottom-5 md:-bottom-6 -left-[5px] w-[34px] h-[3px] md:h-[4px] md:w-[52px] bg-purple-1 z-10 rounded-tl-full rounded-tr-full"></span>
+        </a>
+
+        <img src="./assets/next.svg" class="w-[5px] h-[8px] md:w-[7px] md:h-[12px] object-fill flex-none" alt="" />
+
+        <a href="#" class="w-[22px] h-[22px] md:w-10 md:h-10 inline-block flex-none">
+          <img src="./assets/loaction.png" class="w-full h-full object-fill" alt="" />
+        </a>
+        <img src="./assets/next.svg" class="w-[5px] h-[8px] md:w-[7px] md:h-[12px] object-fill flex-none" alt="" />
+
+        <a href="#" class="w-[22px] h-[22px] md:w-10 md:h-10 inline-block flex-none">
+          <img src="./assets/final.png" class="w-full h-full object-fill" alt="" />
+        </a>
+      </div>
+
+      <!-- button -->
+      <div class="hidden md:flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+        <!-- create product button -->
+        <button
+          class="px-6 h-[42px] md:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-semibold leading-[24px]">
+          Continue to shipping
+        </button>
+      </div>
+    </div>
+
+    <!-- down section -->
+    <div id="product-section"
+      class="w-full min-h-[100vh] flex flex-col bg-gray-2 p-3 md:p-5 rounded-xl md:pt-[80px] pt-[60px]">
+      <div class="container max-w-[937px] mx-auto py-7 md:py-8">
+        <!-- content -->
+        <div class="w-full">
+          <h1 class="text-[20px] text-black-1 font-normal pb-5">Products</h1>
+          <!-- draft -->
+          <div class="w-full h-[60px] flex justify-between items-center px-3 bg-white-1 rounded-xl">
+            <!-- item-1 -->
+            <div class="flex items-center gap-7">
+              <h2 class="text-base lg:text-[24px] text-black-1 font-normal">
+                #100106
+              </h2>
+              <div class="hidden md:inline-block">
+                <span class="text-[14px] text-black-1 font-normal">2024-06-06</span>
+                <span class="text-[14px] text-black-1 font-normal">18:09:08</span>
+              </div>
+            </div>
+            <div class="inline-block md:hidden">
+              <span class="text-[14px] text-black-1 font-normal">2024-06-06</span>
+              <span class="text-[14px] text-black-1 font-normal">18:09:08</span>
+            </div>
+            <!-- item-2 -->
+            <button
+              class="px-2 h-[28px] md:block text-[14px] bg-blue-1/20 hover:bg-blue-1 active:-translate-y-[2px] text-blue-1 hover:text-white-1 rounded-lg font-medium leading-[24px]">
+              Saved as draft
+            </button>
+          </div>
+          <!-- product card -->
+          <div class="bg-white-1 rounded-xl productCardShadow my-4">
+            <!-- titles -->
+            <div class="hidden lg:block p-2 lg:p-5 lg:border-b lg:border-[#E3E3E3]">
+              <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-2">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Image
+                  </h2>
+                </div>
+                <div class="col-span-4">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Product name
+                  </h2>
+                </div>
+                <div class="col-span-4">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Quantity
+                  </h2>
+                </div>
+                <div class="col-span-2">
+                  <h2 class="text-[12px] font-bold text-black-2 uppercase">
+                    Unit price
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- content -->
+            <div class="p-4 lg:p-5 flex flex-col gap-5 lg:gap-8 lg:border-b lg:border-[#E3E3E3]">
+              <div class="flex gap-5 lg:gap-8">
+                <div class="w-[78px]">
+                  <img src="./assets/matte.svg" class="w-full" alt="" />
+                </div>
+                <div class="flex-1">
+                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="flex justify-between lg:justify-start lg:space-y-4">
+                      <div>
+                        <h3 class="font-bold text-base lg:text-lg text-black-2">
+                          Premium Matte Poster
+                        </h3>
+                        <p class="text-black-1 text-sm font-light">50x70cm / 20x28"</p>
+                      </div>
+                      <button
+                        class="w-[42px] h-[40px] bg-gray-3/10 flex lg:hidden items-center justify-center rounded-[4px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M4 2C4 3.1046 3.10457 4 2 4C0.89543 4 0 3.1046 0 2C0 0.8954 0.89543 0 2 0C3.10457 0 4 0.8954 4 2ZM10 2C10 3.1046 9.1046 4 8 4C6.8954 4 6 3.1046 6 2C6 0.8954 6.8954 0 8 0C9.1046 0 10 0.8954 10 2ZM16 2C16 3.1046 15.1046 4 14 4C12.8954 4 12 3.1046 12 2C12 0.8954 12.8954 0 14 0C15.1046 0 16 0.8954 16 2Z"
+                            fill="#171717" />
+                        </svg>
+                      </button>
+                    </div>
+                    <!-- quantity -->
+                    <div class="hidden lg:flex justify-center">
+                      <div
+                        class="w-full min-h-[38px] flex justify-between items-center border border-[#E2E2E2] rounded-lg">
+                        <!-- decrement button -->
+                        <button
+                          class="px-[14px] h-full text-lg text-white font-black text-center flex justify-center items-center"
+                          id="decrement-btn" type="button">
+                          <img src="./assets/minus.svg" class="w-[16px] h-[16px] object-fill" alt="" />
+                        </button>
+                        <!-- input field -->
+                        <input type="number" id="quantity-input"
+                          class="block w-full px-[10px] text-[16px] text-black-2 leading-[24px] font-normal border-none placeholder-black-2 text-center rounded-[2px] focus:border-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-transparent shadow-none"
+                          value="1" step="1" required />
+                        <!-- increment button -->
+                        <button
+                          class="px-[14px] h-full text-lg text-white font-black text-center flex justify-center items-center"
+                          id="increment-btn" type="button">
+                          <img src="./assets/math-plus.svg" class="w-[16px] h-[16px] object-fill" alt="" />
+                        </button>
+                      </div>
+                    </div>
+                    <!-- price -->
+                    <div class="hidden md:block">
+                      <div class="text-start lg:text-center flex justify-end items-center gap-12">
+                        <p class="text-black-1 lg:text-base text-sm">
+                          €14.90
+                        </p>
+                        <button class="w-[42px] h-[40px] bg-gray-3/10 flex items-center justify-center rounded-[4px]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4 2C4 3.1046 3.10457 4 2 4C0.89543 4 0 3.1046 0 2C0 0.8954 0.89543 0 2 0C3.10457 0 4 0.8954 4 2ZM10 2C10 3.1046 9.1046 4 8 4C6.8954 4 6 3.1046 6 2C6 0.8954 6.8954 0 8 0C9.1046 0 10 0.8954 10 2ZM16 2C16 3.1046 15.1046 4 14 4C12.8954 4 12 3.1046 12 2C12 0.8954 12.8954 0 14 0C15.1046 0 16 0.8954 16 2Z"
+                              fill="#171717" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- mobile part -->
+              <div class="gap-5 lg:hidden flex flex-col">
+                <!-- quantity -->
+                <div class="flex justify-center">
+                  <div class="w-full min-h-[38px] flex justify-between items-center border border-[#E2E2E2] rounded-lg">
+                    <!-- decrement button -->
+                    <button
+                      class="px-[14px] h-full text-lg text-white font-black text-center flex justify-center items-center"
+                      id="decrement-btn" type="button">
+                      <img src="./assets/minus.svg" class="w-[16px] h-[16px] object-fill" alt="" />
+                    </button>
+                    <!-- input field -->
+                    <input type="number" id="quantity-input"
+                      class="block w-full px-[10px] text-[16px] text-black-2 leading-[24px] font-normal border-none placeholder-black-2 text-center rounded-[2px] focus:border-transparent focus:outline-none focus:ring-0 focus:ring-offset-0 focus:ring-transparent shadow-none"
+                      value="1" step="1" required />
+                    <!-- increment button -->
+                    <button
+                      class="px-[14px] h-full text-lg text-white font-black text-center flex justify-center items-center"
+                      id="increment-btn" type="button">
+                      <img src="./assets/math-plus.svg" class="w-[16px] h-[16px] object-fill" alt="" />
+                    </button>
+                  </div>
+                </div>
+                <!-- price -->
+                <div class="">
+                  <div class="text-start lg:text-center flex justify-between items-center gap-12">
+                    <p class="text-black-1 lg:text-base text-sm">Price</p>
+                    <p class="text-black-1 lg:text-base text-sm">€14.90</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- add button -->
+            <div class="p-2 lg:pt-[22px] hidden lg:pb-[17px] lg:flex justify-center items-center">
+              <button
+                class="px-[48px] h-[42px] md:block text-[14px] bg-black-4 hover:bg-gray-2 active:-translate-y-[2px] text-white-1 border-[2px] border-black-4 hover:text-black-4 rounded-lg font-semibold leading-[24px]">
+                Add product
+              </button>
+            </div>
+          </div>
+          <!-- summery -->
+          <div class="w-full py-5 md:py-6 bg-white-1 rounded-xl">
+            <div class="w-full md:max-w-[448px] mx-auto">
+              <div class="flex justify-between pb-4 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-bold">
+                  Summary
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">EUR</span>
+              </div>
+              <div class="border-b border-[#E3E3E3]"></div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal">
+                  Subtotal
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€14.90</span>
+              </div>
+              <div class="flex justify-between pt-3 px-4 md:px-0">
+                <h3 class="text-base text-black-1 leading-[20px] font-normal">
+                  Total excl. vat
+                </h3>
+                <span class="text-base text-black-1 leading-[20px] font-normal">€14.90</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- btn -->
+    <div class="w-full bg-white-1 p-4 fixed bottom-0 lg:hidden">
+      <button
+        class="px-6 w-full h-[52px] md:block text-[14px] bg-purple-1 hover:opacity-80 active:-translate-y-[2px] text-white-1 rounded-lg font-semibold">
+        Continue to shipping
+      </button>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+</body>
+
+</html>

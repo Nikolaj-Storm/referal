@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Order Details</title>
+</head>
+
+<body class="border-red-400">
+  <div class="w-full flex flex-col">
+    <!-- LEFT NAVIGATION ------->
+    <div id="left-navigation"
+      class="w-[300px] md:w-[250px] drawer fixed h-screen bg-white-1 justify-start md:justify-between flex flex-col gap-3 md:gap-0 p-5">
+      <!-- top section -->
+      <div class="flex flex-col">
+        <img src="./assets/logo.svg" class="w-[157px] left-0 top-0 h-[55px] object-fill" alt="" />
+        <!-- Links  -->
+        <div class="w-full flex flex-col gap-3 md:gap-5 mt-8 items-start">
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/home.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-semibold">Home</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/products.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Products</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2 hoverBgColor">
+            <img src="./assets/orders.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Orders</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/stores.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Stores</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/ana.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Analytics</p>
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:hidden block my-2 h-[1px] bg-[#D7D7D7]"></div>
+      <!-- down section -->
+      <div class="w-full flex flex-col gap-3 md:gap-5">
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/center.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Resource center</p>
+        </button>
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/call.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Customer support</p>
+        </button>
+      </div>
+    </div>
+    <!-- RIGHT PORTION  ------>
+    <div class="ml-0 md:ml-[250px] md:pl-5 md:pr-0 flex flex-col md:bg-white-1 bg-gray-2">
+      <!-- top Navibar  -->
+      <div
+        class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] md:pr-9 md:pl-0 px-4 bg-white-1">
+        <div class="hidden md:block">
+          <h2 class="text-black-1 text-2xl">Orders</h2>
+        </div>
+        <div class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto">
+          <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+            <!-- for small screen -->
+            <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block" alt="" />
+            <img src="./assets/logo.svg"
+              class="w-[130px] md:hidden block h-[40px] cursor-pointer sm:w-[157px] left-0 top-0 md:h-[55px] object-fill"
+              alt="" />
+            <!--create product button -->
+            <button
+              class="px-6 h-[42px] md:block hidden text-[14px] hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 rounded-lg font-semibold">
+              Create product
+            </button>
+          </div>
+          <div class="flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <img src="./assets/bell.svg" class="w-[24px] cursor-pointer h-[24px] object-cover" alt="" />
+            <div
+              class="w-[35px] md:hidden flex sm:w-[40px] border-[2px] border-white-2 rounded-lg justify-center items-center h-[35px] sm:h-[40px]">
+              <img src="./assets/blackPlus.svg" class="w-[16px] h-[16px] object-fill cursor-pointer" alt="" />
+            </div>
+            <img src="./assets/setting.svg" class="w-[24px] cursor-pointer md:block hidden h-[24px] object-cover"
+              alt="" />
+            <img src="./assets/profile.svg" class="w-[42px] cursor-pointer h-[42px] object-cover" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- down section -->
+      <div class="w-full flex flex-col px-4 pt-5 md:px-0 min-h-[calc(100vh_-_60px)] md:min-h-[calc(100vh_-_90px)]">
+        <!-- Back to orders -->
+        <div
+          class="w-full flex sm:flex-row flex-col sm:gap-0 gap-4 justify-center sm:justify-between items-center lg:px-8">
+          <div class="w-full md:w-1/2 flex items-center">
+            <button
+              class="flex max-w-[250px] sm:w-fit w-full sm:max-w-auto hover:opacity-80 rounded-lg items-center gap-[10px]">
+              <img src="assets/arrowleft.svg" class="w-6" alt="" />
+              <p class="text-sm md:text-base font-bold text-black-2">
+                Back to orders
+              </p>
+            </button>
+          </div>
+          <!--  Reorder button -->
+          <div class="w-full md:w-1/2">
+            <button
+              class="flex w-full sm:w-[130px] justify-center h-[42px] px-3 rounded-lg items-center gap-2 hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 ms-auto">
+              <img src="./assets/del.svg" class="w-6" alt="" />
+              <p class="text-[14px] font-bold">Delete</p>
+            </button>
+          </div>
+        </div>
+        <!-- Order Details -->
+        <div class="w-full bg-white-1 flex flex-col xl:flex-row lg:gap-x-5 justify-between min-h-screen mt-5">
+          <div class="flex-1 bg-gray-2 md:px-8 lg:py-9 p-0 rounded-tl-xl xl:rounded-xl">
+            <!-- order card  -->
+            <div class="bg-white-1 lg:rounded-xl p-5 lg:flex items-center justify-between hidden productCardShadow">
+              <div class="flex items-center gap-x-7">
+                <h2 class="text-black-2 text-2xl">#100106</h2>
+                <p class="text-black-1 text-sm">2024-06-06 18:09:08</p>
+              </div>
+              <div>
+                <p class="text-sm bg-[#DFE1E5] inline-block py-1 px-2 rounded-md text-[#313131] font-medium">
+                  Pending
+                </p>
+              </div>
+            </div>
+            <!-- product card  -->
+            <div class="bg-white-1 rounded-md lg:rounded-xl productCardShadow mt-5 mb-5 lg:mb-8 pb-5">
+              <div class="p-3 lg:p-5 border-b border-[#E3E3E3]">
+                <h2 class="font-bold text-black-2 text-base lg:text-[22px]">
+                  Products
+                </h2>
+              </div>
+              <div class="p-3 lg:p-5 flex gap-5 lg:gap-8">
+                <div class="w-[78px]">
+                  <img src="./assets/matte.svg" class="w-full" alt="" />
+                </div>
+                <div class="flex-1">
+                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div class="space-y-4">
+                      <div>
+                        <h3 class="font-bold text-base lg:text-lg text-black-2">
+                          Premium Matte Poster
+                        </h3>
+                        <p class="text-black-1 text-sm font-light">
+                          50x70cm / 20x28"
+                        </p>
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-sm text-black-2">
+                          Item Reference ID:
+                        </h3>
+                        <p class="text-black-1 text-sm font-light">
+                          15416048583000
+                        </p>
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-sm text-black-2">
+                          Product ID:
+                        </h3>
+                        <p class="text-black-1 text-sm font-light">
+                          1001066679
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="text-start lg:text-center">
+                        <h3 class="font-bold text-sm text-black-2 block lg:hidden">
+                          Quantity:
+                        </h3>
+                        <p class="text-black-1 lg:text-base text-sm">1</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="text-start lg:text-center">
+                        <h3 class="font-bold text-sm text-black-2 block lg:hidden">
+                          Price:
+                        </h3>
+                        <p class="text-black-1 lg:text-base text-sm">
+                          €14.90
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="border border-[#D3D3D3] px-3 xl:px-9 py-[10px] xl:py-4 rounded-xl mx-2 mt-4 xl:flex justify-between items-center hidden relative">
+                    <p class="text-xs text-black-1 flex-1" id="inner-point2">
+                      Order item created
+                    </p>
+                    <p class="text-xs text-black-1 flex-1">
+                      2024-06-07 00:13:27
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="xl:hidden">
+                <div
+                  class="border border-[#D3D3D3] px-3 py-[10px] rounded-xl mx-2 mt-4 flex justify-between items-center">
+                  <p class="text-xs text-black-1 flex-1">
+                    Order item created
+                  </p>
+                  <p class="text-xs text-black-1 flex-1 text-end">
+                    2024-06-07 00:13:27
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Payment card  -->
+            <div class="bg-white-1 rounded-md lg:rounded-xl productCardShadow mb-5 xl:mb-8 pb-5">
+              <div class="p-3 lg:p-5 border-b border-[#E3E3E3]">
+                <h2 class="font-bold text-black-2 text-base lg:text-[22px]">
+                  Payment
+                </h2>
+              </div>
+              <div class="p-3 lg:p-5 space-y-3 lg:space-y-5">
+                <div class="flex items-start xl:items-center gap-x-4 bg-[#F5F5F5] p-3 rounded-lg">
+                  <div class="w-6">
+                    <img src="./assets/info.svg" class="w-6" alt="" />
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-sm text-black-2">
+                      Lorem ipsum dolor sit amet consectetur. Elit urna
+                      pellentesque volutpat eu.
+                    </p>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button
+                    class="bg-purple-1 text-[14px] h-[42px] font-bold text-white-1 w-full sm:w-[240px] py-[10px] hover:opacity-80 rounded-lg">
+                    Pay securaly
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-auto xl:max-w-[362px] bg-gray-2 md:px-8 xl:pt-9 p-0 xl:rounded-xl">
+            <!-- Order Information  -->
+            <div class="bg-white-1 rounded-md lg:rounded-xl productCardShadow mb-5 lg:mb-6">
+              <div class="p-3 lg:p-5 border-b border-[#E3E3E3]">
+                <h2 class="font-bold text-black-2 text-base">
+                  Order Information
+                </h2>
+              </div>
+              <div class="p-3 lg:p-5 border-b border-[#E3E3E3] space-y-3 lg:space-y-5">
+                <div>
+                  <p class="text-[#919191] text-sm">Customer reference</p>
+                  <p class="text-black-1 text-xs">7886980317528</p>
+                </div>
+                <div>
+                  <p class="text-[#919191] text-sm">Order type</p>
+                  <p class="text-black-1 text-xs">Order</p>
+                </div>
+                <div class="flex justify-between items-center">
+                  <div class="w-[70%]">
+                    <p class="text-[#919191] text-sm">Receipt Number</p>
+                    <p class="text-black-1 text-xs">005-0012292307</p>
+                  </div>
+                  <div class="w-[30%] text-end space-y-8 lg:space-y-5">
+                    <button class="flex items-center gap-2 ms-auto">
+                      <img src="./assets/eye2.svg" class="w-4" alt="" /><span class="text-xs text-black-1">View</span>
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-[#919191] text-sm">Financial Status</p>
+                  <p class="text-black-1 text-xs">Unpaid</p>
+                </div>
+                <div>
+                  <p class="text-[#919191] text-sm">Channel</p>
+                  <p class="text-black-1 text-xs">Shopify</p>
+                </div>
+              </div>
+              <div class="pt-3 pb-5 px-3 lg:p-5 flex justify-between items-center">
+                <div class="w-[70%]">
+                  <p class="text-[#919191] text-sm">Printumo Order ID</p>
+                  <p class="text-black-1 text-xs">
+                    a4ac7c49-4397-4d8f-9a53-434f48b1c0ee
+                  </p>
+                </div>
+                <div class="w-[30%] text-end space-y-8 lg:space-y-5">
+                  <button class="flex items-center gap-2 ms-auto">
+                    <img src="./assets/copy.svg" class="w-4" alt="" /><span class="text-xs text-black-1">Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+</body>
+
+</html>

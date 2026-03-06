@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon">
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png">
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="w-full flex flex-col">
+    <!-- LEFT NAVIGATION ------->
+    <div id="left-navigation"
+      class="w-[300px] md:w-[250px] drawer fixed h-screen bg-white-1 justify-start md:justify-between flex flex-col gap-3 md:gap-0 p-5">
+      <!-- top section -->
+      <div class="flex flex-col">
+        <img src="./assets/logo.svg" class="w-[157px] left-0 top-0 h-[55px] object-fill" alt="" />
+        <!-- Links  -->
+        <div class="w-full flex flex-col gap-3 md:gap-5 mt-8 items-start">
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 hoverBgColor w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/home.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-semibold">Home</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/products.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Products</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/orders.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Orders</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/stores.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Stores</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/ana.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Analytics</p>
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:hidden block my-2 h-[1px] bg-[#D7D7D7]"></div>
+      <!-- down section -->
+      <div class="w-full flex flex-col gap-3 md:gap-5">
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/center.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Resource center</p>
+        </button>
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/call.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Customer support</p>
+        </button>
+      </div>
+    </div>
+    <!-- RIGHT PORTION  ------>
+    <div class="ml-0 md:ml-[250px] md:pl-5 md:pr-0 flex flex-col bg-white-1">
+      <!-- top Navibar  -->
+      <div
+        class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between md:justify-end md:pr-9 md:pl-0 px-4 items-center h-[60px] md:h-[90px]">
+        <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+          <!-- for small screen -->
+          <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block" alt="" />
+          <img src="./assets/logo.svg"
+            class="w-[130px] md:hidden block h-[40px] cursor-pointer sm:w-[157px] left-0 top-0 md:h-[55px] object-fill"
+            alt="" />
+          <!-- search input -->
+          <div
+            class="w-[200px] lg:grid hidden lg:w-[300px] xl:w-[480px] h-[42px] justify-center items-center bg-gray-2 rounded-lg grid-cols-[1fr,30px]">
+            <input type="text" name="search" id="search"
+              class="w-full text-base font-normal h-full bg-transparent px-3 focus:outline-none" />
+            <img src="./assets/search.svg" class="w-[20px] h-[20px] object-cover" alt="" />
+          </div>
+          <!--create product button -->
+          <button
+            class="px-6 h-[42px] md:block hidden text-[14px] hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 rounded-lg font-semibold">
+            Create product
+          </button>
+        </div>
+        <div class="flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+          <img src="./assets/bell.svg" class="w-[24px] cursor-pointer h-[24px] object-cover" alt="" />
+          <div
+            class="w-[35px] md:hidden flex sm:w-[40px] border-[2px] border-white-2 rounded-lg justify-center items-center h-[35px] sm:h-[40px]">
+            <img src="./assets/blackPlus.svg" class="w-[16px] h-[16px] object-fill cursor-pointer" alt="" />
+          </div>
+          <img src="./assets/setting.svg" class="w-[24px] cursor-pointer md:block hidden h-[24px] object-cover"
+            alt="" />
+          <img src="./assets/profile.svg" class="w-[42px] cursor-pointer h-[42px] object-cover" alt="" />
+        </div>
+      </div>
+      <!-- product empty section  -->
+      <div id="empty-section"
+        class="w-full  bg-gray-2 px-4 py-6 md:pl-8 md:pr-9 md:pt-8 sm:rounded-s-xl rounded-xl min-h-[calc(100vh_-_60px)] md:min-h-[calc(100vh_-_90px)]">
+        <img src="./assets/noProducts.svg" class="w-[235px] sm:w-[350px] h-[235px] sm:h-[350px] object-fill"
+          alt="no-product" />
+        <p class="text-[24px] font-semibold text-black-1">No products here</p>
+        <button
+          class="px-10 sm:px-8 sm:mt-0 mt-8 hover:opacity-80 active:translate-y-[2px] h-[52px] rounded-lg bg-purple-1 text-[14px] font-semibold text-white-1">
+          Create product
+        </button>
+      </div>
+      <!-- down section -->
+      <div id="product-section" class="w-full flex flex-col bg-gray-2 px-4 py-6 md:pl-8 md:pr-9 md:pt-8 rounded-xl">
+        <!-- filter bar -->
+        <div class="w-full flex sm:flex-row flex-col sm:gap-0 gap-4 justify-center sm:justify-between items-center">
+          <div class="w-full sm:w-fit flex justify-center items-center">
+            <div
+              class="sm:w-fit flex h-[40px] w-full max-w-[250px] rounded-lg px-2 bg-white-1 justify-center items-center gap-1">
+              <p class="text-[14px] font-medium text-[#555555]">Sort by:</p>
+              <select class="focus:outline-none text-[14px] font-semibold" name="pets" id="pet-select">
+                <option value="">Default</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Dscending Order">Dscending Order</option>
+              </select>
+            </div>
+          </div>
+          <!-- add product button -->
+          <div class="w-full sm:w-fit flex justify-center items-center">
+            <button
+              class="flex max-w-[250px] sm:w-fit w-full sm:max-w-auto justify-center bg-purple-1 h-[40px] px-3 hover:opacity-80 rounded-lg items-center gap-3">
+              <img src="./assets/plus.svg" class="w-4 h-4" alt="" />
+              <p class="text-[14px] font-semibold text-white-1">
+                Add new product
+              </p>
+            </button>
+          </div>
+        </div>
+        <!-- products grid -->
+        <div
+          class="w-full grid grid-cols-1 product-container sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-5 md:mt-10">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+
+  <script src="./script/leftNavigation.js"></script>
+  <script src="./script/Products.js"></script>
+</body>
+
+</html>

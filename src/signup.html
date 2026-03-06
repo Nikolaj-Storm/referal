@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon">
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png">
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="w-full grid min-h-screen grid-cols-1 md:grid-cols-[1fr,1fr]">
+    <!-- product image -->
+    <div class="w-full h-full md:block hidden bg-gray-2"></div>
+    <!-- sign-in-form  -->
+    <div class="w-full flex justify-center items-center">
+      <div class="w-full h-full gap-3 flex-col px-4 py-8 md:py-4 flex justify-center items-start max-w-[470px]">
+        <img src="/assets/logo.svg" class="w-[160px] h-[55px] object-fill" alt="" />
+        <h3 class="text-[32px] text-black-3 mt-3 font-semibold">
+          Sing Up to Printumo
+        </h3>
+        <div class="flex justify-center gap-1 items-center">
+          <p class="text-base font-normal text-black-3">
+            Already have an account?
+          </p>
+          <a href="/signin.html" class="text-purple-1 text-base underline font-normal">Sign in</a>
+        </div>
+        <div class="w-full h-[1px] mt-3 bg-[#EEEEEE]"></div>
+        <div class="w-full grid my-5 grid-cols-3 justify-center items-center gap-2">
+          <!-- with google -->
+          <a href="#" class="w-full flex justify-center items-center h-[52px] bg-[#F5F5F5] rounded-xl">
+            <img src="/assets/google.svg" class="w-[22px] h-[14px] object-fill" alt="" />
+          </a>
+          <!-- with facebook -->
+          <a href="#" class="w-full flex justify-center items-center h-[52px] bg-[#F5F5F5] rounded-xl">
+            <img src="/assets/facebook.svg" class="w-[20px] h-[20px] object-fill" alt="" />
+          </a>
+          <!-- with apple store -->
+          <a href="#" class="w-full flex justify-center items-center h-[52px] bg-[#F5F5F5] rounded-xl">
+            <img src="/assets/apple.svg" class="w-[20px] h-[20px] object-fill" alt="" />
+          </a>
+        </div>
+        <div class="grid w-full justify-center items-center grid-cols-[1fr,40px,1fr]">
+          <div class="w-full h-[1px] bg-[#EEEEEE]"></div>
+          <div class="w-full flex justify-center items-center">
+            <p class="text-[14px] font-normal text-[#9E9E9E]">Or</p>
+          </div>
+          <div class="w-full h-[1px] bg-[#EEEEEE]"></div>
+        </div>
+        <form action="" class="w-full flex flex-col gap-5">
+          <!-- login button -->
+          <a href="/signup-with-email.html"
+            class="w-full hover:opacity-80 my-3 flex justify-center items-center h-[52px] rounded-lg bg-purple-1 text-[14px] font-medium text-white-1">
+            Email
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

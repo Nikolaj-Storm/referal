@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Dashboard - Home</title>
+</head>
+
+<body class="border-red-400">
+  <div class="w-full flex flex-col relative">
+    <!-- LEFT NAVIGATION ------->
+    <div id="left-navigation"
+      class="w-[300px] md:w-[250px] drawer fixed h-screen bg-white-1 justify-start md:justify-between flex flex-col gap-3 md:gap-0 p-5">
+      <!-- top section -->
+      <div class="flex flex-col">
+        <img src="./assets/logo.svg" class="w-[157px] left-0 top-0 h-[55px] object-fill" alt="" />
+        <!-- Links  -->
+        <div class="w-full flex flex-col gap-3 md:gap-5 mt-8 items-start">
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-gray-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/home.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-semibold">Home</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/products.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Products</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/orders.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Orders</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/stores.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Stores</p>
+          </button>
+          <button onclick="selectButton(this)"
+            class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+            <img src="./assets/ana.svg" class="w-[24px] h-[24px]" alt="" />
+            <p class="text-base text-black-1 font-normal">Analytics</p>
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:hidden block my-2 h-[1px] bg-[#D7D7D7]"></div>
+      <!-- down section -->
+      <div class="w-full flex flex-col gap-3 md:gap-5">
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/center.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Resource center</p>
+        </button>
+        <button onclick="selectButton(this)"
+          class="flex justify-start hover:bg-gray-1 pl-8 bg-white-1 w-full h-[52px] rounded-[14px] items-center gap-2">
+          <img src="./assets/call.svg" class="w-[24px] h-[24px]" alt="" />
+          <p class="text-base text-black-1 font-normal">Customer support</p>
+        </button>
+      </div>
+    </div>
+    <!-- RIGHT PORTION  ------>
+    <div class="ml-0 md:ml-[250px] px-0 md:px-5 flex flex-col bg-white-1">
+      <!-- top Navibar  -->
+      <div
+        class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] md:pl-0 px-4 md:pr-9 productCardShadow">
+        <div class="hidden md:block">
+          <h2 class="text-black-1 text-2xl">Dashboard</h2>
+        </div>
+        <div class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto">
+          <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+            <!-- for small screen -->
+            <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block" alt="" />
+            <img src="./assets/logo.svg"
+              class="w-[130px] md:hidden block h-[40px] cursor-pointer sm:w-[157px] left-0 top-0 md:h-[55px] object-fill"
+              alt="" />
+            <!--create product button -->
+            <button
+              class="px-6 h-[42px] md:block hidden text-[14px] hover:bg-gray-2 active:-translate-y-[2px] text-black-2 border-[2px] border-white-2 rounded-lg font-semibold">
+              Create product
+            </button>
+          </div>
+          <div class="flex justify-center items-center gap-3 sm:gap-5 xl:gap-7">
+            <img src="./assets/bell.svg" class="w-[24px] cursor-pointer h-[24px] object-cover" alt="" />
+            <div
+              class="w-[35px] md:hidden flex sm:w-[40px] border-[2px] border-white-2 rounded-lg justify-center items-center h-[35px] sm:h-[40px]">
+              <img src="./assets/blackPlus.svg" class="w-[16px] h-[16px] object-fill cursor-pointer" alt="" />
+            </div>
+            <img src="./assets/setting.svg" class="w-[24px] cursor-pointer md:block hidden h-[24px] object-cover"
+              alt="" />
+            <img src="./assets/profile.svg" class="w-[42px] cursor-pointer h-[42px] object-cover" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Home Content -->
+      <div class="w-full bg-gray-2 p-4 md:pr-9 md:pl-8 md:py-10 rounded-none md:rounded-xl">
+        <!-- sub-title -->
+        <div class="pb-4 lg:pb-7">
+          <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+            Getting Started
+          </h2>
+        </div>
+        
+        <!-- Accordion -->
+        <div class="mx-auto">
+          <div class="bg-gray-1 rounded-xl productCardShadow">
+            <!-- Accordion Item -->
+            <div class="accordion-item">
+              <button class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center bg-gray-1 rounded-t-xl" onclick="toggleAccordion(this)">
+                <h3 class="text-lg font-semibold text-black-1">How to Get Started with Printumo</h3>
+                <svg class="accordion-icon w-5 h-5 text-black-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="accordion-content hidden px-6 pb-6 bg-gray-1 rounded-b-xl">
+                <div class="pt-4">
+                  <img src="./assets/dashboard/get-started.png" alt="Getting Started Guide" class="w-full rounded-lg productCardShadow" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrations Section -->
+        <div class="mt-8">
+          <!-- section title -->
+          <div class="pb-4 lg:pb-7">
+            <h2 class="text-base text-black-1 font-bold md:order-1 order-2 uppercase tracking-[1px]">
+              Integrations
+            </h2>
+          </div>
+          
+          <!-- 3 column grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Shopify Integration Card -->
+            <div class="bg-white-1 border border-gray-300 rounded-[30px] p-8 flex flex-col">
+              <div class="flex justify-left items-end mb-6">
+                <img src="./assets/integrations/shopify.svg" alt="Shopify" class="h-[45px] w-auto" />
+              </div>
+              <h3 class="text-2xl font-bold text-black-5 mb-4">Shopify</h3>
+              <p class="text-black-7 text-base lg:text-xl mb-6 flex-grow">Connect your Shopify store and start selling print-on-demand products seamlessly.</p>
+              <div class="space-y-3">
+                <button class="w-full px-6 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                  Connect - 2min
+                </button>
+                <button class="w-full px-6 py-3 bg-white-1 border-2 border-white-2 text-black-5 rounded-xl hover:bg-gray-1 font-semibold transition-all duration-150">
+                  Read Documentation
+                </button>
+              </div>
+            </div>
+
+            <!-- Etsy Integration Card -->
+            <div class="bg-white-1 border border-gray-300 rounded-[30px] p-8 flex flex-col">
+              <div class="flex justify-left items-end mb-6">
+                <img src="./assets/integrations/etsy.svg" alt="Etsy" class="h-[45px] w-auto" />
+              </div>
+              <h3 class="text-2xl font-bold text-black-5 mb-4">Etsy</h3>
+              <p class="text-black-7 text-base lg:text-xl mb-6 flex-grow">Connect your Etsy shop and expand your reach with custom print-on-demand products.</p>
+              <div class="space-y-3">
+                <button class="w-full px-6 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                  Connect - 2min
+                </button>
+                <button class="w-full px-6 py-3 bg-white-1 border-2 border-white-2 text-black-5 rounded-xl hover:bg-gray-1 font-semibold transition-all duration-150">
+                  Read Documentation
+                </button>
+              </div>
+            </div>
+
+            <!-- See All Integrations Card -->
+            <div class="bg-white-1 border border-gray-300 rounded-[30px] p-8 flex flex-col text-center">
+              <div class="mb-6">
+                <svg class="w-12 h-12 text-purple-1 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-black-5 mb-4">See All Integrations</h3>
+              <p class="text-black-7 text-base lg:text-xl mb-6 flex-grow">Explore all available integrations and find the perfect solution for your business.</p>
+              <button class="w-full px-6 py-3 bg-white-1 border-2 border-white-2 text-black-5 rounded-xl hover:bg-gray-1 font-semibold transition-all duration-150">
+                View All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+  <!-- Script  -->
+  <script src="./script/leftNavigation.js"></script>
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.accordion-icon');
+      const isOpen = !content.classList.contains('hidden');
+      
+      if (isOpen) {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+</body>
+
+</html>

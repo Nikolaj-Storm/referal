@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/monetumo/fav.svg" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/monetumo/fav-16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/monetumo/fav-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/monetumo/fav-32.png" sizes="192x192" type="image/png" />
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <title>Monetumo Apply</title>
+
+    <style>
+        @font-face {
+            font-family: "Avenir Next Cyr Medium";
+            src: url("./font/Avenir Next Cyr Medium.ttf") format("truetype");
+        }
+
+        body {
+            font-family: "Avenir Next Cyr Medium", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- header start here  -->
+    <header class="sticky top-0 left-0 z-50 bg-[#132D46] momentoheader">
+        <!-- Navbar -->
+        <div class="flex items-center justify-between px-5 max-w-[1240px] mx-auto py-5 lg:py-6 relative bg-[#132D46]"
+            id="nav-main">
+            <!-- Desktop Logo -->
+            <div class="block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                <a href="/src/monetumo.html" class="block">
+                    <img src="./assets/monetumo/logo.svg" class="w-[124px] sm:w-[174px]" alt="Logo">
+                </a>
+            </div>
+            <div class="flex flex-1 justify-end lg:space-x-4 2xl:space-x-9 items-center">
+                <!-- Hamburger Icon (Visible only on mobile) -->
+                <button id="momentodrawer-button" class="lg:hidden me-3" aria-label="open sidebar">
+                    <img src="./assets/monetumo/hamburger.png" alt="Menu Icon">
+                </button>
+                <!-- Desktop Menu Items (Visible on large screens) -->
+                <ul class="hidden lg:flex lg:space-x-4 2xl:space-x-7">
+                    <li><a href="#"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Help</a>
+                    </li>
+                    <li><a href="/src/about-us.html"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Sidebar Drawer -->
+        <div id="momentodrawer"
+            class="w-full fixed top-0 left-0 h-full bg-[#132D46] shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="p-5 h-screen flex flex-col">
+                <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                        <div class="block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                            <a href="/src/monetumo.html" class="block">
+                                <img src="./assets/monetumo/logo.svg" class="w-[124px]" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- Close Button -->
+                        <button class="w-9" aria-label="close sidebar" onclick="closeMomentoDrawer()">
+                            <img src="./assets/monetumo/close.svg" alt="">
+                        </button>
+                    </div>
+                    <!-- Sidebar Content -->
+                    <ul class="space-y-5 mt-16">
+                        <li><a href="#"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">About
+                                Us</a></li>
+                        <li><a href="/src/about-us.html"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Book
+                                a Demo</a></li>
+                        <li><a href="#"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Join
+                                the Waitlist</a></li>
+                        <li><a href="/src/contact-us.html"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Referral
+                                Program</a></li>
+                    </ul>
+                </div>
+                <div class="p-[1px] rounded-xl bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                    <div class="rounded-xl bg-[#243C53] p-5">
+                        <p class="text-base text-[#FCFEFD] font-semibold tracking-[1px]">Have any questions?</p>
+                        <form action="" class="mt-5 space-y-3">
+                            <div class="relative">
+                                <label for="subscribeInput"
+                                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
+                                    <img src="./assets/monetumo/mail.svg" alt="Mail Icon" class="w-full h-full">
+                                </label>
+                                <input type="text" id="subscribeInput" placeholder="Enter your email..." class="pl-10 pr-3 py-[10px] bg-[#F2F4F8] font-medium text-base text-[#132D46] 
+                                           placeholder:text-[#697077] focus-visible:outline-none w-full rounded-md">
+                            </div>
+                            <button
+                                class="text-[#132D46] font-medium text-lg bg-[#00E980] hover:bg-[#FCFEFD] w-full py-[10px] rounded-lg tracking-[0.5px]">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- main content  -->
+    <main>
+        <section class="py-9 px-6 md:px-0 lg:pt-20 lg:pb-28 bg-[#FCFEFD]">
+            <div class="mx-auto  max-w-[741px] bg-[#F7FBFF] p-4 lg:py-9 lg:px-8">
+                <div>
+                    <h1 class="text-[#132D46] text-[16px] md:text-[32px]">First, enter your email</h1>
+                    <p class="text-[12px] md:text-[18px] text-[#6A6E79] pt-2 lg:pt-8">Somewhere we can send information
+                        about your account.
+                        Then we can get started to customize your dashboard.</p>
+                    <form action="" class="pt-6 lg:pt-8 space-y-4">
+                        <input type="text" placeholder="Full name"
+                            class="px-3 py-[14px] bg-white-1 border border-[#9EA4B4CC] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+                        <input type="email" placeholder="john@start.com"
+                            class="px-3 py-[14px] bg-white-1 border border-[#9EA4B4CC] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+                        <input type="url" placeholder="Website"
+                            class="hidden md:block px-3 py-[14px] bg-white-1 border border-[#9EA4B4CC] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md">
+
+                        <!-- Select Dropdown with Custom Arrow -->
+                        <div class="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-3">
+                            <div class="relative">
+                                <select
+                                    class="px-3 py-[14px] bg-white-1 border border-[#9EA4B4CC] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md appearance-none">
+                                    <option disabled="" selected="">Average monthly impressions</option>
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>30</option>
+                                </select>
+                                <!-- Custom Arrow -->
+                                <img src="./assets/monetumo/apply-down.svg"
+                                    class="w-5 absolute right-3 top-1/2 transform -translate-y-1/2" alt="">
+                            </div>
+                            <div class="relative">
+                                <select
+                                    class="px-3 py-[14px] bg-white-1 border border-[#9EA4B4CC] text-base text-[#9EA4B4] placeholder:text-[#9EA4B4] focus-visible:outline-none w-full rounded-md appearance-none">
+                                    <option disabled="" selected="">Current monetization partner</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </select>
+                                <!-- Custom Arrow -->
+                                <img src="./assets/monetumo/apply-down.svg"
+                                    class="w-5 absolute right-3 top-1/2 transform -translate-y-1/2" alt="">
+                            </div>
+                        </div>
+                        <div class="max-w-[721px] mx-auto text-center">
+                            <button
+                                class="bg-[#00E980] hover:bg-opacity-60 font-medium text-lg text-[#132D46] w-full md:w-auto md:px-24 inline-flex items-center gap-2 justify-center py-[14px] rounded-lg">
+                                <span>Continue</span>
+                                <span><img src="./assets/monetumo/arr-ford.svg" class="w-6" alt=""></span>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="flex items-center my-6 md:hidden">
+                        <div class="flex-grow border-t border-[#9EA4B499]"></div>
+                        <span class="px-3 text-[#6A6E79] text-[16px]">Or</span>
+                        <div class="flex-grow border-t border-[#9EA4B499]"></div>
+                    </div>
+                    <div class="md:hidden space-y-4">
+                        <a href="#"
+                            class="flex items-center gap-2 justify-center border border-[#9ABADA66] rounded-[30px] bg-[#FCFEFD] hover:bg-[#00E980] py-[9px]">
+                            <span><img src="./assets/monetumo/google-icon.svg" class="w-5" alt=""></span>
+                            <span class="text-[16px] text-[#132D46] font-medium">Continue with Google</span>
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-2 justify-center border border-[#9ABADA66] rounded-[30px] bg-[#FCFEFD] hover:bg-[#00E980] py-[9px]">
+                            <span><img src="./assets/monetumo/microsoft.svg" class="w-5" alt=""></span>
+                            <span class="text-[16px] text-[#132D46] font-medium">Continue with Microsoft</span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="pt-9 lg:pt-28 text-center">
+                    <img src="./assets/monetumo/apply-1x.png" srcset="
+                            ./assets/monetumo/apply-1x.png 1x,
+                            ./assets/monetumo/apply-2x.png 2x,
+                            ./assets/monetumo/apply-3x.png 3x
+                        " class="mx-auto" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- footer  -->
+    <footer class="bg-[#F7FBFF] py-12">
+        <div class="mx-auto px-5 max-w-[1240px]">
+            <!-- footer upper  -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-8 lg:pb-12">
+                <div class="w-[124px] lg:w-[174px]">
+                    <img src="./assets/monetumo/footer-logo.svg" class="w-full" alt="">
+                </div>
+                <div class="flex-1">
+                    <form action="" class="flex items-center justify-start md:justify-end gap-2 lg:gap-12">
+                        <div class="relative flex-grow md:flex-grow-0 md:w-[349px]">
+                            <label for="subscribeInput"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
+                                <img src="./assets/monetumo/mail.svg" alt="Mail Icon" class="w-full h-full">
+                            </label>
+                            <input type="text" id="subscribeInput"
+                                placeholder="Enter your email to get the latest news..."
+                                class="pl-12 pr-3 py-[11.5px] bg-[#9EA4B433] border-b border-[#9EA4B4] text-base text-[#6A6E79] focus-visible:outline-none w-full">
+                        </div>
+                        <button
+                            class="text-[#132D46] hover:text-[#fff] font-medium text-lg bg-[#00E980] hover:bg-[#132D46]  py-[10px] px-5 lg:px-[26px] rounded-lg tracking-[0.5px]">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <!-- footer menu  -->
+            <div class="border-y border-y-[#C1C7CD] py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-4 gap-3">
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">About
+                        Monetumo</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Book a
+                        Demo</a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Join the
+                        Waitlist</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Referral
+                        Program</a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Privacy
+                        Policy</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Terms of
+                        Service</a>
+                </div>
+                <div class="mt-12 lg:mt-0">
+                    <div class="flex items-center gap-2 justify-start lg:justify-end">
+                        <a href="#" class="block w-[120px]"><img src="./assets/monetumo/apple.svg" class="w-full"
+                                alt=""></a>
+                        <a href="#" class="block w-[135px]"><img src="./assets/monetumo/google.svg" class="w-full"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!-- copy right  -->
+            <div class="pt-8 lg:pt-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                <p class="font-normal text-[12px] md:text-[14px] text-[#243C53]">Monetumo @ 2025. All rights reserved.
+                </p>
+                <p class="font-medium text-[14px] md:text-[16px] text-[#243C53]">Monetumo: Your partner in maximizing
+                    website revenue, transparently and effortlessly.</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- Script  -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./script/momentuNavbar.js"></script>
+</body>
+
+</html>

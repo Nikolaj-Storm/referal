@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <title>Referral Dashboard | Printumo</title>
+
+    <style>
+        /* Custom Scrollbar Styling */
+        .overflow-x-auto::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .overflow-x-auto::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .overflow-x-auto::-webkit-scrollbar-thumb {
+            background: #f7f5fb;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F9F9FA] text-[#171717] font-['DM_Sans']">
+    <div class="w-full flex flex-col">
+        <!-- LEFT NAVIGATION ------->
+        <div id="left-navigation"
+            class="w-[300px] md:w-[250px] drawer fixed h-screen bg-[#ffffff] justify-start md:justify-between flex flex-col gap-3 md:gap-0 px-6 py-6 z-50">
+
+            <!-- top section -->
+            <div class="flex flex-col">
+                <div class="flex items-center gap-2 px-1">
+                    <img src="./assets/logo.svg" class="w-[140px] h-[35px] object-contain" alt="Printumo Logo" />
+                </div>
+
+                <!-- Links  -->
+                <div class="w-full flex flex-col gap-2 mt-8 items-start">
+                    <button onclick="window.location.href='dashboard.html'"
+                        class="flex justify-start hover:bg-gray-50 pl-4 w-full h-[48px] rounded-xl items-center gap-3 transition-colors group">
+                        <svg class="w-5 h-5 text-[#171717] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#171717]">Home</p>
+                    </button>
+
+                    <button
+                        class="flex justify-start hover:bg-gray-50 pl-4 w-full h-[48px] rounded-xl items-center gap-3 transition-colors group">
+                        <svg class="w-5 h-5 text-[#171717] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#171717]">Products</p>
+                    </button>
+
+                    <button
+                        class="flex justify-start hover:bg-gray-50 pl-4 w-full h-[48px] rounded-xl items-center gap-3 transition-colors group">
+                        <svg class="w-5 h-5 text-[#171717] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#171717]">Orders</p>
+                    </button>
+
+                    <button
+                        class="flex justify-start hover:bg-gray-50 pl-4 w-full h-[48px] rounded-xl items-center gap-3 transition-colors group">
+                        <svg class="w-5 h-5 text-[#171717] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <circle cx="12" cy="13" r="3"></circle>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#171717]">Stores</p>
+                    </button>
+
+                    <button onclick="window.location.href='reseller.html'"
+                        class="flex justify-start hover:bg-gray-50 pl-4 w-full h-[48px] rounded-xl items-center gap-3 transition-colors group">
+                        <svg class="w-5 h-5 text-[#171717] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#171717]">Reseller</p>
+                    </button>
+
+                    <button
+                        class="flex justify-start hover:bg-gray-50 pl-4 w-full h-[48px] rounded-xl items-center gap-3 transition-colors group">
+                        <svg class="w-5 h-5 text-[#171717] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#171717]">Support</p>
+                    </button>
+
+                    <!-- Referrals Link (Active) -->
+                    <button class="flex justify-start bg-[#F4F0FF] pl-4 w-full h-[48px] rounded-xl items-center gap-3">
+                        <svg class="w-5 h-5 text-[#7B53E7] stroke-[1.5]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <p class="text-[15px] font-medium text-[#7B53E7]">Referrals</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- down section / user block -->
+            <div class="w-full flex flex-col gap-3 mt-auto">
+                <div class="p-4 bg-[#F4F0FF] rounded-2xl flex flex-col gap-3 w-full border border-[#f4f0ff]">
+                    <div class="flex items-start gap-4">
+                        <img src="./assets/profile.svg" class="w-11 h-11 rounded-full bg-white object-cover"
+                            alt="User Profile" />
+                        <div class="flex flex-col pt-0.5">
+                            <span class="text-[15px] font-bold text-[#171717]">Hi Nikolaj</span>
+                            <span class="text-[11px] text-[#171717] leading-tight pr-2 mt-0.5 font-medium">Let me know
+                                if you have any questions or need help!</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full h-[36px] bg-[#222222] text-white text-[13px] font-bold rounded-xl hover:bg-black transition-colors mt-1">
+                        Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PORTION  ------>
+        <div class="ml-0 md:ml-[250px] md:pl-5 md:pr-0 flex flex-col min-h-screen bg-[#F9F9FA]">
+            <!-- top Navibar  -->
+            <div
+                class="w-full flex gap-4 lg:gap-8 xl:gap-12 justify-between items-center h-[60px] md:h-[90px] md:pr-9 md:pl-0 px-4 bg-[#F9F9FA] sticky top-0 z-40">
+
+                <!-- Search bar -->
+                <div class="hidden md:flex flex-1 max-w-[500px] relative mt-1">
+                    <input type="text" placeholder="Search for orders, products etc..."
+                        class="w-full h-[40px] bg-[#ffffff] border-none rounded-md pl-4 pr-10 text-[13px] outline-none shadow-[0px_1px_2px_rgba(0,0,0,0.05)] text-gray-400 font-medium" />
+                    <div class="absolute right-3 top-1/2 -translate-y-1/2">
+                        <svg class="w-[18px] h-[18px] text-[#8f92a1]" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div
+                    class="flex justify-between md:justify-end gap-4 lg:gap-8 xl:gap-12 w-full md:w-auto items-center mt-1 text-[13px]">
+                    <div class="flex justify-center items-center gap-1 md:gap-4 xl:gap-7">
+                        <!-- for small screen -->
+                        <img id="toggle-drawer" src="./assets/menu.svg" class="md:hidden block w-[24px]" alt="" />
+                        <img src="./assets/logo.svg"
+                            class="w-[110px] md:hidden block h-[35px] cursor-pointer object-contain"
+                            alt="Printumo Logo" />
+
+                        <button
+                            class="px-[18px] h-[36px] md:block hidden bg-white hover:bg-gray-50 text-[#171717] border border-[#e5e5e5] rounded-md font-bold transition-all shadow-sm tracking-wide">
+                            Create product
+                        </button>
+                    </div>
+                    <div class="flex justify-center items-center gap-3 md:gap-5">
+                        <button
+                            class="w-[36px] h-[36px] bg-white border border-[#e5e5e5] rounded-md flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm">
+                            <svg class="w-[18px] h-[18px] text-[#171717]" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="w-[36px] h-[36px] rounded-full bg-[#1e9b6a] flex items-center justify-center text-white font-bold shadow-md cursor-pointer border-2 border-[#F9F9FA]">
+                            N
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN DASHBOARD CONTENT -->
+            <div class="w-full p-4 md:pr-9 md:py-6 flex flex-col gap-6 max-w-[1200px] mx-auto min-h-[calc(100vh-90px)]">
+
+                <!-- Welcome Hero Area -->
+                <div
+                    class="bg-[#ffffff] rounded-xl p-8 lg:p-10 flex flex-col md:flex-row justify-between items-center gap-8 shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100">
+
+                    <div class="flex flex-col gap-4 relative z-10 max-w-lg">
+                        <div
+                            class="inline-flex items-center gap-2 bg-[#F1ECFF] text-[#7B53E7] px-3 py-1.5 rounded-md text-sm font-bold w-max">
+                            <svg class="w-4 h-4 text-[#7B53E7]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            Affiliate Program
+                        </div>
+                        <h1
+                            class="text-[32px] lg:text-[40px] font-extrabold text-[#171717] tracking-tight leading-[1.1]">
+                            Refer and Earn <span class="text-[#7B53E7]">15%</span><br>Commission!</h1>
+                        <p class="text-[#8F92A1] text-[15px] leading-relaxed mt-1">Invite your creative friends to
+                            Printumo. You both get rewards when they make their first successful sale or order.</p>
+                    </div>
+
+                    <div
+                        class="w-full md:w-auto relative z-10 flex flex-col gap-2 bg-[#f9f9fa] p-6 rounded-xl border border-gray-100">
+                        <p class="text-sm font-bold text-[#171717] mb-1">Your unique referral link</p>
+                        <div
+                            class="flex items-center gap-2 bg-[#ffffff] border border-gray-200 p-1.5 pl-4 rounded-md w-full md:w-[380px] shadow-sm">
+                            <input type="text" id="refLink"
+                                class="bg-transparent border-none outline-none text-[#171717] font-medium text-sm w-full truncate"
+                                value="https://printumo.com/ref/nikolaj2024" readonly />
+                            <button onclick="copyReferralLink()"
+                                class="bg-[#7B53E7] text-white hover:bg-[#6442b5] px-5 py-2.5 rounded-md text-sm font-bold transition-colors flex items-center gap-2 shrink-0">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy link</span>
+                            </button>
+                        </div>
+                        <!-- Success toast mechanism (hidden by default) -->
+                        <p id="copyToast"
+                            class="text-[#10b981] text-xs font-bold opacity-0 transition-opacity h-4 mt-1 flex items-center gap-1">
+                            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Link copied to clipboard!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- KPI Stats Cards (Reduced to 2) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Stat 1 -->
+                    <div
+                        class="bg-[#ffffff] p-6 lg:p-7 rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100 flex flex-col gap-6">
+                        <div class="flex justify-between items-start">
+                            <div
+                                class="w-[42px] h-[42px] bg-[#f0f9ff] rounded-md flex items-center justify-center text-[#0284c7]">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="bg-[#dcfce7] text-[#166534] text-[11px] font-bold px-2 py-1 rounded-md tracking-wide">+12%</span>
+                        </div>
+                        <div>
+                            <h3 class="text-[#8f92a1] text-xs font-bold uppercase tracking-wider mb-2">Total Referrals
+                            </h3>
+                            <p class="text-[32px] font-extrabold text-[#171717] leading-none">42</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div
+                        class="bg-[#7B53E7] text-white p-6 lg:p-7 rounded-xl shadow-[0_8px_30px_0_rgba(123,83,231,0.3)] flex flex-col gap-6">
+                        <div class="flex justify-between items-start">
+                            <div
+                                class="w-[42px] h-[42px] bg-transparent text-white rounded-md flex items-center justify-start text-xl font-bold">
+                                $
+                            </div>
+                        </div>
+                        <div class="text-white mt-auto">
+                            <h3 class="text-white/80 text-xs font-bold uppercase tracking-wider mb-2">Total Earnings
+                            </h3>
+                            <p class="text-[32px] font-extrabold leading-none">€840.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Area: Table and Invite box -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                    <!-- Friends Invited Table -->
+                    <div
+                        class="lg:col-span-2 bg-[#ffffff] rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100 flex flex-col overflow-hidden">
+                        <div class="p-6 md:px-8 border-b border-gray-100 flex justify-between items-center bg-white">
+                            <h2 class="text-[20px] font-extrabold text-[#171717]">Friends Invited</h2>
+                            <button
+                                class="text-white text-sm font-bold hover:text-[#5B3EAD] bg-transparent border-none flex items-center gap-1 transition-colors">
+                                View all <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-white text-[#8f92a1] text-[11px] uppercase tracking-wider">
+                                        <th
+                                            class="p-4 md:px-8 font-bold border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+                                            User</th>
+                                        <th
+                                            class="p-4 md:px-8 font-bold border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+                                            Date Joined</th>
+                                        <th
+                                            class="p-4 md:px-8 font-bold border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors">
+                                            Status</th>
+                                        <th class="p-4 md:px-8 font-bold border-b border-gray-100 text-right">Commission
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 text-sm">
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-[#f0f9ff] text-[#0284c7] flex items-center justify-center font-bold text-xs">
+                                                MK</div>
+                                            <span class="font-bold text-[#171717]">M**** K.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 24, 2024</td>
+                                        <td class="p-4 md:px-8">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
+                                                Converted
+                                            </span>
+                                        </td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€45.00</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-[#fff7ed] text-[#c2410c] flex items-center justify-center font-bold text-xs">
+                                                JL</div>
+                                            <span class="font-bold text-[#171717]">J**** L.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 22, 2024</td>
+                                        <td class="p-4 md:px-8">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#ffedd5] text-[#c2410c]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
+                                                Pending
+                                            </span>
+                                        </td>
+                                        <td class="p-4 md:px-8 font-bold text-[#8f92a1] text-right text-[13px]">--</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-xs">
+                                                AS</div>
+                                            <span class="font-bold text-[#171717]">A**** S.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 18, 2024</td>
+                                        <td class="p-4 md:px-8">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
+                                                Converted
+                                            </span>
+                                        </td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€12.50</td>
+                                    </tr>
+                                    <tr class="hover:bg-[#fcfcfa] transition-colors bg-white">
+                                        <td class="p-4 md:px-8 flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-[#f3f4f6] text-[#4b5563] flex items-center justify-center font-bold text-xs">
+                                                RT</div>
+                                            <span class="font-bold text-[#171717]">R**** T.</span>
+                                        </td>
+                                        <td class="p-4 md:px-8 text-[#8f92a1] font-medium text-[13px]">Oct 15, 2024</td>
+                                        <td class="p-4 md:px-8">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-bold bg-[#dcfce7] text-[#166534]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></span>
+                                                Converted
+                                            </span>
+                                        </td>
+                                        <td class="p-4 md:px-8 font-extrabold text-[#171717] text-right">€85.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Referral Methods / How it works -->
+                    <div class="flex flex-col gap-6">
+                        <!-- Invite via Email -->
+                        <div
+                            class="bg-white px-6 py-8 rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100 flex flex-col gap-6">
+
+                            <div class="flex flex-col gap-2">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center mb-1">
+                                    <svg class="w-6 h-6 text-[#7B53E7]" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <h2 class="text-xl font-extrabold text-[#171717]">Invite via Email</h2>
+                                <p class="text-[#8f92a1] text-[13px] leading-relaxed">Send a beautiful HTML invitation
+                                    to your friends.</p>
+                            </div>
+
+                            <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); inviteSent(this);">
+                                <div>
+                                    <input type="email" placeholder="friend@example.com"
+                                        class="w-full bg-[#f9f9fa] border border-gray-200 text-[#171717] placeholder:text-[#8f92a1] rounded-md px-4 py-3 text-[13px] font-medium outline-none focus:border-[#7B53E7] focus:bg-white transition-colors"
+                                        required>
+                                </div>
+                                <button type="submit"
+                                    class="w-full bg-[#7B53E7] text-white hover:bg-[#6b42d6] font-bold py-3 rounded-md transition-colors flex justify-center items-center gap-2 text-sm shadow-sm">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                    Send Invite
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- How it works -->
+                        <div
+                            class="bg-white p-6 md:p-8 rounded-xl shadow-[0_4px_20px_0_rgba(235,235,235,0.7)] border border-gray-100">
+                            <h2 class="text-xl font-extrabold text-[#171717] mb-6">How it works</h2>
+
+                            <div class="flex flex-col gap-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
+                                        1</div>
+                                    <div class="pt-0.5">
+                                        <h4 class="font-bold text-[#171717] text-sm mb-1">Share your link</h4>
+                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed">Copy your unique referral
+                                            link and share it on social media, blogs, or messages.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
+                                        2</div>
+                                    <div class="pt-0.5">
+                                        <h4 class="font-bold text-[#171717] text-sm mb-1">They sign up & sell</h4>
+                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed">Your referral creates a
+                                            Printumo account and completes their first successful sale.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-[34px] h-[34px] rounded bg-[#F1ECFF] text-[#7B53E7] flex items-center justify-center font-bold text-sm shrink-0">
+                                        3</div>
+                                    <div class="pt-0.5">
+                                        <h4 class="font-bold text-[#171717] text-sm mb-1">You both get paid</h4>
+                                        <p class="text-[#8f92a1] text-[13px] leading-relaxed">Earn 15% commission on
+                                            their first 3 months of sales. Payouts happen monthly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay md:hidden fixed inset-0 bg-[#000000]/50 z-40 hidden" onclick="closeDrawer()"></div>
+
+    <!-- Script  -->
+    <script>
+        // Copy referral link functionality
+        function copyReferralLink() {
+            const linkInput = document.getElementById('refLink');
+            const toast = document.getElementById('copyToast');
+
+            linkInput.select();
+            linkInput.setSelectionRange(0, 99999); // For mobile devices
+
+            navigator.clipboard.writeText(linkInput.value).then(() => {
+                // Show toast
+                toast.classList.remove('opacity-0');
+
+                // Hide toast after 3 seconds
+                setTimeout(() => {
+                    toast.classList.add('opacity-0');
+                }, 3000);
+            });
+        }
+
+        // Simulate Invite Sent 
+        function inviteSent(form) {
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <span class="text-white">Sent Successfully!</span>';
+            btn.classList.replace('bg-[#7B53E7] text-white', 'bg-[#10b981]');
+            btn.classList.replace('hover:bg-[#6b42d6]', 'hover:bg-[#059669]');
+            form.reset();
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.replace('bg-[#10b981]', 'bg-[#7B53E7] text-white');
+                btn.classList.replace('hover:bg-[#059669]', 'hover:bg-[#6b42d6]');
+            }, 3000);
+        }
+
+        // Toggle Mobile Drawer
+        const toggleBtn = document.getElementById('toggle-drawer');
+        const drawer = document.getElementById('left-navigation');
+        const overlay = document.getElementById('overlay');
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                drawer.classList.toggle('-translate-x-full');
+                overlay.classList.toggle('hidden');
+            });
+        }
+
+        function closeDrawer() {
+            if (!drawer.classList.contains('-translate-x-full')) {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Initialize mobile drawer state
+        if (window.innerWidth < 768) {
+            drawer.classList.add('-translate-x-full');
+            drawer.classList.add('transition-transform');
+            drawer.classList.add('duration-300');
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.add('hidden');
+            } else {
+                drawer.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+</body>
+
+</html>

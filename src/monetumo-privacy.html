@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/monetumo/fav.svg" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/monetumo/fav-16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/monetumo/fav-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/monetumo/fav-32.png" sizes="192x192" type="image/png" />
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <title>Monetumo | Privacy</title>
+
+    <style>
+        @font-face {
+            font-family: "Avenir Next Cyr Medium";
+            src: url("./font/Avenir Next Cyr Medium.ttf") format("truetype");
+        }
+
+        body {
+            font-family: "Avenir Next Cyr Medium", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- header start here  -->
+    <header class="sticky top-0 left-0 z-50 bg-[#132D46] momentoheader">
+        <!-- Navbar -->
+        <div class="flex items-center justify-between px-5 max-w-[1240px] mx-auto py-5 lg:py-6 relative bg-[#132D46]"
+            id="nav-main">
+            <!-- Desktop Logo -->
+            <div class="block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                <a href="/src/monetumo.html" class="block">
+                    <img src="./assets/monetumo/logo.svg" class="w-[124px] sm:w-[174px]" alt="Logo">
+                </a>
+            </div>
+            <div class="flex flex-1 justify-end lg:space-x-4 2xl:space-x-9 items-center">
+                <!-- Hamburger Icon (Visible only on mobile) -->
+                <button id="momentodrawer-button" class="lg:hidden me-3" aria-label="open sidebar">
+                    <img src="./assets/monetumo/hamburger.png" alt="Menu Icon">
+                </button>
+                <!-- Desktop Menu Items (Visible on large screens) -->
+                <ul class="hidden lg:flex lg:space-x-4 2xl:space-x-7">
+                    <li><a href="#"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">About
+                            Us</a></li>
+                    <li><a href="/src/about-us.html"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Book
+                            a Demo</a></li>
+                    <li><a href="#"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Join
+                            the Waitlist</a></li>
+                    <li><a href="/src/contact-us.html"
+                            class="font-medium text-sm xl:text-base text-[#FCFEFD] hover:text-[#00E980] capitalize tracking-[.50px]">Referral
+                            Program</a></li>
+                </ul>
+                <!-- Sign Up Button -->
+                <div class="hidden lg:flex lg:items-center lg:gap-4">
+                    <a href="#"
+                        class="bg-[#00E980] hover:bg-[#FCFEFD] py-[10px] px-[18px] tracking-[0.5px] text-sm xl:text-lg font-medium rounded-lg flex items-center gap-2">
+                        <span>Book a Free</span> <span><img src="./assets/monetumo/arr-ford.svg" class="w-6"
+                                alt=""></span>
+                    </a>
+                    <a href="#"
+                        class="bg-[#FCFEFD] hover:bg-[#00E980] py-[10px] px-[18px] tracking-[0.5px] text-sm xl:text-lg font-medium rounded-lg">
+                        Join the Waitlist
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar Drawer -->
+        <div id="momentodrawer"
+            class="w-full fixed top-0 left-0 h-full bg-[#132D46] shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="p-5 h-screen flex flex-col">
+                <div class="flex-1">
+                    <div class="flex items-center justify-between">
+                        <div class="block text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                            <a href="/src/monetumo.html" class="block">
+                                <img src="./assets/monetumo/logo.svg" class="w-[124px]" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- Close Button -->
+                        <button class="w-9" aria-label="close sidebar" onclick="closeMomentoDrawer()">
+                            <img src="./assets/monetumo/close.svg" alt="">
+                        </button>
+                    </div>
+                    <!-- Sidebar Content -->
+                    <ul class="space-y-5 mt-16">
+                        <li><a href="#"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">About
+                                Us</a></li>
+                        <li><a href="/src/about-us.html"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Book
+                                a Demo</a></li>
+                        <li><a href="#"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Join
+                                the Waitlist</a></li>
+                        <li><a href="/src/contact-us.html"
+                                class="font-bold text-[28px] text-[#FCFEFD] hover:text-[#00E980] capitalize">Referral
+                                Program</a></li>
+                    </ul>
+                </div>
+                <div class="p-[1px] rounded-xl bg-gradient-to-r from-[#526374] to-[#9ABADA66]">
+                    <div class="rounded-xl bg-[#243C53] p-5">
+                        <p class="text-base text-[#FCFEFD] font-semibold tracking-[1px]">Have any questions?</p>
+                        <form action="" class="mt-5 space-y-3">
+                            <div class="relative">
+                                <label for="subscribeInput"
+                                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
+                                    <img src="./assets/monetumo/mail.svg" alt="Mail Icon" class="w-full h-full">
+                                </label>
+                                <input type="text" id="subscribeInput" placeholder="Enter your email..." class="pl-10 pr-3 py-[10px] bg-[#F2F4F8] font-medium text-base text-[#132D46] 
+                                           placeholder:text-[#697077] focus-visible:outline-none w-full rounded-md">
+                            </div>
+                            <button
+                                class="text-[#132D46] font-medium text-lg bg-[#00E980] hover:bg-[#FCFEFD] w-full py-[10px] rounded-lg tracking-[0.5px]">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- main content  -->
+    <main>
+        <!-- hero section start here  -->
+        <section class="bg-[#132D46]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20">
+                <div class="text-center space-y-6">
+                    <h3
+                        class="bg-[#37E4792E] p-3 font-bold text-xs lg:text-[20px] text-[#00E980] rounded inline-block tracking-[1px] uppercase">
+                        Last updated on March 25, 2024
+                    </h3>
+                    <h1 class="text-[#FCFEFD] font-bold text-[28px] lg:text-[42px] leading-tight">
+                        Privacy Policy
+                    </h1>
+                </div>
+                <div class="mt-12 lg:mt-[76px] text-center lg:text-start">
+                    <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px]">General</h2>
+                    <p class="py-5 lg:py-8 font-normal text-[#9EA4B4] text-[12px] lg:text-[24px]">This Privacy Policy
+                        ("Privacy Policy") for the company "Monetumo" ("Company", "we", "our", "us")
+                        describes how we
+                        collect, use, and disclose information about users of the Company's website (<a
+                            href="http://www.monetumo.com/" class="underline">www.monetumo.com</a>)
+                        ("Website"),
+                        applications, services, tools, and features (collectively, and together with the Website, the
+                        "Services").</p>
+                    <p class="font-normal text-[#9EA4B4] text-[12px] lg:text-[24px]">For the purposes of this Privacy
+                        Policy, "you" and "your" refer to you as the user of the
+                        Services. Please read this
+                        Privacy Policy carefully so that you understand your rights regarding your personal information,
+                        and how we will
+                        collect, use, and process your personal information. This Privacy Policy supplements any other
+                        privacy-related notices
+                        and policies we may provide to you from time to time, and is not intended to replace them. If
+                        you do not agree with this
+                        Privacy Policy in general or any part of it, you should not access the Website, use our
+                        Services, or otherwise provide
+                        your information to us.
+                        Let me know if you need further adjustments!</p>
+                </div>
+            </div>
+        </section>
+        <!-- The Information We Collect  -->
+        <section class="bg-[#132D46]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20">
+                <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px] text-center lg:text-start">The
+                    Information We Collect
+                </h2>
+                <h3 class="font-medium text-[#FCFEFD] text-[18px] lg:text-[28px] py-5 lg:pb-7">Information You Provide
+                    to Us</h3>
+                <p class="font-normal text-[#9EA4B4] text-[12px] lg:text-[24px] text-center lg:text-start">
+                    Depending on your interactions with our Services or by contacting us via phone, email, or other
+                    channels, you may
+                    provide some or all of the following personal information. This information is necessary to enable
+                    us to fulfill our
+                    contract with you (e.g., applicable terms of service) or as otherwise described below. By
+                    subscribing to or using our
+                    Services, creating an account, or contacting us through our Services, phone, text/SMS, email, social
+                    media, instant
+                    chat, our “Contact Us” page, or other means, you may provide:
+                </p>
+                <ul
+                    class="mt-8 list-disc text-[12px] lg:text-[24px] text-[#FCFEFD] font-semibold space-y-5 lg:space-y-8 ml-5 lg:ml-8">
+                    <li>Contact Details, <span class="text-[#9EA4B4] font-normal"> such as your name, address, phone
+                            number, and email address. If you do not provide this information, we
+                            will be unable to deliver our Services to you.</span></li>
+                    <li>Account Information, <span class="text-[#9EA4B4] font-normal"> such as your username, password,
+                            and security questions. This information is required to create and
+                            maintain your account. If you choose to register for an account, you are responsible for
+                            keeping your login credentials
+                            secure. We strongly advise against sharing your username, password, or other account details
+                            with anyone. If you suspect
+                            your account has been compromised, please notify us immediately.</span></li>
+                    <li>Payment Information, <span class="text-[#9EA4B4] font-normal"> such as your bank account
+                            details, credit or debit card information, tax identification number, and
+                            billing address. This information is necessary to process payments for our Services. Without
+                            this information, we will
+                            be unable to provide you with access to the Services.</span></li>
+                    <li>Tax and Identification Information, <span class="text-[#9EA4B4] font-normal"> including, where
+                            applicable, your Social Security Number or other government-issued
+                            identification numbers. This information may be collected for business purposes such as
+                            completing transactions,
+                            fulfilling legal obligations, preventing fraud, protecting our Services and users, or
+                            supporting other operational
+                            needs. If you do not provide this information, we will not be able to process your payments
+                            or deliver the requested
+                            Services.</span></li>
+                </ul>
+            </div>
+        </section>
+        <!-- How We Process Your Personal Information  -->
+        <section class="bg-[#132D46]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20">
+                <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px] text-center lg:text-start">How We Process
+                    Your Personal Information</h2>
+                <p
+                    class="font-normal text-[#9EA4B4] text-[12px] lg:text-[24px] text-center lg:text-start my-5 lg:mb-6 lg:mt-7">
+                    At Monetumo, we process your personal information to fulfill our contract with you, including:</p>
+                <ul class="list-disc text-[#9EA4B4] text-[12px] lg:text-[24px] ml-5 lg:ml-8">
+                    <li>Providing access to our Services, content, and Website functionality.</li>
+                    <li>Registering and maintaining your account.</li>
+                    <li>Processing payments for the Services you use.</li>
+                </ul>
+                <h3 class="font-medium text-[#FCFEFD] text-[18px] lg:text-[28px] my-5 lg:mt-8 lg:mb-7">With Your Consent
+                </h3>
+                <p class="font-normal text-[#9EA4B4] text-[12px] lg:text-[24px] text-center lg:text-start">
+                    When required by law, we obtain your consent to process your personal information for the following
+                    purposes:
+                </p>
+                <ul class="list-disc text-[#9EA4B4] text-[12px] lg:text-[24px] ml-5 lg:ml-14 mt-5 lg:mt-2">
+                    <li>Personalizing your experience with our Services.</li>
+                    <li>Communicating with you about products, services, promotions, events, and updates we believe may
+                        interest you.</li>
+                </ul>
+                <h3 class="font-medium text-[#FCFEFD] text-[18px] lg:text-[28px] my-5 lg:mt-8 lg:mb-7">For Legitimate
+                    Business Interests</h3>
+                <p class="font-normal text-[#9EA4B4] text-[12px] lg:text-[24px] text-center lg:text-start">
+                    To provide responsive and effective Services, as well as maintain our business relationship, we use
+                    your personal
+                    information to:
+                </p>
+                <ul class="list-disc text-[#9EA4B4] text-[12px] lg:text-[24px] ml-5 lg:ml-8 mt-5 lg:mt-2">
+                    <li>Administer and improve the Services, including troubleshooting, data analysis, testing,
+                        research, and statistical or
+                        survey analysis.</li>
+                    <li>Maintain the safety and security of our users, Services, and business operations.</li>
+                    <li>Send you important announcements related to security, privacy, or administrative matters (these
+                        are non-marketing
+                        communications and cannot be opted out of).</li>
+                </ul>
+            </div>
+        </section>
+        <!-- How Where We Store Your Information  -->
+        <section class="bg-[#FCFEFD]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20 text-center lg:text-start">
+                <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px]">How Where We Store Your Information</h2>
+                <div class="mt-6 lg:mt-7 font-normal text-[#6A6E79] text-[12px] lg:text-[24px] space-y-6">
+                    <p>The personal information we collect from you may be transferred to, stored in, and processed in
+                        countries outside the
+                        European Economic Area (“EEA”) and the United Kingdom (“UK”). Additionally, your information may
+                        be processed by staff
+                        located outside the EEA and UK who work for Monetumo or for one of our third-party service
+                        providers or partners.</p>
+                    <p>Whenever we transfer personal data outside the EEA or UK, we ensure it is to countries that
+                        provide an adequate level of
+                        data protection as required under the GDPR. We will take all necessary steps to ensure that your
+                        personal information is
+                        handled securely and in compliance with this Privacy Policy.</p>
+                    <p>For more information about data transfers, please contact us at <a
+                            href="mailto:privacy@monetumo.com">privacy@monetumo.com</a>.</p>
+                    <p>Let me know if you'd like further refinements!</p>
+                </div>
+            </div>
+        </section>
+        <!-- Cookies  -->
+        <section class="bg-[#F7FBFF]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20 text-center lg:text-start">
+                <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px]">Cookies</h2>
+                <div class="mt-6 lg:mt-7 font-normal text-[#6A6E79] text-[12px] lg:text-[24px] space-y-6">
+                    <p>We utilize cookies and similar technologies to gather information about your browsing behavior
+                        across different websites
+                        and over time while you use our Services. Cookies enable us to identify and count the number of
+                        users, as well as track
+                        how users navigate our Website. This helps us enhance our Services and improve the overall
+                        functionality of our Website.
+                        For further details on cookies and how to manage them, please visit this page.</p>
+                    <p>For additional information, refer to our Cookies Policy available here.</p>
+                </div>
+            </div>
+        </section>
+        <!-- How Monitumo Shares Your Information  -->
+        <section class="bg-[#FCFEFD]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20 text-center lg:text-start">
+                <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px]">How Monitumo Shares Your Information
+                </h2>
+                <p class="my-6 lg:mt-7 font-normal text-[#6A6E79] text-[12px] lg:text-[24px]">We do not use or share
+                    your personal
+                    information except as outlined in this Privacy Policy. In certain cases, we may
+                    share it with third parties, including:</p>
+                <ul class="list-disc text-[#6A6E79] text-[12px] lg:text-[24px] ml-5 lg:ml-8 space-y-6 text-start">
+                    <li>Service Providers: We may share your information with vendors for business purposes, such as
+                        data storage, security, IT
+                        services, and payment processing.</li>
+                    <li>Business Clients: We may share information with clients who use our Services, including about
+                        your activity on their
+                        site.</li>
+                    <li>Professional Advisors: We may share personal information with auditors, law firms, or accounting
+                        firms as necessary.</li>
+                    <li>Legal and Security: We may share your information with regulators, law enforcement, or other
+                        authorities to comply with
+                        legal obligations or protect our Services.</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Security  -->
+        <section class="bg-[#132D46]">
+            <div class="px-5 lg:px-0 max-w-[865px] mx-auto py-9 lg:py-20 text-center lg:text-start">
+                <h2 class="font-bold text-[#00E980] text-[28px] lg:text-[42px]">Security</h2>
+                <p class="mt-5 lg:mt-7 font-normal text-[#9EA4B4] text-[12px] lg:text-[24px]">We have put in place
+                    measures to protect your personal information from accidental loss, as well as from unauthorized
+                    access, use, alteration, and disclosure. While we strive to ensure the safety of your personal
+                    information, we cannot
+                    guarantee the security of any information transmitted through our Services or via email; such
+                    transmission is done at
+                    your own risk.</p>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- footer  -->
+    <footer class="bg-[#F7FBFF] py-12">
+        <div class="mx-auto px-5 max-w-[1240px]">
+            <!-- footer upper  -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-8 lg:pb-12">
+                <div class="w-[124px] lg:w-[174px]">
+                    <img src="./assets/monetumo/footer-logo.svg" class="w-full" alt="">
+                </div>
+                <div class="flex-1">
+                    <form action="" class="flex items-center justify-start md:justify-end gap-2 lg:gap-12">
+                        <div class="relative flex-grow md:flex-grow-0 md:w-[349px]">
+                            <label for="subscribeInput"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6">
+                                <img src="./assets/monetumo/mail.svg" alt="Mail Icon" class="w-full h-full">
+                            </label>
+                            <input type="text" id="subscribeInput"
+                                placeholder="Enter your email to get the latest news..."
+                                class="pl-12 pr-3 py-[11.5px] bg-[#9EA4B433] border-b border-[#9EA4B4] text-base text-[#6A6E79] focus-visible:outline-none w-full">
+                        </div>
+                        <button
+                            class="text-[#132D46] hover:text-[#fff] font-medium text-lg bg-[#00E980] hover:bg-[#132D46]  py-[10px] px-5 lg:px-[26px] rounded-lg tracking-[0.5px]">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <!-- footer menu  -->
+            <div class="border-y border-y-[#C1C7CD] py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-4 gap-3">
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">About
+                        Monetumo</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Book a
+                        Demo</a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Join the
+                        Waitlist</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Referral
+                        Program</a>
+                </div>
+                <div class="space-y-3">
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Privacy
+                        Policy</a>
+                    <a href="#" class="block font-medium text-[#243C53] hover:text-[#2e865e] text-[16px]">Terms of
+                        Service</a>
+                </div>
+                <div class="mt-12 lg:mt-0">
+                    <div class="flex items-center gap-2 justify-start lg:justify-end">
+                        <a href="#" class="block w-[120px]"><img src="./assets/monetumo/apple.svg" class="w-full"
+                                alt=""></a>
+                        <a href="#" class="block w-[135px]"><img src="./assets/monetumo/google.svg" class="w-full"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!-- copy right  -->
+            <div class="pt-8 lg:pt-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                <p class="font-normal text-[12px] md:text-[14px] text-[#243C53]">Monetumo @ 2025. All rights reserved.
+                </p>
+                <p class="font-medium text-[14px] md:text-[16px] text-[#243C53]">Monetumo: Your partner in maximizing
+                    website revenue, transparently and effortlessly.</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- Script  -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./script/momentuNavbar.js"></script>
+</body>
+
+</html>

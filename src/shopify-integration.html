@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <title>Shopify Integration - Printumo</title>
+
+  <!-- Splide.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+  <style>
+    @keyframes pulse-shopify {
+      0% {
+        box-shadow: 0 0 0 0 rgba(149, 208, 58, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(149, 208, 58, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(149, 208, 58, 0);
+      }
+    }
+    @keyframes pulse-printumo {
+      0% {
+        box-shadow: 0 0 0 0 rgba(94, 51, 185, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(94, 51, 185, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(94, 51, 185, 0);
+      }
+    }
+    @keyframes arrow-flow {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+    @keyframes timeline-pulse {
+      0%, 100% {
+        background: linear-gradient(180deg, #9333ea 0%, #7c3aed 50%, #6366f1 100%);
+        box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+      }
+      50% {
+        background: linear-gradient(180deg, #a855f7 0%, #8b5cf6 50%, #7c3aed 100%);
+        box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+      }
+    }
+    @keyframes timeline-dot-pulse {
+      0%, 100% {
+        transform: scale(1);
+        background: #9333ea;
+        box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7);
+      }
+      50% {
+        transform: scale(1.1);
+        background: #a855f7;
+        box-shadow: 0 0 0 8px rgba(147, 51, 234, 0);
+      }
+    }
+    .animate-pulse-shopify {
+      animation: pulse-shopify 3s infinite;
+      animation-delay: 0.5s;
+    }
+    .animate-pulse-printumo {
+      animation: pulse-printumo 3s infinite;
+      animation-delay: 2s;
+    }
+    .animate-arrow-flow {
+      animation: arrow-flow 2s ease-in-out infinite;
+    }
+    .animate-arrow-flow-reverse {
+      animation: arrow-flow 2s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    .timeline-line {
+      animation: timeline-pulse 3s ease-in-out infinite;
+    }
+    .timeline-dot {
+      animation: timeline-dot-pulse 2s ease-in-out infinite;
+    }
+    .timeline-dot:nth-child(2) { animation-delay: 0.3s; }
+    .timeline-dot:nth-child(3) { animation-delay: 0.6s; }
+    .timeline-dot:nth-child(4) { animation-delay: 0.9s; }
+    .timeline-dot:nth-child(5) { animation-delay: 1.2s; }
+    .timeline-dot:nth-child(6) { animation-delay: 1.5s; }
+
+    /* FAQ Accordion Styles */
+    .faq-checkbox {
+        display: none;
+    }
+    
+    .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    
+    .faq-checkbox:checked + .faq-label + .faq-content {
+        max-height: 200px;
+    }
+    
+    .faq-checkbox:checked + .faq-label .faq-icon {
+        transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- hero start -->
+    <section id="shopifyIntegrationHero" class="pt-[22px] pb-[20px] md:pt-[58px] md:pb-[52px]">
+      <div class="max-w-[1328px] mx-auto px-4">
+        <div class="grid grid-cols-12 md:gap-4 gap-y-9">
+          <div class="col-span-12 md:col-span-6 flex items-center justify-center md:justify-start order-2 md:order-1">
+            <!-- content -->
+            <div class="text-center md:text-left">
+              <h1
+                class="md:max-w-[576px] max-w-[343px] md:text-[58px] text-[28px] text-[#222222] font-bold md:leading-[76px] mx-auto md:mx-0">
+                Shopify Print On Demand
+              </h1>
+              <ul class="text-sm lg:text-xl text-black-7 font-normal py-6 space-y-3">
+                <li class="flex text-left items-center gap-x-3">
+                    <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                    <span class="flex-1">Automatic order sync and fulfillment</span>
+                </li>
+                <li class="flex text-left items-center gap-x-3">
+                    <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                    <span class="flex-1">Premium canvas prints and wall art</span>
+                </li>
+                <li class="flex text-left items-center gap-x-3">
+                    <span><img src="./assets//lp2/icons/check.svg" class="w-5 sm:w-6" alt="Check Icon"></span>
+                    <span class="flex-1">Global shipping to 32 countries</span>
+                </li>
+              </ul>
+              <div class="w-full flex flex-col md:flex-row gap-4">
+                <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                  Get Started
+                </a>
+                <a href="#" class="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-gray-300 text-black-5 rounded-xl hover:border-purple-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                  <span>View Documentation</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 md:col-span-6 flex items-center lg:justify-end justify-center md:justify-start order-1 md:order-2">
+            <!-- Custom Integration Illustration -->
+            <div class="w-full max-w-[565px] md:max-w-[565px] max-w-[280px] mx-auto">
+              <div class="flex items-center justify-center gap-2 md:gap-4 p-4 md:p-8">
+                
+                <!-- Shopify Card -->
+                <div class="animate-pulse-shopify rounded-2xl">
+                  <div class="bg-white rounded-2xl shadow-xl p-3 md:p-6 w-20 md:w-32 h-24 md:h-40 flex flex-col items-center justify-center border-2 border-gray-100 hover:scale-105 transition-transform duration-300">
+                    <div class="w-8 md:w-16 h-8 md:h-16 mb-1 md:mb-3 flex items-center justify-center">
+                      <img src="./assets/integrations/shopify.svg" alt="Shopify" class="w-6 md:w-12 h-6 md:h-12 object-contain" />
+                    </div>
+                    <h3 class="text-xs md:text-sm font-bold text-center">Shopify</h3>
+                  </div>
+                </div>
+
+                <!-- Arrow Right -->
+                <div class="flex flex-col gap-1 md:gap-2">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black md:w-10 md:h-5">
+                      <path d="M5 10h30"></path>
+                      <path d="M30 5l5 5-5 5"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black rotate-180 md:w-10 md:h-5">
+                      <path d="M5 10h30"></path>
+                      <path d="M30 5l5 5-5 5"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Product Card -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-lg p-3 md:p-6 w-24 md:w-40 h-28 md:h-48 flex flex-col items-center justify-center border-2 border-gray-200">
+                  <div class="w-12 md:w-20 h-12 md:h-20 mb-2 md:mb-4 bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="./assets/1.png" alt="Canvas Print" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xs md:text-sm font-bold text-gray-800 text-center mb-1 md:mb-2">Product</h3>
+                </div>
+
+                <!-- Arrow Right -->
+                <div class="flex flex-col gap-1 md:gap-2">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black md:w-10 md:h-5">
+                      <path d="M5 10h30"></path>
+                      <path d="M30 5l5 5-5 5"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black rotate-180 md:w-10 md:h-5">
+                      <path d="M5 10h30"></path>
+                      <path d="M30 5l5 5-5 5"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Printumo Card -->
+                <div class="animate-pulse-printumo rounded-2xl">
+                  <div class="bg-white rounded-2xl shadow-xl p-3 md:p-6 w-20 md:w-32 h-24 md:h-40 flex flex-col items-center justify-center border-2 border-purple-100 hover:scale-105 transition-transform duration-300">
+                    <div class="w-8 md:w-16 h-8 md:h-16 mb-1 md:mb-3 flex items-center justify-center">
+                      <img src="./assets/integrations/logomark.svg" alt="Printumo" class="w-6 md:w-12 h-6 md:h-12 object-contain" />
+                    </div>
+                    <h3 class="text-xs md:text-sm font-bold text-center">Printumo</h3>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Easy Steps Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <h2 class="text-center font-bold text-black-5 text-3xl lg:text-[40px] mb-12">3 Easy Steps to Get Started</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Step 1: Create Account -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-1">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="font-bold text-black-5 text-xl lg:text-2xl mb-4">1. Sign up to Printumo for free</h3>
+          <p class="text-black-7 text-base lg:text-lg">Sign up for free in under 2 minutes. No upfront costs or commitments.</p>
+        </div>
+
+        <!-- Step 2: Integrate with Shopify -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            <img src="./assets/integrations/shopify.svg" alt="Shopify" class="w-12 h-12" />
+          </div>
+          <h3 class="font-bold text-black-5 text-xl lg:text-2xl mb-4">2. Integrate with Shopify</h3>
+          <p class="text-black-7 text-base lg:text-lg">Connect your Shopify store and sync orders in just a few clicks.</p>
+        </div>
+
+        <!-- Step 3: Add Products -->
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-1">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-black-5 text-xl lg:text-2xl mb-4">3. Add Your Products to Shopify</h3>
+          <p class="text-black-7 text-base lg:text-lg">Create products in Printumo and add them to Shopify.</p>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="text-center mt-12">
+        <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+          Get Started Now
+        </a>
+      </div>
+    </section>
+
+    <!-- What is Shopify Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+        <div class="w-full lg:flex-1 text-center lg:text-left">
+          <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 font-extrabold">What is Shopify?</h2>
+          <p class="text-black-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+            Think of Shopify as your complete online store builder. It's a website that helps you create your own online shop where customers can browse and buy your products.
+          </p>
+          <ul class="text-base lg:text-xl text-black-5 font-normal py-3 lg:py-4 space-y-3">
+            <li class="flex gap-x-2">
+              <span class="flex-1"><span class="font-semibold">Your own website:</span> Get a professional online store that looks great on phones and computers.</span>
+            </li>
+            <li class="flex gap-x-2">
+              <span class="flex-1"><span class="font-semibold">Handle payments:</span> Customers can pay you safely with credit cards, PayPal, and more.</span>
+            </li>
+            <li class="flex gap-x-2">
+              <span class="flex-1"><span class="font-semibold">Manage everything:</span> Track orders, view sales, and communicate with customers all in one place.</span>
+            </li>
+          </ul>
+          <div class="mt-6">
+            <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+              Get started for free
+            </a>
+          </div>
+        </div>
+        <div class="w-full lg:flex-1">
+          <img 
+            src="./assets/lp2/img/automatic-1x.png"
+            srcset="./assets/lp2/img/automatic-1x.png 1x, ./assets/lp2/img/automatic-2x.png 2x, ./assets/lp2/img/automatic-3x.png 3x"
+            class="w-full rounded-2xl"
+            alt="Shopify store illustration" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- How the Shopify Integration Works Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <div class="text-center mb-16">
+        <h2 class="font-extrabold text-black-5 text-3xl sm:text-5xl xl:text-[58px] max-w-[800px] mx-auto">How the Shopify Integration Works</h2>
+      </div>
+      
+      <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-12">
+          <!-- Timeline Steps -->
+          <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-16 md:gap-8">
+            <!-- Step 1: Customer Purchase -->
+            <div class="flex flex-col items-center text-center flex-1">
+              <div class="mb-12 w-full max-w-[200px]">
+                <img 
+                  src="./assets/how-it-works/step1-shopping.webp"
+                  class="w-full h-auto"
+                  alt="Customer Purchase" 
+                />
+              </div>
+              <div class="relative w-full flex justify-center">
+                <div class="w-[60px] h-[60px] bg-white-1 rounded-full flex items-center justify-center text-black-5 text-xl font-medium border-2 border-[#E5E7EB] relative z-10">1</div>
+                <!-- Connecting Line -->
+                <div class="hidden md:block absolute top-[29px] left-[50%] w-full h-[2px] border-t-2 border-dashed border-[#E5E7EB]"></div>
+              </div>
+              <h3 class="text-xl font-bold text-black-5 mt-6 mb-2">Customer Purchase</h3>
+              <p class="text-base text-black-7 max-w-[250px]">Your customer places an order through your store</p>
+            </div>
+
+            <!-- Step 2: Printumo -->
+            <div class="flex flex-col items-center text-center flex-1">
+              <div class="mb-12 w-full max-w-[200px]">
+                <img 
+                  src="./assets/how-it-works/step2-printing.webp"
+                  class="w-full h-auto"
+                  alt="Printumo Production" 
+                />
+              </div>
+              <div class="relative w-full flex justify-center">
+                <div class="w-[60px] h-[60px] bg-white-1 rounded-full flex items-center justify-center text-black-5 text-xl font-medium border-2 border-[#E5E7EB] relative z-10">2</div>
+                <!-- Connecting Line -->
+                <div class="hidden md:block absolute top-[29px] left-[50%] w-full h-[2px] border-t-2 border-dashed border-[#E5E7EB]"></div>
+              </div>
+              <h3 class="text-xl font-bold text-black-5 mt-6 mb-2">Printumo</h3>
+              <p class="text-base text-black-7 max-w-[250px]">We handle printing, framing, and shipping of your artwork</p>
+            </div>
+
+            <!-- Step 3: Customer Receives -->
+            <div class="flex flex-col items-center text-center flex-1">
+              <div class="mb-12 w-full max-w-[200px]">
+                <img 
+                  src="./assets/how-it-works/step3-arrival.webp"
+                  class="w-full h-auto"
+                  alt="Customer Receives" 
+                />
+              </div>
+              <div class="relative w-full flex justify-center">
+                <div class="w-[60px] h-[60px] bg-white-1 rounded-full flex items-center justify-center text-black-5 text-xl font-medium border-2 border-[#E5E7EB] relative z-10">3</div>
+              </div>
+              <h3 class="text-xl font-bold text-black-5 mt-6 mb-2">Customer Receives</h3>
+              <p class="text-base text-black-7 max-w-[250px]">Your customer receives their beautifully crafted artwork</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Why Shopify Print On Demand with Printumo Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <div class="text-center mb-20 lg:mb-24">
+        <h2 class="font-extrabold text-black-5 text-3xl sm:text-5xl xl:text-[58px] max-w-[800px] mx-auto">Why Shopify Print On Demand with Printumo</h2>
+      </div>
+
+      <!-- Feature 1: No Inventory Management -->
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-16 lg:mb-24">
+        <div class="w-full lg:flex-1 text-center lg:text-left">
+          <h3 class="text-2xl lg:text-[32px] text-black-5 font-extrabold">No Inventory Management</h3>
+          <p class="text-black-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+            Focus on creating amazing designs while we handle everything else. No need to buy, store, or ship physical products. When a customer orders from your Shopify store, we automatically print and ship their canvas directly to them.
+          </p>
+          <div class="mt-6">
+            <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+              Get started for free
+            </a>
+          </div>
+        </div>
+        <div class="w-full lg:flex-1">
+          <img 
+            src="./assets/lp2/img/b2b-1x.png"
+            srcset="./assets/lp2/img/b2b-1x.png 1x, ./assets/lp2/img/b2b-2x.png 2x, ./assets/lp2/img/b2b-3x.png 3x"
+            class="w-full rounded-2xl"
+            alt="b2b print production" 
+          />
+        </div>
+      </div>
+
+      <!-- Feature 2: Automatic Order Processing -->
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20 mb-16 lg:mb-24">
+        <div class="w-full lg:flex-1 text-center lg:text-left">
+          <h3 class="text-2xl lg:text-[32px] text-black-5 font-extrabold">Automatic Order Processing</h3>
+          <p class="text-black-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+            Your Shopify store connects seamlessly with Printumo. When customers place orders, we receive them instantly and start production. No manual work needed - you can literally make sales while you sleep.
+          </p>
+          <div class="mt-6">
+            <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+              Get started for free
+            </a>
+          </div>
+        </div>
+        <div class="w-full lg:flex-1">
+          <img 
+            src="./assets/integrations/orders-sync-1x.png"
+            srcset="./assets/integrations/orders-sync-1x.png 1x, ./assets/integrations/orders-sync-2x.png 2x, ./assets/integrations/orders-sync-3x.png 3x"
+            class="w-full rounded-2xl"
+            alt="Automatic order processing" 
+          />
+        </div>
+      </div>
+
+        <!-- Feature 3: Complete White Label Solution -->
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-16 lg:mb-24">
+          <div class="w-full lg:flex-1 text-center lg:text-left">
+            <h3 class="text-2xl lg:text-[32px] text-black-5 font-extrabold">Complete White Label Solution</h3>
+            <p class="text-black-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+              Your Shopify customers only see your brand. We handle everything behind the scenes with unbranded packaging, shipping labels, and documentation. Build your brand identity without any mention of Printumo or Shopify.
+            </p>
+            <div class="mt-6">
+              <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+                Get started for free
+              </a>
+            </div>
+          </div>
+          <div class="w-full lg:flex-1">
+             <img 
+              src="./assets/lp3/f5-1x.png 1x"
+              srcset="./assets/lp3/f5-1x.png 1x, ./assets/lp3/f5-2x.png 2x, ./assets/lp3/f5-3x.png 3x"
+              class="w-full rounded-2xl"
+              alt="White label solution" 
+            />
+          </div>
+        </div>
+
+      <!-- Feature 4: Global Shipping -->
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
+        <div class="w-full lg:flex-1 text-center lg:text-left">
+          <h3 class="text-2xl lg:text-[32px] text-black-5 font-extrabold">Global Shipping Network</h3>
+          <p class="text-black-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+            Expand your Shopify store's reach to customers worldwide. We ship to 32 countries with local fulfillment centers, ensuring fast delivery and lower shipping costs for your international customers.
+          </p>
+          <div class="mt-6">
+            <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+              Get started for free
+            </a>
+          </div>
+        </div>
+        <div class="w-full lg:flex-1">
+          <img 
+            src="./assets/lp2/img/sell-1x.png"
+            srcset="./assets/lp2/img/sell-1x.png 1x, ./assets/lp2/img/sell-2x.png 2x, ./assets/lp2/img/sell-3x.png 3x"
+            class="w-full rounded-2xl"
+            alt="Global shipping network" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect Your Shopify Store Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 lg:py-24">
+      <div class="bg-purple-1 rounded-[32px] p-8 lg:p-12">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+          <div class="w-full lg:flex-1 text-center lg:text-left">
+            <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-white-1 font-extrabold">Connect Your Shopify Store</h2>
+            <p class="text-white-1 text-base lg:text-xl max-w-[950px] w-full my-2 lg:my-4">
+              Ready to start selling premium canvas prints through your Shopify store? Our seamless integration makes it easy to connect your existing store or set up a new one with automated order processing and fulfillment.
+            </p>
+            <div class="mt-6">
+              <a href="#" class="inline-block px-8 py-3 bg-white-1 border-2 border-white-1 text-purple-1 rounded-xl hover:bg-transparent hover:text-white-1 font-semibold transition-all duration-150">
+                Connect your Shopify store
+              </a>
+            </div>
+          </div>
+          <div class="w-full lg:flex-1">
+            <img 
+              src="./assets/integrations/art-1x.png"
+              srcset="./assets/integrations/art-1x.png 1x, ./assets/integrations/art-2x.png 2x, ./assets/integrations/art-3x.png 3x"
+              class="w-full rounded-2xl"
+              alt="Shopify Store Integration" 
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Timeline Section -->
+    <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Column: Title and Description -->
+        <div class="static lg:sticky lg:top-8">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black-5 mb-6">
+            What happens when you get an order from Shopify?
+          </h2>
+          <p class="text-lg md:text-xl text-black-7 leading-relaxed mb-8">
+            Our seamless integration automatically handles your entire order fulfillment process from start to finish. Here's exactly what happens behind the scenes when a customer places an order.
+          </p>
+          <a href="#" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+            Sync your store
+          </a>
+        </div>
+
+         <!-- Right Column: Timeline Steps -->
+         <div class="space-y-6 relative">
+           
+           <!-- Step 1 -->
+           <div class="sticky top-8 bg-white-1 rounded-2xl shadow-lg border-2 border-gray-300 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300" style="z-index: 10;">
+            <h3 class="text-2xl font-bold text-black-5 mb-4">1. Customer places order</h3>
+            <p class="text-lg text-black-7">A customer visits your Shopify store and places an order for one of your canvas prints.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="sticky top-12 bg-white-1 rounded-2xl shadow-lg border-2 border-gray-300 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300" style="z-index: 20;">
+            <h3 class="text-2xl font-bold text-black-5 mb-4">2. Order is synced to Printumo</h3>
+            <p class="text-lg text-black-7">The order is automatically synced from Shopify to Printumo with all shipping details and customer information.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="sticky top-16 bg-white-1 rounded-2xl shadow-lg border-2 border-gray-300 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300" style="z-index: 30;">
+            <h3 class="text-2xl font-bold text-black-5 mb-4">3. Order is ready for fulfillment</h3>
+            <p class="text-lg text-black-7">The order enters our fulfillment queue and is prepared for production at our printing facility.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="sticky top-20 bg-white-1 rounded-2xl shadow-lg border-2 border-gray-300 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300" style="z-index: 40;">
+            <h3 class="text-2xl font-bold text-black-5 mb-4">4. Order is printed</h3>
+            <p class="text-lg text-black-7">Your customer's canvas print is professionally printed using premium materials and quality-checked before packaging.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="sticky top-24 bg-white-1 rounded-2xl shadow-lg border-2 border-gray-300 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300" style="z-index: 50;">
+            <h3 class="text-2xl font-bold text-black-5 mb-4">5. Order is shipped with tracking</h3>
+            <p class="text-lg text-black-7">The finished print is shipped and a tracking link is automatically added to the Shopify order, triggering a tracking email to your customer.</p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="sticky top-28 bg-white-1 rounded-2xl shadow-lg border-2 border-gray-300 p-8 hover:shadow-xl hover:border-purple-200 transition-all duration-300" style="z-index: 60;">
+            <h3 class="text-2xl font-bold text-black-5 mb-4">6. Customer receives their order</h3>
+            <p class="text-lg text-black-7">Your customer receives their high-quality canvas print, complete with your branding and packaging. The order is now complete and your customer is happy with their purchase.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="px-4 max-w-[1328px] mx-auto pt-0 pb-16 md:pt-0 md:pb-24">
+        <div class="text-center mb-12">
+            <h2 class="font-bold text-black-5 text-3xl lg:text-5xl">
+                FAQ's
+            </h2>
+            <p class="text-lg md:text-xl text-black-7 mt-4 max-w-2xl mx-auto">
+                Everything you need to know about our Shopify integration
+            </p>
+        </div>
+
+        <div class="max-w-[800px] mx-auto space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="bg-[#f7f5fb] rounded-xl overflow-hidden">
+                <input type="checkbox" id="faq1" class="faq-checkbox">
+                <label for="faq1" class="faq-label flex items-center justify-between p-6 cursor-pointer">
+                    <h3 class="text-lg lg:text-xl font-semibold text-black-5">How long does it take to set up the Shopify integration?</h3>
+                    <svg class="faq-icon w-6 h-6 text-purple-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <div class="faq-content">
+                    <div class="px-6 pb-6">
+                        <p class="text-black-7 text-base lg:text-lg">
+                            The integration takes just a few minutes to set up. Simply install our app from the Shopify App Store, connect your Printumo account, and sync your products. You'll be ready to start selling canvas prints immediately.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-[#f7f5fb] rounded-xl overflow-hidden">
+                <input type="checkbox" id="faq2" class="faq-checkbox">
+                <label for="faq2" class="faq-label flex items-center justify-between p-6 cursor-pointer">
+                    <h3 class="text-lg lg:text-xl font-semibold text-black-5">Do I need to manage inventory or handle shipping?</h3>
+                    <svg class="faq-icon w-6 h-6 text-purple-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <div class="faq-content">
+                    <div class="px-6 pb-6">
+                        <p class="text-black-7 text-base lg:text-lg">
+                            No! That's the beauty of our integration. We handle everything automatically - from printing to packaging to shipping. You don't need to worry about inventory, storage, or shipping logistics. Just focus on marketing and growing your business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-[#f7f5fb] rounded-xl overflow-hidden">
+                <input type="checkbox" id="faq3" class="faq-checkbox">
+                <label for="faq3" class="faq-label flex items-center justify-between p-6 cursor-pointer">
+                    <h3 class="text-lg lg:text-xl font-semibold text-black-5">How are orders synchronized between Shopify and Printumo?</h3>
+                    <svg class="faq-icon w-6 h-6 text-purple-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <div class="faq-content">
+                    <div class="px-6 pb-6">
+                        <p class="text-black-7 text-base lg:text-lg">
+                            Orders are synchronized automatically in real-time. When a customer places an order on your Shopify store, it's instantly sent to Printumo with all the necessary details including shipping information, product specifications, and customer data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-[#f7f5fb] rounded-xl overflow-hidden">
+                <input type="checkbox" id="faq4" class="faq-checkbox">
+                <label for="faq4" class="faq-label flex items-center justify-between p-6 cursor-pointer">
+                    <h3 class="text-lg lg:text-xl font-semibold text-black-5">Will my customers know the products are printed by Printumo?</h3>
+                    <svg class="faq-icon w-6 h-6 text-purple-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <div class="faq-content">
+                    <div class="px-6 pb-6">
+                        <p class="text-black-7 text-base lg:text-lg">
+                            No, this is completely white-labeled. All products are shipped under your brand with your branding and packaging. Your customers will only see your store name and branding throughout the entire experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-[#f7f5fb] rounded-xl overflow-hidden">
+                <input type="checkbox" id="faq5" class="faq-checkbox">
+                <label for="faq5" class="faq-label flex items-center justify-between p-6 cursor-pointer">
+                    <h3 class="text-lg lg:text-xl font-semibold text-black-5">How do tracking updates work with Shopify?</h3>
+                    <svg class="faq-icon w-6 h-6 text-purple-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <div class="faq-content">
+                    <div class="px-6 pb-6">
+                        <p class="text-black-7 text-base lg:text-lg">
+                            When we ship an order, the tracking information is automatically added to the Shopify order. This triggers Shopify's built-in email system to send tracking details to your customer, keeping them informed about their order status.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="bg-[#f7f5fb] rounded-xl overflow-hidden">
+                <input type="checkbox" id="faq6" class="faq-checkbox">
+                <label for="faq6" class="faq-label flex items-center justify-between p-6 cursor-pointer">
+                    <h3 class="text-lg lg:text-xl font-semibold text-black-5">What happens if there's an issue with an order?</h3>
+                    <svg class="faq-icon w-6 h-6 text-purple-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
+                <div class="faq-content">
+                    <div class="px-6 pb-6">
+                        <p class="text-black-7 text-base lg:text-lg">
+                            We handle all customer service issues related to printing and shipping. If there's a problem with print quality or shipping, we'll work directly with you to resolve it quickly, including reprints or refunds when necessary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- UGC Marquee Slider Section -->
+        <section class="py-8 md:py-12">
+          <style>
+            /* UGC Marquee Slider Styles */
+            .ugc-marquee .splide__slide {
+              width: 280px;
+              flex-shrink: 0;
+            }
+            
+            .ugc-marquee .splide__list {
+              align-items: center;
+            }
+    
+            /* Video Overlay Styles */
+            .video-overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.8);
+              z-index: 9999;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              opacity: 0;
+              visibility: hidden;
+              transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+    
+            .video-overlay.active {
+              opacity: 1;
+              visibility: visible;
+            }
+    
+            .video-wrapper {
+              position: relative;
+              width: 90%;
+              max-width: 800px;
+              transform: scale(0.8);
+              transition: transform 0.3s ease;
+            }
+    
+            .video-overlay.active .video-wrapper {
+              transform: scale(1);
+            }
+    
+            .video-container {
+              position: relative;
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #000;
+              border-radius: 12px;
+              overflow: hidden;
+            }
+    
+            .video-container iframe {
+              width: 100%;
+              height: 100%;
+            }
+    
+            .video-close-btn {
+              position: absolute;
+              top: -60px;
+              right: 0;
+              background: white;
+              border: none;
+              border-radius: 50%;
+              width: 44px;
+              height: 44px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: background-color 0.2s ease;
+              z-index: 10001;
+              color: #333;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            }
+    
+            .video-close-btn:hover {
+              background: #f0f0f0;
+            }
+    
+            .video-close-btn svg {
+              width: 22px;
+              height: 22px;
+            }
+    
+            @media (max-width: 768px) {
+              .video-wrapper {
+                width: 95%;
+                max-width: none;
+              }
+              
+              .video-close-btn {
+                top: -55px;
+                right: 5px;
+                width: 40px;
+                height: 40px;
+              }
+    
+              .video-close-btn svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          </style>
+    
+          <div class="max-w-[1328px] mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 font-extrabold mb-4">
+                Loved by Artists
+              </h2>
+              <p class="text-base md:text-xl text-[#3A3A3A] max-w-2xl mx-auto">
+                See how our community is using Printumo to showcase their artwork and grow their business
+              </p>
+            </div>
+          </div>
+          
+          <!-- UGC Marquee Slider - Full Width -->
+          <div class="w-full overflow-hidden">
+            <div class="splide ugc-marquee" id="ugc-marquee-slider">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <!-- Slide 1 - Video -->
+                  <li class="splide__slide">
+                    <button onclick="openVideoOverlay('dQw4w9WgXcQ')" class="block relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px] w-full cursor-pointer">
+                      <img src="./assets/product/arts/women.svg" class="w-full h-full object-cover" alt="UGC Video">
+                      
+                      <!-- Play Button Overlay -->
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-[#7B53E7] rounded-full flex items-center justify-center shadow-lg hover:bg-[#6841d4] transition-colors">
+                          <svg class="w-8 h-8 text-white-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Emma Parker">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Emma Parker</h4>
+                            <p class="text-xs text-black-7">"The quality blew me away!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </li>
+                  
+                  <!-- Slide 2 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-1.jpg" class="w-full h-full object-cover" alt="UGC Image 1">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avata2.png" class="w-full h-full object-cover" alt="Michael Smith">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Michael Smith</h4>
+                            <p class="text-xs text-black-7">"My customers are amazed!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 3 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-2.jpg" class="w-full h-full object-cover" alt="UGC Image 2">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avatar3.png" class="w-full h-full object-cover" alt="Sarah Johnson">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Sarah Johnson</h4>
+                            <p class="text-xs text-black-7">"Fast shipping every time!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 4 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-3.jpg" class="w-full h-full object-cover" alt="UGC Image 3">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avata4.png" class="w-full h-full object-cover" alt="David Chen">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">David Chen</h4>
+                            <p class="text-xs text-black-7">"Colors are so vibrant!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 5 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-4.jpg" class="w-full h-full object-cover" alt="UGC Image 4">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avata5.png" class="w-full h-full object-cover" alt="Lisa Rodriguez">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Lisa Rodriguez</h4>
+                            <p class="text-xs text-black-7">"Best quality I've found!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 6 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-5.jpg" class="w-full h-full object-cover" alt="UGC Image 5">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avata6.png" class="w-full h-full object-cover" alt="Tom Wilson">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Tom Wilson</h4>
+                            <p class="text-xs text-black-7">"Exceeded my expectations!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 7 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-6.jpg" class="w-full h-full object-cover" alt="UGC Image 6">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Anna Taylor">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Anna Taylor</h4>
+                            <p class="text-xs text-black-7">"Perfect for my art studio!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- Slide 8 - Image -->
+                  <li class="splide__slide">
+                    <div class="relative rounded-xl overflow-hidden aspect-[9/16] bg-gray-100 h-[400px] md:h-[500px]">
+                      <img src="./assets/lp3/printumo-canvas-product-7.jpg" class="w-full h-full object-cover" alt="UGC Image 7">
+                      
+                      <!-- User Card -->
+                      <div class="absolute bottom-4 left-4 right-4 bg-white-1 rounded-xl p-3 z-10">
+                        <div class="flex items-center">
+                          <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden mr-3">
+                            <img src="./assets/avata2.png" class="w-full h-full object-cover" alt="Mark Garcia">
+                          </div>
+                          <div class="flex-1">
+                            <h4 class="font-bold text-black-5 text-sm">Mark Garcia</h4>
+                            <p class="text-xs text-black-7">"Customers love the quality!"</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- UGC Marquee Slider Script -->
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // Initialize UGC Marquee Slider
+              if (document.getElementById('ugc-marquee-slider')) {
+                console.log('Initializing Splide...'); // Debug log
+                console.log('Splide Extensions:', window.splide?.Extensions); // Debug log
+                
+                const splide = new Splide('#ugc-marquee-slider', {
+                  type: 'loop',
+                  drag: 'free',
+                  focus: 'center',
+                  perPage: 8,
+                  gap: '1rem',
+                  arrows: false,
+                  pagination: false,
+                  autoScroll: {
+                    speed: 0.7,
+                  },
+                  breakpoints: {
+                    2245: {
+                      perPage: 7,
+                      gap: '1.25rem',
+                    },
+                    1920: {
+                      perPage: 6,
+                      gap: '1.25rem',
+                    },
+                    1680: {
+                      perPage: 5,
+                      gap: '1rem',
+                    },
+                    1440: {
+                      perPage: 4,
+                      gap: '0.75rem',
+                    },
+                    1200: {
+                      perPage: 3,
+                      gap: '0.5rem',
+                    },
+                    1024: {
+                      perPage: 3,
+                      gap: '0.5rem',
+                    },
+                    900: {
+                      perPage: 2,
+                      gap: '0.25rem',
+                    },
+                    480: {
+                      perPage: 1.5,
+                      gap: '0.5rem',
+                    },
+                  },
+                });
+                
+                // Mount with all available extensions
+                try {
+                  splide.mount(window.splide.Extensions);
+                } catch (error) {
+                  console.error('Error mounting with extensions:', error);
+                  // Fallback to basic mount
+                  splide.mount();
+                }
+              }
+            });
+          </script>
+    
+          <!-- Video Overlay -->
+          <div id="videoOverlay" class="video-overlay" onclick="closeVideoOverlay(event)">
+            <div class="video-wrapper">
+              <button class="video-close-btn" onclick="closeVideoOverlay()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+              <div class="video-container">
+                <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Video Overlay JavaScript -->
+          <script>
+            function openVideoOverlay(videoId) {
+              const overlay = document.getElementById('videoOverlay');
+              const iframe = document.getElementById('videoFrame');
+              
+              // Set the YouTube embed URL with autoplay
+              iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+              
+              // Show the overlay
+              overlay.classList.add('active');
+              
+              // Prevent body scrolling
+              document.body.style.overflow = 'hidden';
+            }
+    
+            function closeVideoOverlay(event) {
+              // Only close if clicked on overlay background or close button
+              if (event && event.target.closest('.video-wrapper') && !event.target.closest('.video-close-btn')) {
+                return;
+              }
+              
+              const overlay = document.getElementById('videoOverlay');
+              const iframe = document.getElementById('videoFrame');
+              
+              // Hide the overlay
+              overlay.classList.remove('active');
+              
+              // Stop the video by clearing the src
+              iframe.src = '';
+              
+              // Restore body scrolling
+              document.body.style.overflow = '';
+            }
+    
+            // Close overlay on Escape key
+            document.addEventListener('keydown', function(event) {
+              if (event.key === 'Escape') {
+                closeVideoOverlay();
+              }
+            });
+          </script>
+    
+        </section>
+
+<!-- Our Products Section -->
+<section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+  <div class="text-center mb-16">
+    <h2 class="font-bold text-3xl lg:text-5xl mb-6">
+      Our products
+    </h2>
+  </div>
+  
+  <div class="w-full">
+    <img 
+      src="./assets/reseller/products.png" 
+      alt="Our products preview showing canvas prints and wall art options"
+      class="w-full h-auto object-cover rounded-xl"
+    />
+  </div>
+</section>
+
+<!-- Sell & Ship start here  -->
+<section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+  <div>
+    <h2
+      class="text-3xl sm:text-5xl xl:text-[58px] text-black-5 font-extrabold text-center">
+      Sell, print & ship to 28 countries
+    </h2>
+    <p
+      class="text-black-7 text-base lg:text-xl text-center mx-auto max-w-[900px] mt-5 lg:mt-[25px]">
+      Each canvas print is printed, framed, and ready to ship within days.
+      With production facilities in the EU, UK, USA, Canada, and
+      Australia, we ensure fast, reliable, and hassle-free delivery to you
+      and your customers.
+    </p>
+  </div>
+  <div class="w-full max-w-[800px] mx-auto py-8 lg:py-16">
+    <img
+      src="./assets/lp3/printing-shipping-world.jpg"
+      srcset="
+        ./assets/lp3/printing-shipping-world.jpg   1x,
+        ./assets/lp3/printing-shipping-world-2.jpg 2x,
+        ./assets/lp3/printing-shipping-world-3.jpg 3x
+      "
+      class=""
+      alt="printing & shipping" />
+  </div>
+  <div
+    class="flex flex-col lg:flex-row gap-5 lg:gap-[25px] justify-between">
+    <div class="w-full lg:w-1/3">
+      <h3
+        class="font-extrabold text-center lg:text-start text-black-5 text-xl lg:text-[35px]">
+        We ship from
+      </h3>
+      <div
+        class="bg-[#5E33B90D] grid grid-cols-2 font-medium text-xs lg:text-base text-black-5 p-[15px] lg:p-[25px] rounded-[20px] lg:rounded-[30px] mt-[15px] lg:mt-8 gap-3 lg:gap-5">
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-kingdom.svg"
+              class="w-[23px]"
+              alt="united kingdom"
+          /></span>
+          <span class="">London, UK</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/spain.svg"
+              class="w-[23px]"
+              alt="spain"
+          /></span>
+          <span class="">Barcelona, Spain</span>
+        </div>
+
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-states.svg"
+              class="w-[23px]"
+              alt="United States"
+          /></span>
+          <span class="">Dallas, US</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-states.svg"
+              class="w-[23px]"
+              alt="United States"
+          /></span>
+          <span class="">Los Angeles, US</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-states.svg"
+              class="w-[23px]"
+              alt="United States"
+          /></span>
+          <span class="">Sacramento, US</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-states.svg"
+              class="w-[23px]"
+              alt="United States"
+          /></span>
+          <span class="">Raleigh, US</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp3/canada.svg"
+              class="w-[23px]"
+              alt="canada"
+          /></span>
+          <span class="">Toronto, CA</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp3/canada.svg"
+              class="w-[23px]"
+              alt="canada"
+          /></span>
+          <span class="">Vancouver, CA</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/czech.svg"
+              class="w-[23px]"
+              alt="czech"
+          /></span>
+          <span class="">Prague, Czechia</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/australia.svg"
+              class="w-[23px]"
+              alt="australia"
+          /></span>
+          <span class="">Melbourne, AU</span>
+        </div>
+      </div>
+    </div>
+    <div class="w-full lg:w-2/3">
+      <h3
+        class="font-extrabold text-center lg:text-start text-black-5 text-xl lg:text-[35px]">
+        We ship to
+      </h3>
+      <div
+        class="bg-[#5E33B90D] grid grid-cols-2 md:grid-cols-4 font-medium text-xs lg:text-base text-black-5 p-[15px] lg:p-[25px] rounded-[20px] lg:rounded-[30px] mt-[15px] lg:mt-8 gap-3 lg:gap-5">
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/australia.svg"
+              class="w-[23px]"
+              alt="australia"
+          /></span>
+          <span class="">Australia</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/austria.svg"
+              class="w-[23px]"
+              alt="Austria"
+          /></span>
+          <span class="">Austria </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/belgium.svg"
+              class="w-[23px]"
+              alt="Belgium"
+          /></span>
+          <span class="">Belgium </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/bulgaria.svg"
+              class="w-[23px]"
+              alt="Bulgaria"
+          /></span>
+          <span class="">Bulgaria </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/croatia.svg"
+              class="w-[23px]"
+              alt="Croatia"
+          /></span>
+          <span class="">Croatia </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/czech.svg"
+              class="w-[23px]"
+              alt="Czechia"
+          /></span>
+          <span class="">Czechia </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/denmark.svg"
+              class="w-[23px]"
+              alt="Denmark"
+          /></span>
+          <span class="">Denmark </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/estonia.svg"
+              class="w-[23px]"
+              alt="Estonia"
+          /></span>
+          <span class="">Estonia </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/finland.svg"
+              class="w-[23px]"
+              alt="Finland"
+          /></span>
+          <span class="">Finland </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/france.svg"
+              class="w-[23px]"
+              alt="France"
+          /></span>
+          <span class="">France </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/germany.svg"
+              class="w-[23px]"
+              alt="Germany"
+          /></span>
+          <span class="">Germany</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/greece.svg"
+              class="w-[23px]"
+              alt="Greece"
+          /></span>
+          <span class="">Greece </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/hungary.svg"
+              class="w-[23px]"
+              alt="Hungary"
+          /></span>
+          <span class="">Hungary </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/ireland.svg"
+              class="w-[23px]"
+              alt="Ireland"
+          /></span>
+          <span class="">Ireland </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/italy.svg"
+              class="w-[23px]"
+              alt="Italy"
+          /></span>
+          <span class="">Italy </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/latvia.svg"
+              class="w-[23px]"
+              alt="Latvia"
+          /></span>
+          <span class="">Latvia </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/lithuania.svg"
+              class="w-[23px]"
+              alt="Lithuania"
+          /></span>
+          <span class="">Lithuania </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/luxembourg.svg"
+              class="w-[23px]"
+              alt="Luxembourg"
+          /></span>
+          <span class="">Luxembourg </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/netherlands.svg"
+              class="w-[23px]"
+              alt="Netherlands"
+          /></span>
+          <span class="">Netherlands </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/norway.svg"
+              class="w-[23px]"
+              alt="Norway"
+          /></span>
+          <span class="">Norway </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/poland.svg"
+              class="w-[23px]"
+              alt="Poland"
+          /></span>
+          <span class="">Poland</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/portugal.svg"
+              class="w-[23px]"
+              alt="Portugal"
+          /></span>
+          <span class="">Portugal </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/romania.svg"
+              class="w-[23px]"
+              alt="Romania"
+          /></span>
+          <span class="">Romania </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/slovakia.svg"
+              class="w-[23px]"
+              alt="Slovakia"
+          /></span>
+          <span class="">Slovakia </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/slovenia.svg"
+              class="w-[23px]"
+              alt="Slovenia"
+          /></span>
+          <span class="">Slovenia </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/spain.svg"
+              class="w-[23px]"
+              alt="Spain"
+          /></span>
+          <span class="">Spain </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/sweden.svg"
+              class="w-[23px]"
+              alt="Sweden"
+          /></span>
+          <span class="">Sweden </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/switzerland.svg"
+              class="w-[23px]"
+              alt="Switzerland"
+          /></span>
+          <span class="">Switzerland </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-kingdom.svg"
+              class="w-[23px]"
+              alt="United Kingdom"
+          /></span>
+          <span class="">United Kingdom </span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp2/icons/united-states.svg"
+              class="w-[23px]"
+              alt="United States"
+          /></span>
+          <span class="">United States</span>
+        </div>
+        <!-- single country  -->
+        <div class="flex items-center gap-2">
+          <span
+            ><img
+              src="./assets/lp3/canada.svg"
+              class="w-[23px]"
+              alt="canada"
+          /></span>
+          <span class="">Canada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- calculate section start here  -->
+<section
+class="px-4 max-w-[1328px] mx-auto pt-10 pb-6 lg:py-24 overflow-x-hidden xl:overflow-x-visible">
+<h2
+class="text-center font-bold text-black-5 text-3xl lg:text-[58px] lg:leading-tight mx-auto max-w-[800px]">
+Calculate extra revenue with canvas prints
+</h2>
+<div class="flex flex-col lg:flex-row gap-12 pt-16 lg:pt-20">
+<div class="flex-1">
+    <div>
+    <!-- Orders per month section -->
+    <div class="flex">
+        <h3
+        class="font-bold text-base lg:text-xl text-black-5 flex-1 items-center">
+        Orders per month
+        </h3>
+        <h4
+        class="bg-[#F1F2F6] h-10 w-[115px] lg:w-[150px] font-bold text-base lg:text-xl flex items-center justify-end pr-3 rounded-[10px]"
+        id="orderValue">
+        5
+        </h4>
+    </div>
+    <div class="mt-5">
+        <input
+        type="range"
+        min="0"
+        max="50"
+        step="10"
+        value="10"
+        class="w-full"
+        id="orderRange" />
+    </div>
+    </div>
+
+    <div class="mt-16">
+    <!-- Average order value section -->
+    <div class="flex">
+        <h3
+        class="font-bold text-base lg:text-xl text-black-5 flex-1 items-center">
+        Average order value
+        </h3>
+        <h4
+        class="bg-[#F1F2F6] h-10 w-[115px] lg:w-[150px] font-bold text-base lg:text-xl flex items-center justify-end pr-3 rounded-[10px]"
+        id="averageValue">
+        €50
+        </h4>
+    </div>
+    <div class="mt-5">
+        <input
+        type="range"
+        min="0"
+        max="50"
+        step="10"
+        value="20"
+        class="w-full"
+        id="averageorderRange" />
+    </div>
+    </div>
+</div>
+<div
+    class="bg-[#f2eefd] flex-1 rounded-[30px] p-[25px] lg:p-[50px] relative">
+    <h4 class="font-bold text-black-5 text-[15px] lg:text-[22px]">
+    Total sales of canvas prints per month
+    </h4>
+    <h3
+    class="font-bold text-purple-1 text-[35px] lg:text-[40px] py-[5px] lg:py-2">
+    €27.500
+    </h3>
+    <h5 class="text-[#5ED67C] font-base text-2xl lg:text-3xl">
+    Profit: <span class="font-bold">€13.750</span>
+    </h5>
+    <span
+    class="block bg-[#dad6e3] w-full h-[2px] mt-3 mb-[15px] lg:mt-[15px] lg:mb-5"></span>
+    <h6
+    class="font-bold text-black-5 text-2xl lg:text-3xl max-w-[360px]">
+    Are you ready to boost your revenue?
+    </h6>
+    <p
+    class="text-black-5 font-base text-sm lg:text-xl mt-[10px] lg:mt-[15px]">
+    Improve your sales!
+    </p>
+    <div class="mt-5 lg:mt-[30px]">
+    <button
+        class="w-auto text-base lg:text-lg px-8 font-semibold rounded-xl text-white-1 flex items-center justify-center tracking-normal h-10 lg:h-[45px] bg-purple-1 border-2 border-purple-1 hover:bg-white-1 hover:text-purple-1 hover:border-purple-1 transition-all duration-150">
+        Get started for free
+    </button>
+    </div>
+    <div
+    class="absolute bottom-2 lg:bottom-0 -right-8 lg:right-0 2xl:-right-[70px]">
+    <img
+        src="../assets/lp2/icons/rocket.svg"
+        class="w-[140px] lg:w-[240px]" />
+    </div>
+</div>
+</div>
+</section>
+<!-- already selling canvas start here  -->
+<section
+  class="bg-[url('./assets/lp3/frames-bg.png')] bg-center relative min-h-[300px] flex items-center justify-center">
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-purple-1 to-[#563e82] opacity-90"></div>
+  <div class="text-center px-5 py-10 relative z-10">
+    <h2
+      class="text-white-1 font-bold text-[35px] lg:text-[40px] leading-[40px] lg:leading-none tracking-[1px]">
+      Already selling prints?
+    </h2>
+    <p
+      class="text-white-1 lg:text-[20px] tracking-[1px] leading-5 pt-[25px] lg:pt-[16px] pb-8">
+      Switch to Printumo: Lower costs, offer XL sizes, reach 28 countries,
+      boost your profits
+    </p>
+    <a
+      href="#"
+      class="inline-block px-10 py-2 bg-black-1 border-2 border-black-1 font-semibold text-base lg:text-lg text-white-1 rounded-xl hover:bg-white-1 hover:text-black-1 transition-all duration-150">
+      Learn more
+    </a>
+  </div>
+</section>
+
+<!-- Printumo vs Other PODs  -->
+<section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24 space-y-24">
+    <div
+      class="flex items-center justify-between gap-6 lg:gap-10 flex-col lg:flex-row mx-5 lg:mx-0">
+      <div class="w-full lg:w-[38%]">
+        <img
+          src="../assets/lp3/f10-1x.png"
+          srcset="
+            ../assets/lp3/f10-1x.png 1x,
+            ../assets/lp3/f10-2x.png 2x,
+            ../assets/lp3/f10-3x.png 3x
+          "
+          class="w-full sm:w-1/2 lg:w-full mx-auto"
+          alt="automatic Img" />
+      </div>
+      <div
+        class="w-full lg:w-[60%] bg-[#f9f7fc] rounded-[30px] px-[20px] py-[25px] lg:p-10">
+        <div
+          class="flex flex-col md:flex-row gap-[35px] lg:gap-4 xl:gap-[60px]">
+          <div class="w-full md:w-[58%]">
+            <h3 class="text-purple-1 text-2xl lg:text-[26px] font-bold">
+              Printumo
+            </h3>
+            <ul
+              class="text-base lg:text-xl text-black-5 font-normal pt-[15px] lg:pt-5 space-y-3">
+              <li>Affordable prices for higher profit</li>
+              <li>Experts in wall art prints</li>
+              <li>XL canvas sizes available</li>
+              <li>Premium product with great margins</li>
+              <li>Ships to 32 countries</li>
+              <li>24/7 support</li>
+            </ul>
+          </div>
+          <div class="w-full md:w-[40%]">
+            <h3 class="text-black-1 text-2xl lg:text-[26px] font-bold">
+              Other PODs
+            </h3>
+            <ul
+              class="text-base lg:text-xl text-black-5 font-normal pt-[15px] lg:pt-5 space-y-3">
+              <li>Higher costs, lower profits</li>
+              <li>lacking wall art expertise</li>
+              <li>Limited or no XL sizes</li>
+              <li>Lower-margin products</li>
+              <li>Complicated platform</li>
+              <li>Minimal or no support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- User Reviews -->
+<section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+    <div class="text-center mb-16">
+        <h2 class="font-extrabold text-black-5 text-3xl sm:text-5xl xl:text-[58px]">What Our Users Say</h2>
+        <p class="text-black-7 text-base lg:text-xl mx-auto max-w-[800px] mt-5">Real feedback from artists and businesses who trust Printumo for their print-on-demand needs.</p>
+    </div>
+    
+    <!-- Reviews Marquee with Fade Effect -->
+    <div class="testimonials-container relative">
+        <!-- Scrolling content -->
+        <div class="flex animate-marquee py-6 h-[320px] items-stretch">
+            <!-- Review Card 1 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"Printumo has been a game-changer for my business. The print quality exceeds everything I've tried before, and my customers praise the vibrant colors!"</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Jessica Williams">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Jessica Williams</h4>
+                        <p class="text-sm text-black-7">Watercolor Artist</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Card 2 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"As a retail business, we needed reliable fulfillment. Printumo delivers fast shipping and handles all customer service issues promptly."</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Modern Prints Co.">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Modern Prints Co.</h4>
+                        <p class="text-sm text-black-7">Retail Business</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Card 1 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"Printumo has been a game-changer for my business. The print quality exceeds everything I've tried before, and my customers praise the vibrant colors!"</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Jessica Williams">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Jessica Williams</h4>
+                        <p class="text-sm text-black-7">Watercolor Artist</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Card 2 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"As a retail business, we needed reliable fulfillment. Printumo delivers fast shipping and handles all customer service issues promptly."</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Modern Prints Co.">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Modern Prints Co.</h4>
+                        <p class="text-sm text-black-7">Retail Business</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Card 3 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"The integration with my Shopify store was seamless. Now I can focus on creating art while Printumo handles everything else!"</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Thomas Reed">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Thomas Reed</h4>
+                        <p class="text-sm text-black-7">Digital Artist</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Card 4 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"Since switching to Printumo, I've been able to offer more products without worrying about inventory or shipping logistics. Game changer!"</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Sarah Johnson">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Sarah Johnson</h4>
+                        <p class="text-sm text-black-7">Abstract Artist</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Card 5 -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"The customer support team at Printumo is exceptional. They've helped me optimize my store and improve my product offerings."</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="ArtHouse Gallery">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">ArtHouse Gallery</h4>
+                        <p class="text-sm text-black-7">Art Retailer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Duplicate first card for continuous scrolling -->
+            <div class="min-w-[320px] md:min-w-[380px] bg-[#5E33B90D] p-6 rounded-xl mx-4 flex flex-col justify-between h-full">
+                <!-- Stars and review text -->
+                <div>
+                    <!-- Stars -->
+                    <div class="flex gap-1 mb-4">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L13 7L19 7.75L14.88 12.37L16 19L10 16L4 19L5.13 12.37L1 7.75L7 7L10 1Z" fill="#FFB800" />
+                        </svg>
+                    </div>
+                    <!-- Review text -->
+                    <p class="text-black-5">"Printumo has been a game-changer for my business. The print quality exceeds everything I've tried before, and my customers praise the vibrant colors!"</p>
+                </div>
+                
+                <!-- User info -->
+                <div class="flex items-center mt-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="./assets/avatar1.png" class="w-full h-full object-cover" alt="Jessica Williams">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-black-5">Jessica Williams</h4>
+                        <p class="text-sm text-black-7">Watercolor Artist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Left fade overlay -->
+        <div class="fade-left"></div>
+        
+        <!-- Right fade overlay -->
+        <div class="fade-right"></div>
+    </div>
+        <!-- Marquee Animation Script and Custom CSS -->
+  <style>
+    /* Marquee animation */
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+        animation: marquee 35s linear infinite;
+    }
+    
+    /* Container setup */
+    .testimonials-container {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Fade effects */
+    .fade-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+        background: linear-gradient(to right, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%);
+    }
+    
+    .fade-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+        background: linear-gradient(to left, #FFFFFF 20%, rgba(255, 255, 255, 0) 100%);
+    }
+</style>
+</section>
+
+  <!-- Community section start here  -->
+  <section class="bg-[#110C18]">
+    <div
+      class="px-4 max-w-[1328px] mx-auto pt-[22px] pb-[35px] md:pt-[76px] md:pb-[73px] text-center relative">
+      <div class="block lg:hidden">
+        <img
+          src="./assets/lp/avatargrp.png"
+          srcset="
+            ./assets/lp/avatargrp.png  1x,
+            ./assets/lp/avatargrp2.png 2x,
+            ./assets/lp/avatargrp3.png 3x
+          "
+          class="w-[313px] mx-auto"
+          alt="" />
+      </div>
+      <h2
+        class="font-bold text-white-1 text-[35px] leading-none lg:text-5xl mt-[13px] lg:mt-0">
+        +1K Artist Community
+      </h2>
+      <p
+        class="text-sm lg:text-xl text-white-1 max-w-[840px] mx-auto mt-[16px] lg:mt-[23px] mb-[29px] lg:mb-[44px] tracking-[0.25px]">
+        We're building a vibrant community where artists connect, share
+        experiences, and exchange knowledge. By learning from your journey
+        and feedback, we continually refine our print-on-demand service to
+        empower your growth and creativity.
+      </p>
+      <div class="text-center">
+        <button
+          class="w-auto text-base lg:text-lg px-8 font-semibold rounded-xl text-white-1 tracking-normal h-10 lg:h-[45px] bg-purple-1 border-2 border-purple-1 hover:bg-white-1 hover:text-purple-1 hover:border-purple-1 transition-all duration-150">
+          Join our Facebook Group
+        </button>
+      </div>
+      <!-- avatar images  -->
+      <div
+        class="w-[75px] h-[75px] rounded-[50%] absolute top-[44px] left-[19%] hidden lg:block animate-avatar-1">
+        <img
+          src="./assets/lp/a1-1x.png"
+          srcset="
+            ./assets/lp/a1-1x.png 1x,
+            ./assets/lp/a1-2x.png 2x,
+            ./assets/lp/a1-3x.png 3x
+          "
+          class="w-full"
+          alt="" />
+      </div>
+      <div
+        class="w-[60px] h-[60px] rounded-[50%] absolute bottom-[65px] left-[12%] hidden lg:block animate-avatar-2">
+        <img
+          src="./assets/lp/a2-1x.png"
+          srcset="
+            ./assets/lp/a2-1x.png 1x,
+            ./assets/lp/a2-2x.png 2x,
+            ./assets/lp/a2-3x.png 3x
+          "
+          class="w-full"
+          alt="" />
+      </div>
+      <div
+        class="w-[39px] h-[39px] rounded-[50%] absolute top-[29px] right-[20%] hidden lg:block animate-avatar-4">
+        <img
+          src="./assets/lp/a1-1x.png"
+          srcset="
+            ./assets/lp/a3-1x.png 1x,
+            ./assets/lp/a3-2x.png 2x,
+            ./assets/lp/a3-3x.png 3x
+          "
+          class="w-full"
+          alt="" />
+      </div>
+      <div
+        class="w-[50px] h-[50px] rounded-[50%] absolute bottom-[90px] right-[30%] hidden lg:block animate-avatar-5">
+        <img
+          src="./assets/lp/a1-1x.png"
+          srcset="
+            ./assets/lp/a4-1x.png 1x,
+            ./assets/lp/a4-2x.png 2x,
+            ./assets/lp/a4-3x.png 3x
+          "
+          class="w-full"
+          alt="" />
+      </div>
+      <div
+        class="w-[75px] h-[75px] rounded-[50%] absolute bottom-[46px] right-[10%] hidden lg:block animate-avatar-6">
+        <img
+          src="./assets/lp/a1-1x.png"
+          srcset="
+            ./assets/lp/a5-1x.png 1x,
+            ./assets/lp/a5-2x.png 2x,
+            ./assets/lp/a5-3x.png 3x
+          "
+          class="w-full"
+          alt="" />
+      </div>
+      <div
+        class="w-[30px] h-[30px] rounded-[50%] absolute top-[79px] right-[5%] hidden lg:block animate-avatar-7">
+        <img
+          src="./assets/lp/a1-1x.png"
+          srcset="
+            ./assets/lp/a6-1x.png 1x,
+            ./assets/lp/a6-2x.png 2x,
+            ./assets/lp/a6-3x.png 3x
+          "
+          class="w-full"
+          alt="" />
+      </div>
+      <div class="block lg:hidden mt-7">
+        <img
+          src="./assets/lp3/people-b.webp"
+          srcset="
+            ./assets/lp3/people-b.webp    1x,
+            ./assets/lp3/people-b-2x.webp 2x,
+            ./assets/lp3/people-b-3x.webp 3x
+          "
+          class="w-[313px] mx-auto"
+          alt="" />
+      </div>
+    </div>
+  </section>
+
+<!-- About Us section start here  -->
+    <section
+      class="px-4 max-w-[1328px] mx-auto py-[60px] lg:py-[110px] flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16 2xl:gap-[139px]">
+      <div class="w-full sm:w-[481px] relative">
+        <img
+          src="./assets/lp/about-us.jpg"
+          srcset="
+            ./assets/lp/about-us.jpg    1x,
+            ./assets/lp/about-us-2x.jpg 2x,
+            ./assets/lp/about-us-2x.jpg 3x
+          "
+          class="w-full rounded-tl-[0px] rounded-tr-[99px] rounded-br-[100px] rounded-bl-[100px]"
+          alt="" />
+        <div class="absolute w-4 lg:w-[27px] -top-8 lg:-top-14 left-[50%]">
+          <img src="./assets/lp/about1.svg" class="w-full" alt="" />
+        </div>
+        <div
+          class="absolute w-[135px] lg:w-[246px] -top-10 lg:-top-16 -left-4 lg:-left-[50px] -z-10">
+          <img src="./assets/lp/about2.svg" class="w-full" alt="" />
+        </div>
+      </div>
+      <div class="flex-1 text-black-5">
+        <h2 class="text-3xl lg:text-[40px] font-extrabold">About us</h2>
+        <h4 class="my-4 lg:mt-9 lg:mb-6 font-bold text-xl lg:text-[26px]">
+          For Artist, by Artists
+        </h4>
+        <div class="w-full max-w-[600px]">
+          <p class="text-base lg:text-xl">
+            Our journey began as artists selling our own art through our
+            webshop, but it was difficult to find a reliable print-on-demand
+            partner that offered the variety of sizes and framing options we
+            needed.
+          </p>
+          <p class="my-6 text-base lg:text-xl">
+            Frustrated by the lack of options for artists and creative
+            individuals, we decided to built a platform designed specifically
+            for canvas and posters.
+          </p>
+          <p class="mt-6 mb-6 lg:mb-[40px] text-base lg:text-xl">
+            At Printumo, we are dedicated to delivering the quality,
+            flexibility, and support artists need, so your creative vision can
+            shine in every print
+          </p>
+          <button
+            class="w-auto text-base lg:text-lg px-8 font-semibold rounded-xl text-white-1 tracking-normal h-10 lg:h-[45px] bg-purple-1 border-2 border-purple-1 hover:bg-white-1 hover:text-purple-1 hover:border-purple-1 transition-all duration-150">
+            Read more
+          </button>
+        </div>
+      </div>
+    </section>
+
+     <!-- Integrations Section -->
+     <section class="px-4 max-w-[1328px] mx-auto py-16 md:py-24">
+      <div class="text-center mb-16">
+          <h2 class="font-extrabold text-black-5 text-3xl sm:text-5xl xl:text-[58px]">Looking for another integration?</h2>
+          <p class="text-black-7 text-base lg:text-xl mx-auto max-w-[800px] mt-5">Check out our other integrations, with more platforms coming soon.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Shopify -->
+          <div class="bg-[#f7f5fb] rounded-[30px] p-8">
+              <div class="flex justify-left items-end mb-6">
+                  <img src="./assets/integrations/shopify.svg" alt="Shopify" class="h-[45px] w-auto" />
+              </div>
+              <h3 class="text-2xl font-bold text-black-5 mb-4">Shopify</h3>
+              <p class="text-black-7 text-base lg:text-xl">Automatically sync your Shopify products and orders</p>
+          </div>
+
+          <!-- Etsy -->
+          <div class="bg-[#f7f5fb] rounded-[30px] p-8">
+              <div class="flex justify-left items-end mb-6">
+                  <img src="./assets/integrations/etsy.svg" alt="Etsy" class="h-[45px] w-auto" />
+              </div>
+              <h3 class="text-2xl font-bold text-black-5 mb-4">Etsy</h3>
+              <p class="text-black-7 text-base lg:text-xl">Connect your Etsy shop for seamless order fulfillment</p>
+          </div>
+
+          <!-- Other Integrations -->
+          <div class="bg-[#f7f5fb] rounded-[30px] p-8">
+              <h3 class="text-2xl font-bold text-black-5 mb-2">+6 Other Integrations</h3>
+              
+              <!-- Overlapping logos -->
+              <div class="flex mb-4">
+                  <!-- Stack of overlapping logos -->
+                  <div class="flex -space-x-4">
+                      <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[7]">
+                          <img src="./assets/integrations/woocommerce.svg" alt="WooCommerce" class="w-10 h-10 object-contain" />
+                      </div>
+                      <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[6]">
+                          <img src="./assets/integrations/wix.svg" alt="Wix" class="w-10 h-10 object-contain" />
+                      </div>
+                      <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[5]">
+                          <img src="./assets/integrations/squarespace.svg" alt="Squarespace" class="w-10 h-10 object-contain" />
+                      </div>
+                      <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[4]">
+                          <img src="./assets/integrations/bigcommerce.svg" alt="BigCommerce" class="w-10 h-10 object-contain" />
+                      </div>
+                      <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[3]">
+                          <img src="./assets/integrations/amazon.svg" alt="Amazon" class="w-10 h-10 object-contain" />
+                      </div>
+                      <div class="w-14 h-14 bg-white-1 rounded-md border-2 border-white overflow-hidden flex items-center justify-center transition-transform duration-200 hover:-translate-y-1 relative z-[2]">
+                          <img src="./assets/integrations/ebay.svg" alt="eBay" class="w-10 h-10 object-contain" />
+                      </div>
+                  </div>
+              </div>
+
+              <!-- API section -->
+              <div>
+                  <p class="text-gray-600 text-sm mb-4">Or use our API:</p>
+                  <div class="flex items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-1">
+                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                      </svg>
+                      <span class="text-base font-semibold text-black-5">Printumo API</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="text-center mt-12">
+          <a href="" target="_blank" class="inline-block px-8 py-3 bg-purple-1 border-2 border-purple-1 text-white-1 rounded-xl hover:bg-white-1 hover:text-purple-1 font-semibold transition-all duration-150">
+              Get started now
+          </a>
+      </div>
+  </section>
+
+  </main>
+</body>
+
+</html>
+
+

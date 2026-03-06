@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./assets/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+    <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./assets/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <title>Landing page</title>
+</head>
+
+<body>
+    <header class="shadow-headerboxshadow lg:shadow-none sticky top-0 left-0 z-50 bg-white-1">
+        <!-- Navbar -->
+        <div class="flex items-center justify-between px-4 max-w-[1328px] mx-auto py-[12px] lg:pt-8 lg:pb-6 relative bg-white-1"
+            id="nav-main">
+            <!-- Hamburger Icon (Visible only on mobile) -->
+            <button id="drawer-button" class="lg:hidden me-3" aria-label="open sidebar" onclick="openDrawer()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-gray-800">
+                    <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Logo -->
+            <div class="text-xl flex-1 lg:flex-none font-semibold text-center lg:text-left">
+                <a href="/src/landingPage.html" class="block"><img src="./assets/logo.svg"
+                        class="w-[133px] h-[40px] lg:h-[58px] lg:w-[203px]" alt=""></a>
+            </div>
+
+            <!-- Desktop Menu Items (Visible on large screens) -->
+            <ul class="hidden lg:flex lg:flex-1 lg:justify-center lg:space-x-4 2xl:space-x-6">
+                <li><a href="/src/about-us.html"
+                        class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Why
+                        Us</a></li>
+                <li><a href="#"
+                        class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">How It
+                        Works</a>
+                </li>
+
+
+
+                <li class="relative">
+                    <button id="desktop-dropdown-button" onclick="toggleDeskDropdown()"
+                        class="font-bold flex items-center gap-x-2 text-black-5 hover:text-purple-1 capitalize">
+                        Products
+                        <img src="./assets/down-chevron.svg" class="w-[13px]" alt="">
+                    </button>
+                    <ul id="desktop-dropdown-menu"
+                        class="absolute left-0 hidden mt-2 w-40 bg-white rounded-md text-gray-800 shadow-lg z-50 p-3 space-y-2 bg-white-1">
+                        <li><a href="/src/product-page.html"
+                                class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product Page</a>
+                        </li>
+                        <li><a href="#" class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"
+                        class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Store
+                        Connection</a></li>
+                <li><a href="#"
+                        class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Story
+                        Case</a>
+                </li>
+                <li><a href="/src/contact-us.html"
+                        class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Contact
+                        Us</a>
+                </li>
+            </ul>
+
+
+            <!-- Button -->
+            <div class="">
+                <button
+                    class="h-9 w-[130px] lg:h-[53px] lg:w-[180px] bg-black-6 hover:bg-purple-1 text-sm lg:text-base font-bold text-white-1 rounded-lg lg:rounded-xl tracking-[0.25px]">
+                    Sign up for free
+                </button>
+            </div>
+        </div>
+
+        <!-- Drawer Overlay -->
+        <div id="overlay" class="overlay" onclick="closeDrawer()"></div>
+
+        <!-- Sidebar Drawer -->
+        <div id="drawer"
+            class="w-[300px] md:w-[250px] fixed top-0 left-0  h-full bg-white shadow-lg transform -translate-x-full transition-transform bg-white-1">
+            <div class="px-[18px] pt-[91px] pb-4">
+                <div class="relative hidden" id="closebtn">
+                    <button class="text-black-1 mb-4 absolute -top-5 -right-12" aria-label="close sidebar"
+                        onclick="closeDrawer()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Sidebar Content -->
+                <ul class="space-y-8">
+                    <li><a href="/src/about-us.html"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Why
+                            Us</a>
+                    </li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">How
+                            It
+                            Works</a></li>
+                    <li class="relative">
+                        <button
+                            class="flex items-center gap-x-2 w-full text-black-5 hover:text-purple-1 capitalize font-bold"
+                            onclick="toggleDropdown()">
+                            Products
+                            <img src="./assets/down-chevron.svg" class="w-3" alt="">
+                        </button>
+                        <ul id="dropdown-menu" class="hidden mt-2 space-y-2 pl-4 border-l border-gray-200">
+                            <li><a href="/src/product-page.html"
+                                    class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                    Page</a>
+                            </li>
+                            <li><a href="#"
+                                    class="font-medium text-sm text-black-5 hover:text-purple-1 capitalize">Product
+                                    2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Store
+                            Connection</a></li>
+                    <li><a href="#"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Story
+                            Case</a></li>
+                    <li><a href="/src/contact-us.html"
+                            class="font-bold text-base text-black-5 hover:text-purple-1 capitalize tracking-[.25px]">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- header ends here  -->
+
+    <main>
+        <!-- hero start here  -->
+        <section
+            class="flex items-center justify-between flex-col-reverse lg:flex-row px-4 max-w-[1328px] mx-auto pt-[30px] pb-[25px] lg:pt-16 lg:pb-[112px] gap-y-[34px]">
+            <div class="flex-1">
+                <h1
+                    class="font-bold text-black-5 text-[28px] sm:text-3xl lg:text-5xl 2xl:text-[58px] 2xl:leading-[76px] lg:max-w-[500px]">
+                    Start printing and selling your art</h1>
+                <p
+                    class="text-base lg:text-xl text-[#3a3a3a] lg:max-w-[480px] pt-[14px] pb-[29px] lg:py-6 2xl:pt-[41px] 2xl:pb-[45px]">
+                    Earn money from your art with on-demand printing for canvas and posters.</p>
+                <div class="flex items-center flex-col sm:flex-row gap-x-6 gap-y-4">
+                    <a href="#"
+                        class="w-full sm:w-[196px] h-14 bg-purple-1 border-2 border-purple-1 flex items-center justify-center font-bold text-base text-white-1 rounded-xl hover:bg-black-6 hover:border-black-6 tracking-[0.25px]">Get
+                        started for free</a>
+                    <a href="#"
+                        class="w-full sm:w-[196px] h-[53px] bg-transparent border-2 border-purple-1 flex items-center justify-center font-bold text-base text-purple-1 rounded-xl hover:bg-black-6 hover:border-black-6 hover:text-white-1">See
+                        our products</a>
+                </div>
+            </div>
+            <div class="flex-1">
+                <img src="./assets/lp/banner-1.jpg" srcset="
+                    ./assets/lp/banner-1.jpg   1x,
+                    ./assets/lp/banner-2.jpg 2x,
+                    ./assets/lp/banner-3.jpg 3x
+                  " alt="" class="w-[318px] sm:w-full 2xl:w-[654px] ms-auto" alt="Hero Img">
+            </div>
+        </section>
+
+        <!-- How it works section strat here  -->
+        <section
+            class="bg-[url('../src/assets/lp/bg.jpg')] bg-cover bg-no-repeat lg:bg-center bg-center min-h-[985px] ">
+            <div class="px-4 max-w-[1328px] mx-auto text-center relative">
+                <div>
+                    <div class="pt-[38px] md:pt-[100px]">
+                        <img src="./assets/lp/store.svg" class="w-[58px] mx-auto" alt="">
+                    </div>
+                    <h2 class="text-[28px] sm:text-3xl 2xl:text-[40px] text-black-5 font-bold my-3 lg:mt-10 lg:mb-5">How
+                        it
+                        works</h2>
+                    <p class="text-base lg:text-xl text-black-5 mx-auto max-w-[845px]">Start by preparing your art
+                        files. Upload
+                        your
+                        designs to our user-friendly platform. connect to your webshop or place
+                        orders directly on Printumo.</p>
+                    <div
+                        class=" mx-auto flex flex-col lg:flex-row justify-center gap-16 lg:gap-[160px] items-center mt-4 md:mt-[44px]">
+                        <div class="relative">
+                            <div
+                                class="h-[150px] w-[150px] sm:w-[160px] sm:h-[160px] rounded-[42px] sm:rounded-[48px] bg-white-1 workShadow flex flex-col items-center justify-center gap-4">
+                                <img src="./assets/lp/upload.svg" class="w-[58px] h-[58px] mx-auto" alt="">
+                                <p class="font-bold text-black-1 text-[13px] tracking-[0.25px]">Prepare your <br>
+                                    art files</p>
+                            </div>
+                            <div class="absolute top-1/2 -translate-y-1/2 -right-[78%] hidden lg:block">
+                                <img src="./assets/lp/darr1.svg" class="w-24" alt="">
+                            </div>
+                            <div class="absolute left-1/2 -translate-x-1/2 -bottom-12 lg:hidden block">
+                                <img src="./assets/lp/marr1.svg" class="" alt="">
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div
+                                class="h-[150px] w-[150px] sm:w-[160px] sm:h-[160px] rounded-[42px] sm:rounded-[48px] bg-purple-1 workShadow flex flex-col items-center justify-center gap-4">
+                                <img src="./assets/lp/custom.svg" class="w-[58px] h-[58px] mx-auto" alt="">
+                                <p class="font-bold text-white-1 text-[13px] tracking-[0.25px]">Upload to <br> Printumo
+                                </p>
+                            </div>
+                            <div class="absolute -top-[40px] -right-[78%] hidden lg:block">
+                                <img src="./assets/lp/darr2.svg" class="w-[108px]" alt="">
+                            </div>
+                            <div class="absolute -bottom-[40px] -right-[78%] hidden lg:block">
+                                <img src="./assets/lp/darr3.svg" class="w-[108px]" alt="">
+                            </div>
+                            <div class="absolute -left-[22px] -bottom-12 lg:hidden block">
+                                <img src="./assets/lp/marr2.svg" class="" alt="">
+                            </div>
+                            <div class="absolute -right-[26px] -bottom-12 lg:hidden block">
+                                <img src="./assets/lp/marr3.svg" class="" alt="">
+                            </div>
+                        </div>
+                        <div class="flex flex-row lg:flex-col gap-[38px] lg:gap-[77px]">
+                            <div
+                                class="h-[150px] w-[150px] sm:w-[160px] sm:h-[160px] rounded-[42px] sm:rounded-[48px] bg-white-1 workShadow flex flex-col items-center justify-center gap-2 sm:order-1 order-2">
+                                <img src="./assets/lp/shopify.svg" class="w-[70px] h-[67px] mx-auto" alt="">
+                                <p class="font-bold text-black-1 text-[13px] tracking-[0.25px]">Connect to your shop
+                                    <br>
+                                    and start selling
+                                </p>
+                            </div>
+                            <div
+                                class="h-[150px] w-[150px] sm:w-[160px] sm:h-[160px] rounded-[42px] sm:rounded-[48px] bg-white-1 workShadow flex flex-col items-center justify-center gap-4 sm:order-2 order-1">
+                                <img src="./assets/lp/order.svg" class="w-[58px] h-[58px] mx-auto" alt="">
+                                <p class="font-bold text-black-1 text-[13px] tracking-[0.25px]">Order directly <br>
+                                    through Printumo</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pt-12 pb-[39px] lg:pt-[54px] lg:pb-[114px]">
+                        <button
+                            class="w-full sm:w-[195px] h-[53px] bg-black-6 border-2 border-black-6 flex items-center justify-center font-bold text-base text-white-1 rounded-xl hover:bg-purple-1 hover:border-purple-1 mx-auto See our tracking-[0.25px]">Get
+                            started for free</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="hidden lg:block animate-move-image-1 absolute top-[50%] left-[4%] xl:left-[10%]">
+                        <img src="./assets/lp/w-1.svg" alt="">
+                    </div>
+                    <div class="hidden lg:block animate-move-image-2 absolute bottom-[20%] left-[25%]">
+                        <img src="./assets/lp/w-2.svg" alt="">
+                    </div>
+                    <div class="hidden lg:block animate-move-image-3 absolute top-[40%] right-[4%] xl:right-[10%]">
+                        <img src="./assets/lp/w-3.svg" alt="">
+                    </div>
+                    <div class="hidden lg:block animate-move-image-4 absolute bottom-[25%] right-[8%] xl:right-[15%]">
+                        <img src="./assets/lp/w-4.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- our product start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto py-8 lg:pt-[108px] lg:pb-[110px]">
+            <div class="text-start sm:text-center">
+                <h2 class="text-[28px] sm:text-3xl 2xl:text-[40px] text-black-5 font-bold">Our Products</h2>
+                <p class="text-black-1 text-base lg:text-xl max-w-[950px] w-full mx-auto mt-3 lg:mt-6">We specialize in
+                    canvas
+                    and poster prints designed to make your art stand out. We offer a broad range of sizes and
+                    framing options to showcase your creativity. Explore our premium printing options and bring your art
+                    to life.
+                </p>
+            </div>
+            <div class="flex items-center justify-center flex-col lg:flex-row gap-6 mt-[34px] lg:mt-[72px]">
+                <div class="w-full lg:w-[526px]">
+                    <a href="#" class="productImg rounded-2xl lg:rounded-[32px]">
+                        <img src="./assets/lp/design-1x.jpg" srcset="
+                    ./assets/lp/design-1x.jpg   1x,
+                    ./assets/lp/design-2x.jpg 2x,
+                    ./assets/lp/design-3x.jpg 3x
+                  " alt="" class="w-full" alt="">
+                        <div class="product-icon bg-white-1 w-12 h-12 rounded-[50%] flex items-center justify-center">
+                            <img src="./assets/lp/hoverArrow.svg" class="w-8" alt="">
+                        </div>
+                    </a>
+                    <h3 class="font-semibold text-xl lg:text-[32px] text-black-5 mt-[17px] lg:mt-[19px]">Poster</h3>
+                </div>
+                <div class="w-full lg:w-[526px]">
+                    <a href="#" class="productImg rounded-2xl lg:rounded-[32px]">
+                        <img src="./assets/lp/design2-1x.jpg" srcset="
+                    ./assets/lp/design2-1x.jpg   1x,
+                    ./assets/lp/design2-2x.jpg 2x,
+                    ./assets/lp/design2-3x 3x" class="w-full" alt="">
+                        <div class="product-icon bg-white-1 w-12 h-12 rounded-[50%] flex items-center justify-center">
+                            <img src="./assets/lp/hoverArrow.svg" class="w-8" alt="">
+                        </div>
+                    </a>
+                    <h3 class="font-semibold text-xl lg:text-[32px] text-black-5 mt-[17px] lg:mt-[19px]">Canvas</h3>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- feature section start here  -->
+        <section class="bg-[#C3C8D933]">
+            <div class="px-4 max-w-[1328px] mx-auto py-8 lg:pt-[114px] lg:pb-[130px]">
+                <div class="text-start sm:text-center">
+                    <h4 class="text-xl text-[#94959B] mb-3 lg:mb-6 tracking-[0.25px]">OUR FEATURES</h4>
+                    <h2 class="text-[28px] sm:text-3xl 2xl:text-[40px] text-black-5 font-bold">Why Printumo?</h2>
+                </div>
+                <div
+                    class="mt-[28px] mb-[25px] lg:mt-20 lg:mb-[93px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:gap-6 gap-4">
+                    <!-- single item  -->
+                    <div class="py-[46px] px-6 lg:p-6 rounded-2xl bg-white-1 text-center hover:bg-[#7a53e728]">
+                        <div class="w-24 h-24 rounded-[50%] bg-[#EBE5FB] mx-auto flex items-center justify-center">
+                            <img src="./assets/lp/crown.svg" class="w-12" alt="">
+                        </div>
+                        <div class="mt-6 space-y-3 lg:space-y-6">
+                            <h5 class="text-xl text-black-5 font-bold">Premium Quality</h5>
+                            <p class="text-[#3a3a3a] tracking-[0.25px]">We use top-of-the-line printing technology and
+                                materials to ensure
+                                your artwork looks
+                                its
+                                best.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="py-[46px] px-6 lg:p-6 rounded-2xl bg-white-1 text-center hover:bg-[#7a53e728]">
+                        <div class="w-24 h-24 rounded-[50%] bg-[#EBE5FB] mx-auto flex items-center justify-center">
+                            <img src="./assets/lp/website.svg" class="w-12" alt="">
+                        </div>
+                        <div class="mt-6 space-y-3 lg:space-y-6">
+                            <h5 class="text-xl text-black-5 font-bold">User-friendly Platform</h5>
+                            <p class="text-[#3a3a3a] tracking-[0.25px]">Our platform is designed for simplicity,
+                                allowing you to easily
+                                upload, customize, and manage your prints.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="py-[46px] px-6 lg:p-6 rounded-2xl bg-white-1 text-center hover:bg-[#7a53e728]">
+                        <div class="w-24 h-24 rounded-[50%] bg-[#EBE5FB] mx-auto flex items-center justify-center">
+                            <img src="./assets/lp/globe-fill.svg" class="w-12" alt="">
+                        </div>
+                        <div class="mt-6 space-y-3 lg:space-y-6">
+                            <h5 class="text-xl text-black-5 font-bold">Global Reach</h5>
+                            <p class="text-[#3a3a3a] tracking-[0.25px]">Worldwide shipping. Reach customers across the
+                                globe, while we
+                                take care of production and delivery.</p>
+                        </div>
+                    </div>
+                    <!-- single item  -->
+                    <div class="py-[46px] px-6 lg:p-6 rounded-2xl bg-white-1 text-center hover:bg-[#7a53e728]">
+                        <div class="w-24 h-24 rounded-[50%] bg-[#EBE5FB] mx-auto flex items-center justify-center">
+                            <img src="./assets/lp/bolt.svg" class="w-12" alt="">
+                        </div>
+                        <div class="mt-6 space-y-3 lg:space-y-6">
+                            <h5 class="text-xl text-black-5 font-bold">Extensive Support</h5>
+                            <p class="text-[#3a3a3a] tracking-[0.25px]">Our dedicated customer support is here to help
+                                with everything
+                                from your art, using the platform and marketing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#"
+                        class="w-full sm:w-[195px] h-[53px] bg-purple-1 border-2 border-purple-1 flex items-center justify-center font-bold text-base text-white-1 rounded-xl hover:bg-black-6 hover:border-black-6 mx-auto tracking-[0.25px]">Get
+                        started for free</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why We’re Different section start here  -->
+        <section class="px-4 max-w-[1328px] mx-auto py-8 lg:pt-[91px] lg:pb-[83px]">
+            <div class="text-start sm:text-center">
+                <h2 class="text-[28px] sm:text-3xl 2xl:text-[40px] text-black-5 font-bold">What makes us different?</h2>
+            </div>
+            <div
+                class="my-8 mb-[25px] lg:mt-[69px] lg:mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6 gap-4">
+                <!-- single item  -->
+                <div class="p-[18px] lg:p-8 rounded-2xl bg-[#F3F4F7] hover:bg-[#7a53e728]">
+                    <div class="w-12 h-12 rounded-2xl bg-[#7B53E7] flex items-center justify-center">
+                        <img src="./assets/lp/d1.svg" class="w-8" alt="">
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <h5 class="text-xl text-[#0D152E] font-bold tracking-[-0.4px]">Easiest interface</h5>
+                        <p class="text-[#2A3735] text-base lg:text-xl">Our intuitive platform makes it simple to upload,
+                            manage, and customize your art with ease.</p>
+                    </div>
+                </div>
+                <!-- single item  -->
+                <div class="p-[18px] lg:p-8 rounded-2xl bg-[#F3F4F7] hover:bg-[#7a53e728]">
+                    <div class="w-12 h-12 rounded-2xl bg-[#7B53E7] flex items-center justify-center">
+                        <img src="./assets/lp/d2.svg" class="w-8" alt="">
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <h5 class="text-xl text-[#0D152E] font-bold tracking-[-0.4px]">Large prints and various sizes
+                        </h5>
+                        <p class="text-[#2A3735] text-base lg:text-xl">Choose from a wide range of sizes and
+                            large-format prints to perfectly showcase your art.</p>
+                    </div>
+                </div>
+                <!-- single item  -->
+                <div class="p-[18px] lg:p-8 rounded-2xl bg-[#F3F4F7] hover:bg-[#7a53e728]">
+                    <div class="w-12 h-12 rounded-2xl bg-[#7B53E7] flex items-center justify-center">
+                        <img src="./assets/lp/d3.svg" class="w-8" alt="">
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <h5 class="text-xl text-[#0D152E] font-bold tracking-[-0.4px]">Webshop & marketing support</h5>
+                        <p class="text-[#2A3735] text-base lg:text-xl">We offer comprehensive support to help you
+                            connect your webshop and promote your art effectively.</p>
+                    </div>
+                </div>
+                <!-- single item  -->
+                <div class="p-[18px] lg:p-8 rounded-2xl bg-[#F3F4F7] hover:bg-[#7a53e728]">
+                    <div class="w-12 h-12 rounded-2xl bg-[#7B53E7] flex items-center justify-center">
+                        <img src="./assets/lp/d4.svg" class="w-8" alt="">
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <h5 class="text-xl text-[#0D152E] font-bold tracking-[-0.4px]">Dedicated to wall art</h5>
+                        <p class="text-[#2A3735] text-base lg:text-xl">We specialize exclusively in wall art, ensuring
+                            that every print is crafted for artists like you.</p>
+                    </div>
+                </div>
+                <!-- single item  -->
+                <div class="p-[18px] lg:p-8 rounded-2xl bg-[#F3F4F7] hover:bg-[#7a53e728]">
+                    <div class="w-12 h-12 rounded-2xl bg-[#7B53E7] flex items-center justify-center">
+                        <img src="./assets/lp/d5.svg" class="w-8" alt="">
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <h5 class="text-xl text-[#0D152E] font-bold tracking-[-0.4px]">For artists, by artists</h5>
+                        <p class="text-[#2A3735] text-base lg:text-xl">Our platform understands your needs and provides
+                            the tools to help you succeed.</p>
+                    </div>
+                </div>
+                <!-- single item  -->
+                <div class="p-[18px] lg:p-8 rounded-2xl bg-[#F3F4F7] hover:bg-[#7a53e728]">
+                    <div class="w-12 h-12 rounded-2xl bg-[#7B53E7] flex items-center justify-center">
+                        <img src="./assets/lp/d6.svg" class="w-8" alt="">
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <h5 class="text-xl text-[#0D152E] font-bold tracking-[-0.4px]">Smart selling tips</h5>
+                        <p class="text-[#2A3735] text-base lg:text-xl">Access valuable insights and strategies to
+                            effectively market and sell your art.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <a href="#"
+                    class="w-full sm:w-[195px] h-[53px] bg-purple-1 border-2 border-purple-1 flex items-center justify-center font-bold text-base text-white-1 rounded-xl hover:bg-black-6 hover:border-black-6 mx-auto tracking-[0.25px]">Get
+                    started for free</a>
+            </div>
+        </section>
+
+
+        <!-- Community section start here  -->
+        <section
+            class="bg-[url('../src/assets/mobilecta.png')] lg:bg-[url('../src/assets/bgcta.svg')] bg-cover bg-no-repeat bg-center bg-black-5">
+            <div class="px-4 max-w-[1328px] mx-auto pt-[22px] pb-[35px] md:pt-[76px] md:pb-[73px] text-center relative">
+                <div class="block lg:hidden">
+                    <img src="./assets/lp/avatargrp.png" srcset="
+                    ./assets/lp/avatargrp.png   1x,
+                    ./assets/lp/avatargrp2.png 2x,
+                    ./assets/lp/avatargrp3.png 3x" class="w-[313px] mx-auto" alt="">
+                </div>
+                <h2 class="font-bold text-white-1 text-[28px] lg:text-5xl mt-[13px] lg:mt-0">+15K Artist Community</h2>
+                <p
+                    class="text-base lg:text-xl text-white-1 max-w-[840px] mx-auto mt-[16px] lg:mt-[23px] mb-[29px] lg:mb-[44px] tracking-[0.25px]">
+                    We're dedicated to building a vibrant community of artists. By listening to your feedback and
+                    learning from your
+                    journeys, we continuously refine our print-on-demand service to meet your needs</p>
+                <div>
+                    <button
+                        class="w-full sm:w-[250px] h-[60px] bg-purple-1 border-2 border-purple-1 flex items-center justify-center font-bold text-base text-white-1 rounded-xl hover:bg-gray-3 hover:border-gray-3 mx-auto">Try
+                        It For Free</button>
+                </div>
+                <!-- avatar images  -->
+                <div
+                    class="w-[75px] h-[75px] rounded-[50%] absolute top-[44px] left-[19%] hidden lg:block animate-avatar-1">
+                    <img src="./assets/lp/a1-1x.png" srcset="
+                    ./assets/lp/a1-1x.png   1x,
+                    ./assets/lp/a1-2x.png 2x,
+                    ./assets/lp/a1-3x.png 3x" class="w-full" alt="">
+                </div>
+                <div
+                    class="w-[60px] h-[60px] rounded-[50%] absolute bottom-[65px] left-[12%] hidden lg:block animate-avatar-2">
+                    <img src="./assets/lp/a2-1x.png" srcset="
+                    ./assets/lp/a2-1x.png   1x,
+                    ./assets/lp/a2-2x.png 2x,
+                    ./assets/lp/a2-3x.png 3x" class="w-full" alt="">
+                </div>
+                <!-- <div
+                    class="w-[39px] h-[39px] rounded-[50%] absolute bottom-[101px] left-[30%] hidden lg:block animate-avatar-3">
+                    <img src="./assets/lp/a1-1x.png" srcset="
+                    ./assets/lp/a1-1x.png   1x,
+                    ./assets/lp/a1-2x.png 2x,
+                    ./assets/lp/a1-3x.png 3x" class="w-full" alt="">
+                </div> -->
+                <div
+                    class="w-[39px] h-[39px] rounded-[50%] absolute top-[29px] right-[20%] hidden lg:block animate-avatar-4">
+                    <img src="./assets/lp/a1-1x.png" srcset="
+                    ./assets/lp/a3-1x.png   1x,
+                    ./assets/lp/a3-2x.png 2x,
+                    ./assets/lp/a3-3x.png 3x" class="w-full" alt="">
+                </div>
+                <div
+                    class="w-[50px] h-[50px] rounded-[50%] absolute bottom-[90px] right-[30%] hidden lg:block animate-avatar-5">
+                    <img src="./assets/lp/a1-1x.png" srcset="
+                    ./assets/lp/a4-1x.png   1x,
+                    ./assets/lp/a4-2x.png 2x,
+                    ./assets/lp/a4-3x.png 3x" class="w-full" alt="">
+                </div>
+                <div
+                    class="w-[75px] h-[75px] rounded-[50%] absolute bottom-[46px] right-[10%] hidden lg:block animate-avatar-6">
+                    <img src="./assets/lp/a1-1x.png" srcset="
+                    ./assets/lp/a5-1x.png   1x,
+                    ./assets/lp/a5-2x.png 2x,
+                    ./assets/lp/a5-3x.png 3x" class="w-full" alt="">
+                </div>
+                <div
+                    class="w-[30px] h-[30px] rounded-[50%] absolute top-[79px] right-[5%] hidden lg:block animate-avatar-7">
+                    <img src="./assets/lp/a1-1x.png" srcset="
+                    ./assets/lp/a6-1x.png   1x,
+                    ./assets/lp/a6-2x.png 2x,
+                    ./assets/lp/a6-3x.png 3x" class="w-full" alt="">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- About Us section start here  -->
+        <section
+            class="px-4 max-w-[1328px] mx-auto pt-[85px] pb-10 lg:pt-[125px] lg:pb-[151px] flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16 2xl:gap-[139px]">
+            <div class="w-full sm:w-[481px] relative">
+                <img src="./assets/lp/about-us.jpg" srcset="
+                    ./assets/lp/about-us.jpg   1x,
+                    ./assets/lp/about-us-2x.jpg 2x,
+                    ./assets/lp/about-us-2x.jpg 3x"
+                    class="w-full rounded-[100px] lg:rounded-tl-[0px] lg:rounded-tr-[99px] lg:rounded-br-[100px] lg:rounded-bl-[100px]"
+                    alt="">
+                <div class="absolute w-4 lg:w-[27px] -top-8 lg:-top-14 left-[50%]">
+                    <img src="./assets/lp/about1.svg" class="w-full" alt="">
+                </div>
+                <div class="absolute w-[135px] lg:w-[246px] -top-6 lg:-top-16 -left-[10px] lg:-left-[50px] -z-10">
+                    <img src="./assets/lp/about2.svg" class="w-full" alt="">
+                </div>
+                <div class="absolute w-[46px] lg:w-[85px] -bottom-5 lg:-bottom-7 left-0 lg:-left-6 -z-10">
+                    <img src="./assets/lp/about3.svg" class="w-full" alt="">
+                </div>
+            </div>
+            <div class="flex-1 text-black-5">
+                <h2 class="text-[28px] sm:text-3xl 2xl:text-[40px]  font-bold">About Us</h2>
+                <h4 class="my-4 lg:mt-9 lg:mb-6 font-bold text-xl lg:text-[26px]">For Artist, by Artists
+                </h4>
+                <div class="w-full max-w-[600px]">
+                    <p class="text-base lg:text-xl tracking-[.25px]">Our journey began as artists selling our own art
+                        through our
+                        webshop,
+                        but it was difficult to find a reliable
+                        print-on-demand partner that offered the variety of sizes and framing options we needed.</p>
+                    <p class="my-6  text-base  lg:text-xl tracking-[.25px]">Frustrated by the lack of options for
+                        artists and creative
+                        individuals, we decided to built a platform designed
+                        specifically for canvas and posters.</p>
+                    <p class="mt-6 mb-[45px] lg:mb-[60px] text-base  lg:text-xl tracking-[.25px]">At Printumo, we are
+                        dedicated to
+                        delivering
+                        the quality, flexibility, and support artists need, so your creative vision
+                        can shine in every print</p>
+                </div>
+                <div>
+                    <button
+                        class="w-full sm:w-[195px] h-[53px] bg-black-6 border-2 border-black-6 flex items-center justify-center font-bold text-base text-white-1 rounded-xl hover:bg-purple-1 hover:border-purple-1 tracking-[0.25px]">Read
+                        more</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get started with us section start here  -->
+        <section
+            class=" 2xl:max-w-[1296px] xl:max-w-[1210px] xl:mx-auto mx-4 md:mx-8  bg-purple-1 rounded-[24px] lg:rounded-[32px] mb-[61px] lg:mb-[145px]">
+            <div
+                class="bg-[url('../src/assets/form.svg')] bg-[length:163%]  xl:bg-[length:638px]  bg-no-repeat bg-[bottom_center] lg:bg-right flex justify-between lg:items-center flex-col lg:flex-row gap-y-[46px] px-[17px] pt-[31px] pb-[17px] lg:py-0 xl:px-8  2xl:px-12">
+                <div class="flex-1">
+                    <h2
+                        class="text-[28px] lg:text-6xl xl:text-[72px] xl:leading-[93px] font-semibold text-white-1 max-w-[400px] lg:leading-10">
+                        Get started with us</h2>
+                    <p
+                        class="lg:text-xl text-white-1 pt-[17px] lg:pt-[44px] font-light w-full max-w-[520px] tracking-[.25px]">
+                        Curious about
+                        Printumo and how we
+                        can support you as an artist? Feel free to reach out - we're here to help!</p>
+                </div>
+                <div class="flex-1 lg:pt-[56px] lg:pb-[53px]">
+                    <div class="bg-white-1 max-w-full lg:max-w-[456px] ms-auto p-6 rounded-[24px]">
+                        <h3 class="font-semibold text-xl lg:text-[30px] text-black-5">Got any questions?</h3>
+                        <form action="" class="space-y-6 mt-6">
+                            <input type="text" name=""
+                                class="w-full h-[62px] rounded-xl bg-[#F6F6F6] ps-4 text-lg focus-visible:outline-none"
+                                placeholder="Full Name" id="">
+                            <input type="email" name=""
+                                class="w-full h-[62px] rounded-xl bg-[#F6F6F6] ps-4 text-lg focus-visible:outline-none"
+                                placeholder="Email" id="">
+                            <textarea name="" placeholder="Note"
+                                class="w-full h-[162px] rounded-xl bg-[#F6F6F6] ps-4 pt-[10px] text-lg focus-visible:outline-none"
+                                id=""></textarea>
+                            <button
+                                class="w-full sm:h-[59px] h-[55px] bg-[#0D152E] border-2 border-[#0D152E] flex items-center justify-center font-semibold text-lg text-white-1 rounded-xl hover:bg-purple-1 hover:border-purple-1 tracking-[0.25px]">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer start here  -->
+    <footer class="bg-[#0C0F18]">
+        <div
+            class="text-white-1 px-4 max-w-[1328px] mx-auto pt-[43px] py-[58px] lg:py-20 flex flex-col lg:flex-row justify-center lg:items-center lg:gap-16 2xl:gap-[176px]">
+            <div class="w-full lg:max-w-[326px]">
+                <div class="w-[262px]">
+                    <img src="./assets/lp/footerlogo.svg" class="w-full" alt="">
+                </div>
+                <p class="text-[#94959B] text-base lg:text-xl pt-[24px] pb-[41px] lg:pt-[34px] lg:pb-[48px]">Unleash
+                    your creativity and start selling your printed artworks</p>
+                <div class="gap-5 hidden sm:flex pb-[41px] lg:pb-0">
+                    <a href="#"
+                        class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                        <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+                    </a>
+                    <a href="#"
+                        class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                        <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+                    </a>
+                    <a href="#"
+                        class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                        <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col sm:flex-row sm:justify-between gap-y-[31px]">
+                <div>
+                    <h3 class="text-2xl font-bold">Sitemap</h3>
+                    <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+                        <li>
+                            <a href="/src/landingPage.html" class="hover:text-white-1">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">How it works</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">Services</a>
+                        </li>
+                        <li>
+                            <a href="/src/about-us.html" class="hover:text-white-1">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Landing</h3>
+                    <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+                        <li>
+                            <a href="#" class="hover:text-white-1">Why Create with Us?</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">How It Works</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">Store connection</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-white-1">Customer reviews</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Utility</h3>
+                    <ul class="text-[#94959B] text-base lg:text-xl mt-[26px] space-y-[26px]">
+                        <li>
+                            <a href="#" class="hover:text-white-1">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="terms-&-conditions.html" class="hover:text-white-1">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="flex gap-5 sm:hidden mt-[46px]">
+                <a href="#"
+                    class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                    <img src="./assets/lp/facebook-fill.svg" class="w-6 h6" alt="">
+                </a>
+                <a href="#"
+                    class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                    <img src="./assets/lp/twitter-fill.svg" class="w-6 h6" alt="">
+                </a>
+                <a href="#"
+                    class="flex items-center justify-center h-12 w-12 rounded-[50%] bg-white-1 hover:bg-purple-1">
+                    <img src="./assets/lp/linkedin-fill.svg" class="w-6 h6" alt="">
+                </a>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Script  -->
+
+    <script src="./script/navbar.js"></script>
+</body>
+
+</html>
