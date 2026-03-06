@@ -1,4 +1,4 @@
 node_modules
-output.css
+# output.css removed to allow GitHub Pages hosting
 
 .DS_Store
