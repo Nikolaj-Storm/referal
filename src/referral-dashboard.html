@@ -790,12 +790,14 @@
 
     <!-- Bank Connection Modal -->
     <div id="bankModal"
-        class="fixed inset-0 bg-[#000000]/50 z-[60] hidden flex flex-col justify-end md:items-center md:justify-center transition-opacity">
+        class="fixed inset-0 z-[60] transition-opacity"
+        style="display:none; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
         <!-- Close overlay click -->
         <div class="absolute inset-0 z-0" onclick="closeBankModal()"></div>
 
         <div
-            class="bg-white rounded-t-2xl md:rounded-xl shadow-2xl w-full max-w-[420px] p-6 md:p-8 relative z-10 animate-[slideUp_0.3s_ease-out] md:animate-[fadeIn_0.2s_ease-out]">
+            class="bg-white shadow-2xl relative z-10"
+            style="width:100%; max-width:440px; border-radius:16px; padding:32px; animation:fadeIn 0.2s ease-out;">
             <button onclick="closeBankModal()"
                 class="absolute top-5 right-5 text-gray-400 hover:text-[#171717] transition-colors p-1 bg-gray-50 hover:bg-gray-100 rounded-full">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -894,13 +896,12 @@
     <script>
         // Bank connection modal functions
         function openBankModal() {
-            document.getElementById('bankModal').classList.remove('hidden');
-            // Prevent body scroll on mobile
+            document.getElementById('bankModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeBankModal() {
-            document.getElementById('bankModal').classList.add('hidden');
+            document.getElementById('bankModal').style.display = 'none';
             document.body.style.overflow = '';
         }
 
