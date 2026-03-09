@@ -790,7 +790,7 @@
 
     <!-- Bank Connection Modal -->
     <div id="bankModal"
-        class="fixed inset-0 md:left-[250px] bg-[#000000]/40 z-50 hidden flex flex-col justify-end md:items-center md:justify-center transition-opacity">
+        class="fixed inset-0 bg-[#000000]/50 z-[60] hidden flex flex-col justify-end md:items-center md:justify-center transition-opacity">
         <!-- Close overlay click -->
         <div class="absolute inset-0 z-0" onclick="closeBankModal()"></div>
 
@@ -861,6 +861,12 @@
     </div>
 
     <style>
+        @media (min-width: 768px) {
+            #bankModal {
+                left: 250px;
+            }
+        }
+
         @keyframes slideUp {
             from {
                 transform: translateY(100%);
