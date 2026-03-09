@@ -790,14 +790,12 @@
 
     <!-- Bank Connection Modal -->
     <div id="bankModal"
-        class="fixed inset-0 z-[60] transition-opacity"
-        style="display:none; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+        style="display:none; position:fixed; top:0; right:0; bottom:0; left:0; z-index:9999; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
         <!-- Close overlay click -->
-        <div class="absolute inset-0 z-0" onclick="closeBankModal()"></div>
+        <div style="position:absolute; top:0; right:0; bottom:0; left:0;" onclick="closeBankModal()"></div>
 
         <div
-            class="bg-white shadow-2xl relative z-10"
-            style="width:100%; max-width:440px; border-radius:16px; padding:32px; animation:fadeIn 0.2s ease-out;">
+            style="position:relative; z-index:10000; width:100%; max-width:440px; border-radius:16px; padding:32px; background:#ffffff; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); animation:fadeIn 0.2s ease-out;">
             <button onclick="closeBankModal()"
                 class="absolute top-5 right-5 text-gray-400 hover:text-[#171717] transition-colors p-1 bg-gray-50 hover:bg-gray-100 rounded-full">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
